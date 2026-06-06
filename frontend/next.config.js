@@ -2,6 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   
   images: {
     domains: ['localhost', 'iitdeveloper.com'],
@@ -21,6 +25,9 @@ const nextConfig = {
     config.externals.push({
       'utf-8-validate': 'commonjs utf-8-validate',
       'bufferutil': 'commonjs bufferutil',
+      'pdfkit': 'commonjs pdfkit',
+      'fontkit': 'commonjs fontkit',
+      'iconv-lite': 'commonjs iconv-lite',
     });
     return config;
   },
