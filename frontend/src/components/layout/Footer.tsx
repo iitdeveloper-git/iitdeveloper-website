@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { Zap, Github, Twitter, Linkedin, Mail } from 'lucide-react';
+import Image from 'next/image';
+import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
 
 const footerLinks = {
   services: [
@@ -40,13 +41,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-16">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center space-x-2 group mb-6">
-              <div className="relative">
-                <Zap className="w-8 h-8 text-primary transition-all duration-300" />
-                <div className="absolute inset-0 blur-lg bg-primary/50 group-hover:bg-primary/70 transition-all" />
-              </div>
-              <span className="text-2xl font-bold gradient-text tracking-tight">
-                IITDeveloper
+            <Link href="/" className="flex items-center gap-2 group mb-6">
+              <Image
+                src="/logo.png"
+                alt="IIT Developer"
+                width={160}
+                height={56}
+                className="h-12 lg:h-14 w-auto object-contain transition-transform group-hover:scale-105"
+              />
+              <span className="text-xl lg:text-2xl font-bold gradient-text tracking-tight leading-none self-center">
+                IIT Developer
               </span>
             </Link>
             <p className="text-muted-foreground/80 mb-8 max-w-sm text-base leading-relaxed font-light">
