@@ -1,0 +1,229 @@
+# IITDeveloper - Podman Compose Configuration
+# Optimized for Podman with rootless containers
+
+version: '3.8'
+
+services:
+  # ============================================================================
+  # PostgreSQL Database
+  # ============================================================================
+  postgres:
+    image: docker.io/library/postgres:15-alpine
+    container_name: iitdeveloper-postgres
+    restart: unless-stopped
+    
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-iitdeveloper}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=en_US.UTF-8"
+      POSTGRES_HOST_AUTH_METHOD: ${POSTGRES_HOST_AUTH_METHOD:-scram-sha-256}
+    
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    
+    volumes:
+      # Persistent data storage
+      - postgres_data:/var/lib/postgresql/data
+      # Auto-initialization scripts
+      - ./src/lib/db/schema.sql:/docker-entrypoint-initdb.d/001_schema.sql:ro
+      - ./src/lib/db/migrations:/docker-entrypoint-initdb.d/migrations:ro
+      # Custom postgresql.conf (optional)
+      # - ./config/postgresql.conf:/etc/postgresql/postgresql.conf:ro
+    
+    networks:
+      - iitdeveloper-network
+    
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-iitdeveloper}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    
+    # Podman-specific: Run as non-root user
+    userns_mode: "keep-id"
+    
+    # Resource limits (optional, uncomment for production)
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '1.0'
+    #       memory: 512M
+    #     reservations:
+    #       cpus: '0.25'
+    #       memory: 128M
+    
+    labels:
+      app: "iitdeveloper"
+      tier: "database"
+      environment: "${ENVIRONMENT:-development}"
+
+  # ============================================================================
+  # Next.js Frontend + Backend (API Routes)
+  # ============================================================================
+  frontend:
+    build:
+      context: .
+      dockerfile: Containerfile
+      args:
+        NODE_ENV: ${NODE_ENV:-production}
+        BUILDKIT_INLINE_CACHE: "1"
+      # Use buildah for better Podman integration
+      # labels:
+      #   - "io.buildah.version=1.35"
+    
+    image: iitdeveloper-frontend:${VERSION:-latest}
+    container_name: iitdeveloper-frontend
+    restart: unless-stopped
+    
+    environment:
+      # Node environment
+      - NODE_ENV=${NODE_ENV:-production}
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+      
+      # Database connection
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=${POSTGRES_DB:-iitdeveloper}
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
+      
+      # Application URLs
+      - NEXT_PUBLIC_APP_URL=${NEXT_PUBLIC_APP_URL:-http://localhost:3000}
+      
+      # Email service (Resend)
+      - RESEND_API_KEY=${RESEND_API_KEY:-}
+      - FROM_EMAIL=${FROM_EMAIL:-noreply@iitdeveloper.com}
+      - FROM_NAME=${FROM_NAME:-IITDeveloper}
+      
+      # Optional: Authentication
+      # - NEXTAUTH_URL=${NEXTAUTH_URL:-http://localhost:3000}
+      # - NEXTAUTH_SECRET=${NEXTAUTH_SECRET:-}
+      
+      # Telemetry
+      - NEXT_TELEMETRY_DISABLED=1
+    
+    ports:
+      - "${FRONTEND_PORT:-3000}:3000"
+    
+    depends_on:
+      postgres:
+        condition: service_healthy
+    
+    networks:
+      - iitdeveloper-network
+    
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"require('http').get('http://localhost:3000/api/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    
+    # Podman-specific: Run as non-root user
+    userns_mode: "keep-id"
+    
+    # Resource limits (optional, uncomment for production)
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '2.0'
+    #       memory: 1G
+    #     reservations:
+    #       cpus: '0.5'
+    #       memory: 256M
+    
+    labels:
+      app: "iitdeveloper"
+      tier: "frontend"
+      environment: "${ENVIRONMENT:-development}"
+    
+    # Optional: Mount source code for development
+    # volumes:
+    #   - ./src:/app/src:ro
+    #   - ./public:/app/public:ro
+
+  # ============================================================================
+  # Optional: Redis Cache (Uncomment to enable)
+  # ============================================================================
+  # redis:
+  #   image: docker.io/library/redis:7-alpine
+  #   container_name: iitdeveloper-redis
+  #   restart: unless-stopped
+  #   
+  #   command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-redis}
+  #   
+  #   ports:
+  #     - "${REDIS_PORT:-6379}:6379"
+  #   
+  #   volumes:
+  #     - redis_data:/data
+  #   
+  #   networks:
+  #     - iitdeveloper-network
+  #   
+  #   healthcheck:
+  #     test: ["CMD", "redis-cli", "ping"]
+  #     interval: 10s
+  #     timeout: 3s
+  #     retries: 5
+  #   
+  #   labels:
+  #     app: "iitdeveloper"
+  #     tier: "cache"
+
+  # ============================================================================
+  # Optional: Nginx Reverse Proxy (Uncomment to enable)
+  # ============================================================================
+  # nginx:
+  #   image: docker.io/library/nginx:alpine
+  #   container_name: iitdeveloper-nginx
+  #   restart: unless-stopped
+  #   
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   
+  #   volumes:
+  #     - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+  #     - ./nginx/ssl:/etc/nginx/ssl:ro
+  #   
+  #   depends_on:
+  #     - frontend
+  #   
+  #   networks:
+  #     - iitdeveloper-network
+  #   
+  #   labels:
+  #     app: "iitdeveloper"
+  #     tier: "proxy"
+
+# ============================================================================
+# Networks
+# ============================================================================
+networks:
+  iitdeveloper-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16
+    labels:
+      app: "iitdeveloper"
+
+# ============================================================================
+# Volumes
+# ============================================================================
+volumes:
+  postgres_data:
+    driver: local
+    labels:
+      app: "iitdeveloper"
+      tier: "database"
+  
+  # redis_data:
+  #   driver: local
+  #   labels:
+  #     app: "iitdeveloper"
+  #     tier: "cache"

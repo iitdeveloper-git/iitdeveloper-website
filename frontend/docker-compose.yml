@@ -1,0 +1,87 @@
+version: '3.8'
+
+services:
+  # ============================================================================
+  # PostgreSQL Database
+  # ============================================================================
+  postgres:
+    image: postgres:15-alpine
+    container_name: iitdeveloper-postgres
+    restart: unless-stopped
+    
+    environment:
+      POSTGRES_DB: iitdeveloper
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    
+    ports:
+      - "5432:5432"
+    
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./src/lib/db/schema.sql:/docker-entrypoint-initdb.d/001_schema.sql
+      - ./src/lib/db/migrations:/docker-entrypoint-initdb.d/migrations
+    
+    networks:
+      - iitdeveloper-network
+    
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d iitdeveloper"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # ============================================================================
+  # Next.js Frontend + Backend (API Routes)
+  # ============================================================================
+  frontend:
+    build:
+      context: .
+      dockerfile: Containerfile
+    
+    container_name: iitdeveloper-frontend
+    restart: unless-stopped
+    
+    environment:
+      - NODE_ENV=production
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=iitdeveloper
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - NEXT_PUBLIC_APP_URL=http://localhost:3000
+      - RESEND_API_KEY=${RESEND_API_KEY:-}
+      - FROM_EMAIL=noreply@iitdeveloper.com
+      - FROM_NAME=IITDeveloper
+    
+    ports:
+      - "3000:3000"
+    
+    depends_on:
+      postgres:
+        condition: service_healthy
+    
+    networks:
+      - iitdeveloper-network
+    
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/api/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+# ============================================================================
+# Networks
+# ============================================================================
+networks:
+  iitdeveloper-network:
+    driver: bridge
+
+# ============================================================================
+# Volumes
+# ============================================================================
+volumes:
+  postgres_data:
+    driver: local
