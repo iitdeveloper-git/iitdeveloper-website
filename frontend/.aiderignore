@@ -1,0 +1,14 @@
+# Standard Next.js/Node ignores
+/node_modules
+/.next/
+/out/
+/build
+/dist
+/coverage
+.DS_Store
+
+# AI specific ignores
+package-lock.json
+/public/
+.env*
+!.env.example
