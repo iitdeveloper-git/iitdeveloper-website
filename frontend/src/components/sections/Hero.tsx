@@ -91,7 +91,7 @@ export default function Hero() {
             className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-4xl mx-auto"
           >
             {[
-              { value: "500+", label: "Projects Delivered" },
+              { value: "100+", label: "Projects Delivered" },
               { value: "99.9%", label: "Uptime SLA" },
               { value: "24/7", label: "Support Available" },
               { value: "50+", label: "Happy Clients" },

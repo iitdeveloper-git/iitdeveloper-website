@@ -110,40 +110,40 @@ const processSteps = [
 const pricing = [
   {
     tier: 'Startup Growth',
-    price: 'From $2,500/mo',
+    price: 'From ₹19,999/mo',
     description: 'Perfect for startups testing channels.',
     features: [
       '1-2 ad platforms',
       'Basic campaign management',
       'Monthly reporting',
-      'Ad spend: $5k-$15k/mo',
+      'Ad spend: ₹50k-₹1.5L/mo',
       '3-month minimum',
     ],
   },
   {
     tier: 'Business Scale',
-    price: 'From $5,000/mo',
+    price: 'From ₹39,999/mo',
     description: 'For growing businesses ready to scale.',
     features: [
       'Multi-channel campaigns',
       'Advanced optimization',
       'Landing page optimization',
       'Bi-weekly reporting',
-      'Ad spend: $15k-$50k/mo',
+      'Ad spend: ₹1.5L-₹5L/mo',
       'CRO included',
     ],
     popular: true,
   },
   {
     tier: 'Enterprise Growth',
-    price: 'From $10,000/mo',
+    price: 'From ₹79,999/mo',
     description: 'Complete growth marketing for scale.',
     features: [
       'Full-stack marketing',
       'Dedicated strategist',
       'Custom attribution models',
       'Weekly strategy calls',
-      'Ad spend: $50k+/mo',
+      'Ad spend: ₹5L+/mo',
       'Marketing automation',
     ],
   },
@@ -294,7 +294,7 @@ export default function MarketingPage() {
                 key={index}
                 glass
                 premium
-                className={`dark-surface border-white/[0.08] relative ${
+                className={`dark-surface border-white/[0.08] relative h-full flex flex-col ${
                   plan.popular ? 'ring-2 ring-accent/50' : ''
                 }`}
               >
@@ -312,8 +312,8 @@ export default function MarketingPage() {
                   </div>
                   <CardDescription className="mt-2">{plan.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
+                <CardContent className="flex flex-1 flex-col">
+                  <ul className="flex-1 space-y-3">
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
@@ -321,7 +321,7 @@ export default function MarketingPage() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="/estimate" className="block mt-6">
+                  <Link href="/estimate" className="mt-auto block pt-6">
                     <Button className="w-full" variant={plan.popular ? 'default' : 'outline'}>
                       Get Started
                     </Button>

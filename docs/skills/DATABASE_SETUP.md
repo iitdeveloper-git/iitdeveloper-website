@@ -6,7 +6,7 @@ Your project is now configured to work with **any PostgreSQL database** using th
 
 **Connected to:** Neon (Serverless PostgreSQL)  
 **Status:** ✅ Migrations completed successfully  
-**Email:** Contact notifications → `goyalnikhil743@gmail.com`
+**Email:** Contact notifications → `info@iitdeveloper.com`
 
 ---
 
@@ -109,7 +109,7 @@ curl -X POST http://localhost:3000/api/leads \
 ```
 
 ### 4. Check Your Email:
-- You should receive notification at: **goyalnikhil743@gmail.com**
+- You should receive notification at: **info@iitdeveloper.com**
 - Customer receives confirmation at their email
 
 ---
@@ -137,7 +137,7 @@ Your database connection works on:
      ```
      DATABASE_URL=your-neon-connection-string
      RESEND_API_KEY=your-resend-key
-     SALES_EMAIL=goyalnikhil743@gmail.com
+     SALES_EMAIL=info@iitdeveloper.com
      ```
 
 3. **Deploy!**
@@ -158,11 +158,11 @@ DATABASE_URL=postgresql://neondb_owner:npg_l4X3hAiYOzWH@ep-fancy-truth-app7pl9q.
 RESEND_API_KEY=re_your_api_key_here
 FROM_EMAIL=noreply@iitdeveloper.com
 FROM_NAME=IITDeveloper
-SALES_EMAIL=goyalnikhil743@gmail.com
+SALES_EMAIL=info@iitdeveloper.com
 
 # App URLs
 NEXT_PUBLIC_APP_URL=https://yourdomain.com
-NEXT_PUBLIC_CONTACT_EMAIL=goyalnikhil743@gmail.com
+NEXT_PUBLIC_CONTACT_EMAIL=info@iitdeveloper.com
 ```
 
 ---
@@ -172,7 +172,7 @@ NEXT_PUBLIC_CONTACT_EMAIL=goyalnikhil743@gmail.com
 Your contact form now:
 - ✅ Saves leads to Neon database
 - ✅ Sends email confirmation to customers
-- ✅ Sends notification to you (goyalnikhil743@gmail.com)
+- ✅ Sends notification to you (info@iitdeveloper.com)
 - ✅ Works on any hosting platform
 - ✅ Completely free (within Neon's free tier)
 

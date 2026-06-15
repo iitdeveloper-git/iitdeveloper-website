@@ -30,7 +30,7 @@ const socialLinks = [
   { icon: Github, href: 'https://github.com', label: 'GitHub' },
   { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
   { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: Mail, href: 'mailto:goyalnikhil743@gmail.com', label: 'Email' },
+  { icon: Mail, href: 'mailto:info@iitdeveloper.com', label: 'Email' },
 ];
 
 export default function Footer() {

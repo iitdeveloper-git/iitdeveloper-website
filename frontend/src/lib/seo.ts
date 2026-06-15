@@ -121,7 +121,7 @@ export function generateStructuredData(type: 'Organization' | 'WebSite' | 'Servi
       contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'Customer Service',
-        email: 'goyalnikhil743@gmail.com',
+        email: 'info@iitdeveloper.com',
         availableLanguage: ['English'],
       },
       sameAs: [

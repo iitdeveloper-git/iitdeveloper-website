@@ -149,7 +149,7 @@ export default function Testimonials() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="text-4xl font-bold gradient-text mb-2">500+</div>
+                <div className="text-4xl font-bold gradient-text mb-2">100+</div>
                 <div className="text-sm text-muted-foreground/80 font-medium">Projects</div>
               </motion.div>
             </div>

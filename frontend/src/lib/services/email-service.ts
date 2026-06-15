@@ -24,7 +24,7 @@ export class EmailService {
   private static apiKey = process.env.RESEND_API_KEY;
   private static fromEmail = process.env.FROM_EMAIL || 'noreply@iitdeveloper.com';
   private static fromName = process.env.FROM_NAME || 'IITDeveloper';
-  private static salesEmail = process.env.SALES_EMAIL || 'goyalnikhil743@gmail.com';
+  private static salesEmail = process.env.SALES_EMAIL || 'info@iitdeveloper.com';
 
   // Send email using Resend API
   static async sendEmail(options: EmailOptions): Promise<{
@@ -147,6 +147,13 @@ export class EmailService {
         })
       : 'N/A';
 
+    const formatCurrency = (amount: number) =>
+      new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        maximumFractionDigits: 0,
+      }).format(amount);
+
     const lineItemsHTML = estimate.lineItems
       .map(
         (item) => `
@@ -158,7 +165,7 @@ export class EmailService {
             </div>
           </td>
           <td style="padding: 16px 8px; text-align: right; font-weight: 600; color: #111827;">
-            $${item.totalPrice.toLocaleString()}
+            ${formatCurrency(item.totalPrice)}
           </td>
         </tr>
       `
@@ -174,7 +181,7 @@ export class EmailService {
           })
           </td>
           <td style="padding: 12px 8px; text-align: right; color: #10b981;">
-            -$${((estimate.subtotal * estimate.discount.value) / 100).toLocaleString()}
+            -${formatCurrency((estimate.subtotal * estimate.discount.value) / 100)}
           </td>
         </tr>
       `
@@ -187,7 +194,7 @@ export class EmailService {
             Tax (${estimate.tax.rate}%)
           </td>
           <td style="padding: 12px 8px; text-align: right; color: #6b7280;">
-            $${estimate.tax.amount.toLocaleString()}
+            ${formatCurrency(estimate.tax.amount)}
           </td>
         </tr>
       `
@@ -281,7 +288,7 @@ export class EmailService {
                 Subtotal
               </td>
               <td style="padding: 12px 8px; text-align: right; font-weight: 600; color: #111827;">
-                $${estimate.subtotal.toLocaleString()}
+                ${formatCurrency(estimate.subtotal)}
               </td>
             </tr>
             ${discountHTML}
@@ -291,7 +298,7 @@ export class EmailService {
                 Total
               </td>
               <td style="padding: 16px 8px; text-align: right; font-size: 24px; font-weight: 700; color: #FFD662;">
-                $${estimate.total.toLocaleString()}
+                ${formatCurrency(estimate.total)}
               </td>
             </tr>
           </tbody>
@@ -484,7 +491,7 @@ export class EmailService {
                 Building Tomorrow's Solutions Today
               </p>
               <p style="margin: 0; color: #999999; font-size: 12px;">
-                📧 goyalnikhil743@gmail.com | 🌐 <a href="https://iitdeveloper.com" style="color: #6366f1; text-decoration: none;">iitdeveloper.com</a>
+                📧 info@iitdeveloper.com | 🌐 <a href="https://iitdeveloper.com" style="color: #6366f1; text-decoration: none;">iitdeveloper.com</a>
               </p>
             </td>
           </tr>

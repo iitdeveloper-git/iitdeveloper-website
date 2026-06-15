@@ -40,12 +40,12 @@ const services = [
 ];
 
 const budgets = [
-  'Under $5K',
-  '$5K - $10K',
-  '$10K - $25K',
-  '$25K - $50K',
-  '$50K - $100K',
-  '$100K+',
+  'Under ₹25K',
+  '₹25K - ₹50K',
+  '₹50K - ₹1L',
+  '₹1L - ₹3L',
+  '₹3L - ₹7L',
+  '₹7L+',
   'Let\'s Discuss',
 ];
 

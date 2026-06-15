@@ -111,7 +111,7 @@ const CATEGORY_TERMS: Record<ServiceCategory, string[]> = {
 
 const GENERAL_TERMS = [
   'This quotation is valid for 30 days from the date of issue. Prices are subject to revision after expiry.',
-  'All prices are in USD unless explicitly stated otherwise.',
+  'All prices are in INR unless explicitly stated otherwise.',
   'Applicable taxes (GST, VAT, withholding tax) will be levied per jurisdictional requirements.',
   'IITDeveloper reserves the right to assign qualified team members while maintaining delivery quality and timelines.',
   'All deliverables and communication will be in English unless otherwise agreed in writing.',
@@ -174,9 +174,9 @@ function getCategories(estimate: PricingEstimate): ServiceCategory[] {
 }
 
 function formatCurrency(amount: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat('en-IN', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'INR',
     maximumFractionDigits: 0,
   }).format(amount);
 }

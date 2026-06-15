@@ -85,7 +85,7 @@ const processSteps = [
 const pricing = [
   {
     tier: 'Static Design',
-    price: 'From $500',
+    price: 'From ₹4,999',
     description: 'For individual design assets or small campaigns.',
     features: [
       'Up to 5 design assets',
@@ -97,7 +97,7 @@ const pricing = [
   },
   {
     tier: 'Motion & Video',
-    price: 'From $2,000',
+    price: 'From ₹14,999',
     description: 'For video production and motion graphics projects.',
     features: [
       'Video editing (up to 3 mins)',
@@ -111,7 +111,7 @@ const pricing = [
   },
   {
     tier: 'Brand Package',
-    price: 'From $5,000',
+    price: 'From ₹39,999',
     description: 'Complete visual identity and design system for your brand.',
     features: [
       'Full brand identity design',
@@ -270,7 +270,7 @@ export default function GraphicDesignPage() {
                 key={index}
                 glass
                 premium
-                className={`dark-surface border-white/[0.08] relative ${
+                className={`dark-surface border-white/[0.08] relative h-full flex flex-col ${
                   plan.popular ? 'ring-2 ring-accent/50' : ''
                 }`}
               >
@@ -288,8 +288,8 @@ export default function GraphicDesignPage() {
                   </div>
                   <CardDescription className="mt-2">{plan.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
+                <CardContent className="flex flex-1 flex-col">
+                  <ul className="flex-1 space-y-3">
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
@@ -297,7 +297,7 @@ export default function GraphicDesignPage() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-8">
+                  <div className="mt-auto pt-8">
                     <Link href="/contact">
                       <Button className="w-full" variant={plan.popular ? 'default' : 'outline'}>
                         Get Started

@@ -6,6 +6,7 @@ import { Trash2, ChevronDown, ChevronUp, Edit3 } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import { LineItem } from '@/types/pricing';
 import { serviceTemplates } from '@/lib/pricing-config';
+import { formatCurrency } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -114,14 +115,14 @@ export default function LineItemCard({
               <div className="text-right">
                 <p className="text-sm text-muted-foreground/70 mb-1">Base Price</p>
                 <p className="font-mono text-lg">
-                  ${(item.basePrice * item.quantity).toLocaleString()}
+                  {formatCurrency(item.basePrice * item.quantity)}
                 </p>
               </div>
 
               <div className="text-right">
                 <p className="text-sm text-muted-foreground/70 mb-1">Total</p>
                 <p className="font-mono text-2xl font-bold text-primary">
-                  ${item.totalPrice.toLocaleString()}
+                  {formatCurrency(item.totalPrice)}
                 </p>
               </div>
             </div>

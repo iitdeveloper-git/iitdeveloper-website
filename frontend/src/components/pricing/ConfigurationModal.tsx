@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Info } from 'lucide-react';
 import { ServiceTemplate, LineItemConfig } from '@/types/pricing';
+import { formatCurrency } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -119,7 +120,7 @@ export default function ConfigurationModal({
                         </label>
                         {option.priceModifier && (
                           <span className="text-sm text-primary font-mono">
-                            +${option.priceModifier.toLocaleString()}
+                            +{formatCurrency(option.priceModifier)}
                           </span>
                         )}
                       </div>
@@ -135,7 +136,7 @@ export default function ConfigurationModal({
                             <option key={opt.value} value={opt.value} className="bg-[#0a0a0a]">
                               {opt.label}
                               {opt.priceModifier &&
-                                ` (+$${opt.priceModifier.toLocaleString()})`}
+                                ` (+${formatCurrency(opt.priceModifier)})`}
                             </option>
                           ))}
                         </select>
@@ -174,7 +175,7 @@ export default function ConfigurationModal({
                                 </div>
                                 {opt.priceModifier && (
                                   <span className="text-sm text-primary font-mono">
-                                    +${opt.priceModifier.toLocaleString()}
+                                    +{formatCurrency(opt.priceModifier)}
                                   </span>
                                 )}
                               </label>
@@ -218,7 +219,7 @@ export default function ConfigurationModal({
                             <p className="text-base mb-1">{option.label}</p>
                             {option.priceModifier && (
                               <p className="text-sm text-primary font-mono">
-                                +${option.priceModifier.toLocaleString()}
+                                +{formatCurrency(option.priceModifier)}
                               </p>
                             )}
                           </div>

@@ -90,7 +90,7 @@ const processSteps = [
 const pricing = [
   {
     tier: 'CRM Setup',
-    price: 'From $8,000',
+    price: 'From ₹49,999',
     description: 'Basic Salesforce implementation for small teams.',
     features: [
       'Initial configuration',
@@ -102,7 +102,7 @@ const pricing = [
   },
   {
     tier: 'Business Optimization',
-    price: 'From $25,000',
+    price: 'From ₹1,49,999',
     description: 'Advanced Salesforce setup with integrations.',
     features: [
       'Complex workflows',
@@ -116,7 +116,7 @@ const pricing = [
   },
   {
     tier: 'Enterprise Solution',
-    price: 'From $75,000',
+    price: 'From ₹3,99,999',
     description: 'Complete Salesforce ecosystem with custom apps.',
     features: [
       'Multi-cloud setup',
@@ -274,7 +274,7 @@ export default function SalesforcePage() {
                 key={index}
                 glass
                 premium
-                className={`dark-surface border-white/[0.08] relative ${
+                className={`dark-surface border-white/[0.08] relative h-full flex flex-col ${
                   plan.popular ? 'ring-2 ring-accent/50' : ''
                 }`}
               >
@@ -292,8 +292,8 @@ export default function SalesforcePage() {
                   </div>
                   <CardDescription className="mt-2">{plan.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
+                <CardContent className="flex flex-1 flex-col">
+                  <ul className="flex-1 space-y-3">
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
@@ -301,7 +301,7 @@ export default function SalesforcePage() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="/estimate" className="block mt-6">
+                  <Link href="/estimate" className="mt-auto block pt-6">
                     <Button className="w-full" variant={plan.popular ? 'default' : 'outline'}>
                       Get Started
                     </Button>

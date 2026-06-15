@@ -7,6 +7,7 @@ import { X, Search } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import { ServiceTemplate } from '@/types/pricing';
 import { serviceTemplates } from '@/lib/pricing-config';
+import { formatCurrency } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
@@ -158,7 +159,7 @@ export default function ServiceSelector({ isOpen, onClose, onSelect }: ServiceSe
                               </p>
                               <div className="flex items-center justify-between">
                                 <p className="text-primary font-semibold">
-                                  ${service.basePrice.toLocaleString()}
+                                  {formatCurrency(service.basePrice)}
                                   <span className="text-xs text-muted-foreground/70 ml-1">
                                     / {service.unit}
                                   </span>

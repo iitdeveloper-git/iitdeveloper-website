@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { apiClient } from '@/lib/api-client';
+import { formatCurrency } from '@/lib/utils';
 import { PricingEstimate } from '@/types/pricing';
 import { 
   Loader2, 
@@ -210,7 +211,7 @@ export default function ViewEstimatePage() {
                   </div>
                   <div className="text-right">
                     <p className="text-2xl font-bold font-mono text-accent-neon">
-                      ${item.totalPrice.toLocaleString()}
+                      {formatCurrency(item.totalPrice)}
                     </p>
                   </div>
                 </div>
@@ -229,7 +230,7 @@ export default function ViewEstimatePage() {
               <div className="flex items-center justify-between pb-4 border-b border-white/[0.08]">
                 <span className="text-base text-muted-foreground/70">Subtotal</span>
                 <span className="text-xl font-mono font-bold">
-                  ${estimate.subtotal.toLocaleString()}
+                  {formatCurrency(estimate.subtotal)}
                 </span>
               </div>
 
@@ -239,7 +240,7 @@ export default function ViewEstimatePage() {
                     Discount ({estimate.discount.value}%)
                   </span>
                   <span className="text-xl font-mono text-green-400">
-                    -${((estimate.subtotal * estimate.discount.value) / 100).toLocaleString()}
+                    -{formatCurrency((estimate.subtotal * estimate.discount.value) / 100)}
                   </span>
                 </div>
               )}
@@ -248,9 +249,9 @@ export default function ViewEstimatePage() {
                 <span className="text-2xl font-bold">Total</span>
                 <div className="text-right">
                   <span className="text-4xl font-bold font-mono text-accent-neon">
-                    ${estimate.total.toLocaleString()}
+                    {formatCurrency(estimate.total)}
                   </span>
-                  <p className="text-xs text-muted-foreground/70 mt-1">USD</p>
+                  <p className="text-xs text-muted-foreground/70 mt-1">INR</p>
                 </div>
               </div>
             </div>

@@ -12,7 +12,8 @@ const stats = [
   { value: '50+', label: 'Projects Delivered' },
   { value: '98%', label: 'Client Satisfaction' },
   { value: '4.9★', label: 'Average Rating' },
-  { value: '$2M+', label: 'Revenue Generated' },
+  { value: '100%', label: 'On-Time Delivery' },
+  //{ value: '₹10Cr+', label: 'Revenue Generated' },
 ];
 
 // Featured projects with detailed case study info
@@ -46,7 +47,7 @@ const featuredProjects = [
     metrics: [
       { label: 'Tickets Automated', value: '80%', change: '+80%' },
       { label: 'Response Time', value: '<10s', change: '-95%' },
-      { label: 'Cost Savings', value: '$15k/mo', change: '-60%' },
+      { label: 'Cost Savings', value: '₹12L/mo', change: '-60%' },
     ],
     tech: ['GPT-4', 'LangChain', 'Python', 'Pinecone', 'React'],
     timeline: '8 weeks',
@@ -202,8 +203,7 @@ export default function OurWorkPage() {
               variants={staggerItem}
               className="text-xl sm:text-2xl text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed font-light mb-12"
             >
-              Real projects. Real results. Real users. 
-              Here's what we've built — and what's live right now.
+              Selected work across websites, AI solutions, ecommerce, mobile apps, cloud infrastructure, and growth campaigns, built to perform in the real world.
             </motion.p>
 
             {/* Stats */}

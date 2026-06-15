@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS services (
   -- Pricing
   base_price DECIMAL(10, 2) NOT NULL DEFAULT 0,
   price_unit VARCHAR(50) DEFAULT 'project', -- 'project', 'hour', 'month', 'user'
-  price_display VARCHAR(100), -- Custom display text like "Starting from $15,000"
+  price_display VARCHAR(100), -- Custom display text like "Starting from ₹49,999"
   
   -- Features
   features JSONB DEFAULT '[]'::jsonb, -- Array of feature strings
@@ -221,7 +221,7 @@ CREATE TABLE IF NOT EXISTS leads (
   lead_quality VARCHAR(20) DEFAULT 'unknown', -- 'hot', 'warm', 'cold', 'unknown'
   
   -- Business info
-  budget_range VARCHAR(50), -- e.g., "$10k-$25k", "$25k-$50k"
+  budget_range VARCHAR(50), -- e.g., "₹50K - ₹1L", "₹1L - ₹3L"
   estimated_value DECIMAL(10, 2),
   timeline VARCHAR(100), -- When they need the work done
   
@@ -364,10 +364,12 @@ DECLARE
 BEGIN
   -- Budget scoring
   CASE p_budget_range
-    WHEN '$50k+' THEN score := score + 40;
-    WHEN '$25k-$50k' THEN score := score + 30;
-    WHEN '$10k-$25k' THEN score := score + 20;
-    WHEN '$5k-$10k' THEN score := score + 10;
+    WHEN '₹7L+' THEN score := score + 40;
+    WHEN '₹3L - ₹7L' THEN score := score + 40;
+    WHEN '₹1L - ₹3L' THEN score := score + 35;
+    WHEN '₹50K - ₹1L' THEN score := score + 30;
+    WHEN '₹25K - ₹50K' THEN score := score + 20;
+    WHEN 'Under ₹25K' THEN score := score + 10;
     ELSE score := score + 5;
   END CASE;
   
@@ -571,10 +573,10 @@ INSERT INTO pricing_rules (
   name, description, rule_type, conditions, value_type, value, is_active, priority
 ) VALUES
   (
-    'Volume Discount - $50k+',
-    'Automatic 10% discount for projects over $50,000',
+    'Volume Discount - ₹3L+',
+    'Automatic 10% discount for projects over ₹3,00,000',
     'discount',
-    '{"minTotal": 50000}'::jsonb,
+    '{"minTotal": 300000}'::jsonb,
     'percentage',
     10,
     true,

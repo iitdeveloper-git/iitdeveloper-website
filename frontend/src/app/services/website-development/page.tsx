@@ -110,7 +110,7 @@ const processSteps = [
 const pricing = [
   {
     tier: 'Landing Page',
-    price: 'From $2,500',
+    price: 'From ₹24,999',
     description: 'Single-page websites for marketing campaigns or product launches.',
     features: [
       'Responsive design',
@@ -122,7 +122,7 @@ const pricing = [
   },
   {
     tier: 'Business Website',
-    price: 'From $8,000',
+    price: 'From ₹74,999',
     description: 'Multi-page corporate websites with CMS and advanced features.',
     features: [
       'Custom design system',
@@ -136,7 +136,7 @@ const pricing = [
   },
   {
     tier: 'Web Application',
-    price: 'From $25,000',
+    price: 'From ₹1,99,999',
     description: 'Full-stack applications with authentication, databases, and APIs.',
     features: [
       'Custom functionality',
@@ -295,7 +295,7 @@ export default function WebsiteDevelopmentPage() {
                 key={index}
                 glass
                 premium
-                className={`dark-surface border-white/[0.08] relative ${
+                className={`dark-surface border-white/[0.08] relative h-full flex flex-col ${
                   plan.popular ? 'ring-2 ring-accent/50' : ''
                 }`}
               >
@@ -313,8 +313,8 @@ export default function WebsiteDevelopmentPage() {
                   </div>
                   <CardDescription className="mt-2">{plan.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
+                <CardContent className="flex flex-1 flex-col">
+                  <ul className="flex-1 space-y-3">
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
@@ -322,7 +322,7 @@ export default function WebsiteDevelopmentPage() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="/estimate" className="block mt-6">
+                  <Link href="/estimate" className="mt-auto block pt-6">
                     <Button className="w-full" variant={plan.popular ? 'default' : 'outline'}>
                       Get Started
                     </Button>

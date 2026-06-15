@@ -15,16 +15,16 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email Us',
-    content: 'goyalnikhil743@gmail.com',
+    content: 'info@iitdeveloper.com',
     subtext: 'We reply within 4 hours',
-    href: 'mailto:goyalnikhil743@gmail.com',
+    href: 'mailto:info@iitdeveloper.com',
   },
   {
     icon: Phone,
     title: 'Call Us',
-    content: '+1 (555) 123-4567',
-    subtext: 'Mon-Fri, 9am-6pm EST',
-    href: 'tel:+15551234567',
+    content: '+91 73027 55534 ',
+    subtext: 'Mon-Fri, 9am-6pm IST',
+    href: 'tel:+917302755534',
   },
   {
     icon: MessageCircle,
@@ -37,7 +37,7 @@ const contactInfo = [
 
 const stats = [
   { label: 'Response Time', value: '< 4 hrs', icon: Clock },
-  { label: 'Projects Delivered', value: '200+', icon: Zap },
+  { label: 'Projects Delivered', value: '100+', icon: Zap },
   { label: 'Client Satisfaction', value: '98%', icon: Zap },
 ];
 
@@ -174,7 +174,7 @@ export default function ContactPage() {
                       Headquarters
                     </h3>
                     <p className="text-sm text-muted-foreground/80 leading-relaxed">
-                      San Francisco, CA
+                      Knowledge Park-2 Greater Noida, Utter Pradesh 201310, INDIA
                       <br />
                       Remote-first team
                       <br />

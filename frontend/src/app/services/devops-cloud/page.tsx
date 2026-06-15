@@ -90,7 +90,7 @@ const processSteps = [
 const pricing = [
   {
     tier: 'Cloud Setup',
-    price: 'From $5,000',
+    price: 'From ₹29,999',
     description: 'Basic cloud infrastructure setup for startups.',
     features: [
       'Cloud provider selection',
@@ -102,7 +102,7 @@ const pricing = [
   },
   {
     tier: 'DevOps Transformation',
-    price: 'From $25,000',
+    price: 'From ₹99,999',
     description: 'Complete DevOps implementation for growing teams.',
     features: [
       'Infrastructure as code',
@@ -116,7 +116,7 @@ const pricing = [
   },
   {
     tier: 'Enterprise Cloud',
-    price: 'From $75,000',
+    price: 'From ₹2,49,999',
     description: 'Multi-region, high-availability architecture.',
     features: [
       'Multi-cloud strategy',
@@ -274,7 +274,7 @@ export default function DevOpsCloudPage() {
                 key={index}
                 glass
                 premium
-                className={`dark-surface border-white/[0.08] relative ${
+                className={`dark-surface border-white/[0.08] relative h-full flex flex-col ${
                   plan.popular ? 'ring-2 ring-accent/50' : ''
                 }`}
               >
@@ -292,8 +292,8 @@ export default function DevOpsCloudPage() {
                   </div>
                   <CardDescription className="mt-2">{plan.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
+                <CardContent className="flex flex-1 flex-col">
+                  <ul className="flex-1 space-y-3">
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
@@ -301,7 +301,7 @@ export default function DevOpsCloudPage() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="/estimate" className="block mt-6">
+                  <Link href="/estimate" className="mt-auto block pt-6">
                     <Button className="w-full" variant={plan.popular ? 'default' : 'outline'}>
                       Get Started
                     </Button>

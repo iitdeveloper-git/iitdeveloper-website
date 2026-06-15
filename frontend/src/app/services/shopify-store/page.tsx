@@ -92,7 +92,7 @@ const processSteps = [
 const pricing = [
   {
     tier: 'Starter Store',
-    price: 'From $3,000',
+    price: 'From ₹24,999',
     description: 'Perfect for small brands launching their first Shopify store.',
     features: [
       'Premium theme customization',
@@ -105,7 +105,7 @@ const pricing = [
   },
   {
     tier: 'Growth Store',
-    price: 'From $8,000',
+    price: 'From ₹59,999',
     description: 'For growing brands that need a fully custom, high-converting store.',
     features: [
       'Custom Liquid theme (built from scratch)',
@@ -120,7 +120,7 @@ const pricing = [
   },
   {
     tier: 'Shopify Plus',
-    price: 'From $20,000',
+    price: 'From ₹1,49,999',
     description: 'Enterprise-grade Shopify Plus stores for high-volume merchants.',
     features: [
       'Shopify Plus configuration',
@@ -280,7 +280,7 @@ export default function ShopifyStorePage() {
                 key={index}
                 glass
                 premium
-                className={`dark-surface border-white/[0.08] relative ${
+                className={`dark-surface border-white/[0.08] relative h-full flex flex-col ${
                   plan.popular ? 'ring-2 ring-accent/50' : ''
                 }`}
               >
@@ -298,8 +298,8 @@ export default function ShopifyStorePage() {
                   </div>
                   <CardDescription className="mt-2">{plan.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
+                <CardContent className="flex flex-1 flex-col">
+                  <ul className="flex-1 space-y-3">
                     {plan.features.map((feature, fIndex) => (
                       <li key={fIndex} className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
@@ -307,7 +307,7 @@ export default function ShopifyStorePage() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-8">
+                  <div className="mt-auto pt-8">
                     <Link href="/estimate">
                       <Button
                         className="w-full"

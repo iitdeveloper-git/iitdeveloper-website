@@ -17,6 +17,7 @@ import toast from 'react-hot-toast';
 import { LineItem, ServiceTemplate, LineItemConfig } from '@/types/pricing';
 import { serviceTemplates, calculateLineItemPrice } from '@/lib/pricing-config';
 import { apiClient } from '@/lib/api-client';
+import { formatCurrency } from '@/lib/utils';
 import ServiceSelector from './ServiceSelector';
 import ConfigurationModal from './ConfigurationModal';
 import LineItemCard from './LineItemCard';
@@ -464,7 +465,7 @@ export default function PricingEstimator() {
                 <div className="flex items-center justify-between pb-4 border-b border-primary/10">
                   <span className="text-base text-muted-foreground/70">Subtotal</span>
                   <span className="text-xl font-mono font-bold">
-                    ${subtotal.toLocaleString()}
+                    {formatCurrency(subtotal)}
                   </span>
                 </div>
 
@@ -482,7 +483,7 @@ export default function PricingEstimator() {
                   />
                   {discountAmount > 0 && (
                     <p className="text-sm text-primary">
-                      -${discountAmount.toLocaleString()}
+                      -{formatCurrency(discountAmount)}
                     </p>
                   )}
                 </div>
@@ -493,9 +494,9 @@ export default function PricingEstimator() {
                     <span className="text-xl font-semibold">Total</span>
                     <div className="text-right">
                       <span className="text-4xl font-bold font-mono text-primary">
-                        ${total.toLocaleString()}
+                        {formatCurrency(total)}
                       </span>
-                      <p className="text-xs text-muted-foreground/70 mt-1">USD</p>
+                      <p className="text-xs text-muted-foreground/70 mt-1">INR</p>
                     </div>
                   </div>
                 </div>
@@ -579,7 +580,7 @@ export default function PricingEstimator() {
               <div className="mt-8 p-4 rounded-xl glass-strong">
                 <p className="text-xs text-muted-foreground/70 leading-relaxed">
                   This is an estimated quote. Final pricing may vary based on specific requirements
-                  and project scope. All prices in USD.
+                  and project scope. All prices are in INR.
                 </p>
               </div>
             </motion.div>

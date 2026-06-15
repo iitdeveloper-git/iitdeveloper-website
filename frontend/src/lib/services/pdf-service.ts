@@ -44,6 +44,13 @@ export async function generateEstimatePDF(
         white: '#ffffff',
       };
 
+      const formatCurrency = (amount: number) =>
+        new Intl.NumberFormat('en-IN', {
+          style: 'currency',
+          currency: 'INR',
+          maximumFractionDigits: 0,
+        }).format(amount);
+
       let yPosition = 50;
 
       // ================================
@@ -273,7 +280,7 @@ export async function generateEstimatePDF(
           .fillColor(colors.dark)
           .font('Helvetica-Bold')
           .text(
-            `$${item.totalPrice.toLocaleString()}`,
+            formatCurrency(item.totalPrice),
             tableLeft + col1Width + col2Width + col3Width + 5,
             yPosition,
             {
@@ -313,7 +320,7 @@ export async function generateEstimatePDF(
       doc
         .fillColor(colors.dark)
         .font('Helvetica')
-        .text(`$${estimate.subtotal.toLocaleString()}`, totalsX + 85, yPosition, {
+        .text(formatCurrency(estimate.subtotal), totalsX + 85, yPosition, {
           width: 77,
           align: 'right',
         });
@@ -335,7 +342,7 @@ export async function generateEstimatePDF(
         doc
           .fillColor('#FFD662')
           .font('Helvetica')
-          .text(`-$${discountAmount.toLocaleString()}`, totalsX + 85, yPosition, {
+          .text(`-${formatCurrency(discountAmount)}`, totalsX + 85, yPosition, {
             width: 77,
             align: 'right',
           });
@@ -364,7 +371,7 @@ export async function generateEstimatePDF(
         .fontSize(18)
         .fillColor(colors.primary)
         .font('Helvetica-Bold')
-        .text(`$${estimate.total.toLocaleString()}`, totalsX + 85, yPosition, {
+        .text(formatCurrency(estimate.total), totalsX + 85, yPosition, {
           width: 77,
           align: 'right',
         });
@@ -373,7 +380,7 @@ export async function generateEstimatePDF(
         .fontSize(8)
         .fillColor(colors.gray)
         .font('Helvetica')
-        .text('USD', totalsX + 85, yPosition + 20, { width: 77, align: 'right' });
+        .text('INR', totalsX + 85, yPosition + 20, { width: 77, align: 'right' });
 
       yPosition += 60;
 
@@ -443,7 +450,7 @@ export async function generateEstimatePDF(
         .fontSize(8)
         .fillColor(colors.gray)
         .text(
-          'This estimate is valid for 30 days from the date of issue. All prices are in USD.',
+          'This estimate is valid for 30 days from the date of issue. All prices are in INR.',
           50,
           yPosition,
           { width: 512, align: 'center' }
@@ -454,7 +461,7 @@ export async function generateEstimatePDF(
       doc
         .fontSize(8)
         .fillColor(colors.primary)
-        .text('www.iitdeveloper.com • goyalnikhil743@gmail.com', 50, yPosition, {
+        .text('www.iitdeveloper.com • info@iitdeveloper.com', 50, yPosition, {
           width: 512,
           align: 'center',
         });

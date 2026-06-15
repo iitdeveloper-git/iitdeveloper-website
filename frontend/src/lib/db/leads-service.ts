@@ -82,12 +82,12 @@ function calculateLeadScoreFallback(data: CreateLead): number {
   
   // Budget range scoring (0-40 points)
   const budgetScores: { [key: string]: number } = {
-    'Under $5K': 10,
-    '$5K - $10K': 20,
-    '$10K - $25K': 30,
-    '$25K - $50K': 35,
-    '$50K - $100K': 40,
-    '$100K+': 40,
+    'Under ₹25K': 10,
+    '₹25K - ₹50K': 20,
+    '₹50K - ₹1L': 30,
+    '₹1L - ₹3L': 35,
+    '₹3L - ₹7L': 40,
+    '₹7L+': 40,
   };
   if (data.budget_range && budgetScores[data.budget_range]) {
     score += budgetScores[data.budget_range];
