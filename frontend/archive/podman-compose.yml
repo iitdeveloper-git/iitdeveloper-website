@@ -1,3 +1,6 @@
+# AGENT-CONTEXT: This compose file is for local development and staging using Podman.
+# The database is exposed on port 5432 and frontend on 3000.
+# Do not modify volume paths without updating podman-stack.sh as well.
 # IITDeveloper - Podman Compose Configuration
 # Optimized for Podman with rootless containers
 

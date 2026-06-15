@@ -1,3 +1,6 @@
+// AGENT-CONTEXT: Main landing page for IITDeveloper.
+// Uses Framer Motion for animations and Three.js (@react-three/fiber) for the Hero scene.
+// Ensure any changes to the 3D canvas are strictly performance-tested.
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
