@@ -1,0 +1,5 @@
+# Global ignores
+.DS_Store
+.env*
+!.env.example
+node_modules/
