@@ -190,7 +190,7 @@ export default function ConfigurationModal({
                             min={option.min}
                             max={option.max}
                             step={option.step}
-                            value={config[option.id] || option.min || 0}
+                            value={(typeof config[option.id] === 'number' ? config[option.id] : (option.min || 0)) as number}
                             onChange={(e) =>
                               setConfig({ ...config, [option.id]: parseInt(e.target.value) || 0 })
                             }

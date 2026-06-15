@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { PricingService } from '@/lib/services/pricing-service';
 import { calculatePriceSchema } from '@/lib/validations/pricing';
 
+// Enable Edge Runtime for Cloudflare Pages
+export const runtime = 'edge';
+
 // POST /api/estimates/calculate - Calculate price for a service configuration
 export async function POST(request: NextRequest) {
   try {

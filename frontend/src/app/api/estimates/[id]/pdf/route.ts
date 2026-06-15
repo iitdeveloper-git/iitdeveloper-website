@@ -2,6 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import { generateEstimatePDF, generatePDFFilename } from '@/lib/services/pdf-service';
 import { PricingService } from '@/lib/services/pricing-service';
 
+// NOTE: PDF generation requires Node.js APIs (pdfkit), so we use Node.js runtime
+// Remove this route or use a different PDF generation method for Edge Runtime
+export const runtime = 'nodejs';
+
 /**
  * GET /api/estimates/[id]/pdf
  * Generate and download estimate as PDF
@@ -21,8 +25,7 @@ export async function GET(
     }
 
     // Fetch estimate from database
-    const pricingService = new PricingService();
-    const estimate = await pricingService.getEstimate(id);
+    const estimate = await PricingService.getEstimate(id);
 
     if (!estimate) {
       return NextResponse.json(
@@ -36,13 +39,13 @@ export async function GET(
     const filename = generatePDFFilename(estimate);
 
     // Log activity
-    await pricingService.logActivity(id, 'downloaded', {
+    await PricingService.logActivity(id, 'downloaded', 'PDF downloaded', {
       format: 'pdf',
       userAgent: request.headers.get('user-agent') || 'unknown',
     });
 
-    // Return PDF with proper headers
-    return new NextResponse(pdfBuffer, {
+    // Return PDF with proper headers (convert Buffer to Uint8Array for Next.js)
+    return new NextResponse(new Uint8Array(pdfBuffer), {
       status: 200,
       headers: {
         'Content-Type': 'application/pdf',

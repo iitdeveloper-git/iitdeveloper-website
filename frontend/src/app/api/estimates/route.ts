@@ -1,4 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
+
+// Enable Edge Runtime for Cloudflare Pages
+export const runtime = 'edge';
 import { PricingService } from '@/lib/services/pricing-service';
 import { createEstimateSchema } from '@/lib/validations/pricing';
 

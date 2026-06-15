@@ -21,7 +21,7 @@ export async function getAllLeads(includeDeleted = false): Promise<Lead[]> {
     : `SELECT * FROM active_leads ORDER BY created_at DESC`;
   
   const result = await query<Lead>(sql);
-  return result.rows;
+  return result;
 }
 
 export async function getLeadById(id: string): Promise<Lead | null> {
@@ -29,7 +29,7 @@ export async function getLeadById(id: string): Promise<Lead | null> {
     `SELECT * FROM leads WHERE id = $1`,
     [id]
   );
-  return result.rows[0] || null;
+  return result[0] || null;
 }
 
 export async function getLeadByEmail(email: string): Promise<Lead | null> {
@@ -37,7 +37,7 @@ export async function getLeadByEmail(email: string): Promise<Lead | null> {
     `SELECT * FROM active_leads WHERE email = $1 ORDER BY created_at DESC LIMIT 1`,
     [email]
   );
-  return result.rows[0] || null;
+  return result[0] || null;
 }
 
 export async function getLeadsByStatus(status: LeadStatus): Promise<Lead[]> {
@@ -45,7 +45,7 @@ export async function getLeadsByStatus(status: LeadStatus): Promise<Lead[]> {
     `SELECT * FROM active_leads WHERE status = $1 ORDER BY created_at DESC`,
     [status]
   );
-  return result.rows;
+  return result;
 }
 
 export async function getLeadsByQuality(quality: LeadQuality): Promise<Lead[]> {
@@ -53,7 +53,7 @@ export async function getLeadsByQuality(quality: LeadQuality): Promise<Lead[]> {
     `SELECT * FROM active_leads WHERE lead_quality = $1 ORDER BY lead_score DESC, created_at DESC`,
     [quality]
   );
-  return result.rows;
+  return result;
 }
 
 export async function getLeadsByAssignee(assignedTo: string): Promise<Lead[]> {
@@ -61,7 +61,7 @@ export async function getLeadsByAssignee(assignedTo: string): Promise<Lead[]> {
     `SELECT * FROM active_leads WHERE assigned_to = $1 ORDER BY created_at DESC`,
     [assignedTo]
   );
-  return result.rows;
+  return result;
 }
 
 export async function getHotLeads(): Promise<Lead[]> {
@@ -70,29 +70,117 @@ export async function getHotLeads(): Promise<Lead[]> {
      WHERE lead_quality = 'hot' AND status NOT IN ('won', 'lost', 'disqualified')
      ORDER BY lead_score DESC, created_at DESC`
   );
-  return result.rows;
+  return result;
 }
 
-export async function createLead(data: CreateLead): Promise<Lead> {
-  // Calculate lead score
-  const scoreResult = await query<{ calculate_lead_score: number }>(
-    `SELECT calculate_lead_score($1, $2, $3, $4, $5) as calculate_lead_score`,
-    [
-      data.budget_range || null,
-      data.timeline || null,
-      data.message || null,
-      data.company || null,
-      data.source,
-    ]
-  );
-  const leadScore = scoreResult.rows[0].calculate_lead_score;
+// ============================================================================
+// FALLBACK FUNCTIONS (when database functions don't exist)
+// ============================================================================
 
-  // Determine lead quality based on score
-  const qualityResult = await query<{ assign_lead_quality: LeadQuality }>(
-    `SELECT assign_lead_quality($1) as assign_lead_quality`,
-    [leadScore]
-  );
-  const leadQuality = qualityResult.rows[0].assign_lead_quality;
+function calculateLeadScoreFallback(data: CreateLead): number {
+  let score = 0;
+  
+  // Budget range scoring (0-40 points)
+  const budgetScores: { [key: string]: number } = {
+    'Under $5K': 10,
+    '$5K - $10K': 20,
+    '$10K - $25K': 30,
+    '$25K - $50K': 35,
+    '$50K - $100K': 40,
+    '$100K+': 40,
+  };
+  if (data.budget_range && budgetScores[data.budget_range]) {
+    score += budgetScores[data.budget_range];
+  }
+  
+  // Message quality (0-20 points)
+  if (data.message) {
+    const messageLength = data.message.length;
+    if (messageLength > 100) score += 20;
+    else if (messageLength > 50) score += 15;
+    else if (messageLength > 20) score += 10;
+    else score += 5;
+  }
+  
+  // Company provided (0-15 points)
+  if (data.company) score += 15;
+  
+  // Timeline urgency (0-15 points)
+  const timelineScores: { [key: string]: number } = {
+    'ASAP': 15,
+    'Within 1 month': 12,
+    'Within 3 months': 10,
+    '3-6 months': 7,
+    'Just exploring': 3,
+  };
+  if (data.timeline && timelineScores[data.timeline]) {
+    score += timelineScores[data.timeline];
+  }
+  
+  // Source quality (0-10 points)
+  const sourceScores: { [key: string]: number } = {
+    'contact_form': 10,
+    'estimate_request': 10,
+    'referral': 10,
+    'social': 7,
+    'organic': 7,
+    'direct': 5,
+  };
+  if (sourceScores[data.source]) {
+    score += sourceScores[data.source];
+  }
+  
+  return Math.min(score, 100); // Cap at 100
+}
+
+function assignLeadQualityFallback(score: number): LeadQuality {
+  if (score >= 80) return 'hot';
+  if (score >= 50) return 'warm';
+  return 'cold';
+}
+
+// ============================================================================
+// CREATE LEAD
+// ============================================================================
+
+export async function createLead(data: CreateLead): Promise<Lead> {
+  // Calculate lead score with fallback
+  let leadScore = 50; // Default score
+  try {
+    const scoreResult = await query<{ calculate_lead_score: number }>(
+      `SELECT calculate_lead_score($1, $2, $3, $4, $5) as calculate_lead_score`,
+      [
+        data.budget_range || null,
+        data.timeline || null,
+        data.message || null,
+        data.company || null,
+        data.source,
+      ]
+    );
+    if (scoreResult && scoreResult[0]) {
+      leadScore = scoreResult[0].calculate_lead_score;
+    }
+  } catch (error) {
+    // Function doesn't exist, use simple scoring
+    console.log('Using fallback lead scoring');
+    leadScore = calculateLeadScoreFallback(data);
+  }
+
+  // Determine lead quality based on score with fallback
+  let leadQuality: LeadQuality = 'cold';
+  try {
+    const qualityResult = await query<{ assign_lead_quality: LeadQuality }>(
+      `SELECT assign_lead_quality($1) as assign_lead_quality`,
+      [leadScore]
+    );
+    if (qualityResult && qualityResult[0]) {
+      leadQuality = qualityResult[0].assign_lead_quality;
+    }
+  } catch (error) {
+    // Function doesn't exist, use simple quality assignment
+    console.log('Using fallback quality assignment');
+    leadQuality = assignLeadQualityFallback(leadScore);
+  }
 
   // Create lead with transaction to include activity log
   const leadResult = await transaction(async (client) => {

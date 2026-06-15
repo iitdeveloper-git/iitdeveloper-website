@@ -79,8 +79,6 @@ export default function CTA() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 + index * 0.1, duration: 0.3 }}
-                className="glass px-5 py-2.5 rounded-full text-sm font-medium border border-secondary/30 hover:border-secondary/50 hover:bg-secondary/5 transition-all"
-                transition={{ delay: 0.4 + index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
                 className="glass glass-hover px-5 py-3 rounded-full text-sm text-muted-foreground/80 font-medium shadow-premium hover:shadow-premium-lg border-primary/10 hover:border-primary/20"
               >

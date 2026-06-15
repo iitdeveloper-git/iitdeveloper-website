@@ -131,8 +131,9 @@ export default function ServiceSelector({ isOpen, onClose, onSelect }: ServiceSe
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {filteredServices.map((service) => {
-                      const IconComponent =
-                        LucideIcons[service.icon as keyof typeof LucideIcons] || LucideIcons.Box;
+                      const IconComponent = (
+                        LucideIcons[service.icon as keyof typeof LucideIcons] || LucideIcons.Box
+                      ) as React.ComponentType<{ className?: string }>;
                       return (
                         <motion.button
                           key={service.id}

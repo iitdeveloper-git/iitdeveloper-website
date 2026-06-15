@@ -454,7 +454,7 @@ export async function generateEstimatePDF(
       doc
         .fontSize(8)
         .fillColor(colors.primary)
-        .text('www.iitdeveloper.com • hello@iitdeveloper.com', 50, yPosition, {
+        .text('www.iitdeveloper.com • goyalnikhil743@gmail.com', 50, yPosition, {
           width: 512,
           align: 'center',
         });

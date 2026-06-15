@@ -71,7 +71,7 @@ const CATEGORY_TERMS: Record<ServiceCategory, string[]> = {
     'Monthly pipeline metrics report delivered by the 5th of each month.',
   ],
   technical: [
-    '50% advance payment required before project commencement.'
+    '50% advance payment required before project commencement.',
     'Remaining 50% due upon final delivery and client sign-off.',
     'Full source code ownership transfers to client upon receipt of final payment.',
     '90-day bug-fix warranty included post-delivery (scope limited to original requirements).',

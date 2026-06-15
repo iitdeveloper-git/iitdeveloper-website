@@ -15,9 +15,9 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email Us',
-    content: 'hello@iitdeveloper.com',
+    content: 'goyalnikhil743@gmail.com',
     subtext: 'We reply within 4 hours',
-    href: 'mailto:hello@iitdeveloper.com',
+    href: 'mailto:goyalnikhil743@gmail.com',
   },
   {
     icon: Phone,

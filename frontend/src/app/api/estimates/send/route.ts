@@ -3,6 +3,9 @@ import { PricingService } from '@/lib/services/pricing-service';
 import { EmailService } from '@/lib/services/email-service';
 import { sendEstimateSchema } from '@/lib/validations/pricing';
 
+// Enable Edge Runtime for Cloudflare Pages
+export const runtime = 'edge';
+
 // POST /api/estimates/send - Send estimate via email
 export async function POST(request: NextRequest) {
   try {
@@ -66,13 +69,12 @@ export async function POST(request: NextRequest) {
       estimateId,
       'sent',
       `Estimate sent to ${customerInfo.email}`,
-      { emailId: emailResult.messageId }
+      { emailSent: true }
     );
 
     return NextResponse.json({
       success: true,
       estimate: updatedEstimate,
-      emailId: emailResult.messageId,
     });
   } catch (error) {
     console.error('Error sending estimate:', error);

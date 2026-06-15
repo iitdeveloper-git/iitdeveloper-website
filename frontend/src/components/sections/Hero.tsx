@@ -98,8 +98,6 @@ export default function Hero() {
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
-                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-                className="glass dark-surface-hover rounded-xl p-6 border-2 border-secondary/20 hover:border-secondary/40 transition-all shadow-glow-yellow"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 + index * 0.1, duration: 0.5 }}

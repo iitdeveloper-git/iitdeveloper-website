@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { serviceTemplates } from '@/lib/pricing-config';
 
+// Enable Edge Runtime for Cloudflare Pages
+export const runtime = 'edge';
+
 // GET /api/services/[id] - Get single service details
 export async function GET(
   request: NextRequest,

@@ -1,0 +1,35 @@
+# Cloudflare Pages configuration
+# Learn more: https://developers.cloudflare.com/pages/
+
+name = "iitdeveloper"
+compatibility_date = "2024-01-01"
+
+# Build output directory (Cloudflare auto-detects Next.js)
+pages_build_output_dir = ".next"
+
+# Add Node.js compatibility for better package support
+compatibility_flags = ["nodejs_compat"]
+
+# Environment variables (set these in Cloudflare Dashboard)
+[env.production]
+name = "iitdeveloper-production"
+
+[env.preview]
+name = "iitdeveloper-preview"
+
+# KV Namespaces (if needed for caching)
+# [[kv_namespaces]]
+# binding = "CACHE"
+# id = "your-kv-namespace-id"
+
+# D1 Database (if migrating from PostgreSQL)
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "iitdeveloper-db"
+# database_id = "your-database-id"
+
+# Custom domains (configure in Cloudflare Dashboard)
+# routes = [
+#   { pattern = "iitdeveloper.com", zone_name = "iitdeveloper.com" },
+#   { pattern = "www.iitdeveloper.com", zone_name = "iitdeveloper.com" }
+# ]

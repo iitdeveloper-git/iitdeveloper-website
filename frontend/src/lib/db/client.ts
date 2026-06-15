@@ -1,54 +1,32 @@
-import { Pool, PoolClient } from 'pg';
+// Cloudflare Pages / Edge Runtime compatible database client
+import { neon } from '@neondatabase/serverless';
 
-// Database configuration
-const config = {
-  host: process.env.POSTGRES_HOST || 'localhost',
-  port: parseInt(process.env.POSTGRES_PORT || '5432'),
-  database: process.env.POSTGRES_DB || 'iitdeveloper',
-  user: process.env.POSTGRES_USER || 'postgres',
-  password: process.env.POSTGRES_PASSWORD,
-  max: 20, // Maximum pool size
-  idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 2000,
-};
+// Get database connection
+// This is edge-compatible and works with Cloudflare Pages
+let sql: ReturnType<typeof neon> | null = null;
 
-// Create connection pool
-let pool: Pool | null = null;
-
-export function getPool(): Pool {
-  if (!pool) {
-    pool = new Pool(config);
-
-    // Handle pool errors
-    pool.on('error', (err) => {
-      console.error('Unexpected error on idle database client', err);
-    });
-
-    // Log pool events in development
-    if (process.env.NODE_ENV === 'development') {
-      pool.on('connect', () => {
-        console.log('✅ Database client connected');
-      });
-      
-      pool.on('remove', () => {
-        console.log('🔌 Database client removed');
-      });
-    }
+export function getDbConnection() {
+  if (!process.env.DATABASE_URL) {
+    throw new Error('DATABASE_URL is not set');
   }
-
-  return pool;
+  
+  if (!sql) {
+    sql = neon(process.env.DATABASE_URL);
+  }
+  
+  return sql;
 }
 
-// Query helper with automatic client release
+// Query helper for edge runtime
 export async function query<T = any>(
   text: string,
   params?: any[]
 ): Promise<T[]> {
-  const pool = getPool();
+  const sql = getDbConnection();
   const start = Date.now();
   
   try {
-    const result = await pool.query(text, params);
+    const result = await sql(text, params || []);
     
     // Log slow queries in development
     const duration = Date.now() - start;
@@ -56,35 +34,29 @@ export async function query<T = any>(
       console.warn(`⚠️  Slow query (${duration}ms):`, text.substring(0, 100));
     }
     
-    return result.rows;
+    return result as T[];
   } catch (error) {
     console.error('Database query error:', error);
     throw error;
   }
 }
 
-// Get a client from the pool for transactions
-export async function getClient(): Promise<PoolClient> {
-  const pool = getPool();
-  return pool.connect();
-}
-
-// Transaction helper
+// Transaction helper (simplified for edge)
+// Note: Neon serverless uses HTTP, so traditional transactions work differently
 export async function transaction<T>(
-  callback: (client: PoolClient) => Promise<T>
+  callback: (sql: ReturnType<typeof neon>) => Promise<T>
 ): Promise<T> {
-  const client = await getClient();
+  const sql = getDbConnection();
   
   try {
-    await client.query('BEGIN');
-    const result = await callback(client);
-    await client.query('COMMIT');
+    // For Neon serverless, transactions need to be handled with SQL commands
+    await sql('BEGIN');
+    const result = await callback(sql);
+    await sql('COMMIT');
     return result;
   } catch (error) {
-    await client.query('ROLLBACK');
+    await sql('ROLLBACK');
     throw error;
-  } finally {
-    client.release();
   }
 }
 
@@ -97,26 +69,4 @@ export async function healthCheck(): Promise<boolean> {
     console.error('Database health check failed:', error);
     return false;
   }
-}
-
-// Close pool (for graceful shutdown)
-export async function closePool(): Promise<void> {
-  if (pool) {
-    await pool.end();
-    pool = null;
-    console.log('🔒 Database pool closed');
-  }
-}
-
-// Handle process termination
-if (typeof process !== 'undefined') {
-  process.on('SIGINT', async () => {
-    await closePool();
-    process.exit(0);
-  });
-
-  process.on('SIGTERM', async () => {
-    await closePool();
-    process.exit(0);
-  });
 }

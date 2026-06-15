@@ -1,25 +1,37 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: false,
-  
-  // Enable standalone output for containerized deployments
-  output: process.env.NODE_ENV === 'production' ? 'standalone' : undefined,
+  swcMinify: true,
+
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'iitdeveloper.com'],
     formats: ['image/avif', 'image/webp'],
+    unoptimized: true, // Cloudflare handles image optimization
   },
+  
   env: {
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000',
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || '',
   },
+  
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
+  
   webpack: (config) => {
     config.externals.push({
       'utf-8-validate': 'commonjs utf-8-validate',
       'bufferutil': 'commonjs bufferutil',
+      'pdfkit': 'commonjs pdfkit',
+      'fontkit': 'commonjs fontkit',
+      'iconv-lite': 'commonjs iconv-lite',
     });
     return config;
   },

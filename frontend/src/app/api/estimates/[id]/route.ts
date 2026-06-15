@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { PricingService } from '@/lib/services/pricing-service';
 import { updateEstimateSchema } from '@/lib/validations/pricing';
 
+// Enable Edge Runtime for Cloudflare Pages
+export const runtime = 'edge';
+
 // GET /api/estimates/[id] - Get single estimate
 export async function GET(
   request: NextRequest,

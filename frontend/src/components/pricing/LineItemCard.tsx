@@ -28,9 +28,9 @@ export default function LineItemCard({
   const [isEditingQty, setIsEditingQty] = useState(false);
 
   const service = serviceTemplates.find((s) => s.id === item.serviceId);
-  const IconComponent = service
+  const IconComponent = (service
     ? LucideIcons[service.icon as keyof typeof LucideIcons] || LucideIcons.Box
-    : LucideIcons.Box;
+    : LucideIcons.Box) as React.ComponentType<{ className?: string }>;
 
   return (
     <motion.div

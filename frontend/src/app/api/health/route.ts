@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { healthCheck } from '@/lib/db/client';
 
+// Enable Edge Runtime for Cloudflare Pages
+export const runtime = 'edge';
+
 // GET /api/health - Health check endpoint
 export async function GET(request: NextRequest) {
   try {

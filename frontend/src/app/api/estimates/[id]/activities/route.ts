@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { PricingService } from '@/lib/services/pricing-service';
 
+// Enable Edge Runtime for Cloudflare Pages
+export const runtime = 'edge';
+
 // GET /api/estimates/[id]/activities - Get estimate activity log
 export async function GET(
   request: NextRequest,

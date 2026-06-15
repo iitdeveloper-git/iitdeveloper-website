@@ -5,14 +5,26 @@ interface EmailOptions {
   to: string;
   subject: string;
   html: string;
-  type: 'estimate_sent' | 'estimate_approved' | 'estimate_rejected';
+  type: 'estimate_sent' | 'estimate_approved' | 'estimate_rejected' | 'contact_form' | 'lead_notification';
   estimateId?: string;
+  replyTo?: string;
+}
+
+export interface ContactFormEmailData {
+  name: string;
+  email: string;
+  phone?: string;
+  company?: string;
+  service?: string;
+  budget?: string;
+  message: string;
 }
 
 export class EmailService {
   private static apiKey = process.env.RESEND_API_KEY;
   private static fromEmail = process.env.FROM_EMAIL || 'noreply@iitdeveloper.com';
   private static fromName = process.env.FROM_NAME || 'IITDeveloper';
+  private static salesEmail = process.env.SALES_EMAIL || 'goyalnikhil743@gmail.com';
 
   // Send email using Resend API
   static async sendEmail(options: EmailOptions): Promise<{
@@ -55,6 +67,7 @@ export class EmailService {
           from: `${this.fromName} <${this.fromEmail}>`,
           to: options.to,
           subject: options.subject,
+          reply_to: options.replyTo,
           html: options.html,
         }),
       });
@@ -343,5 +356,239 @@ export class EmailService {
       console.error('Error logging email:', error);
       // Don't throw - email logging failure shouldn't break the flow
     }
+  }
+
+  // ===================================
+  // Contact Form Email Methods
+  // ===================================
+
+  /**
+   * Send contact form confirmation email to customer
+   */
+  static async sendContactConfirmation(data: ContactFormEmailData): Promise<{
+    success: boolean;
+    messageId?: string;
+    error?: string;
+  }> {
+    const html = this.generateContactConfirmationHTML(data);
+
+    return this.sendEmail({
+      to: data.email,
+      subject: 'Thank You for Contacting IIT Developer',
+      html,
+      type: 'contact_form',
+      replyTo: this.salesEmail,
+    });
+  }
+
+  /**
+   * Send contact form notification to sales team
+   */
+  static async sendContactNotification(data: ContactFormEmailData): Promise<{
+    success: boolean;
+    messageId?: string;
+    error?: string;
+  }> {
+    const html = this.generateContactNotificationHTML(data);
+
+    return this.sendEmail({
+      to: this.salesEmail,
+      subject: `🔔 New Lead: ${data.name}${data.company ? ` from ${data.company}` : ''}`,
+      html,
+      type: 'lead_notification',
+      replyTo: data.email,
+    });
+  }
+
+  /**
+   * Generate HTML for contact confirmation email
+   */
+  private static generateContactConfirmationHTML(data: ContactFormEmailData): string {
+    return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You for Contacting IIT Developer</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          <!-- Header -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); padding: 40px 40px 30px; border-radius: 8px 8px 0 0;">
+              <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; text-align: center;">
+                Thank You for Reaching Out!
+              </h1>
+            </td>
+          </tr>
+          
+          <!-- Body -->
+          <tr>
+            <td style="padding: 40px;">
+              <p style="margin: 0 0 20px; color: #333333; font-size: 16px; line-height: 1.6;">
+                Hi <strong>${data.name}</strong>,
+              </p>
+              
+              <p style="margin: 0 0 20px; color: #333333; font-size: 16px; line-height: 1.6;">
+                We've received your message and we're excited to learn more about your project! Our team will review your inquiry and get back to you within <strong>24 hours</strong>.
+              </p>
+              
+              <!-- Summary Box -->
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f8f9fa; border-radius: 6px; margin: 30px 0;">
+                <tr>
+                  <td style="padding: 20px;">
+                    <h3 style="margin: 0 0 15px; color: #6366f1; font-size: 18px; font-weight: 600;">
+                      📋 Your Inquiry Summary
+                    </h3>
+                    ${data.service ? `<p style="margin: 0 0 10px; color: #555555; font-size: 14px;"><strong>Service Interest:</strong> ${data.service}</p>` : ''}
+                    ${data.budget ? `<p style="margin: 0 0 10px; color: #555555; font-size: 14px;"><strong>Budget Range:</strong> ${data.budget}</p>` : ''}
+                    ${data.company ? `<p style="margin: 0 0 10px; color: #555555; font-size: 14px;"><strong>Company:</strong> ${data.company}</p>` : ''}
+                    <p style="margin: 0 0 10px; color: #555555; font-size: 14px;"><strong>Your Message:</strong></p>
+                    <p style="margin: 0; color: #666666; font-size: 14px; font-style: italic; padding-left: 15px; border-left: 3px solid #6366f1;">
+                      ${data.message}
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              
+              <p style="margin: 0 0 20px; color: #333333; font-size: 16px; line-height: 1.6;">
+                In the meantime, feel free to:
+              </p>
+              
+              <ul style="margin: 0 0 20px; padding-left: 20px; color: #333333; font-size: 16px; line-height: 1.8;">
+                <li>Browse our <a href="https://iitdeveloper.com/case-studies" style="color: #6366f1; text-decoration: none;">case studies</a></li>
+                <li>Explore our <a href="https://iitdeveloper.com/services" style="color: #6366f1; text-decoration: none;">services</a></li>
+                <li>Check out our <a href="https://iitdeveloper.com/projects" style="color: #6366f1; text-decoration: none;">portfolio</a></li>
+              </ul>
+              
+              <p style="margin: 0 0 20px; color: #333333; font-size: 16px; line-height: 1.6;">
+                If you have any urgent questions, feel free to reply to this email or call us directly.
+              </p>
+              
+              <p style="margin: 0; color: #333333; font-size: 16px; line-height: 1.6;">
+                Best regards,<br>
+                <strong>The IIT Developer Team</strong>
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 30px 40px; background-color: #f8f9fa; border-radius: 0 0 8px 8px; text-align: center;">
+              <p style="margin: 0 0 10px; color: #666666; font-size: 14px;">
+                <strong>IIT Developer</strong><br>
+                Building Tomorrow's Solutions Today
+              </p>
+              <p style="margin: 0; color: #999999; font-size: 12px;">
+                📧 goyalnikhil743@gmail.com | 🌐 <a href="https://iitdeveloper.com" style="color: #6366f1; text-decoration: none;">iitdeveloper.com</a>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+    `;
+  }
+
+  /**
+   * Generate HTML for contact notification email to sales team
+   */
+  private static generateContactNotificationHTML(data: ContactFormEmailData): string {
+    return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Contact Form Submission</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          <!-- Header -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); padding: 30px 40px; border-radius: 8px 8px 0 0;">
+              <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700;">
+                🔔 New Contact Form Submission
+              </h1>
+            </td>
+          </tr>
+          
+          <!-- Body -->
+          <tr>
+            <td style="padding: 40px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td style="padding-bottom: 20px;">
+                    <h2 style="margin: 0 0 5px; color: #333333; font-size: 20px; font-weight: 600;">
+                      ${data.name}
+                    </h2>
+                    ${data.company ? `<p style="margin: 0; color: #666666; font-size: 14px;">${data.company}</p>` : ''}
+                  </td>
+                </tr>
+                
+                <!-- Contact Info -->
+                <tr>
+                  <td style="padding: 20px; background-color: #f8f9fa; border-radius: 6px;">
+                    <p style="margin: 0 0 10px; color: #333333; font-size: 14px;">
+                      <strong>📧 Email:</strong> <a href="mailto:${data.email}" style="color: #6366f1; text-decoration: none;">${data.email}</a>
+                    </p>
+                    ${data.phone ? `<p style="margin: 0 0 10px; color: #333333; font-size: 14px;"><strong>📱 Phone:</strong> ${data.phone}</p>` : ''}
+                    ${data.service ? `<p style="margin: 0 0 10px; color: #333333; font-size: 14px;"><strong>🎯 Service:</strong> ${data.service}</p>` : ''}
+                    ${data.budget ? `<p style="margin: 0; color: #333333; font-size: 14px;"><strong>💰 Budget:</strong> ${data.budget}</p>` : ''}
+                  </td>
+                </tr>
+                
+                <!-- Message -->
+                <tr>
+                  <td style="padding-top: 25px;">
+                    <h3 style="margin: 0 0 15px; color: #333333; font-size: 16px; font-weight: 600;">
+                      Message:
+                    </h3>
+                    <div style="padding: 20px; background-color: #f8f9fa; border-left: 4px solid #6366f1; border-radius: 6px;">
+                      <p style="margin: 0; color: #333333; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">
+${data.message}
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+                
+                <!-- CTA Button -->
+                <tr>
+                  <td style="padding-top: 30px; text-align: center;">
+                    <a href="mailto:${data.email}?subject=Re: Your Inquiry to IIT Developer" 
+                       style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">
+                      Reply to ${data.name}
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 20px 40px; background-color: #f8f9fa; border-radius: 0 0 8px 8px; text-align: center;">
+              <p style="margin: 0; color: #999999; font-size: 12px;">
+                Submitted on ${new Date().toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'short' })}
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+    `;
   }
 }
