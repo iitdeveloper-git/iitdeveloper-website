@@ -176,18 +176,18 @@ export default function ServicesPage() {
               Full-stack development, AI solutions, and growth marketing. We build digital products that scale. 
               From idea to production, we handle everything.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
+{/*            <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/estimate">
                 <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
                   Get a Quote
                 </Button>
               </Link>
-              <Link href="/case-studies">
+            {/*  <Link href="/case-studies">
                 <Button variant="outline" size="lg">
                   See Our Work
                 </Button>
               </Link>
-            </div>
+            </div>*/}
           </div>
         </div>
 
@@ -197,16 +197,17 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 lg:py-28">
+{/*      <section className="py-20 lg:py-28"> */}
+      <section className="-mt-12 pb-20 lg:pb-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+{/*          <div className="text-center mb-16"> 
             <h2 className="text-4xl sm:text-5xl font-bold mb-4 tracking-tight">
               Our <span className="gradient-text">Services</span>
             </h2>
             <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto">
               Comprehensive solutions for modern businesses. Click any service to learn more.
-            </p>
-          </div>
+            </p><br></br>
+          </div>*/}
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => {
@@ -248,7 +249,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Tech Stack */}
-      <section className="py-20 lg:py-28 bg-surface-dark">
+{/*      <section className="py-20 lg:py-28 bg-surface-dark">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4 tracking-tight">
@@ -282,7 +283,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
+*/}
       {/* Process */}
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
