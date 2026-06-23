@@ -261,7 +261,7 @@ export default function EcommercePage() {
       </section>
 
       {/* Pricing */}
-      <section className="py-20 lg:py-28 bg-surface-dark">
+{/*      <section className="py-20 lg:py-28 bg-surface-dark">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4 tracking-tight">
@@ -318,7 +318,7 @@ export default function EcommercePage() {
           </div>
         </div>
       </section>
-
+*/}
       {/* CTA */}
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
