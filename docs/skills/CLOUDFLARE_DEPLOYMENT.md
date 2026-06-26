@@ -82,10 +82,10 @@ In Cloudflare Dashboard → Pages → Your Project → Settings → Environment 
 ```env
 DATABASE_URL = postgresql://neondb_owner:npg_l4X3hAiYOzWH@ep-fancy-truth-app7pl9q.c-7.us-east-1.aws.neon.tech/neondb?sslmode=require
 
-SALES_EMAIL = goyalnikhil743@gmail.com
+SALES_EMAIL = info@iitdeveloper.com
 
 # Option 1: Gmail SMTP (100% FREE)
-GMAIL_USER = goyalnikhil743@gmail.com
+GMAIL_USER = info@iitdeveloper.com
 GMAIL_APP_PASSWORD = your_16_char_password_here
 
 # Option 2: Resend (Alternative)
@@ -182,8 +182,8 @@ npm run lint
 | Variable | Required | Description | Where to Get |
 |----------|----------|-------------|--------------|
 | `DATABASE_URL` | ✅ Yes | Neon PostgreSQL connection | Already configured |
-| `SALES_EMAIL` | ✅ Yes | Recipient email | `goyalnikhil743@gmail.com` |
-| `GMAIL_USER` | ⚠️ Optional | Gmail SMTP user | `goyalnikhil743@gmail.com` |
+| `SALES_EMAIL` | ✅ Yes | Recipient email | `info@iitdeveloper.com` |
+| `GMAIL_USER` | ⚠️ Optional | Gmail SMTP user | `info@iitdeveloper.com` |
 | `GMAIL_APP_PASSWORD` | ⚠️ Optional | Gmail app password | https://myaccount.google.com/apppasswords |
 | `RESEND_API_KEY` | ⚠️ Optional | Resend API (alternative) | https://resend.com/api-keys |
 | `NODE_ENV` | ✅ Yes | Environment | `production` |
@@ -373,7 +373,7 @@ Your website is now **fully configured** for Cloudflare Pages deployment.
 **Next Steps:**
 1. Follow "Option A" deployment steps above
 2. Test contact form after deployment
-3. Verify emails arrive at `goyalnikhil743@gmail.com`
+3. Verify emails arrive at `info@iitdeveloper.com`
 4. Share your live site! 🚀
 
 **Your site will be live at:**
