@@ -1,5 +1,4 @@
-import { PoolClient } from 'pg';
-import { query, transaction, getClient } from '@/lib/db/client';
+import { query, transaction } from '@/lib/db/client';
 import { PricingEstimate, LineItem } from '@/types/pricing';
 import { calculateLineItemPrice, serviceTemplates } from '@/lib/pricing-config';
 

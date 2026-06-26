@@ -8,10 +8,11 @@ export const runtime = 'edge';
 // GET /api/estimates/[id] - Get single estimate
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const estimate = await PricingService.getEstimate(params.id);
+    const { id } = await params;
+    const estimate = await PricingService.getEstimate(id);
 
     if (!estimate) {
       return NextResponse.json(
@@ -21,7 +22,7 @@ export async function GET(
     }
 
     // Log view activity
-    await PricingService.logActivity(params.id, 'viewed', 'Estimate viewed');
+    await PricingService.logActivity(id, 'viewed', 'Estimate viewed');
 
     return NextResponse.json(estimate);
   } catch (error) {
@@ -39,9 +40,10 @@ export async function GET(
 // PATCH /api/estimates/[id] - Update estimate
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const body = await request.json();
 
     // Validate request body
@@ -57,7 +59,7 @@ export async function PATCH(
     }
 
     // Update estimate
-    const estimate = await PricingService.updateEstimate(params.id, {
+    const estimate = await PricingService.updateEstimate(id, {
       lineItems: validation.data.lineItems,
       discount: validation.data.discount,
       tax: validation.data.tax,
@@ -89,10 +91,11 @@ export async function PATCH(
 // DELETE /api/estimates/[id] - Delete estimate (soft delete)
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    await PricingService.deleteEstimate(params.id);
+    const { id } = await params;
+    await PricingService.deleteEstimate(id);
 
     return NextResponse.json(
       { message: 'Estimate deleted successfully' },

@@ -6,20 +6,20 @@ import { fadeInUp } from '@/lib/animations/variants';
 export default function TechStack() {
   const technologies = [
     {
-      category: 'Frontend',
-      items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Vue.js'],
+      category: 'Product Engineering',
+      items: ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL'],
     },
     {
-      category: 'Backend',
-      items: ['Node.js', 'Python', 'Go', 'PostgreSQL', 'MongoDB'],
+      category: 'AI and Data',
+      items: ['Python', 'LLM APIs', 'RAG', 'Vector search', 'Evaluation'],
     },
     {
-      category: 'Cloud & DevOps',
-      items: ['AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes'],
+      category: 'Cloud and Platform',
+      items: ['AWS', 'Docker', 'Kubernetes', 'CI/CD', 'Infrastructure as Code'],
     },
     {
-      category: 'AI & ML',
-      items: ['OpenAI', 'Anthropic', 'LangChain', 'TensorFlow', 'PyTorch'],
+      category: 'Search and Analytics',
+      items: ['Technical SEO', 'Structured data', 'Search Console', 'Bing', 'Web analytics'],
     },
   ];
 
@@ -35,11 +35,10 @@ export default function TechStack() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-            <span className="text-secondary">Built</span> With <span className="gradient-text">Cutting-Edge Tech</span>
+            Technology selected for <span className="gradient-text">the operating reality</span>
           </h2>
           <p className="text-xl text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed font-light">
-            We don't chase trends. We master tools that solve real problems. <br />
-            <span className="text-base text-muted-foreground/60 italic">Also, we Googled "best tech stack 2026" and this is what we found.</span>
+            Tools are selected around product constraints, team capability, security, reliability, and long-term operating cost.
           </p>
         </motion.div>
 
@@ -81,9 +80,7 @@ export default function TechStack() {
           transition={{ delay: 0.5, duration: 0.5 }}
           className="mt-16 text-center"
         >
-          <p className="text-xl text-muted-foreground/70 italic font-light">
-            And 50+ more technologies in our arsenal
-          </p>
+          <p className="text-xl text-muted-foreground/70 font-light">The exact stack is documented and agreed during solution design.</p>
         </motion.div>
       </div>
 

@@ -1,23 +1,17 @@
 import { Metadata } from 'next';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import PricingEstimator from '@/components/pricing/PricingEstimator';
+import { generateSEO } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Project Estimator | IITDeveloper',
-  description:
-    'Get an instant estimate for your project. Configure services, select features, and receive a detailed quote in minutes.',
-  openGraph: {
-    title: 'Project Estimator | IITDeveloper',
-    description:
-      'Get an instant estimate for your project. Configure services, select features, and receive a detailed quote in minutes.',
-  },
-};
+export const metadata: Metadata = generateSEO({ title: 'Project Estimate', description: 'Build an indicative IITDEVELOPER project range. Final scope and pricing depend on discovery and confirmed requirements.', canonical: '/estimate' });
 
 export default function EstimatePage() {
   return (
     <>
       <Header />
       <PricingEstimator />
+      <Footer />
     </>
   );
 }

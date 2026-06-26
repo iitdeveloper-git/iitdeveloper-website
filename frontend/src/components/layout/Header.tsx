@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navigation from './Navigation';
 import { cn } from '@/lib/utils';
+import { siteConfig } from '@/content/site';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,19 +29,19 @@ export default function Header() {
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <Image
               src="/logo.png"
-              alt="IIT Developer"
+              alt="IITDEVELOPER"
               width={160}
               height={56}
               className="h-12 lg:h-14 w-auto object-contain transition-transform group-hover:scale-105"
               priority
             />
             <span className="text-xl lg:text-2xl font-bold gradient-text tracking-tight leading-none self-center">
-              IIT Developer
+                IITDEVELOPER
             </span>
           </Link>
 
@@ -50,24 +51,25 @@ export default function Header() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-5">
+          <div className="hidden xl:flex items-center space-x-3">
             <Link href="/estimate">
-              <Button variant="neon" size="lg" className="min-w-[140px]">
-                Price It Out
+              <Button variant="glass" size="lg">
+                Get an Estimate
               </Button>
             </Link>
-            <Link href="/contact">
-              <Button variant="glass" size="lg" className="min-w-[140px]">
-                Let's Talk
+            <a href={siteConfig.bookingUrl}>
+              <Button variant="neon" size="lg">
+                Book a Discovery Call
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden p-2 rounded-lg glass hover:bg-primary/10 transition-colors"
-            aria-label="Toggle menu"
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? (
               <X className="w-6 h-6" />
@@ -85,15 +87,15 @@ export default function Header() {
             <Navigation mobile onNavigate={() => setIsMobileMenuOpen(false)} />
             <div className="mt-6 space-y-3">
               <Link href="/estimate" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button variant="neon" size="lg" className="w-full">
-                  Price It Out
-                </Button>
-              </Link>
-              <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button variant="glass" size="lg" className="w-full">
-                  Let's Talk
+                  Get a Project Estimate
                 </Button>
               </Link>
+              <a href={siteConfig.bookingUrl} onClick={() => setIsMobileMenuOpen(false)}>
+                <Button variant="neon" size="lg" className="w-full">
+                  Book a Discovery Call
+                </Button>
+              </a>
             </div>
           </div>
         </div>

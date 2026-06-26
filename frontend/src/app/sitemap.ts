@@ -1,48 +1,9 @@
-import { MetadataRoute } from 'next';
-
+import type { MetadataRoute } from 'next';
+import { siteConfig, servicePillars } from '@/content/site';
+import { caseStudies } from '@/content/work';
+import { insights } from '@/content/insights';
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://iitdeveloper.com';
-  const currentDate = new Date();
-
-  // Main pages
-  const routes = [
-    '',
-    '/about',
-    '/contact',
-    '/estimate',
-    '/pricing-estimator',
-    '/case-studies',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: route === '' ? 1.0 : 0.8,
-  }));
-
-  // Service pages
-  const services = [
-    'website-development',
-    'app-development',
-    'devops-cloud',
-    'salesforce',
-    'ai-agents',
-    'ai-workflows',
-    'marketing',
-    'seo-smm',
-  ].map((service) => ({
-    url: `${baseUrl}/services/${service}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }));
-
-  // Legal pages
-  const legal = ['privacy', 'terms', 'cookies'].map((page) => ({
-    url: `${baseUrl}/${page}`,
-    lastModified: currentDate,
-    changeFrequency: 'yearly' as const,
-    priority: 0.3,
-  }));
-
-  return [...routes, ...services, ...legal];
+  const staticRoutes = ['', '/services', '/work', '/about', '/insights', '/contact', '/estimate', '/privacy', '/terms', '/cookies'];
+  const routes = [...staticRoutes, ...servicePillars.map((item) => `/services/${item.slug}`), ...caseStudies.map((item) => `/work/${item.slug}`), ...insights.map((item) => `/insights/${item.slug}`)];
+  return routes.map((route) => ({ url: `${siteConfig.url}${route}`, changeFrequency: route.startsWith('/insights') ? 'monthly' : 'monthly', priority: route === '' ? 1 : route.split('/').length <= 2 ? 0.8 : 0.7 }));
 }

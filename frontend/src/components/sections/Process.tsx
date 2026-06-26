@@ -8,26 +8,26 @@ const steps = [
   {
     icon: FileSearch,
     number: '01',
-    title: 'Discovery',
-    description: 'We dig deep to understand your business, users, and goals. No assumptions, just facts.',
+    title: 'Discover',
+    description: 'Understand the business objective, users, current systems, constraints, risks, and success criteria.',
   },
   {
     icon: Lightbulb,
     number: '02',
-    title: 'Strategy',
-    description: 'Custom roadmap tailored to your needs. Architecture, timeline, and cost—all transparent.',
+    title: 'Design',
+    description: 'Define user journeys, architecture, delivery scope, milestones, security requirements, and measurable outcomes.',
   },
   {
     icon: Code2,
     number: '03',
-    title: 'Development',
-    description: 'Agile sprints with weekly demos. You see progress, not excuses.',
+    title: 'Build',
+    description: 'Deliver in visible iterations with testing, documentation, code review, and regular demonstrations.',
   },
   {
     icon: Rocket,
     number: '04',
-    title: 'Launch & Scale',
-    description: 'Smooth deployment, monitoring, and ongoing optimization. We stick around.',
+    title: 'Launch and Improve',
+    description: 'Deploy safely, monitor production, measure outcomes, and prioritize improvements.',
   },
 ];
 
@@ -44,10 +44,10 @@ export default function Process() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-            How We <span className="text-secondary">Get Shit Done</span>
+            A clear path from <span className="text-secondary">problem to production</span>
           </h2>
           <p className="text-xl text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed font-light">
-            AI agents that don't sleep, unlike your team. A process designed for speed and quality.
+            Transparent decisions, visible progress, and production readiness at every stage.
           </p>
         </motion.div>
 
@@ -116,7 +116,7 @@ export default function Process() {
           className="mt-16 text-center"
         >
           <p className="text-xl text-muted-foreground/70 italic font-light">
-            "From zero to production faster than your coffee gets cold."
+            Scope and delivery decisions remain visible throughout the engagement.
           </p>
         </motion.div>
       </div>

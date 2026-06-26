@@ -1,356 +1,79 @@
 'use client';
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Send, CheckCircle2, AlertCircle, Mail, Phone, MessageSquare, Building, User } from 'lucide-react';
+import { useRef, useState } from 'react';
+import Link from 'next/link';
+import { CheckCircle2, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
-import toast from 'react-hot-toast';
+import { servicePillars } from '@/content/site';
+import { track } from '@/lib/analytics';
 
-interface ContactFormData {
-  name: string;
-  email: string;
-  phone: string;
-  company: string;
-  service: string;
-  budget: string;
-  message: string;
-}
+type Status = 'idle' | 'submitting' | 'success' | 'error';
 
-const services = [
-  'Website Development',
-  'App Development',
-  'DevOps & Cloud',
-  'Salesforce Solutions',
-  'AI Agents',
-  'AI Workflows',
-  'Performance Marketing',
-  'SEO & SMM',
-  'Not Sure Yet',
-];
-
-const budgets = [
-  'Under ₹25K',
-  '₹25K - ₹50K',
-  '₹50K - ₹1L',
-  '₹1L - ₹3L',
-  '₹3L - ₹7L',
-  '₹7L+',
-  'Let\'s Discuss',
-];
+const fieldClass = 'w-full rounded-xl border-2 border-white/[0.08] bg-white/[0.03] px-4 py-3 text-foreground focus:border-secondary/50 focus:outline-none focus:ring-2 focus:ring-secondary/30';
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState<ContactFormData>({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    service: '',
-    budget: '',
-    message: '',
-  });
+  const [status, setStatus] = useState<Status>('idle');
+  const [error, setError] = useState('');
+  const started = useRef(false);
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
-  const handleSelectChange = (name: string, value: string) => {
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (status === 'submitting') return;
+    setStatus('submitting');
+    track('contact_form_submit');
+    setError('');
+    const form = event.currentTarget;
+    const payload = Object.fromEntries(new FormData(form).entries());
+    const params = new URLSearchParams(window.location.search);
+    Object.assign(payload, {
+      source_url: window.location.href,
+      landing_page: sessionStorage.getItem('landing_page') || window.location.pathname,
+      referrer: document.referrer,
+      utm_source: params.get('utm_source') || '',
+      utm_medium: params.get('utm_medium') || '',
+      utm_campaign: params.get('utm_campaign') || '',
+      utm_term: params.get('utm_term') || '',
+      utm_content: params.get('utm_content') || '',
+    });
     try {
-      // Validate required fields
-      if (!formData.name || !formData.email || !formData.message) {
-        toast.error('Please fill in all required fields');
-        setIsSubmitting(false);
-        return;
-      }
-
-      // Email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(formData.email)) {
-        toast.error('Please enter a valid email address');
-        setIsSubmitting(false);
-        return;
-      }
-
-      // Prepare lead data
-      const leadData = {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone || null,
-        company: formData.company || null,
-        source: 'contact_form',
-        message: formData.message,
-        metadata: {
-          service_interest: formData.service || 'Not specified',
-          budget_range: formData.budget || 'Not specified',
-          form_type: 'contact',
-          submitted_at: new Date().toISOString(),
-        },
-      };
-
-      // Submit to API
-      const response = await fetch('/api/leads', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(leadData),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to submit form');
-      }
-
-      const result = await response.json();
-
-      // Success!
-      setIsSuccess(true);
-      toast.success('Message sent! We\'ll get back to you within 24 hours.');
-
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          company: '',
-          service: '',
-          budget: '',
-          message: '',
-        });
-        setIsSuccess(false);
-      }, 3000);
-    } catch (error) {
-      console.error('Form submission error:', error);
-      toast.error('Something went wrong. Please try again or email us directly.');
-    } finally {
-      setIsSubmitting(false);
+      const response = await fetch('/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      const body = await response.json();
+      if (!response.ok) throw new Error(body.error || 'Unable to submit your enquiry.');
+      setStatus('success');
+      form.reset();
+    } catch (submissionError) {
+      setStatus('error');
+      track('contact_form_error', { message: submissionError instanceof Error ? submissionError.message : 'unknown' });
+      setError(submissionError instanceof Error ? submissionError.message : 'Unable to submit your enquiry.');
     }
-  };
+  }
+
+  if (status === 'success') return <div className="glass rounded-2xl border border-secondary/30 p-10 text-center" role="status"><CheckCircle2 className="mx-auto h-14 w-14 text-secondary" /><h2 className="mt-5 text-3xl font-bold">Enquiry received</h2><p className="mt-3 text-muted-foreground">We have recorded your project details and sent an acknowledgement email when email delivery is configured.</p></div>;
 
   return (
-    <Card glass premium className="max-w-3xl mx-auto">
-      <CardHeader>
-        <CardTitle className="text-3xl">Get In Touch</CardTitle>
-        <CardDescription className="text-base">
-          Tell us about your project. We promise to reply faster than your last agency did.
-          <span className="block text-xs text-muted-foreground/60 mt-2 italic">
-            ⚡ Average response time: 4 hours. Not 4 days.
-          </span>
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        {isSuccess ? (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="flex flex-col items-center justify-center py-12 text-center"
-          >
-            <CheckCircle2 className="w-20 h-20 text-primary mb-6" />
-            <h3 className="text-2xl font-bold mb-3">Message Received!</h3>
-            <p className="text-muted-foreground/80 max-w-md">
-              We've received your message and will get back to you within 24 hours.
-              Check your email for confirmation.
-            </p>
-          </motion.div>
-        ) : (
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Name & Email */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <Label htmlFor="name" className="flex items-center space-x-2">
-                  <User className="w-4 h-4" />
-                  <span>Full Name *</span>
-                </Label>
-                <Input
-                  id="name"
-                  name="name"
-                  type="text"
-                  placeholder="John Doe"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  glass
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email" className="flex items-center space-x-2">
-                  <Mail className="w-4 h-4" />
-                  <span>Email Address *</span>
-                </Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="john@company.com"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  glass
-                />
-              </div>
-            </div>
-
-            {/* Phone & Company */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <Label htmlFor="phone" className="flex items-center space-x-2">
-                  <Phone className="w-4 h-4" />
-                  <span>Phone Number</span>
-                </Label>
-                <Input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="+1 (555) 000-0000"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  glass
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="company" className="flex items-center space-x-2">
-                  <Building className="w-4 h-4" />
-                  <span>Company Name</span>
-                </Label>
-                <Input
-                  id="company"
-                  name="company"
-                  type="text"
-                  placeholder="Acme Inc."
-                  value={formData.company}
-                  onChange={handleChange}
-                  glass
-                />
-              </div>
-            </div>
-
-            {/* Service & Budget */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <Label htmlFor="service">Service Interest</Label>
-                <Select
-                  value={formData.service}
-                  onValueChange={(value) => handleSelectChange('service', value)}
-                >
-                  <SelectTrigger id="service" glass>
-                    <SelectValue placeholder="Select a service" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {services.map((service) => (
-                      <SelectItem key={service} value={service}>
-                        {service}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="budget">Budget Range</Label>
-                <Select
-                  value={formData.budget}
-                  onValueChange={(value) => handleSelectChange('budget', value)}
-                >
-                  <SelectTrigger id="budget" glass>
-                    <SelectValue placeholder="Select budget range" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {budgets.map((budget) => (
-                      <SelectItem key={budget} value={budget}>
-                        {budget}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-
-            {/* Message */}
-            <div className="space-y-2">
-              <Label htmlFor="message" className="flex items-center space-x-2">
-                <MessageSquare className="w-4 h-4" />
-                <span>Tell Us About Your Project *</span>
-              </Label>
-              <Textarea
-                id="message"
-                name="message"
-                placeholder="What are you looking to build? What's the timeline? Any specific requirements?"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                glass
-                rows={6}
-                className="resize-none"
-              />
-              <p className="text-xs text-muted-foreground/60">
-                The more details, the better. We won't judge if you use bullet points.
-              </p>
-            </div>
-
-            {/* Submit Button */}
-            <Button
-              type="submit"
-              variant="neon"
-              size="lg"
-              className="w-full group relative overflow-hidden"
-              disabled={isSubmitting}
-            >
-              <span className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity" />
-              <span className="relative flex items-center justify-center">
-                {isSubmitting ? (
-                  <>
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2" />
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    Send Message
-                    <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </>
-                )}
-              </span>
-            </Button>
-
-            <p className="text-xs text-center text-muted-foreground/60">
-              By submitting this form, you agree to our{' '}
-              <a href="/privacy" className="text-primary hover:underline">
-                Privacy Policy
-              </a>
-              . We respect your inbox.
-            </p>
-          </form>
-        )}
-      </CardContent>
-    </Card>
+    <form onSubmit={handleSubmit} onFocus={() => { if (!started.current) { started.current = true; track('contact_form_start'); } }} className="glass rounded-2xl border border-white/10 p-6 sm:p-8" noValidate>
+      <div className="grid gap-6 sm:grid-cols-2">
+        <Field label="Full name" name="name" required />
+        <Field label="Work email" name="email" type="email" required />
+        <Field label="Phone or WhatsApp" name="phone" type="tel" />
+        <Field label="Company" name="company" required />
+        <Field label="Website" name="website" type="url" />
+        <div><Label htmlFor="service_interest">Service needed *</Label><select id="service_interest" name="service_interest" required className={`${fieldClass} mt-2`} defaultValue=""><option value="" disabled>Select a service</option>{servicePillars.map((service) => <option key={service.slug} value={service.title}>{service.title}</option>)}<option>Not sure yet</option></select></div>
+        <div><Label htmlFor="budget_range">Budget range *</Label><select id="budget_range" name="budget_range" required className={`${fieldClass} mt-2`} defaultValue=""><option value="" disabled>Select a range</option><option>Under ₹1 lakh</option><option>₹1–3 lakh</option><option>₹3–7 lakh</option><option>₹7–15 lakh</option><option>₹15 lakh+</option><option>Need help defining budget</option></select></div>
+        <div><Label htmlFor="timeline">Desired timeline *</Label><select id="timeline" name="timeline" required className={`${fieldClass} mt-2`} defaultValue=""><option value="" disabled>Select a timeline</option><option>Within 1 month</option><option>1–3 months</option><option>3–6 months</option><option>6+ months</option><option>Exploring options</option></select></div>
+      </div>
+      <div className="mt-6"><Label htmlFor="message">Project description *</Label><Textarea id="message" name="message" required minLength={30} rows={7} className="mt-2" aria-describedby="message-help" /><p id="message-help" className="mt-2 text-xs text-muted-foreground">Include the objective, users, current system, constraints, and desired outcome.</p></div>
+      <div className="absolute left-[-9999px]" aria-hidden="true"><Label htmlFor="website_confirm">Leave this field empty</Label><Input id="website_confirm" name="website_confirm" tabIndex={-1} autoComplete="off" /></div>
+      <label className="mt-6 flex items-start gap-3 text-sm text-muted-foreground"><input type="checkbox" name="consent" value="true" required className="mt-1 h-4 w-4 accent-[#FFD662]" /><span>I agree that IITDEVELOPER may use this information to respond to my enquiry. See the <Link href="/privacy" className="text-secondary hover:underline">Privacy Policy</Link>.</span></label>
+      {status === 'error' && <div className="mt-5 flex gap-2 rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-200" role="alert"><AlertCircle className="h-5 w-5 shrink-0" />{error}</div>}
+      <Button type="submit" variant="neon" size="lg" className="mt-7 w-full" disabled={status === 'submitting'}>{status === 'submitting' ? 'Submitting…' : 'Submit project enquiry'}</Button>
+    </form>
   );
+}
+
+function Field({ label, name, type = 'text', required = false }: { label: string; name: string; type?: string; required?: boolean }) {
+  return <div><Label htmlFor={name}>{label}{required ? ' *' : ''}</Label><Input id={name} name={name} type={type} required={required} className="mt-2" /></div>;
 }

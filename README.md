@@ -1,22 +1,34 @@
-# IITDeveloper Website
+# IITDEVELOPER website
 
-This is the main repository for the IITDeveloper premium agency website.
+Production website for IITDEVELOPER, positioned around AI systems, cloud and DevOps, SaaS development, and SEO/GEO/AI visibility.
 
-## Architecture
-
-This repository contains:
-- `/frontend`: The main Next.js web application.
-- `/docs`: Project documentation and architecture maps.
-- `netlify.toml`: Deployment configuration for Netlify.
-
-## Quick Start
-
-Navigate to the frontend directory to run the project locally:
+## Local development
 
 ```bash
 cd frontend
+cp .env.example .env.local
 npm install
 npm run dev
 ```
 
-For detailed architecture and setup instructions, please see the [Project Structure Documentation](./docs/PROJECT_STRUCTURE.md).
+Open `http://localhost:3000`.
+
+## Quality checks
+
+```bash
+cd frontend
+npm run type-check
+npm run lint
+npm run build
+```
+
+## Content updates
+
+- Services: `frontend/src/content/site.ts`
+- Case studies: `frontend/src/content/work.ts`
+- Insights: `frontend/src/content/insights.ts`
+- Global metadata/schema: `frontend/src/lib/seo.ts`
+
+Optional business information is hidden when its environment variable is empty. Do not publish unverified statistics, testimonials, locations, social profiles, or case-study outcomes.
+
+See `docs/` for launch, forms, SEO/GEO, deployment, environment, and redirect documentation.

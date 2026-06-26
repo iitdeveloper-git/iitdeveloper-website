@@ -7,10 +7,11 @@ export const runtime = 'edge';
 // GET /api/services/[id] - Get single service details
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const service = serviceTemplates.find((s) => s.id === params.id);
+    const { id } = await params;
+    const service = serviceTemplates.find((s) => s.id === id);
 
     if (!service) {
       return NextResponse.json(

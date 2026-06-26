@@ -7,11 +7,12 @@ export const runtime = 'edge';
 // GET /api/estimates/[id]/activities - Get estimate activity log
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     // Check if estimate exists
-    const estimate = await PricingService.getEstimate(params.id);
+    const estimate = await PricingService.getEstimate(id);
     if (!estimate) {
       return NextResponse.json(
         { error: 'Estimate not found' },
@@ -20,10 +21,10 @@ export async function GET(
     }
 
     // Get activities
-    const activities = await PricingService.getActivities(params.id);
+    const activities = await PricingService.getActivities(id);
 
     return NextResponse.json({
-      estimateId: params.id,
+      estimateId: id,
       activities,
       count: activities.length,
     });

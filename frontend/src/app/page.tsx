@@ -1,28 +1,27 @@
 // AGENT-CONTEXT: Main landing page for IITDeveloper.
 // Uses Framer Motion for animations and Three.js (@react-three/fiber) for the Hero scene.
 // Ensure any changes to the 3D canvas are strictly performance-tested.
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
+import PageShell from '@/components/layout/PageShell';
 import Hero from '@/components/sections/Hero';
 import Services from '@/components/sections/Services';
-import Clients from '@/components/sections/Clients';
 import TechStack from '@/components/sections/TechStack';
 import Process from '@/components/sections/Process';
-import Testimonials from '@/components/sections/Testimonials';
 import CTA from '@/components/sections/CTA';
+import Trust from '@/components/sections/Trust';
+import SelectedWork from '@/components/sections/SelectedWork';
+import InsightsPreview from '@/components/sections/InsightsPreview';
 
 export default function HomePage() {
   return (
-    <main className="relative">
-      <Header />
+    <PageShell>
       <Hero />
+      <Trust />
       <Services />
-      <Clients />
+      <SelectedWork />
       <TechStack />
       <Process />
-      <Testimonials />
+      <InsightsPreview />
       <CTA />
-      <Footer />
-    </main>
+    </PageShell>
   );
 }

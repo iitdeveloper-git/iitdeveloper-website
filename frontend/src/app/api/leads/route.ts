@@ -1,146 +1,109 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createLead, getAllLeads } from '@/lib/db/leads-service';
-import { EmailService } from '@/lib/services/email-service';
 import { z } from 'zod';
+import { createLead } from '@/lib/db/leads-service';
+import { EmailService } from '@/lib/services/email-service';
 
-// Enable Edge Runtime for Cloudflare Pages
 export const runtime = 'edge';
 
-// Validation schema for lead creation
-const CreateLeadSchema = z.object({
-  name: z.string().min(1, 'Name is required'),
-  email: z.string().email('Invalid email address'),
-  phone: z.string().optional(),
-  company: z.string().optional(),
-  job_title: z.string().optional(),
-  message: z.string().optional(),
-  source: z.string().default('contact-form'),
-  source_url: z.string().optional(),
-  budget_range: z.string().optional(),
-  timeline: z.string().optional(),
-  service_interest: z.string().optional(),
-  tags: z.array(z.string()).optional(),
-  lead_data: z.record(z.any()).optional(),
+const buckets = new Map<string, { count: number; resetAt: number }>();
+const recentSubmissions = new Map<string, number>();
+
+const schema = z.object({
+  name: z.string().trim().min(2).max(100),
+  email: z.string().trim().email().max(200),
+  phone: z.string().trim().max(40).optional().or(z.literal('')),
+  company: z.string().trim().min(2).max(150),
+  website: z.string().trim().url().max(300).optional().or(z.literal('')),
+  service_interest: z.string().trim().min(2).max(150),
+  budget_range: z.string().trim().min(2).max(100),
+  timeline: z.string().trim().min(2).max(100),
+  message: z.string().trim().min(30).max(5000),
+  consent: z.literal('true'),
+  website_confirm: z.string().max(0).optional().or(z.literal('')),
+  source_url: z.string().max(500).optional(),
+  landing_page: z.string().max(500).optional(),
+  referrer: z.string().max(500).optional(),
+  utm_source: z.string().max(200).optional(),
+  utm_medium: z.string().max(200).optional(),
+  utm_campaign: z.string().max(200).optional(),
+  utm_term: z.string().max(200).optional(),
+  utm_content: z.string().max(200).optional(),
 });
 
-// GET /api/leads - Get all leads (protected route - add auth later)
-export async function GET(request: NextRequest) {
-  try {
-    const searchParams = request.nextUrl.searchParams;
-    const includeDeleted = searchParams.get('includeDeleted') === 'true';
-
-    const leads = await getAllLeads(includeDeleted);
-
-    return NextResponse.json({
-      success: true,
-      data: leads,
-      count: leads.length,
-    });
-  } catch (error) {
-    console.error('Error fetching leads:', error);
-    return NextResponse.json(
-      {
-        success: false,
-        error: 'Failed to fetch leads',
-        message: error instanceof Error ? error.message : 'Unknown error',
-      },
-      { status: 500 }
-    );
-  }
+function clean(value: string) {
+  return value.replace(/[<>]/g, '').replace(/[\u0000-\u001F\u007F]/g, '').trim();
 }
 
-// POST /api/leads - Create new lead from contact form
+export async function GET() {
+  return NextResponse.json({ success: false, error: 'Not found' }, { status: 404 });
+}
+
 export async function POST(request: NextRequest) {
+  const ip = request.headers.get('cf-connecting-ip') || request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown';
+  const now = Date.now();
+  const bucket = buckets.get(ip);
+  if (bucket && bucket.resetAt > now && bucket.count >= 5) {
+    return NextResponse.json({ success: false, error: 'Too many submissions. Please try again later.' }, { status: 429 });
+  }
+  buckets.set(ip, bucket && bucket.resetAt > now ? { ...bucket, count: bucket.count + 1 } : { count: 1, resetAt: now + 15 * 60 * 1000 });
+
   try {
-    const body = await request.json();
+    const parsed = schema.safeParse(await request.json());
+    if (!parsed.success) return NextResponse.json({ success: false, error: 'Please review the highlighted form fields.', details: parsed.error.flatten() }, { status: 400 });
+    const data = parsed.data;
+    if (data.website_confirm) return NextResponse.json({ success: true }, { status: 202 });
 
-    // Validate input
-    const validationResult = CreateLeadSchema.safeParse(body);
-    if (!validationResult.success) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: 'Validation failed',
-          details: validationResult.error.errors,
-        },
-        { status: 400 }
-      );
+    const duplicateKey = `${data.email.toLowerCase()}:${data.message.slice(0, 80)}`;
+    const previous = recentSubmissions.get(duplicateKey);
+    if (previous && now - previous < 10 * 60 * 1000) {
+      return NextResponse.json({ success: false, error: 'This enquiry was already submitted recently.' }, { status: 409 });
     }
+    recentSubmissions.set(duplicateKey, now);
 
-    const data = validationResult.data;
+    const safe = {
+      name: clean(data.name),
+      email: data.email.toLowerCase(),
+      phone: data.phone ? clean(data.phone) : undefined,
+      company: clean(data.company),
+      message: clean(data.message),
+      service: clean(data.service_interest),
+      budget: clean(data.budget_range),
+    };
 
-    // Get source URL from referer or request
-    const sourceUrl = data.source_url || request.headers.get('referer') || undefined;
-
-    // Create lead in database
     const lead = await createLead({
-      name: data.name,
-      email: data.email,
-      phone: data.phone,
-      company: data.company,
-      job_title: data.job_title,
-      message: data.message,
-      source: data.source as any, // Type cast since validation ensures correct value
-      source_url: sourceUrl,
-      budget_range: data.budget_range,
-      timeline: data.timeline,
-      tags: data.tags,
+      name: safe.name,
+      email: safe.email,
+      phone: safe.phone,
+      company: safe.company,
+      message: safe.message,
+      source: 'contact-form',
+      source_url: data.source_url || request.headers.get('referer') || undefined,
+      budget_range: safe.budget,
+      timeline: clean(data.timeline),
       lead_data: {
-        ...data.lead_data,
-        service_interest: data.service_interest,
+        service_interest: safe.service,
+        website: data.website,
+        consent: true,
+        consent_recorded_at: new Date().toISOString(),
+        landing_page: data.landing_page,
+        referrer: data.referrer,
+        utm_source: data.utm_source,
+        utm_medium: data.utm_medium,
+        utm_campaign: data.utm_campaign,
+        utm_term: data.utm_term,
+        utm_content: data.utm_content,
         user_agent: request.headers.get('user-agent'),
-        ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip'),
       },
     });
 
-    // Send confirmation and notification emails (don't wait for them)
-    Promise.all([
-      EmailService.sendContactConfirmation({
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        company: data.company,
-        service: data.service_interest,
-        budget: data.budget_range,
-        message: data.message || '',
-      }),
-      EmailService.sendContactNotification({
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        company: data.company,
-        service: data.service_interest,
-        budget: data.budget_range,
-        message: data.message || '',
-      }),
-    ]).catch((error) => {
-      console.error('Error sending emails:', error);
-      // Don't fail the request if emails fail
-    });
+    await Promise.allSettled([
+      EmailService.sendContactConfirmation({ ...safe, message: safe.message }),
+      EmailService.sendContactNotification({ ...safe, message: safe.message }),
+    ]);
 
-    return NextResponse.json(
-      {
-        success: true,
-        message: 'Lead created successfully',
-        data: {
-          id: lead.id,
-          email: lead.email,
-          status: lead.status,
-          lead_quality: lead.lead_quality,
-          lead_score: lead.lead_score,
-        },
-      },
-      { status: 201 }
-    );
+    return NextResponse.json({ success: true, id: lead.id }, { status: 201 });
   } catch (error) {
-    console.error('Error creating lead:', error);
-    return NextResponse.json(
-      {
-        success: false,
-        error: 'Failed to create lead',
-        message: error instanceof Error ? error.message : 'Unknown error',
-      },
-      { status: 500 }
-    );
+    console.error('Lead submission failed', error);
+    return NextResponse.json({ success: false, error: 'Unable to submit right now. Please email us directly.' }, { status: 500 });
   }
 }
