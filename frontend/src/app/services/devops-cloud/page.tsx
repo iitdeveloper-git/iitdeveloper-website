@@ -155,7 +155,7 @@ export default function DevOpsCloudPage() {
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button variant="outline" size="lg">
+                <Button variant="neon" size="lg">
                   Infrastructure Audit
                 </Button>
               </Link>
@@ -332,7 +332,7 @@ export default function DevOpsCloudPage() {
                   </Button>
                 </Link>
                 <Link href="/contact">
-                  <Button variant="outline" size="lg">
+                  <Button variant="neon" size="lg">
                     Talk to DevOps Expert
                   </Button>
                 </Link>

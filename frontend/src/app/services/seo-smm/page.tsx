@@ -153,7 +153,7 @@ export default function SEOSMMPage() {
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button variant="outline" size="lg">
+                <Button variant="neon" size="lg">
                   Free SEO Audit
                 </Button>
               </Link>
@@ -330,7 +330,7 @@ export default function SEOSMMPage() {
                   </Button>
                 </Link>
                 <Link href="/contact">
-                  <Button variant="outline" size="lg">
+                  <Button variant="neon" size="lg">
                     Talk to SEO Expert
                   </Button>
                 </Link>

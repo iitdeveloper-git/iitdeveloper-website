@@ -392,7 +392,7 @@ export async function getLeadActivities(leadId: string): Promise<LeadActivity[]>
     `SELECT * FROM lead_activities WHERE lead_id = $1 ORDER BY created_at DESC`,
     [leadId]
   );
-  return result.rows;
+  return result;
 }
 
 export async function createLeadActivity(data: CreateLeadActivity): Promise<LeadActivity> {
@@ -409,7 +409,7 @@ export async function createLeadActivity(data: CreateLeadActivity): Promise<Lead
       data.created_by || null,
     ]
   );
-  return result.rows[0];
+  return result[0];
 }
 
 export async function addLeadNote(
@@ -481,7 +481,7 @@ export async function getLeadStats(): Promise<LeadStats> {
   const result = await query<LeadStats>(
     `SELECT * FROM lead_stats`
   );
-  return result.rows[0];
+  return result[0];
 }
 
 export async function getLeadsByDateRange(
@@ -494,7 +494,7 @@ export async function getLeadsByDateRange(
      ORDER BY created_at DESC`,
     [startDate, endDate]
   );
-  return result.rows;
+  return result;
 }
 
 export async function getLeadConversionRate(): Promise<{
@@ -516,7 +516,7 @@ export async function getLeadConversionRate(): Promise<{
      WHERE status IN ('won', 'lost')`
   );
 
-  const { total, won, lost } = result.rows[0];
+  const { total, won, lost } = result[0];
   const conversionRate = total > 0 ? (won / total) * 100 : 0;
 
   return {
@@ -543,7 +543,7 @@ export async function searchLeads(searchTerm: string): Promise<Lead[]> {
      LIMIT 50`,
     [`%${searchTerm}%`]
   );
-  return result.rows;
+  return result;
 }
 
 export async function getLeadsByTag(tag: string): Promise<Lead[]> {
@@ -553,7 +553,7 @@ export async function getLeadsByTag(tag: string): Promise<Lead[]> {
      ORDER BY created_at DESC`,
     [JSON.stringify([tag])]
   );
-  return result.rows;
+  return result;
 }
 
 export async function getRecentLeads(limit = 10): Promise<Lead[]> {
@@ -563,5 +563,5 @@ export async function getRecentLeads(limit = 10): Promise<Lead[]> {
      LIMIT $1`,
     [limit]
   );
-  return result.rows;
+  return result;
 }

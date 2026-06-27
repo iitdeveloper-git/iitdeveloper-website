@@ -155,7 +155,7 @@ export default function SalesforcePage() {
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button variant="outline" size="lg">
+                <Button variant="neon" size="lg">
                   Free CRM Audit
                 </Button>
               </Link>
@@ -332,7 +332,7 @@ export default function SalesforcePage() {
                   </Button>
                 </Link>
                 <Link href="/contact">
-                  <Button variant="outline" size="lg">
+                  <Button variant="neon" size="lg">
                     Talk to Salesforce Expert
                   </Button>
                 </Link>

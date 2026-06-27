@@ -175,7 +175,7 @@ export default function MarketingPage() {
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button variant="outline" size="lg">
+                <Button variant="neon" size="lg">
                   Free Marketing Audit
                 </Button>
               </Link>
@@ -352,7 +352,7 @@ export default function MarketingPage() {
                   </Button>
                 </Link>
                 <Link href="/contact">
-                  <Button variant="outline" size="lg">
+                  <Button variant="neon" size="lg">
                     Talk to Growth Strategist
                   </Button>
                 </Link>

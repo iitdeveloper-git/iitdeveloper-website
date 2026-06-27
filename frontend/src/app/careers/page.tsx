@@ -185,7 +185,7 @@ export default function CareersPage() {
                 </Button>
               </a>
               <Link href="/team">
-                <Button size="lg" variant="outline" className="border-primary/30 hover:border-primary/60 hover:shadow-glow">
+                <Button size="lg" variant="neon" className="">
                   Meet The Team
                 </Button>
               </Link>

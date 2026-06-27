@@ -155,7 +155,7 @@ export default function AIWorkflowsPage() {
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button variant="outline" size="lg">
+                <Button variant="neon" size="lg">
                   See Workflow Examples
                 </Button>
               </Link>
@@ -332,7 +332,7 @@ export default function AIWorkflowsPage() {
                   </Button>
                 </Link>
                 <Link href="/contact">
-                  <Button variant="outline" size="lg">
+                  <Button variant="neon" size="lg">
                     Talk to Automation Expert
                   </Button>
                 </Link>

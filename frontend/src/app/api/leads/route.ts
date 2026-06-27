@@ -91,30 +91,32 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    // Send confirmation and notification emails (don't wait for them)
-    Promise.all([
-      EmailService.sendContactConfirmation({
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        company: data.company,
-        service: data.service_interest,
-        budget: data.budget_range,
-        message: data.message || '',
-      }),
-      EmailService.sendContactNotification({
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        company: data.company,
-        service: data.service_interest,
-        budget: data.budget_range,
-        message: data.message || '',
-      }),
-    ]).catch((error) => {
+    // Send confirmation and notification emails (await for serverless functions)
+    try {
+      await Promise.all([
+        EmailService.sendContactConfirmation({
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          company: data.company,
+          service: data.service_interest,
+          budget: data.budget_range,
+          message: data.message || '',
+        }),
+        EmailService.sendContactNotification({
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          company: data.company,
+          service: data.service_interest,
+          budget: data.budget_range,
+          message: data.message || '',
+        }),
+      ]);
+    } catch (error) {
       console.error('Error sending emails:', error);
       // Don't fail the request if emails fail
-    });
+    }
 
     return NextResponse.json(
       {

@@ -21,7 +21,7 @@ export async function getAllServiceCategories(): Promise<ServiceCategory[]> {
   const result = await query<ServiceCategory>(
     `SELECT * FROM service_categories WHERE is_active = true ORDER BY display_order, name`
   );
-  return result.rows;
+  return result;
 }
 
 export async function getServiceCategoryBySlug(slug: string): Promise<ServiceCategory | null> {
@@ -29,7 +29,7 @@ export async function getServiceCategoryBySlug(slug: string): Promise<ServiceCat
     `SELECT * FROM service_categories WHERE slug = $1 AND is_active = true`,
     [slug]
   );
-  return result.rows[0] || null;
+  return result[0] || null;
 }
 
 export async function createServiceCategory(data: CreateServiceCategory): Promise<ServiceCategory> {
@@ -46,7 +46,7 @@ export async function createServiceCategory(data: CreateServiceCategory): Promis
       data.is_active ?? true,
     ]
   );
-  return result.rows[0];
+  return result[0];
 }
 
 export async function updateServiceCategory(
@@ -88,7 +88,7 @@ export async function updateServiceCategory(
     `UPDATE service_categories SET ${updates.join(', ')} WHERE id = $${paramCount} RETURNING *`,
     values
   );
-  return result.rows[0];
+  return result[0];
 }
 
 // ============================================================================
@@ -99,14 +99,14 @@ export async function getAllServices(): Promise<ServiceWithCategory[]> {
   const result = await query<ServiceWithCategory>(
     `SELECT * FROM active_services ORDER BY display_order, name`
   );
-  return result.rows;
+  return result;
 }
 
 export async function getFeaturedServices(): Promise<ServiceWithCategory[]> {
   const result = await query<ServiceWithCategory>(
     `SELECT * FROM active_services WHERE is_featured = true ORDER BY display_order, name`
   );
-  return result.rows;
+  return result;
 }
 
 export async function getServicesByCategory(categorySlug: string): Promise<ServiceWithCategory[]> {
@@ -114,7 +114,7 @@ export async function getServicesByCategory(categorySlug: string): Promise<Servi
     `SELECT * FROM active_services WHERE category_slug = $1 ORDER BY display_order, name`,
     [categorySlug]
   );
-  return result.rows;
+  return result;
 }
 
 export async function getServiceBySlug(slug: string): Promise<ServiceWithCategory | null> {
@@ -122,7 +122,7 @@ export async function getServiceBySlug(slug: string): Promise<ServiceWithCategor
     `SELECT * FROM active_services WHERE slug = $1`,
     [slug]
   );
-  return result.rows[0] || null;
+  return result[0] || null;
 }
 
 export async function getServiceById(id: string): Promise<Service | null> {
@@ -130,7 +130,7 @@ export async function getServiceById(id: string): Promise<Service | null> {
     `SELECT * FROM services WHERE id = $1`,
     [id]
   );
-  return result.rows[0] || null;
+  return result[0] || null;
 }
 
 export async function createService(data: CreateService): Promise<Service> {
@@ -169,7 +169,7 @@ export async function createService(data: CreateService): Promise<Service> {
       data.meta_description || null,
     ]
   );
-  return result.rows[0];
+  return result[0];
 }
 
 export async function updateService(id: string, data: UpdateService): Promise<Service> {
@@ -212,7 +212,7 @@ export async function updateService(id: string, data: UpdateService): Promise<Se
     `UPDATE services SET ${updates.join(', ')} WHERE id = $${paramCount} RETURNING *`,
     values
   );
-  return result.rows[0];
+  return result[0];
 }
 
 export async function deleteService(id: string): Promise<void> {
@@ -228,7 +228,7 @@ export async function getServiceConfigurations(serviceId: string): Promise<Servi
     `SELECT * FROM service_configurations WHERE service_id = $1 ORDER BY display_order, name`,
     [serviceId]
   );
-  return result.rows;
+  return result;
 }
 
 export async function createServiceConfiguration(
@@ -259,7 +259,7 @@ export async function createServiceConfiguration(
       data.help_text || null,
     ]
   );
-  return result.rows[0];
+  return result[0];
 }
 
 export async function updateServiceConfiguration(
@@ -294,7 +294,7 @@ export async function updateServiceConfiguration(
     `UPDATE service_configurations SET ${updates.join(', ')} WHERE id = $${paramCount} RETURNING *`,
     values
   );
-  return result.rows[0];
+  return result[0];
 }
 
 export async function deleteServiceConfiguration(id: string): Promise<void> {

@@ -183,7 +183,7 @@ export default function ServicesPage() {
                 </Button>
               </Link>
             {/*  <Link href="/case-studies">
-                <Button variant="outline" size="lg">
+                <Button variant="neon" size="lg">
                   See Our Work
                 </Button>
               </Link>
@@ -334,7 +334,7 @@ export default function ServicesPage() {
                   </Button>
                 </Link>
                 <Link href="/contact">
-                  <Button variant="outline" size="lg">
+                  <Button variant="neon" size="lg">
                     Talk to Our Team
                   </Button>
                 </Link>

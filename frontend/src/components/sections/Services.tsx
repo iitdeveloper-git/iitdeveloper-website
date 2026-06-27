@@ -208,7 +208,7 @@ export default function Services() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 rounded-xl glass border-2 border-primary/30 hover:border-primary/50 text-foreground font-semibold text-lg hover:shadow-glow transition-all"
+                    className="px-8 py-4 rounded-xl bg-secondary text-secondary-foreground font-bold text-lg shadow-glow-yellow hover:shadow-glow-yellow-lg transition-all"
                   >
                     Book a Call
                   </motion.button>

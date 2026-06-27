@@ -29,29 +29,26 @@ export interface ContactFormEmailData {
 // SMTP Transporter (singleton, created lazily)
 // ─────────────────────────────────────────────────────────────────
 
-let _transporter: nodemailer.Transporter | null = null;
-
 function getTransporter(): nodemailer.Transporter {
-  if (_transporter) return _transporter;
-
   const host = process.env.SMTP_HOST || 'mail.iitdeveloper.com';
   const port = parseInt(process.env.SMTP_PORT || '465', 10);
   const secure = process.env.SMTP_SECURE !== 'false'; // default true (SSL/TLS on 465)
   const user = process.env.SMTP_USER || 'info@iitdeveloper.com';
   const pass = process.env.SMTP_PASS || '';
 
-  _transporter = nodemailer.createTransport({
+  return nodemailer.createTransport({
     host,
     port,
     secure, // true → SSL/TLS (port 465); false → STARTTLS (port 587)
     auth: { user, pass },
+    connectionTimeout: 10000, // 10s connection timeout
+    greetingTimeout: 10000,   // 10s greeting timeout
+    socketTimeout: 15000,     // 15s socket timeout
     tls: {
       // Allow self-signed certs on the mail server if needed
       rejectUnauthorized: false,
     },
   });
-
-  return _transporter;
 }
 
 // ─────────────────────────────────────────────────────────────────
