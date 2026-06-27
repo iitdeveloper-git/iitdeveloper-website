@@ -1,0 +1,7 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import PageShell from '@/components/layout/PageShell';
+import { insights } from '@/content/insights';
+import { generateSEO } from '@/lib/seo';
+export const metadata: Metadata = generateSEO({ title: 'Insights on AI, Cloud and Product Engineering', description: 'Original, practical guidance on AI systems, cloud platforms, software architecture and AI-search visibility.', canonical: '/insights' });
+export default function InsightsPage(){return <PageShell><section className="pb-16 pt-36"><div className="container mx-auto px-4"><p className="text-sm font-bold tracking-[0.18em] text-secondary">INSIGHTS</p><h1 className="mt-4 text-5xl font-bold tracking-tighter sm:text-7xl">Practical Insights on AI, Cloud and Product Engineering</h1><p className="mt-6 max-w-3xl text-xl leading-8 text-muted-foreground">Focused explanations built from engineering practice, with clear limitations and no search-ranking folklore.</p></div></section><section className="pb-24"><div className="container mx-auto grid gap-6 px-4 md:grid-cols-2 lg:grid-cols-3">{insights.map((article)=><article key={article.slug} className="glass rounded-2xl border border-white/10 p-7"><p className="text-xs text-muted-foreground">{article.published} · {article.readingTime}</p><h2 className="mt-3 text-2xl font-bold"><Link href={`/insights/${article.slug}`} className="hover:text-secondary">{article.title}</Link></h2><p className="mt-4 leading-7 text-muted-foreground">{article.summary}</p></article>)}</div></section></PageShell>}
