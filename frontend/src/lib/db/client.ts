@@ -9,41 +9,42 @@
 // { rows: T[] } result object inside transactions.  We pass fullResults: true
 // so client.query() inside the transaction callback returns that shape.
 
-import { neon } from '@neondatabase/serverless';
+import { Pool } from '@neondatabase/serverless';
 
 // Singleton connection
-let _sql: ReturnType<typeof neon> | null = null;
+let _pool: Pool | null = null;
 
-export function getDbConnection(): ReturnType<typeof neon> {
+export function getDbConnection(): Pool {
   if (!process.env.DATABASE_URL) {
     throw new Error('DATABASE_URL is not configured');
   }
-  if (!_sql) {
-    _sql = neon(process.env.DATABASE_URL);
+  if (!_pool) {
+    _pool = new Pool({ connectionString: process.env.DATABASE_URL });
   }
-  return _sql;
+  return _pool;
 }
 
 // ── Top-level query helper ────────────────────────────────────────────────────
 // Called from service files as:  query<Row>("SELECT ...", [params])
 // Returns T[] directly (rows only — no .rows wrapper needed).
+export const getClient = getDbConnection;
+
 export async function query<T = any>(
   text: string,
   params?: any[]
 ): Promise<T[]> {
-  const sql = getDbConnection();
+  const pool = getDbConnection();
   const start = Date.now();
 
   try {
-    // sql.query() returns a plain T[] (not { rows }).
-    const result = await sql.query(text, params ?? []) as unknown as T[];
+    const result = await pool.query(text, params);
 
     const duration = Date.now() - start;
     if (process.env.NODE_ENV === 'development' && duration > 100) {
       console.warn(`⚠️  Slow query (${duration}ms):`, text.substring(0, 100));
     }
 
-    return result;
+    return result.rows as unknown as T[];
   } catch (error) {
     console.error('Database query error:', error);
     throw error;
@@ -51,53 +52,37 @@ export async function query<T = any>(
 }
 
 // ── Neon pg-compatible result wrapper ────────────────────────────────────────
-// The transaction callbacks in leads-service.ts / pricing-rules-service.ts
-// use client.query<T>(text, params) and then read result.rows[0], matching
-// the node-postgres (pg) API.  We expose a pgQuery helper on the connection
-// object that returns { rows: T[] } by using fullResults: true.
 
 interface PgResult<T> {
   rows: T[];
-  rowCount?: number;
+  rowCount?: number | null;
 }
 
-// A thin wrapper around the neon sql object that surfaces a pg-compatible
-// .query() method returning { rows }.
 export type PgClient = {
   query<T = any>(text: string, params?: any[]): Promise<PgResult<T>>;
 };
 
-function makePgClient(sql: ReturnType<typeof neon>): PgClient {
-  return {
-    async query<T = any>(text: string, params?: any[]): Promise<PgResult<T>> {
-      // fullResults: true → returns { rows, fields, rowCount, command, … }
-      const result = await sql.query(text, params ?? [], { fullResults: true } as any);
-      return result as unknown as PgResult<T>;
-    },
-  };
-}
-
 // ── Transaction helper ────────────────────────────────────────────────────────
-// The callback receives a pg-compatible client whose .query() returns { rows }.
-// This matches how leads-service.ts / pricing-rules-service.ts use it.
 export async function transaction<T>(
   callback: (client: PgClient) => Promise<T>
 ): Promise<T> {
-  const sql = getDbConnection();
-  const pgClient = makePgClient(sql);
+  const pool = getDbConnection();
+  const client = await pool.connect();
 
   try {
-    await sql.query('BEGIN');
-    const result = await callback(pgClient);
-    await sql.query('COMMIT');
+    await client.query('BEGIN');
+    const result = await callback(client);
+    await client.query('COMMIT');
     return result;
   } catch (error) {
     try {
-      await sql.query('ROLLBACK');
+      await client.query('ROLLBACK');
     } catch {
       // ignore rollback errors
     }
     throw error;
+  } finally {
+    client.release();
   }
 }
 

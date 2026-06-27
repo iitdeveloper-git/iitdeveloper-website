@@ -270,7 +270,7 @@ export default function ViewEstimatePage() {
               </Button>
             </Link>
             <Link href="/estimate" className="flex-1">
-              <Button variant="glass" size="lg" className="w-full">
+              <Button variant="neon" size="lg" className="w-full">
                 Create New Estimate
               </Button>
             </Link>

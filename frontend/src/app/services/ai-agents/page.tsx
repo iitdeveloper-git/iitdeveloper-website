@@ -155,7 +155,7 @@ export default function AIAgentsPage() {
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button variant="outline" size="lg">
+                <Button variant="neon" size="lg">
                   See Agent Demos
                 </Button>
               </Link>
@@ -332,7 +332,7 @@ export default function AIAgentsPage() {
                   </Button>
                 </Link>
                 <Link href="/contact">
-                  <Button variant="outline" size="lg">
+                  <Button variant="neon" size="lg">
                     Talk to AI Expert
                   </Button>
                 </Link>

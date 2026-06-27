@@ -79,5 +79,7 @@ export interface PricingEstimate {
     name: string;
     email: string;
     company?: string;
+    phone?: string;
+    message?: string;
   };
 }

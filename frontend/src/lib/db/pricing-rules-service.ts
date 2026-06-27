@@ -16,7 +16,7 @@ export async function getAllPricingRules(): Promise<PricingRule[]> {
   const result = await query<PricingRule>(
     `SELECT * FROM pricing_rules ORDER BY priority DESC, created_at DESC`
   );
-  return result.rows;
+  return result;
 }
 
 export async function getActivePricingRules(): Promise<PricingRule[]> {
@@ -28,7 +28,7 @@ export async function getActivePricingRules(): Promise<PricingRule[]> {
      AND (max_usage IS NULL OR usage_count < max_usage)
      ORDER BY priority DESC`
   );
-  return result.rows;
+  return result;
 }
 
 export async function getPricingRuleById(id: string): Promise<PricingRule | null> {
@@ -36,7 +36,7 @@ export async function getPricingRuleById(id: string): Promise<PricingRule | null
     `SELECT * FROM pricing_rules WHERE id = $1`,
     [id]
   );
-  return result.rows[0] || null;
+  return result[0] || null;
 }
 
 export async function getPricingRulesByType(ruleType: string): Promise<PricingRule[]> {
@@ -44,7 +44,7 @@ export async function getPricingRulesByType(ruleType: string): Promise<PricingRu
     `SELECT * FROM pricing_rules WHERE rule_type = $1 AND is_active = true ORDER BY priority DESC`,
     [ruleType]
   );
-  return result.rows;
+  return result;
 }
 
 export async function createPricingRule(data: CreatePricingRule): Promise<PricingRule> {
@@ -72,7 +72,7 @@ export async function createPricingRule(data: CreatePricingRule): Promise<Pricin
       data.max_usage || null,
     ]
   );
-  return result.rows[0];
+  return result[0];
 }
 
 export async function updatePricingRule(
@@ -107,7 +107,7 @@ export async function updatePricingRule(
     `UPDATE pricing_rules SET ${updates.join(', ')} WHERE id = $${paramCount} RETURNING *`,
     values
   );
-  return result.rows[0];
+  return result[0];
 }
 
 export async function deletePricingRule(id: string): Promise<void> {
@@ -252,7 +252,7 @@ export async function getPricingRuleApplications(
     `SELECT * FROM pricing_rule_applications WHERE estimate_id = $1 ORDER BY applied_at DESC`,
     [estimateId]
   );
-  return result.rows;
+  return result;
 }
 
 export async function recordPricingRuleApplication(
@@ -294,7 +294,7 @@ export async function getExpiringSoonRules(daysAhead = 7): Promise<PricingRule[]
      AND valid_until >= NOW()
      ORDER BY valid_until ASC`
   );
-  return result.rows;
+  return result;
 }
 
 export async function getUnusedRules(): Promise<PricingRule[]> {
@@ -305,7 +305,7 @@ export async function getUnusedRules(): Promise<PricingRule[]> {
      AND created_at < NOW() - INTERVAL '30 days'
      ORDER BY created_at ASC`
   );
-  return result.rows;
+  return result;
 }
 
 export async function getMostUsedRules(limit = 10): Promise<PricingRule[]> {
@@ -316,7 +316,7 @@ export async function getMostUsedRules(limit = 10): Promise<PricingRule[]> {
      LIMIT $1`,
     [limit]
   );
-  return result.rows;
+  return result;
 }
 
 export async function getRuleEffectiveness(): Promise<
@@ -347,7 +347,7 @@ export async function getRuleEffectiveness(): Promise<
   );
 
   const rulesData = await Promise.all(
-    result.rows.map(async (row) => {
+    result.map(async (row: any) => {
       const rule = await getPricingRuleById(row.rule_id);
       return {
         rule: rule!,
@@ -358,5 +358,5 @@ export async function getRuleEffectiveness(): Promise<
     })
   );
 
-  return rulesData.filter((data) => data.rule !== null);
+  return rulesData.filter((data: any) => data.rule !== null);
 }

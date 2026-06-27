@@ -91,7 +91,7 @@ export default function Hero() {
               </Button>
             </Link>
             <Link href="/services">
-              <Button variant="glass" size="xl" className="w-full sm:w-auto">
+              <Button variant="neon" size="xl" className="w-full sm:w-auto">
                 Explore Services
               </Button>
             </Link>

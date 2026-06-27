@@ -157,7 +157,7 @@ export default function AppDevelopmentPage() {
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button variant="outline" size="lg">
+                <Button variant="neon" size="lg">
                   See Our Portfolio
                 </Button>
               </Link>
@@ -334,7 +334,7 @@ export default function AppDevelopmentPage() {
                   </Button>
                 </Link>
                 <Link href="/contact">
-                  <Button variant="outline" size="lg">
+                  <Button variant="neon" size="lg">
                     Book a Discovery Call
                   </Button>
                 </Link>

@@ -160,7 +160,7 @@ export default function EcommercePage() {
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button variant="outline" size="lg">
+                <Button variant="neon" size="lg">
                   Schedule a Call
                 </Button>
               </Link>
@@ -336,7 +336,7 @@ export default function EcommercePage() {
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button variant="outline" size="lg">
+                <Button variant="neon" size="lg">
                   Talk to Us
                 </Button>
               </Link>

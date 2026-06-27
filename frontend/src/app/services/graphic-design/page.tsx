@@ -152,7 +152,7 @@ export default function GraphicDesignPage() {
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button variant="outline" size="lg">
+                <Button variant="neon" size="lg">
                   Share Your Brief
                 </Button>
               </Link>
@@ -328,7 +328,7 @@ export default function GraphicDesignPage() {
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button variant="outline" size="lg">
+                <Button variant="neon" size="lg">
                   Talk to Us
                 </Button>
               </Link>

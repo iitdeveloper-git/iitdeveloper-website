@@ -323,7 +323,7 @@ export default function AboutPage() {
                 </Button>
               </Link>
               <Link href="/team">
-                <Button size="lg" variant="outline" className="border-secondary/30 hover:border-secondary/60 hover:shadow-glow-yellow">
+                <Button size="lg" variant="neon" className="">
                   Meet The Team
                 </Button>
               </Link>

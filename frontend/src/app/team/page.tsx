@@ -348,7 +348,7 @@ export default function TeamPage() {
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="border-primary/30 hover:border-primary/60 hover:shadow-glow">
+                <Button size="lg" variant="neon" className="">
                   Get In Touch
                 </Button>
               </Link>
