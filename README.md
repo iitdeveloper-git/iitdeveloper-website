@@ -19,4 +19,4 @@ npm install
 npm run dev
 ```
 
-For detailed architecture and setup instructions, please see the [Project Structure Documentation](./docs/PROJECT_STRUCTURE.md).
+For detailed architecture and setup instructions, please see the [Project Structure Documentation](./docs/PROJECT_STRUCTURE.md). 
