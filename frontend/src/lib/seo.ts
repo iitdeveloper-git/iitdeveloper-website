@@ -97,6 +97,14 @@ export function generateSEO(config: SEOConfig = {}): Metadata {
       google: 'your-google-verification-code',
       // Add other verification codes as needed
     },
+    icons: {
+      icon: [
+        { url: '/favicon.ico' },
+        { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      ],
+      shortcut: '/favicon.ico',
+      apple: '/apple-touch-icon.png',
+    },
     category: 'technology',
   };
 }
@@ -125,9 +133,10 @@ export function generateStructuredData(type: 'Organization' | 'WebSite' | 'Servi
         availableLanguage: ['English'],
       },
       sameAs: [
-        'https://twitter.com/iitdeveloper',
-        'https://linkedin.com/company/iitdeveloper',
-        'https://github.com/iitdeveloper',
+        'https://www.linkedin.com/in/iitdeveloper-com-655a57213/',
+        'https://github.com/iitdeveloper-git',
+        'https://instagram.com/iitdeveloper_official',
+        'https://x.com/developer_iit',
       ],
     },
     WebSite: {

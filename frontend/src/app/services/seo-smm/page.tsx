@@ -149,12 +149,12 @@ export default function SEOSMMPage() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact">
                 <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                  Get a Quote
+                  Boost My Rankings
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/case-studies">
                 <Button variant="neon" size="lg">
-                  Free SEO Audit
+                  See Ranking Results
                 </Button>
               </Link>
             </div>
@@ -326,13 +326,11 @@ export default function SEOSMMPage() {
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link href="/contact">
                   <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                    Get Free SEO Audit
+                    Grow My Audience
                   </Button>
                 </Link>
-                <Link href="/contact">
-                  <Button variant="neon" size="lg">
-                    Talk to SEO Expert
-                  </Button>
+                <Link href="/estimate">
+                  <Button variant="neon" size="lg">Estimate Monthly Cost</Button>
                 </Link>
               </div>
             </CardContent>

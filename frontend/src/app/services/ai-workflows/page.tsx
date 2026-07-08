@@ -151,10 +151,10 @@ export default function AIWorkflowsPage() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact">
                 <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                  Get a Quote
+                  Automate My Workflow
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/case-studies">
                 <Button variant="neon" size="lg">
                   See Workflow Examples
                 </Button>
@@ -328,13 +328,11 @@ export default function AIWorkflowsPage() {
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link href="/contact">
                   <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                    Start Automation Project
+                    Start Automating Now
                   </Button>
                 </Link>
-                <Link href="/contact">
-                  <Button variant="neon" size="lg">
-                    Talk to Automation Expert
-                  </Button>
+                <Link href="/estimate">
+                  <Button variant="neon" size="lg">Estimate Savings</Button>
                 </Link>
               </div>
             </CardContent>

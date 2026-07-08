@@ -151,12 +151,12 @@ export default function DevOpsCloudPage() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact">
                 <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                  Get a Quote
+                  Modernize My Stack
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/case-studies">
                 <Button variant="neon" size="lg">
-                  Infrastructure Audit
+                  View Case Studies
                 </Button>
               </Link>
             </div>
@@ -328,13 +328,11 @@ export default function DevOpsCloudPage() {
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link href="/contact">
                   <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                    Request Audit
+                    Optimize My Infra
                   </Button>
                 </Link>
-                <Link href="/contact">
-                  <Button variant="neon" size="lg">
-                    Talk to DevOps Expert
-                  </Button>
+                <Link href="/estimate">
+                  <Button variant="neon" size="lg">Estimate Cloud Cost</Button>
                 </Link>
               </div>
             </CardContent>

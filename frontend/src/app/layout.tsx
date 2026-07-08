@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import './styles.css';
 import ToastProvider from '@/components/providers/ToastProvider';
+import ChatWidget from '@/components/layout/ChatWidget';
 import { generateSEO, generateStructuredData } from '@/lib/seo';
 
 const inter = Inter({ 
@@ -56,6 +57,7 @@ export default function RootLayout({
           
           {children}
           
+          <ChatWidget />
           <ToastProvider />
         </div>
       </body>

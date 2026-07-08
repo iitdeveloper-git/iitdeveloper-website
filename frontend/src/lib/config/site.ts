@@ -57,11 +57,13 @@ export const siteConfig = {
   // Social profiles — set real URLs before launch
   social: {
     /** GitHub org URL or null to hide */
-    github: null as string | null,
+    github: 'https://github.com/iitdeveloper-git',
     /** LinkedIn company page or null to hide */
-    linkedin: null as string | null,
+    linkedin: 'https://www.linkedin.com/in/iitdeveloper-com-655a57213/',
     /** Twitter/X handle URL or null to hide */
-    twitter: null as string | null,
+    twitter: 'https://x.com/developer_iit',
+    /** Instagram page or null to hide */
+    instagram: 'https://instagram.com/iitdeveloper_official',
     /** Email for social display */
     email: 'info@iitdeveloper.com',
   },

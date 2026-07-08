@@ -148,12 +148,12 @@ export default function GraphicDesignPage() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact">
                 <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                  Get a Quote
+                  Start My Design
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/case-studies">
                 <Button variant="neon" size="lg">
-                  Share Your Brief
+                  View Our Portfolio
                 </Button>
               </Link>
             </div>
@@ -322,17 +322,15 @@ export default function GraphicDesignPage() {
               Share your brief and let's create visuals that your audience remembers.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link href="/contact">
-                <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                  Start a Project
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button variant="neon" size="lg">
-                  Talk to Us
-                </Button>
-              </Link>
-            </div>
+                <Link href="/contact">
+                  <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
+                    Bring My Brand to Life
+                  </Button>
+                </Link>
+                <Link href="/estimate">
+                  <Button variant="neon" size="lg">Estimate Design Cost</Button>
+                </Link>
+              </div>
           </div>
         </div>
       </section>

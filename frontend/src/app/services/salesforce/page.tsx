@@ -151,12 +151,12 @@ export default function SalesforcePage() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact">
                 <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                  Get a Quote
+                  Set Up My Salesforce
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/case-studies">
                 <Button variant="neon" size="lg">
-                  Free CRM Audit
+                  See Implementations
                 </Button>
               </Link>
             </div>
@@ -328,13 +328,11 @@ export default function SalesforcePage() {
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link href="/contact">
                   <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                    Request Free Audit
+                    Start My CRM
                   </Button>
                 </Link>
-                <Link href="/contact">
-                  <Button variant="neon" size="lg">
-                    Talk to Salesforce Expert
-                  </Button>
+                <Link href="/estimate">
+                  <Button variant="neon" size="lg">Estimate Project Cost</Button>
                 </Link>
               </div>
             </CardContent>

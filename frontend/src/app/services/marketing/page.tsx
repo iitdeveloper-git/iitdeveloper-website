@@ -171,12 +171,12 @@ export default function MarketingPage() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact">
                 <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                  Get a Quote
+                  Grow My Brand
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/case-studies">
                 <Button variant="neon" size="lg">
-                  Free Marketing Audit
+                  See Campaign Results
                 </Button>
               </Link>
             </div>
@@ -348,13 +348,11 @@ export default function MarketingPage() {
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link href="/contact">
                   <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                    Get Free Audit
+                    Launch My Campaign
                   </Button>
                 </Link>
-                <Link href="/contact">
-                  <Button variant="neon" size="lg">
-                    Talk to Growth Strategist
-                  </Button>
+                <Link href="/estimate">
+                  <Button variant="neon" size="lg">Estimate Marketing Cost</Button>
                 </Link>
               </div>
             </CardContent>
