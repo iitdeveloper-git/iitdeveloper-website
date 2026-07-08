@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
+import Script from 'next/script';
 import './styles.css';
 import ToastProvider from '@/components/providers/ToastProvider';
 import ChatWidget from '@/components/layout/ChatWidget';
@@ -48,6 +49,19 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-7VZRZJC8C8"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-7VZRZJC8C8');
+          `}
+        </Script>
         <div className="relative min-h-screen bg-background">
           {/* Background gradient overlay - Softer */}
           <div className="fixed inset-0 -z-10 bg-gradient-to-br from-background via-background to-primary/3" />
