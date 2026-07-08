@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button";
@@ -40,16 +40,6 @@ export default function Hero() {
           animate="visible"
           className="max-w-5xl mx-auto text-center"
         >
-          <motion.div
-            variants={staggerItem}
-            className="inline-flex items-center space-x-2 glass glass-hover px-5 py-2.5 rounded-full mb-10 shadow-premium"
-          >
-            <Sparkles className="w-4 h-4 text-secondary" />
-            <span className="text-sm font-medium tracking-wide">
-              Tech + Design + Growth. No BS. Just solutions that work.
-            </span>
-          </motion.div>
-
           <motion.h1
             variants={staggerItem}
             className="text-5xl sm:text-6xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tighter"

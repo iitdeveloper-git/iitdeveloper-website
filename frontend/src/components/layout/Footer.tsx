@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
+import { Github, Instagram, Linkedin, Mail, Twitter } from 'lucide-react';
 
 const footerLinks = {
   services: [
@@ -28,9 +28,10 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com', label: 'GitHub' },
-  { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+  { icon: Github, href: 'https://github.com/iitdeveloper-git', label: 'GitHub' },
+  { icon: Instagram, href: 'https://instagram.com/iitdeveloper_official', label: 'Instagram' },
+  { icon: Twitter, href: 'https://x.com/developer_iit', label: 'Twitter/X' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/iitdeveloper-com-655a57213/', label: 'LinkedIn' },
   { icon: Mail, href: 'mailto:info@iitdeveloper.com', label: 'Email' },
 ];
 
@@ -141,7 +142,7 @@ export default function Footer() {
                 Handcrafted with ☕ and ⚡. No AI was harmed in the making of this website. (They did all the work.)
               </p>
             </div>
-            <div className="flex items-center space-x-8 text-base">
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base">
               <Link
                 href="/privacy"
                 className="text-muted-foreground/70 hover:text-primary transition-colors font-light"
@@ -152,13 +153,19 @@ export default function Footer() {
                 href="/terms"
                 className="text-muted-foreground/70 hover:text-primary transition-colors font-light"
               >
-                Terms of Service
+                Terms & Conditions
               </Link>
               <Link
                 href="/cookies"
                 className="text-muted-foreground/70 hover:text-primary transition-colors font-light"
               >
                 Cookie Policy
+              </Link>
+              <Link
+                href="/refund-policy"
+                className="text-muted-foreground/70 hover:text-primary transition-colors font-light"
+              >
+                Refund Policy
               </Link>
             </div>
           </div>

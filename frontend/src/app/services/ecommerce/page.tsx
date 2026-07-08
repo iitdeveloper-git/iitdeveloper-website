@@ -156,12 +156,12 @@ export default function EcommercePage() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact">
                 <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                  Get a Quote
+                  Launch My Store
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/case-studies">
                 <Button variant="neon" size="lg">
-                  Schedule a Call
+                  See Stores We've Built
                 </Button>
               </Link>
             </div>
@@ -330,17 +330,15 @@ export default function EcommercePage() {
               Let's build an ecommerce experience your customers will love — and keep coming back to.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link href="/contact">
-                <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                  Start a Project
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button variant="neon" size="lg">
-                  Talk to Us
-                </Button>
-              </Link>
-            </div>
+                <Link href="/contact">
+                  <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
+                    Open My Online Store
+                  </Button>
+                </Link>
+                <Link href="/estimate">
+                  <Button variant="neon" size="lg">Estimate Store Cost</Button>
+                </Link>
+              </div>
           </div>
         </div>
       </section>

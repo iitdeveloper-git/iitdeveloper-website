@@ -179,10 +179,10 @@ export default function ServicesPage() {
 {/*            <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact">
                 <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                  Get a Quote
+                  Discuss My Project
                 </Button>
               </Link>
-            {/*  <Link href="/case-studies">
+              <Link href="/case-studies">
                 <Button variant="neon" size="lg">
                   See Our Work
                 </Button>
@@ -330,13 +330,11 @@ export default function ServicesPage() {
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link href="/contact">
                   <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                    Get Your Free Quote
+                    Start a Project
                   </Button>
                 </Link>
-                <Link href="/contact">
-                  <Button variant="neon" size="lg">
-                    Talk to Our Team
-                  </Button>
+                <Link href="/estimate">
+                  <Button variant="neon" size="lg">Estimate My Budget</Button>
                 </Link>
               </div>
             </CardContent>

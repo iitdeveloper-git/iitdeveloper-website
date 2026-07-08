@@ -151,12 +151,12 @@ export default function AIAgentsPage() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact">
                 <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                  Get a Quote
+                  Deploy My AI Agent
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/case-studies">
                 <Button variant="neon" size="lg">
-                  See Agent Demos
+                  See What We've Built
                 </Button>
               </Link>
             </div>
@@ -328,13 +328,11 @@ export default function AIAgentsPage() {
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link href="/contact">
                   <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                    Start Your AI Project
+                    Automate My Business
                   </Button>
                 </Link>
-                <Link href="/contact">
-                  <Button variant="neon" size="lg">
-                    Talk to AI Expert
-                  </Button>
+                <Link href="/estimate">
+                  <Button variant="neon" size="lg">Calculate ROI</Button>
                 </Link>
               </div>
             </CardContent>

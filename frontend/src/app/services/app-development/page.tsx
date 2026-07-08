@@ -153,12 +153,12 @@ export default function AppDevelopmentPage() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact">
                 <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                  Get a Quote
+                  Build My App
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/case-studies">
                 <Button variant="neon" size="lg">
-                  See Our Portfolio
+                  View Our Apps
                 </Button>
               </Link>
             </div>
@@ -330,13 +330,11 @@ export default function AppDevelopmentPage() {
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link href="/contact">
                   <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                    Start Your Project
+                    Ship My App
                   </Button>
                 </Link>
-                <Link href="/contact">
-                  <Button variant="neon" size="lg">
-                    Book a Discovery Call
-                  </Button>
+                <Link href="/estimate">
+                  <Button variant="neon" size="lg">Estimate App Cost</Button>
                 </Link>
               </div>
             </CardContent>

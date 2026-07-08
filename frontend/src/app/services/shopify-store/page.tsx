@@ -158,12 +158,12 @@ export default function ShopifyStorePage() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact">
                 <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                  Get a Quote
+                  Launch My Shopify
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/case-studies">
                 <Button variant="neon" size="lg">
-                  Schedule a Call
+                  See Our Stores
                 </Button>
               </Link>
             </div>
@@ -338,17 +338,15 @@ export default function ShopifyStorePage() {
               we&apos;ll build a store that converts from day one.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link href="/contact">
-                <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                  Start Your Project
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button variant="neon" size="lg">
-                  Talk to an Expert
-                </Button>
-              </Link>
-            </div>
+                <Link href="/contact">
+                  <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
+                    Build My Shopify Store
+                  </Button>
+                </Link>
+                <Link href="/estimate">
+                  <Button variant="neon" size="lg">Estimate Store Cost</Button>
+                </Link>
+              </div>
           </div>
         </div>
       </section>

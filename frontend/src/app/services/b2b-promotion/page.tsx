@@ -152,12 +152,12 @@ export default function B2BPromotionPage() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact">
                 <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                  Get a Quote
+                  Grow My Pipeline
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/case-studies">
                 <Button variant="neon" size="lg">
-                  Free Strategy Call
+                  See Success Stories
                 </Button>
               </Link>
             </div>
@@ -326,17 +326,15 @@ export default function B2BPromotionPage() {
               Let's build a predictable, scalable revenue engine together.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link href="/contact">
-                <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
-                  Start a Project
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button variant="neon" size="lg">
-                  Talk to Us
-                </Button>
-              </Link>
-            </div>
+                <Link href="/contact">
+                  <Button size="lg" className="shadow-premium hover:shadow-premium-lg">
+                    Scale My B2B
+                  </Button>
+                </Link>
+                <Link href="/estimate">
+                  <Button variant="neon" size="lg">Estimate Campaign Cost</Button>
+                </Link>
+              </div>
           </div>
         </div>
       </section>
