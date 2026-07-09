@@ -34,6 +34,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        {/* Preconnect to external origins for faster resource loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <meta name="theme-color" content="#0b1a2b" />
+        <meta name="color-scheme" content="dark" />
         {/* Structured Data */}
         <script
           type="application/ld+json"

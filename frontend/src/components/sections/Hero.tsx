@@ -3,14 +3,9 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button";
 import { staggerContainer, staggerItem } from "@/lib/animations/variants";
-
-const HeroScene = dynamic(() => import("@/components/three/HeroScene"), {
-  ssr: false,
-  loading: () => <div className="absolute inset-0 -z-10 bg-gradient-to-br from-background via-background to-primary/5" />,
-});
+import HeroScene from "@/components/three/HeroScene";
 
 export default function Hero() {
   return (
