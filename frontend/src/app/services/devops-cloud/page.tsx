@@ -331,7 +331,7 @@ export default function DevOpsCloudPage() {
                     Optimize My Infra
                   </Button>
                 </Link>
-                <Link href="/estimate">
+                <Link href="/contact">
                   <Button variant="neon" size="lg">Estimate Cloud Cost</Button>
                 </Link>
               </div>

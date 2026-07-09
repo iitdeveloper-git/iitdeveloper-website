@@ -333,7 +333,7 @@ export default function AppDevelopmentPage() {
                     Ship My App
                   </Button>
                 </Link>
-                <Link href="/estimate">
+                <Link href="/contact">
                   <Button variant="neon" size="lg">Estimate App Cost</Button>
                 </Link>
               </div>

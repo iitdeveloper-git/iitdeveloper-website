@@ -28,7 +28,7 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com/iitdeveloper-git', label: 'GitHub' },
+  // { icon: Github, href: 'https://github.com/iitdeveloper-git', label: 'GitHub' },
   { icon: Instagram, href: 'https://instagram.com/iitdeveloper_official', label: 'Instagram' },
   { icon: Twitter, href: 'https://x.com/developer_iit', label: 'Twitter/X' },
   { icon: Linkedin, href: 'https://www.linkedin.com/in/iitdeveloper-com-655a57213/', label: 'LinkedIn' },
@@ -57,7 +57,7 @@ export default function Footer() {
             <p className="text-muted-foreground/80 mb-8 max-w-sm text-base leading-relaxed font-light">
               Building legendary digital products since [checks notes] recently. We turn "it's impossible" into "it's deployed." ⚡
             </p>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 mb-8">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -71,6 +71,38 @@ export default function Footer() {
                 </a>
               ))}
             </div>
+
+            {/* Portfolio Spotlight Card */}
+            <Link href="/case-studies" className="group block">
+              <div className="relative overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/10 via-background to-secondary/5 p-5 transition-all duration-500 hover:border-secondary/40 hover:shadow-[0_0_30px_rgba(0,83,156,0.25)] hover:scale-[1.02]">
+                {/* Animated shimmer line */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-secondary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-secondary/80 bg-secondary/10 px-2.5 py-1 rounded-full border border-secondary/20">
+                    ✦ Our Work
+                  </span>
+                  <span className="text-[10px] text-muted-foreground/50 font-light">100+ Projects</span>
+                </div>
+
+                <p className="text-sm font-semibold text-foreground/90 mb-1 leading-snug">
+                  See what we've built
+                </p>
+                <p className="text-xs text-muted-foreground/60 font-light mb-4 leading-relaxed">
+                  Case studies, live projects & real results.
+                </p>
+
+                <div className="flex items-center gap-1.5 text-xs font-semibold text-primary group-hover:text-secondary transition-colors duration-300">
+                  <span>View Portfolio</span>
+                  <svg className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  </svg>
+                </div>
+
+                {/* Corner glow */}
+                <div className="absolute -bottom-6 -right-6 w-20 h-20 bg-secondary/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+            </Link>
           </div>
 
           {/* Services */}
@@ -130,6 +162,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+
 
         {/* Bottom Bar */}
         <div className="mt-16 pt-10 border-t border-white/[0.08]">

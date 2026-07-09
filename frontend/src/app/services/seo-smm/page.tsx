@@ -329,7 +329,7 @@ export default function SEOSMMPage() {
                     Grow My Audience
                   </Button>
                 </Link>
-                <Link href="/estimate">
+                <Link href="/contact">
                   <Button variant="neon" size="lg">Estimate Monthly Cost</Button>
                 </Link>
               </div>

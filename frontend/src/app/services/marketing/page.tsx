@@ -351,7 +351,7 @@ export default function MarketingPage() {
                     Launch My Campaign
                   </Button>
                 </Link>
-                <Link href="/estimate">
+                <Link href="/contact">
                   <Button variant="neon" size="lg">Estimate Marketing Cost</Button>
                 </Link>
               </div>

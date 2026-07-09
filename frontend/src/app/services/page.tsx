@@ -333,7 +333,7 @@ export default function ServicesPage() {
                     Start a Project
                   </Button>
                 </Link>
-                <Link href="/estimate">
+                <Link href="/contact">
                   <Button variant="neon" size="lg">Estimate My Budget</Button>
                 </Link>
               </div>

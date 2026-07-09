@@ -56,7 +56,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-20"
           >
             {/* DISABLED: Estimator — uncomment to re-enable
-            <Link href="/estimate">
+            <Link href="/contact">
               <Button variant="neon" size="xl" className="group w-full sm:w-auto relative overflow-hidden">
                 <span className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity" />
                 <span className="relative flex items-center">

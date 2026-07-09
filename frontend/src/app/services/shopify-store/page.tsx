@@ -343,7 +343,7 @@ export default function ShopifyStorePage() {
                     Build My Shopify Store
                   </Button>
                 </Link>
-                <Link href="/estimate">
+                <Link href="/contact">
                   <Button variant="neon" size="lg">Estimate Store Cost</Button>
                 </Link>
               </div>

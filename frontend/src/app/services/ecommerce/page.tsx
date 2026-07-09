@@ -335,7 +335,7 @@ export default function EcommercePage() {
                     Open My Online Store
                   </Button>
                 </Link>
-                <Link href="/estimate">
+                <Link href="/contact">
                   <Button variant="neon" size="lg">Estimate Store Cost</Button>
                 </Link>
               </div>

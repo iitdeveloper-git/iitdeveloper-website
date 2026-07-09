@@ -327,7 +327,7 @@ export default function GraphicDesignPage() {
                     Bring My Brand to Life
                   </Button>
                 </Link>
-                <Link href="/estimate">
+                <Link href="/contact">
                   <Button variant="neon" size="lg">Estimate Design Cost</Button>
                 </Link>
               </div>

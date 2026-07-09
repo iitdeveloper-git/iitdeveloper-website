@@ -331,7 +331,7 @@ export default function AIWorkflowsPage() {
                     Start Automating Now
                   </Button>
                 </Link>
-                <Link href="/estimate">
+                <Link href="/contact">
                   <Button variant="neon" size="lg">Estimate Savings</Button>
                 </Link>
               </div>

@@ -331,7 +331,7 @@ export default function AIAgentsPage() {
                     Automate My Business
                   </Button>
                 </Link>
-                <Link href="/estimate">
+                <Link href="/contact">
                   <Button variant="neon" size="lg">Calculate ROI</Button>
                 </Link>
               </div>

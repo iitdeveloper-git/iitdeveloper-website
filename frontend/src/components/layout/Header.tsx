@@ -52,7 +52,7 @@ export default function Header() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-5">
             {/* DISABLED: Estimator — uncomment to re-enable
-            <Link href="/estimate">
+            <Link href="/contact">
               <Button variant="neon" size="lg" className="min-w-[140px]">
                 Price It Out
               </Button>
@@ -87,7 +87,7 @@ export default function Header() {
             <Navigation mobile onNavigate={() => setIsMobileMenuOpen(false)} />
             <div className="mt-6 space-y-3">
               {/* DISABLED: Estimator — uncomment to re-enable
-              <Link href="/estimate" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button variant="neon" size="lg" className="w-full">
                   Price It Out
                 </Button>

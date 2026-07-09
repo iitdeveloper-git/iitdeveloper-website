@@ -331,7 +331,7 @@ export default function SalesforcePage() {
                     Start My CRM
                   </Button>
                 </Link>
-                <Link href="/estimate">
+                <Link href="/contact">
                   <Button variant="neon" size="lg">Estimate Project Cost</Button>
                 </Link>
               </div>
