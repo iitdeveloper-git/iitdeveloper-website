@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/animations/variants';
 
 const stats = [
-  { value: '50+', label: 'Projects Delivered' },
+  { value: '100+', label: 'Projects Delivered' },
   { value: '98%', label: 'Client Satisfaction' },
   { value: '4.9★', label: 'Average Rating' },
   { value: '100%', label: 'On-Time Delivery' },
@@ -251,24 +251,17 @@ export default function OurWorkPage() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.15 }}
+                    className="h-full"
                   >
                     <motion.div
                       whileHover={{ y: -8, scale: 1.01 }}
                       transition={{ duration: 0.3, ease: 'easeOut' }}
-                      className={`relative group glass-strong rounded-3xl overflow-hidden border-2 ${
-                        isPrimary 
-                          ? 'border-primary/30 hover:border-primary/60 hover:shadow-glow' 
-                          : 'border-secondary/30 hover:border-secondary/60 hover:shadow-glow-yellow-lg'
-                      } transition-all duration-300`}
+                      className="relative group glass-strong rounded-3xl overflow-hidden border-2 border-secondary/30 hover:border-secondary/60 hover:shadow-glow-yellow-lg transition-all duration-300 h-full flex flex-col"
                     >
                       {/* Top color band */}
-                      <div className={`h-2 w-full ${
-                        isPrimary 
-                          ? 'bg-gradient-to-r from-primary via-primary/80 to-transparent' 
-                          : 'bg-gradient-to-r from-secondary via-secondary/80 to-transparent'
-                      }`} />
+                      <div className="h-2 w-full bg-gradient-to-r from-secondary via-secondary/80 to-transparent" />
 
-                      <div className="p-8 lg:p-10">
+                      <div className="p-8 lg:p-10 flex flex-col flex-1">
                         {/* Header row */}
                         <div className="flex items-start justify-between mb-6">
                           <div className="flex items-center gap-4">
@@ -288,9 +281,7 @@ export default function OurWorkPage() {
                               }`} />
                             </motion.div>
                             <div>
-                              <span className={`text-xs font-bold tracking-wider uppercase ${
-                                isPrimary ? 'text-primary' : 'text-secondary'
-                              }`}>
+                              <span className="text-xs font-bold tracking-wider uppercase text-secondary">
                                 {project.category}
                               </span>
                               <h3 className="text-2xl font-bold text-foreground">{project.title}</h3>
@@ -300,7 +291,7 @@ export default function OurWorkPage() {
                           <span className="text-xs text-muted-foreground/50 font-mono">{project.year}</span>
                         </div>
 
-                        <p className="text-muted-foreground/80 text-base leading-relaxed mb-6">
+                        <p className="text-muted-foreground/80 text-base leading-relaxed mb-6 flex-grow">
                           {project.description}
                         </p>
 
@@ -308,9 +299,7 @@ export default function OurWorkPage() {
                         <div className="grid grid-cols-3 gap-4 mb-6">
                           {project.metrics.map((metric, idx) => (
                             <div key={idx} className="text-center glass rounded-xl p-3 border border-white/5">
-                              <div className={`text-2xl font-bold ${
-                                isPrimary ? 'text-primary' : 'text-secondary'
-                              }`}>
+                              <div className="text-2xl font-bold text-secondary">
                                 {metric.value}
                               </div>
                               <div className="text-xs text-muted-foreground mt-1">{metric.label}</div>
@@ -325,11 +314,7 @@ export default function OurWorkPage() {
                             {project.tech.map((tech, idx) => (
                               <span
                                 key={idx}
-                                className={`text-xs px-3 py-1.5 rounded-full font-medium ${
-                                  isPrimary 
-                                    ? 'bg-primary/10 text-primary border border-primary/20' 
-                                    : 'bg-secondary/10 text-secondary border border-secondary/20'
-                                }`}
+                                className="text-xs px-3 py-1.5 rounded-full font-medium bg-secondary/10 text-secondary border border-secondary/20"
                               >
                                 {tech}
                               </span>
@@ -348,11 +333,7 @@ export default function OurWorkPage() {
                           href={project.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`inline-flex items-center gap-3 px-6 py-3 rounded-xl font-bold text-base transition-all duration-300 group/btn ${
-                            isPrimary 
-                              ? 'bg-primary text-white hover:bg-primary/90 shadow-glow hover:shadow-glow-lg' 
-                              : 'bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-glow-yellow hover:shadow-glow-yellow-lg'
-                          }`}
+                          className="mt-auto inline-flex items-center gap-3 px-6 py-3 rounded-xl font-bold text-base transition-all duration-300 group/btn bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-glow-yellow hover:shadow-glow-yellow-lg"
                         >
                           <Globe className="w-4 h-4" />
                           {project.displayUrl}
@@ -361,9 +342,7 @@ export default function OurWorkPage() {
                       </div>
 
                       {/* Corner decoration */}
-                      <div className={`absolute bottom-0 right-0 w-32 h-32 ${
-                        isPrimary ? 'bg-primary' : 'bg-secondary'
-                      } rounded-tl-full opacity-[0.04] group-hover:opacity-[0.08] transition-opacity`} />
+                      <div className="absolute bottom-0 right-0 w-32 h-32 bg-secondary rounded-tl-full opacity-[0.04] group-hover:opacity-[0.08] transition-opacity" />
                     </motion.div>
                   </motion.div>
                 );
@@ -384,7 +363,7 @@ export default function OurWorkPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
               {moreProjects.map((project, index) => {
                 const Icon = project.icon;
-                const isPrimary = project.color === 'primary';
+                const isPrimary = project.color === 'primary'; // kept for data compatibility
                 return (
                   <motion.div
                     key={project.title}
@@ -397,47 +376,25 @@ export default function OurWorkPage() {
                     <motion.div
                       whileHover={{ y: -10, scale: 1.02 }}
                       transition={{ duration: 0.3, ease: 'easeOut' }}
-                      className={`relative group h-full glass dark-surface rounded-2xl overflow-hidden border-2 border-transparent ${
-                        isPrimary 
-                          ? 'hover:border-primary/40 hover:shadow-glow' 
-                          : 'hover:border-secondary/40 hover:shadow-glow-yellow'
-                      } transition-all duration-300`}
+                      className="relative group h-full glass dark-surface rounded-2xl overflow-hidden border-2 border-transparent hover:border-secondary/40 hover:shadow-glow-yellow transition-all duration-300 flex flex-col"
                     >
                       {/* Top accent */}
-                      <div className={`absolute top-0 left-0 right-0 h-0.5 ${
-                        isPrimary 
-                          ? 'bg-gradient-to-r from-primary via-primary/60 to-transparent' 
-                          : 'bg-gradient-to-r from-secondary via-secondary/60 to-transparent'
-                      } opacity-60 group-hover:opacity-100 transition-opacity`} />
+                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-secondary via-secondary/60 to-transparent opacity-60 group-hover:opacity-100 transition-opacity" />
 
                       {/* Hover background */}
-                      <div className={`absolute inset-0 ${
-                        isPrimary 
-                          ? 'bg-gradient-to-br from-primary/5' 
-                          : 'bg-gradient-to-br from-secondary/5'
-                      } to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                      <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                      <div className="relative p-7">
+                      <div className="relative p-7 flex flex-col flex-1">
                         {/* Header */}
                         <div className="flex items-start justify-between mb-5">
                           <motion.div
                             whileHover={{ rotate: 8 }}
-                            className={`w-14 h-14 rounded-xl ${
-                              isPrimary 
-                                ? 'bg-primary/10 border-2 border-primary/20' 
-                                : 'bg-secondary/10 border-2 border-secondary/20'
-                            } flex items-center justify-center`}
+                            className="w-14 h-14 rounded-xl bg-secondary/10 border-2 border-secondary/20 flex items-center justify-center"
                           >
-                            <Icon className={`w-7 h-7 ${
-                              isPrimary ? 'text-primary' : 'text-secondary'
-                            }`} />
+                            <Icon className="w-7 h-7 text-secondary" />
                           </motion.div>
                           <div className="flex flex-col items-end gap-1">
-                            <span className={`text-xs font-bold tracking-wider uppercase px-2.5 py-1 rounded-full ${
-                              isPrimary 
-                                ? 'bg-primary/10 text-primary' 
-                                : 'bg-secondary/10 text-secondary'
-                            }`}>
+                            <span className="text-xs font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-secondary/10 text-secondary">
                               {project.category}
                             </span>
                             <span className="text-xs text-muted-foreground/40 font-mono">{project.year}</span>
@@ -445,7 +402,7 @@ export default function OurWorkPage() {
                         </div>
 
                         <h3 className="text-xl font-bold mb-3 text-foreground">{project.title}</h3>
-                        <p className="text-muted-foreground/75 text-sm leading-relaxed mb-5">
+                        <p className="text-muted-foreground/75 text-sm leading-relaxed mb-5 flex-grow">
                           {project.description}
                         </p>
 
@@ -466,11 +423,7 @@ export default function OurWorkPage() {
                           href={project.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`flex items-center justify-between w-full px-4 py-3 rounded-xl border ${
-                            isPrimary 
-                              ? 'border-primary/25 hover:border-primary/50 hover:bg-primary/10 text-primary' 
-                              : 'border-secondary/25 hover:border-secondary/50 hover:bg-secondary/10 text-secondary'
-                          } transition-all duration-300 group/link`}
+                          className="mt-auto flex items-center justify-between w-full px-4 py-3 rounded-xl border border-secondary/25 hover:border-secondary/50 hover:bg-secondary/10 text-secondary transition-all duration-300 group/link"
                         >
                           <span className="text-sm font-semibold font-mono">{project.displayUrl}</span>
                           <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
@@ -478,9 +431,7 @@ export default function OurWorkPage() {
                       </div>
 
                       {/* Corner decoration */}
-                      <div className={`absolute bottom-0 right-0 w-20 h-20 ${
-                        isPrimary ? 'bg-primary' : 'bg-secondary'
-                      } rounded-tl-full opacity-[0.04] group-hover:opacity-[0.07] transition-opacity`} />
+                      <div className="absolute bottom-0 right-0 w-20 h-20 bg-secondary rounded-tl-full opacity-[0.04] group-hover:opacity-[0.07] transition-opacity" />
                     </motion.div>
                   </motion.div>
                 );
@@ -587,7 +538,7 @@ export default function OurWorkPage() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.97 }}
-                    className="px-8 py-4 rounded-xl glass border-2 border-primary/30 hover:border-primary/60 text-foreground font-semibold text-lg hover:shadow-glow transition-all"
+                    className="px-8 py-4 rounded-xl bg-secondary text-secondary-foreground font-bold text-lg shadow-glow-yellow-lg hover:shadow-glow-yellow transition-all"
                   >
                     Book a Free Call
                   </motion.button>
