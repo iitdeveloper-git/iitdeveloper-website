@@ -25,6 +25,12 @@ const footerLinks = {
     { label: 'API Reference', href: '/api-docs' },
     { label: 'Support', href: '/support' },
   ],
+  developers: [
+    { label: 'Open Source', href: '/open-source' },
+    { label: 'GitHub', href: 'https://github.com/iitdeveloper-git', external: true },
+    { label: 'DeployKit', href: 'https://github.com/iitdeveloper-git/deploykit', external: true },
+    { label: 'OpsPilot', href: 'https://github.com/iitdeveloper-git/opspilot', external: true },
+  ],
 };
 
 const socialLinks = [
@@ -39,7 +45,7 @@ export default function Footer() {
   return (
     <footer className="relative border-t border-white/[0.08] bg-background/80 backdrop-blur-xl">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-16">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 group mb-6">
@@ -153,6 +159,27 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
+                    className="text-muted-foreground/80 hover:text-primary transition-colors text-base font-light hover:translate-x-1 inline-block duration-300"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Developers */}
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-wider mb-6 text-secondary">
+              Developers
+            </h3>
+            <ul className="space-y-4">
+              {footerLinks.developers.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    target={link.external ? '_blank' : undefined}
+                    rel={link.external ? 'noopener noreferrer' : undefined}
                     className="text-muted-foreground/80 hover:text-primary transition-colors text-base font-light hover:translate-x-1 inline-block duration-300"
                   >
                     {link.label}

@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
-import { Cloud, Container, GitBranch, Server, Shield, Zap, Activity, CheckCircle2 } from 'lucide-react';
+import { Cloud, Container, GitBranch, Server, Shield, Zap, Activity, CheckCircle2, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -313,6 +313,26 @@ export default function DevOpsCloudPage() {
         </div>
       </section>
 */}
+      {/* Open Source Cross-Link */}
+      <section className="py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 lg:p-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-10 text-center lg:text-left">
+            <div className="flex-1">
+              <h2 className="text-2xl font-bold mb-2 tracking-tight">We build the tools we use.</h2>
+              <p className="text-muted-foreground/80">
+                Explore IITDEVELOPER&apos;s open-source DevOps engineering, including DeployKit and OpsPilot.
+              </p>
+            </div>
+            <Link href="/open-source" className="shrink-0">
+              <Button variant="outline" size="lg">
+                <Github className="mr-2 w-4 h-4" />
+                Explore Open Source
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

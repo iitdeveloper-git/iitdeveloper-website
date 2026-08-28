@@ -243,6 +243,26 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Open Source Statement */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <p className="text-lg text-muted-foreground/85 leading-relaxed">
+              Beyond client work, IITDEVELOPER invests in open-source infrastructure, DevOps automation and AI
+              engineering tools that we build and maintain publicly.{' '}
+              <Link href="/open-source" className="text-primary font-semibold hover:text-secondary transition-colors">
+                See our open-source work →
+              </Link>
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Mission, Vision, Plan, Care */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // '/estimate',
     // '/pricing-estimator',
     '/case-studies',
+    '/open-source',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: currentDate,

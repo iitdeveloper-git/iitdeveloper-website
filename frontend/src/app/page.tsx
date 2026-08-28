@@ -7,6 +7,7 @@ import Hero from '@/components/sections/Hero';
 import Services from '@/components/sections/Services';
 import Clients from '@/components/sections/Clients';
 import TechStack from '@/components/sections/TechStack';
+import OpenSourceHighlight from '@/components/sections/OpenSourceHighlight';
 import Process from '@/components/sections/Process';
 import Testimonials from '@/components/sections/Testimonials';
 import CTA from '@/components/sections/CTA';
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Services />
       <Clients />
       <TechStack />
+      <OpenSourceHighlight />
       <Process />
       <Testimonials />
       <CTA />

@@ -70,6 +70,7 @@ const navItems: NavItem[] = [
     ],
   },
   // { label: 'Our Work', href: '/case-studies' },
+  { label: 'Open Source', href: '/open-source' },
   {
     label: 'Company',
     href: '/team',

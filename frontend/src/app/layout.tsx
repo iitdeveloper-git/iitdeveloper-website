@@ -18,10 +18,13 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 });
 
-export const metadata: Metadata = generateSEO({
-  title: 'Premium Web Development, AI Solutions & DevOps',
-  description: 'Expert web development, AI automation, and cloud infrastructure. Build scalable applications with modern frameworks. Fast, reliable, and built to last.',
-});
+export const metadata: Metadata = {
+  metadataBase: new URL('https://iitdeveloper.com'),
+  ...generateSEO({
+    title: 'Premium Web Development, AI Solutions & DevOps',
+    description: 'Expert web development, AI automation, and cloud infrastructure. Build scalable applications with modern frameworks. Fast, reliable, and built to last.',
+  }),
+};
 
 export default function RootLayout({
   children,
