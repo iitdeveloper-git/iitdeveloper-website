@@ -3,6 +3,7 @@
 import { Metadata } from 'next';
 import { motion } from 'framer-motion';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import { Mail, Phone, MapPin, Clock, MessageCircle, Zap } from 'lucide-react';
 import ContactForm from '@/components/forms/ContactForm';
 import { Card, CardContent } from '@/components/ui/card';
@@ -230,6 +231,7 @@ export default function ContactPage() {
       {/* Background decoration */}
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-accent-neon/5 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-accent-purple/5 rounded-full blur-3xl -z-10" />
+      <Footer />
     </div>
   );
 }

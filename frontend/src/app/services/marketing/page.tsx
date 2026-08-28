@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import { TrendingUp, Target, DollarSign, BarChart3, MousePointer, Users, CheckCircle2, Mail, Megaphone, Rocket, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -359,6 +360,7 @@ export default function MarketingPage() {
           </Card>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }

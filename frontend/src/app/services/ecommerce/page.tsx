@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import { ShoppingCart, CreditCard, Store, Package, Users, TrendingUp, Globe, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -342,6 +343,7 @@ export default function EcommercePage() {
           </div>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }

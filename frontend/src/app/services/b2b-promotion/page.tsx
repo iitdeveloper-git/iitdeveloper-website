@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import { Building2, Search, FileText, Target, BarChart3, MessageSquare, RefreshCcw, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -338,6 +339,7 @@ export default function B2BPromotionPage() {
           </div>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }

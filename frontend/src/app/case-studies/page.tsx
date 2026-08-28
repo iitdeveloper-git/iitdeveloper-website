@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import { ExternalLink, TrendingUp, Clock, Sparkles, Star, Globe, ArrowRight, Bot, Code, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -548,6 +549,7 @@ export default function OurWorkPage() {
           </motion.div>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }

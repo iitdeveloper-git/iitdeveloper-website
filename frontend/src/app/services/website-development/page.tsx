@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import { Code, Rocket, Zap, Shield, Globe, Smartphone, Database, CheckCircle2, UserCheck, Settings, RefreshCcw, Wrench } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -360,6 +361,7 @@ export default function WebsiteDevelopmentPage() {
           </Card>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }

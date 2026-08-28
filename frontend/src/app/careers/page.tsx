@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import { Rocket, Code, Heart, Zap, Globe, Users, TrendingUp, Sparkles, ArrowRight, CheckCircle2, Coffee, Laptop, Clock, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -450,6 +451,7 @@ export default function CareersPage() {
           </motion.div>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }
