@@ -151,14 +151,7 @@ export default function ContactPage() {
                   🚀 Fast Track
                 </h3>
                 <p className="text-sm text-muted-foreground/80 leading-relaxed">
-                  Need an instant estimate? Use our{' '}
-                  <a
-                    href="/contact"
-                    className="text-accent-neon hover:underline font-semibold"
-                  >
-                    Smart Price Estimator
-                  </a>{' '}
-                  to get pricing in 60 seconds. No forms, no waiting, no BS.
+                  Need a quick quote? Share your project details below and we&apos;ll get back to you with pricing within 24 hours. No BS, just straight answers.
                 </p>
               </CardContent>
             </Card>

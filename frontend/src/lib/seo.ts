@@ -31,7 +31,7 @@ const defaultMetadata = {
   ],
   url: 'https://iitdeveloper.com',
   ogImage: '/og-image.jpg',
-  twitterHandle: '@iitdeveloper',
+  twitterHandle: '@developer_iit',
 };
 
 export function generateSEO(config: SEOConfig = {}): Metadata {
@@ -138,9 +138,9 @@ export function generateStructuredData(type: 'Organization' | 'WebSite' | 'Servi
         availableLanguage: ['English'],
       },
       sameAs: [
-        'https://www.linkedin.com/in/iitdeveloper-com-655a57213/',
+        'https://www.linkedin.com/company/iitdeveloper/',
         'https://github.com/iitdeveloper-git',
-        'https://instagram.com/iitdeveloper_official',
+        'https://www.instagram.com/iitdeveloper',
         'https://x.com/developer_iit',
       ],
     },

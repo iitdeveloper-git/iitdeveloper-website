@@ -14,7 +14,6 @@ const footerLinks = {
   ],
   company: [
     { label: 'About Us', href: '/about' },
-    { label: 'Case Studies', href: '/case-studies' },
     { label: 'Team', href: '/team' },
     { label: 'Careers', href: '/careers' },
     { label: 'Contact', href: '/contact' },
@@ -35,9 +34,9 @@ const footerLinks = {
 
 const socialLinks = [
   // { icon: Github, href: 'https://github.com/iitdeveloper-git', label: 'GitHub' },
-  { icon: Instagram, href: 'https://instagram.com/iitdeveloper_official', label: 'Instagram' },
+  { icon: Instagram, href: 'https://www.instagram.com/iitdeveloper', label: 'Instagram' },
   { icon: Twitter, href: 'https://x.com/developer_iit', label: 'Twitter/X' },
-  { icon: Linkedin, href: 'https://www.linkedin.com/in/iitdeveloper-com-655a57213/', label: 'LinkedIn' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/company/iitdeveloper/', label: 'LinkedIn' },
   { icon: Mail, href: 'mailto:info@iitdeveloper.com', label: 'Email' },
 ];
 

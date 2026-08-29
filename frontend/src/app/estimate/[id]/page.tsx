@@ -21,6 +21,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Footer from '@/components/layout/Footer';
 
 export default function ViewEstimatePage() {
   const params = useParams();
@@ -52,35 +53,41 @@ export default function ViewEstimatePage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <Loader2 className="w-12 h-12 animate-spin text-accent-neon mx-auto mb-4" />
-          <p className="text-lg text-muted-foreground">Loading estimate...</p>
+      <>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <Loader2 className="w-12 h-12 animate-spin text-accent-neon mx-auto mb-4" />
+            <p className="text-lg text-muted-foreground">Loading estimate...</p>
+          </div>
         </div>
-      </div>
+        <Footer />
+      </>
     );
   }
 
   if (error || !estimate) {
     return (
-      <div className="min-h-screen flex items-center justify-center py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl glass-strong mb-6">
-              <XCircle className="w-10 h-10 text-red-400" />
+      <>
+        <div className="min-h-screen flex items-center justify-center py-32">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl mx-auto text-center">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl glass-strong mb-6">
+                <XCircle className="w-10 h-10 text-red-400" />
+              </div>
+              <h1 className="text-4xl font-bold mb-4">Estimate Not Found</h1>
+              <p className="text-lg text-muted-foreground/70 mb-8">
+                {error || "The estimate you're looking for doesn't exist or has been removed."}
+              </p>
+              <Link href="/estimate">
+                <Button variant="neon" size="lg">
+                  Create New Estimate
+                </Button>
+              </Link>
             </div>
-            <h1 className="text-4xl font-bold mb-4">Estimate Not Found</h1>
-            <p className="text-lg text-muted-foreground/70 mb-8">
-              {error || "The estimate you're looking for doesn't exist or has been removed."}
-            </p>
-            <Link href="/estimate">
-              <Button variant="neon" size="lg">
-                Create New Estimate
-              </Button>
-            </Link>
           </div>
         </div>
-      </div>
+        <Footer />
+      </>
     );
   }
 
@@ -101,6 +108,7 @@ export default function ViewEstimatePage() {
   const StatusIcon = statusIcons[estimate.status];
 
   return (
+    <>
     <div className="min-h-screen py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -278,5 +286,7 @@ export default function ViewEstimatePage() {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 }

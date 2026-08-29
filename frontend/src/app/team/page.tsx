@@ -30,8 +30,8 @@ const teamMembers = [
     bio: 'Security-focused DevOps expert ensuring robust infrastructure and secure deployments. Passionate about automation and best practices.',
     avatar: 'NG',
     social: {
-      linkedin: 'https://www.linkedin.com/in/nikhil-goyal-6576261a9',
-      github: 'https://github.com/cyberRuptor',
+      linkedin: '#',
+      github: '#',
       twitter: '#',
     },
     gradient: 'from-secondary to-primary',

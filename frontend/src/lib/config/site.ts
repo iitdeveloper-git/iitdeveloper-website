@@ -59,11 +59,11 @@ export const siteConfig = {
     /** GitHub org URL or null to hide */
     github: 'https://github.com/iitdeveloper-git',
     /** LinkedIn company page or null to hide */
-    linkedin: 'https://www.linkedin.com/in/iitdeveloper-com-655a57213/',
+    linkedin: 'https://www.linkedin.com/company/iitdeveloper/',
     /** Twitter/X handle URL or null to hide */
     twitter: 'https://x.com/developer_iit',
     /** Instagram page or null to hide */
-    instagram: 'https://instagram.com/iitdeveloper_official',
+    instagram: 'https://www.instagram.com/iitdeveloper',
     /** Email for social display */
     email: 'info@iitdeveloper.com',
   },
