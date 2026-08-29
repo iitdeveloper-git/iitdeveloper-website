@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import PricingEstimator from '@/components/pricing/PricingEstimator';
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function EstimatePage() {
     <>
       <Header />
       <PricingEstimator />
+      <Footer />
     </>
   );
 }
