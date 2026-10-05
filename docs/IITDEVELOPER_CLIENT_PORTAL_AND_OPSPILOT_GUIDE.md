@@ -14,6 +14,20 @@
 
 ---
 
+## 0. Universal Multi-Client Architecture (PulsarIP, LegalSujhav, KKE & Beyond)
+
+This platform is **NOT limited to student inquiries** — it is a **Universal Client Portal for every business IITDeveloper serves**:
+
+| Client & Industry | Inbound Lead Type | Typical Services Invoiced | Growixa Remarketing Campaigns |
+| :--- | :--- | :--- | :--- |
+| **PulsarIP** *(Intellectual Property & Patents)* | Patent Filings, Trademark Searches, Copyright Disputes | Patent Registration Retainers, Annual Maintenance | *"New International Patent Filings Guidelines"* / Trademark Deadlines |
+| **Knowledge King Education** *(Education)* | Student Course Inquiries, Admission Requests | Annual Hosting, LMS Portal, AMC | *"New JEE/NEET Batch Admissions Open — Scholarships"* |
+| **LegalSujhav** *(Legal Consultations)* | Case Inquiries, Corporate Advisory, Retainers | Retainer Agreements, Drafting Fees | *"Annual Corporate Compliance Audit Alert"* |
+| **Healthcare / Clinics** | Patient Consultations, Dental Appointments | Clinic Website & Appointment Engine Hosting | Preventive Healthcare Broadcasts, Camp Notices |
+| **Corporate / B2B SaaS** | Product Demos, Sales Consultations | Custom Software Development Milestones | Feature Updates, Case Studies, Retargeting |
+
+---
+
 ## 1. The Master Ecosystem Flywheel
 
 Google Sheets has been **completely eliminated**. Data lives in your self-hosted PostgreSQL database, feeds the Portal UI, triggers real-time transactional alerts via **Sendrin**, and automatically builds the client's marketing list inside **Growixa**:
@@ -118,17 +132,18 @@ CREATE TABLE portal_users (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- 3. Inbound Student & Customer Leads
+-- 3. Universal Inbound Leads (PulsarIP, Knowledge King, LegalSujhav, etc.)
 CREATE TABLE portal_leads (
     id SERIAL PRIMARY KEY,
     client_slug VARCHAR(64) NOT NULL REFERENCES portal_clients(slug) ON DELETE CASCADE,
-    student_name VARCHAR(128) NOT NULL,
-    mobile_number VARCHAR(32) NOT NULL,
+    contact_name VARCHAR(128) NOT NULL,              -- Client Customer / Student / Lead Name
+    phone VARCHAR(32) NOT NULL,                      -- Primary Phone / Mobile
     email VARCHAR(255),
-    target_course VARCHAR(128),
-    query_message TEXT,
-    status VARCHAR(32) DEFAULT 'NEW',                -- 'NEW', 'CONTACTED', 'ADMITTED', 'LOST'
-    counselor_notes TEXT,
+    service_or_subject VARCHAR(128),                 -- PulsarIP: 'Patent Filing', KKE: 'JEE/NEET', Legal: 'Trademark'
+    query_message TEXT,                              -- Customer's requirement or message
+    status VARCHAR(32) DEFAULT 'NEW',                -- 'NEW', 'CONTACTED', 'CONVERTED', 'LOST'
+    staff_notes TEXT,                                -- Internal follow-up notes
+    source_url VARCHAR(255),                         -- Page where the lead originated
     sendrin_notified BOOLEAN DEFAULT FALSE,
     growixa_synced BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
