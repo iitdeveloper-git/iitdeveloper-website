@@ -14,6 +14,11 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
+import {
+  checkRateLimit,
+  createRateLimitResponse,
+  getRateLimitHeaders,
+} from '@/lib/security/rate-limiter';
 import { z } from 'zod';
 import {
   getClientBySlug,
@@ -26,22 +31,22 @@ import {
 // ─── Validation schema ─────────────────────────────────────────────────────────
 
 const DispatchFieldSchema = z.object({
-  label: z.string().min(1),
-  value: z.string(),
+  label: z.string().min(1).max(100),
+  value: z.string().max(1000),
 });
 
 const DispatchSchema = z.object({
   /** client slug, e.g. "knowledgekingedu" */
-  client_id: z.string().min(1, 'client_id is required'),
+  client_id: z.string().min(1, 'client_id is required').max(100),
   /** Sendrin event key, e.g. "inquiry.received" */
-  event_type: z.string().default('inquiry.received'),
+  event_type: z.string().default('inquiry.received').refine((v) => v.length <= 100),
   /** Optional sub-category, e.g. "admission", "appointment" */
-  category: z.string().optional(),
+  category: z.string().max(100).optional(),
 
   contact: z.object({
-    name: z.string().min(1, 'contact.name is required'),
-    phone: z.string().optional(),
-    email: z.string().email().optional().or(z.literal('')),
+    name: z.string().min(1, 'contact.name is required').max(150),
+    phone: z.string().max(50).optional(),
+    email: z.string().email().max(150).optional().or(z.literal('')),
   }),
 
   notification: z.object({
@@ -55,8 +60,8 @@ const DispatchSchema = z.object({
   }).optional(),
 
   /** Dynamic key-value pairs from any form */
-  fields: z.array(DispatchFieldSchema).default([]),
-  message: z.string().optional(),
+  fields: z.array(DispatchFieldSchema).max(30).default([]),
+  message: z.string().max(5000).optional(),
 
   metadata: z.object({
     source_url: z.string().optional(),
@@ -89,6 +94,22 @@ export async function OPTIONS(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   const requestOrigin = request.headers.get('origin') ?? '';
+
+  // 0. Extract Client IP & Check Rate Limiting (15 requests / 60 seconds per IP)
+  const clientIp =
+    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+    request.headers.get('x-real-ip') ||
+    '127.0.0.1';
+
+  const rateLimit = checkRateLimit(clientIp, {
+    windowMs: 60_000,
+    maxRequests: 15,
+    namespace: 'dispatch',
+  });
+
+  if (!rateLimit.allowed) {
+    return createRateLimitResponse(rateLimit, corsHeaders(requestOrigin || '*'));
+  }
 
   // 1. Parse body
   let body: unknown;
@@ -175,7 +196,13 @@ export async function POST(request: NextRequest) {
 
   return NextResponse.json(
     { success: true, lead_id: lead.id, status: 'dispatched' },
-    { status: 202, headers: corsHeaders(responseOrigin) }
+    {
+      status: 202,
+      headers: {
+        ...corsHeaders(responseOrigin),
+        ...getRateLimitHeaders(rateLimit),
+      },
+    }
   );
 }
 
