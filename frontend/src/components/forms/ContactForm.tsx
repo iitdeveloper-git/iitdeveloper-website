@@ -99,30 +99,35 @@ export default function ContactForm() {
         return;
       }
 
-      // Prepare lead data
-      const leadData = {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone || undefined,
-        company: formData.company || undefined,
-        source: 'contact_form',
+      // Prepare dispatch payload for IITDeveloper Central Gateway
+      const dispatchUrl = process.env.NEXT_PUBLIC_DISPATCH_URL || 'https://api.iitdeveloper.com/api/dispatch';
+      const dispatchPayload = {
+        client_id: 'iitdeveloper',
+        event_type: 'inquiry.received',
+        category: 'contact_form',
+        contact: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || undefined,
+        },
         message: formData.message,
-        // Top-level fields so the API Zod schema picks them up for confirmation emails
-        service_interest: formData.service || undefined,
-        budget_range: formData.budget || undefined,
-        lead_data: {
-          form_type: 'contact',
-          submitted_at: new Date().toISOString(),
+        fields: [
+          { label: 'Company', value: formData.company || 'N/A' },
+          { label: 'Service Interest', value: formData.service || 'Not specified' },
+          { label: 'Budget Range', value: formData.budget || 'Not specified' },
+        ],
+        metadata: {
+          source_url: typeof window !== 'undefined' ? window.location.href : undefined,
         },
       };
 
-      // Submit to API
-      const response = await fetch('/api/leads', {
+      // Submit to Central Dispatch Gateway
+      const response = await fetch(dispatchUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(leadData),
+        body: JSON.stringify(dispatchPayload),
       });
 
       if (!response.ok) {

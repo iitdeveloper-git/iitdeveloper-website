@@ -66,5 +66,4 @@ setup.sh
 # Development only
 .eslintrc.json
 .prettierrc
-tsconfig.json
 next.config.js.backup
