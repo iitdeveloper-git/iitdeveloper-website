@@ -185,11 +185,13 @@ export default function CareersPage() {
                   View Open Positions
                 </Button>
               </a>
+              {/* Team CTA temporarily disabled; see docs/COMMENTED_SECTIONS.md.
               <Link href="/team">
                 <Button size="lg" variant="neon" className="">
                   Meet The Team
                 </Button>
               </Link>
+              */}
             </motion.div>
           </motion.div>
         </div>

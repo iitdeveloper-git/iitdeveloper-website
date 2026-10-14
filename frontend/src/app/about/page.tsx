@@ -343,11 +343,13 @@ export default function AboutPage() {
                   Get Started
                 </Button>
               </Link>
+              {/* Team CTA temporarily disabled; see docs/COMMENTED_SECTIONS.md.
               <Link href="/team">
                 <Button size="lg" variant="neon" className="">
                   Meet The Team
                 </Button>
               </Link>
+              */}
             </div>
           </motion.div>
         </div>

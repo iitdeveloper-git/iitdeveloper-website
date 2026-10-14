@@ -73,9 +73,10 @@ const navItems: NavItem[] = [
   { label: 'Open Source', href: '/open-source' },
   {
     label: 'Company',
-    href: '/team',
+    // href: '/team', // Temporarily disabled; see docs/COMMENTED_SECTIONS.md.
+    href: '/about',
     submenu: [
-      { label: 'Team', href: '/team' },
+      // { label: 'Team', href: '/team' }, // Temporarily disabled.
       { label: 'Careers', href: '/careers' },
     ],
   },

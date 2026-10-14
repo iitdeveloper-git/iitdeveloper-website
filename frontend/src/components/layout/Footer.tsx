@@ -14,7 +14,7 @@ const footerLinks = {
   ],
   company: [
     { label: 'About Us', href: '/about' },
-    { label: 'Team', href: '/team' },
+    // { label: 'Team', href: '/team' }, // Temporarily disabled; see docs/COMMENTED_SECTIONS.md.
     { label: 'Careers', href: '/careers' },
     { label: 'Contact', href: '/contact' },
   ],
