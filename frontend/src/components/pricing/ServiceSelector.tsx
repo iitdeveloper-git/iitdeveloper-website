@@ -77,7 +77,7 @@ export default function ServiceSelector({ isOpen, onClose, onSelect }: ServiceSe
                   <h2 className="text-3xl font-bold gradient-text">Add Service</h2>
                   <button
                     onClick={onClose}
-                    className="p-2.5 rounded-xl glass-hover hover:bg-white/[0.08] transition-all"
+                    className="p-2.5 rounded-xl glass-hover hover:bg-surface-muted transition-all"
                   >
                     <X className="w-6 h-6" />
                   </button>
@@ -85,7 +85,7 @@ export default function ServiceSelector({ isOpen, onClose, onSelect }: ServiceSe
 
                 {/* Search */}
                 <div className="relative mb-6">
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                   <Input
                     type="text"
                     placeholder="Search services..."
@@ -102,7 +102,7 @@ export default function ServiceSelector({ isOpen, onClose, onSelect }: ServiceSe
                     className={`px-5 py-2.5 rounded-xl text-sm font-medium transition-all ${
                       selectedCategory === null
                         ? 'bg-primary/20 text-primary shadow-glow-sm'
-                        : 'glass-hover hover:bg-white/[0.05]'
+                        : 'glass-hover hover:bg-surface-muted/80'
                     }`}
                   >
                     All Services
@@ -114,7 +114,7 @@ export default function ServiceSelector({ isOpen, onClose, onSelect }: ServiceSe
                       className={`px-5 py-2.5 rounded-xl text-sm font-medium transition-all ${
                         selectedCategory === category.id
                           ? 'bg-primary/20 text-primary shadow-glow-sm'
-                          : 'glass-hover hover:bg-white/[0.05]'
+                          : 'glass-hover hover:bg-surface-muted/80'
                       }`}
                     >
                       {category.label}
@@ -127,7 +127,7 @@ export default function ServiceSelector({ isOpen, onClose, onSelect }: ServiceSe
               <div className="flex-1 min-h-0 overflow-y-auto p-8">
                 {filteredServices.length === 0 ? (
                   <div className="text-center py-12">
-                    <p className="text-muted-foreground/70">No services found</p>
+                    <p className="text-muted-foreground">No services found</p>
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -160,7 +160,7 @@ export default function ServiceSelector({ isOpen, onClose, onSelect }: ServiceSe
                               <div className="flex items-center justify-between">
                                 <p className="text-primary font-semibold">
                                   {formatCurrency(service.basePrice)}
-                                  <span className="text-xs text-muted-foreground/70 ml-1">
+                                  <span className="text-xs text-muted-foreground ml-1">
                                     / {service.unit}
                                   </span>
                                 </p>

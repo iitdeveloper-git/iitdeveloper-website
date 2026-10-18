@@ -23,7 +23,7 @@ export function GridPlane() {
     >
       <planeGeometry args={[50, 50, 50, 50]} />
       <meshBasicMaterial
-        color="#00539C"
+        color="#FFB162"
         wireframe
         transparent
         opacity={0.1}

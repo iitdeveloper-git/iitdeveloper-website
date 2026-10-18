@@ -167,7 +167,7 @@ export default function ContactForm() {
         <CardTitle className="text-3xl">Get In Touch</CardTitle>
         <CardDescription className="text-base">
           Tell us about your project. We promise to reply faster than your last agency did.
-          <span className="block text-xs text-muted-foreground/60 mt-2 italic">
+          <span className="block text-xs text-muted-foreground mt-2 italic">
             ⚡ Average response time: 4 hours. Not 4 days.
           </span>
         </CardDescription>
@@ -318,7 +318,7 @@ export default function ContactForm() {
                 rows={6}
                 className="resize-none"
               />
-              <p className="text-xs text-muted-foreground/60">
+              <p className="text-xs text-muted-foreground">
                 The more details, the better. We won't judge if you use bullet points.
               </p>
             </div>
@@ -347,7 +347,7 @@ export default function ContactForm() {
               </span>
             </Button>
 
-            <p className="text-xs text-center text-muted-foreground/60">
+            <p className="text-xs text-center text-muted-foreground">
               By submitting this form, you agree to our{' '}
               <a href="/privacy" className="text-primary hover:underline">
                 Privacy Policy

@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 export default function OSSBusinessCTA() {
   return (
-    <section className="py-16 lg:py-20 bg-white/[0.02]" aria-labelledby="oss-business-heading">
+    <section className="py-16 lg:py-20 bg-surface-muted/40" aria-labelledby="oss-business-heading">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <h2 id="oss-business-heading" className="text-2xl sm:text-3xl font-bold mb-4 tracking-tight">

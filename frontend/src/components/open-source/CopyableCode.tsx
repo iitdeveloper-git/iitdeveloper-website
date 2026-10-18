@@ -25,22 +25,22 @@ export default function CopyableCode({ code, lang, label, className }: CopyableC
   };
 
   return (
-    <div className={cn('rounded-xl border border-white/[0.08] bg-[#080d16] overflow-hidden', className)}>
-      <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/[0.06] bg-white/[0.02]">
+    <div className={cn('rounded-xl border border-border-subtle bg-surface-darker overflow-hidden', className)}>
+      <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/[0.06] bg-surface-muted/40">
         <div className="flex items-center gap-2 min-w-0">
           <span className="flex gap-1.5 shrink-0" aria-hidden="true">
-            <span className="w-2.5 h-2.5 rounded-full bg-white/10" />
-            <span className="w-2.5 h-2.5 rounded-full bg-white/10" />
-            <span className="w-2.5 h-2.5 rounded-full bg-white/10" />
+            <span className="w-2.5 h-2.5 rounded-full bg-surface-muted" />
+            <span className="w-2.5 h-2.5 rounded-full bg-surface-muted" />
+            <span className="w-2.5 h-2.5 rounded-full bg-surface-muted" />
           </span>
           {label && (
-            <span className="text-xs text-muted-foreground/60 font-mono truncate">{label}</span>
+            <span className="text-xs text-muted-foreground font-mono truncate">{label}</span>
           )}
         </div>
         <button
           type="button"
           onClick={handleCopy}
-          className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground/70 hover:text-secondary transition-colors shrink-0"
+          className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-secondary transition-colors shrink-0"
           aria-label={copied ? 'Copied to clipboard' : 'Copy code to clipboard'}
         >
           {copied ? (

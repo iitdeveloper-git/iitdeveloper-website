@@ -1,0 +1,11 @@
+/* Static presentation is the default; Framer enhances it after hydration. */
+[data-hero-reveal] { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .homepage-hero *, .homepage-hero *::before, .homepage-hero *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .homepage-hero [data-hero-reveal] { opacity: 1 !important; transform: none !important; }
+  .homepage-hero .engineering-lab { transform: none !important; }
+}

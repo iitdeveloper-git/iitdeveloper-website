@@ -12,69 +12,42 @@ export default function TechBackground() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    let animId: number;
-    const particles: { x: number; y: number; vx: number; vy: number; r: number }[] = [];
-    const COUNT = 50;
-
-    const resize = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    };
-    resize();
-    window.addEventListener('resize', resize);
-
-    for (let i = 0; i < COUNT; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        r: Math.random() * 2 + 1,
-      });
-    }
-
+    // Fixed architectural grid: preserve the canvas and brand colors without
+    // random particles or a continuous background render loop.
     const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Draw connections
-      for (let i = 0; i < COUNT; i++) {
-        for (let j = i + 1; j < COUNT; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 150) {
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(0, 83, 156, ${(1 - dist / 150) * 0.25})`;
-            ctx.lineWidth = 1;
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
-          }
+      const width = canvas.offsetWidth;
+      const height = canvas.offsetHeight;
+      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = width * ratio;
+      canvas.height = height * ratio;
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+      ctx.clearRect(0, 0, width, height);
+      const accent = getComputedStyle(document.documentElement).getPropertyValue('--color-accent').trim() || '#FFB162';
+      ctx.strokeStyle = accent;
+      ctx.fillStyle = accent;
+      ctx.lineWidth = 1;
+      for (let row = 0; row < 5; row++) {
+        for (let column = 0; column < 10; column++) {
+          const x = (column + 0.5) * width / 10;
+          const y = (row + 0.5) * height / 5;
+          ctx.beginPath();
+          ctx.moveTo(x, y);
+          if (column < 9) ctx.lineTo(x + width / 10, y);
+          ctx.moveTo(x, y);
+          if (row < 4 && column % 3 === row % 3) ctx.lineTo(x, y + height / 5);
+          ctx.globalAlpha = 0.25;
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.arc(x, y, 1, 0, Math.PI * 2);
+          ctx.globalAlpha = 0.7;
+          ctx.fill();
         }
       }
-
-      // Draw dots
-      for (const p of particles) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(0, 115, 204, 0.7)';
-        ctx.fill();
-
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-      }
-
-      animId = requestAnimationFrame(draw);
     };
-
+    const observer = new ResizeObserver(draw);
+    observer.observe(canvas);
     draw();
-
-    return () => {
-      cancelAnimationFrame(animId);
-      window.removeEventListener('resize', resize);
-    };
+    return () => observer.disconnect();
   }, []);
 
   return (

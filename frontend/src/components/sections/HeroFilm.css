@@ -1,0 +1,94 @@
+/* THE LIVING SYSTEM: local geometry, using the established brand palette. */
+.hero-film { width: 100%; position: relative; isolation: isolate; }
+.hero-film__video, .hero-film__poster, .hero-film > svg { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; }
+.hero-film .engineering-lab__guides { stroke: hsl(var(--lime)); stroke-opacity: .35; stroke-width: .7; }
+.hero-film .engineering-lab__orbit { stroke: hsl(var(--lime)); stroke-width: 1; animation: none; }
+.hero-film .engineering-lab__signal { fill: hsl(var(--lime)); }
+.hero-film .engineering-lab__connections { stroke: hsl(var(--lime)); stroke-width: 1.5; }
+.hero-film .engineering-lab__core { stroke: hsl(var(--lime)); stroke-width: 1.5; }
+.hero-film .engineering-lab__nodes rect { fill: hsl(var(--background)); stroke: hsl(var(--lime)); }
+.hero-film .engineering-lab__nodes text { fill: hsl(var(--foreground)); font: 9px var(--font-geist-mono), monospace; letter-spacing: 1px; }
+.hero-film__structure { stroke: hsl(var(--lime)); stroke-width: .8; stroke-opacity: .65; }
+.hero-film__hubs { stroke: hsl(var(--lime)); stroke-width: 1; }
+.hero-film__domain-labels { fill: hsl(var(--muted-foreground)); font: 8px var(--font-geist-mono), monospace; letter-spacing: 1px; }
+.hero-film__pulse { stroke: hsl(var(--lime)); stroke-width: 1.5; stroke-dasharray: 8 112; animation: system-transfer 6s linear infinite; }
+.hero-film[data-paused='true'] .hero-film__pulse { animation-play-state: paused; }
+@keyframes system-transfer { from { stroke-dashoffset: 120; } to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) { .hero-film__pulse { animation: none; } }
+@media (max-width: 639px) { .hero-film__pulse { animation-duration: 9s; } }
+/* Mobile keeps the same lightweight SVG and all labels, with quieter motion. */
+@media (max-width: 639px) {
+  .hero-film__pulse { animation-duration: 12s; }
+  .hero-film .engineering-lab__nodes text { font-size: 11px; letter-spacing: .3px; }
+  .hero-film__domain-labels { font-size: 10px; letter-spacing: .5px; }
+}
+
+/* The original blueprint is the drawing plane beneath the physical assembly. */
+.ecosystem__drawing-plane { opacity: .45; }
+.ecosystem { stroke-width: 1; }
+.ecosystem__labels {
+  fill: hsl(var(--foreground));
+  font: 10px var(--font-geist-mono), monospace;
+  letter-spacing: .8px;
+}
+.ecosystem__labels .ecosystem__caption { fill: hsl(var(--lime)); font-size: 9px; }
+.ecosystem__layer { transition: transform 1.2s cubic-bezier(.22, 1, .36, 1); }
+/* One shared 14-second clock: origin → alignment → hold → return.
+   Matching endpoint poses and eased velocity prevent a jump at the seam. */
+.hero-film { --ecosystem-duration: 14s; }
+.ecosystem__camera {
+  transform-origin: 300px 270px;
+  animation: ecosystem-camera var(--ecosystem-duration) ease-in-out infinite;
+}
+.ecosystem__arrival {
+  transform-origin: 300px 300px;
+  animation: ecosystem-origin var(--ecosystem-duration) cubic-bezier(.45, 0, .25, 1) infinite;
+}
+.ecosystem__arrival--cloud { --origin-y: 0px; --origin-x: 0px; }
+.ecosystem__arrival--automation { --origin-y: 54px; --origin-x: -12px; animation-name: ecosystem-align-routing; }
+.ecosystem__arrival--intelligence { --origin-y: 108px; --origin-x: 12px; animation-name: ecosystem-align-core; }
+.ecosystem__arrival--product { --origin-y: 166px; --origin-x: 0px; animation-name: ecosystem-align-canopy; }
+.ecosystem__flow { stroke-dasharray: 24 440; animation: ecosystem-flow var(--ecosystem-duration) linear infinite; }
+.ecosystem__material-light { animation: ecosystem-light var(--ecosystem-duration) ease-in-out infinite; }
+.ecosystem__fasteners { animation: ecosystem-fasteners var(--ecosystem-duration) ease-in-out infinite; }
+.engineering-lab[data-expanded='true'] .ecosystem__layer--product { transform: translateY(-42px); }
+.engineering-lab[data-expanded='true'] .ecosystem__layer--intelligence { transform: translateY(-14px); }
+.engineering-lab[data-expanded='true'] .ecosystem__layer--automation { transform: translateY(14px); }
+.engineering-lab[data-expanded='true'] .ecosystem__layer--cloud { transform: translateY(32px); }
+.hero-film[data-paused='true'] .ecosystem * { animation-play-state: paused; }
+@keyframes ecosystem-origin {
+  0%, 100% { transform: translate(var(--origin-x), var(--origin-y)) scale(.78); }
+  20%, 70% { transform: translate(0, 0) scale(1); }
+}
+@keyframes ecosystem-align-routing {
+  0%, 6%, 100% { transform: translate(var(--origin-x), var(--origin-y)) scale(.78); }
+  26%, 70% { transform: translate(0, 0) scale(1); }
+}
+@keyframes ecosystem-align-core {
+  0%, 12%, 100% { transform: translate(var(--origin-x), var(--origin-y)) scale(.78); }
+  32%, 70% { transform: translate(0, 0) scale(1); }
+}
+@keyframes ecosystem-align-canopy {
+  0%, 18%, 100% { transform: translate(var(--origin-x), var(--origin-y)) scale(.78); }
+  38%, 70% { transform: translate(0, 0) scale(1); }
+}
+@keyframes ecosystem-camera {
+  0%, 100% { transform: translateY(3px) scale(.985); }
+  50% { transform: translateY(-3px) scale(1.015); }
+}
+@keyframes ecosystem-light { 0%, 100% { opacity: .15; } 42%, 56% { opacity: .9; } 75% { opacity: .3; } }
+@keyframes ecosystem-fasteners { 0%, 18%, 100% { transform: translateY(-12px); } 38%, 70% { transform: translateY(0); } }
+@keyframes ecosystem-flow { to { stroke-dashoffset: -464; } }
+/* Exploration presents stable layers rather than competing with the sequence. */
+.engineering-lab[data-expanded='true'] .ecosystem__arrival,
+.engineering-lab[data-expanded='true'] .ecosystem__camera,
+.engineering-lab[data-expanded='true'] .ecosystem__fasteners { animation: none; }
+.hero-film .hero-film__pulse { animation-duration: var(--ecosystem-duration); }
+@media (prefers-reduced-motion: reduce) {
+  .ecosystem__arrival, .ecosystem__flow, .ecosystem__camera, .ecosystem__material-light, .ecosystem__fasteners { animation: none; }
+  .ecosystem__layer { transition: none; }
+}
+@media (max-width: 639px) {
+  .ecosystem__labels { font-size: 14px; letter-spacing: .2px; }
+  .ecosystem__labels .ecosystem__caption { font-size: 12px; }
+}

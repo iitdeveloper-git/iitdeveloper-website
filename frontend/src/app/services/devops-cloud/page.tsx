@@ -220,7 +220,7 @@ export default function DevOpsCloudPage() {
                 key={index}
                 className="px-6 py-3 rounded-lg bg-accent/10 border border-accent/20 hover:border-accent/40 transition-all hover:shadow-glow-purple"
               >
-                <span className="font-medium text-white">{tech}</span>
+                <span className="font-medium text-foreground">{tech}</span>
               </div>
             ))}
           </div>
@@ -243,8 +243,8 @@ export default function DevOpsCloudPage() {
             {processSteps.map((step, index) => (
               <div key={index} className="relative">
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-glow-purple">
-                    <span className="text-2xl font-bold text-white">{step.number}</span>
+                  <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-glow-purple text-primary-foreground">
+                    <span className="text-2xl font-bold text-primary-foreground">{step.number}</span>
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
@@ -281,7 +281,7 @@ export default function DevOpsCloudPage() {
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="px-4 py-1 rounded-full bg-gradient-to-r from-primary to-accent text-white text-sm font-semibold">
+                    <span className="px-4 py-1 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-semibold">
                       Most Popular
                     </span>
                   </div>
@@ -317,7 +317,7 @@ export default function DevOpsCloudPage() {
       {/* Open Source Cross-Link */}
       <section className="py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 lg:p-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-10 text-center lg:text-left">
+          <div className="max-w-4xl mx-auto rounded-2xl border border-white/[0.08] bg-surface-muted/40 p-8 lg:p-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-10 text-center lg:text-left">
             <div className="flex-1">
               <h2 className="text-2xl font-bold mb-2 tracking-tight">We build the tools we use.</h2>
               <p className="text-muted-foreground/80">

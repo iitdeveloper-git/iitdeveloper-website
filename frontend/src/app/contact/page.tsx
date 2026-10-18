@@ -61,7 +61,7 @@ export default function ContactPage() {
             Have a project in mind? Need a quote? Just want to chat about tech?
             We're all ears. And keyboards.
           </p>
-          <p className="text-sm text-muted-foreground/60 italic mt-4">
+          <p className="text-sm text-muted-foreground italic mt-4">
             💬 No sales pressure. No corporate jargon. Just real humans (and some helpful AI).
           </p>
         </motion.div>
@@ -94,7 +94,7 @@ export default function ContactPage() {
                     href={info.href}
                     className="block group"
                   >
-                    <Card glass premium className="hover:bg-white/[0.06] transition-all border-white/[0.08] hover:border-white/[0.15]">
+                    <Card glass premium className="hover:bg-surface-muted transition-all border-white/[0.08] hover:border-white/[0.15]">
                       <CardContent className="p-6">
                         <div className="flex items-start space-x-4">
                           <div className="w-12 h-12 rounded-xl bg-accent-neon/10 flex items-center justify-center group-hover:bg-accent-neon/20 transition-all shadow-glow-sm group-hover:shadow-glow flex-shrink-0">
@@ -107,7 +107,7 @@ export default function ContactPage() {
                             <p className="text-lg font-semibold text-foreground group-hover:text-accent-neon transition-colors">
                               {info.content}
                             </p>
-                            <p className="text-xs text-muted-foreground/60 mt-1">
+                            <p className="text-xs text-muted-foreground mt-1">
                               {info.subtext}
                             </p>
                           </div>
@@ -172,7 +172,7 @@ export default function ContactPage() {
                       <br />
                       Remote-first team
                       <br />
-                      <span className="text-xs text-muted-foreground/60 italic">
+                      <span className="text-xs text-muted-foreground italic">
                         (Working from coffee shops worldwide)
                       </span>
                     </p>

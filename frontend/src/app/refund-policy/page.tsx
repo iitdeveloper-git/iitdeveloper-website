@@ -94,7 +94,7 @@ export default function RefundPolicyPage() {
                     <p className="text-muted-foreground/90 font-light leading-relaxed">
                       If you have questions about an invoice, charge, or wish to discuss project cancellation settlement options, please contact our billing desk:
                     </p>
-                    <div className="mt-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] inline-block">
+                    <div className="mt-4 p-4 rounded-xl bg-surface-muted/40 border border-white/[0.05] inline-block">
                       <p className="text-sm font-semibold text-foreground">IITDeveloper Billing & Finance</p>
                       <p className="text-sm text-muted-foreground">Email: <a href="mailto:info@iitdeveloper.com" className="text-primary hover:underline">info@iitdeveloper.com</a></p>
                       <p className="text-sm text-muted-foreground">Phone: +91 73027 55534</p>

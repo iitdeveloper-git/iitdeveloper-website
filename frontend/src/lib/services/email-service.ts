@@ -283,12 +283,12 @@ export class EmailService {
         (item) => `
         <tr style="border-bottom: 1px solid #e5e7eb;">
           <td style="padding: 16px 8px;">
-            <div style="font-weight: 600; color: #111827;">${item.serviceName}</div>
+            <div style="font-weight: 600; color: #172126;">${item.serviceName}</div>
             <div style="font-size: 14px; color: #6b7280; margin-top: 4px;">
               Qty: ${item.quantity} × ${item.unit}
             </div>
           </td>
-          <td style="padding: 16px 8px; text-align: right; font-weight: 600; color: #111827;">
+          <td style="padding: 16px 8px; text-align: right; font-weight: 600; color: #172126;">
             ${formatCurrency(item.totalPrice)}
           </td>
         </tr>
@@ -304,7 +304,7 @@ export class EmailService {
             estimate.discount.type === 'percentage' ? '%' : ''
           })
           </td>
-          <td style="padding: 12px 8px; text-align: right; color: #10b981;">
+          <td style="padding: 12px 8px; text-align: right; color: #73CBA2;">
             -${formatCurrency((estimate.subtotal * estimate.discount.value) / 100)}
           </td>
         </tr>
@@ -337,7 +337,7 @@ export class EmailService {
     
     <!-- Header -->
     <div style="text-align: center; margin-bottom: 40px;">
-      <h1 style="margin: 0; font-size: 32px; font-weight: 700; background: linear-gradient(135deg, #00539C 0%, #FFD662 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      <h1 style="margin: 0; font-size: 32px; font-weight: 700; background: linear-gradient(135deg, #8BE0BA 0%, #8BE0BA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
         IITDeveloper
       </h1>
     </div>
@@ -347,7 +347,7 @@ export class EmailService {
       
       <!-- Greeting -->
       <div style="padding: 32px; border-bottom: 1px solid #e5e7eb;">
-        <h2 style="margin: 0 0 16px 0; font-size: 24px; font-weight: 700; color: #111827;">
+        <h2 style="margin: 0 0 16px 0; font-size: 24px; font-weight: 700; color: #172126;">
           Hi ${customerName},
         </h2>
         <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #6b7280;">
@@ -356,7 +356,7 @@ export class EmailService {
         ${
           message
             ? `
-          <div style="margin-top: 16px; padding: 16px; background-color: #f3f4f6; border-radius: 8px; border-left: 4px solid #FFD662;">
+          <div style="margin-top: 16px; padding: 16px; background-color: #f3f4f6; border-radius: 8px; border-left: 4px solid #8BE0BA;">
             <p style="margin: 0; font-size: 14px; color: #374151;">
               ${message}
             </p>
@@ -373,7 +373,7 @@ export class EmailService {
             <p style="margin: 0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280;">
               Estimate ID
             </p>
-            <p style="margin: 4px 0 0 0; font-size: 16px; font-weight: 600; font-family: 'Courier New', monospace; color: #111827;">
+            <p style="margin: 4px 0 0 0; font-size: 16px; font-weight: 600; font-family: 'Courier New', monospace; color: #172126;">
               ${estimate.id.substring(0, 8)}
             </p>
           </div>
@@ -381,7 +381,7 @@ export class EmailService {
             <p style="margin: 0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280;">
               Valid Until
             </p>
-            <p style="margin: 4px 0 0 0; font-size: 16px; font-weight: 600; color: #111827;">
+            <p style="margin: 4px 0 0 0; font-size: 16px; font-weight: 600; color: #172126;">
               ${validUntil}
             </p>
           </div>
@@ -411,17 +411,17 @@ export class EmailService {
               <td style="padding: 12px 8px; color: #6b7280;">
                 Subtotal
               </td>
-              <td style="padding: 12px 8px; text-align: right; font-weight: 600; color: #111827;">
+              <td style="padding: 12px 8px; text-align: right; font-weight: 600; color: #172126;">
                 ${formatCurrency(estimate.subtotal)}
               </td>
             </tr>
             ${discountHTML}
             ${taxHTML}
             <tr style="border-top: 2px solid #e5e7eb;">
-              <td style="padding: 16px 8px; font-size: 18px; font-weight: 700; color: #111827;">
+              <td style="padding: 16px 8px; font-size: 18px; font-weight: 700; color: #172126;">
                 Total
               </td>
-              <td style="padding: 16px 8px; text-align: right; font-size: 24px; font-weight: 700; color: #FFD662;">
+              <td style="padding: 16px 8px; text-align: right; font-size: 24px; font-weight: 700; color: #8BE0BA;">
                 ${formatCurrency(estimate.total)}
               </td>
             </tr>
@@ -432,7 +432,7 @@ export class EmailService {
         <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://iitdeveloper.com'}/estimate/${
       estimate.id
     }" 
-           style="display: block; width: 100%; padding: 16px; text-align: center; background: linear-gradient(135deg, #FFD662 0%, #00539C 100%); color: #000; text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 16px; margin-bottom: 16px;">
+           style="display: block; width: 100%; padding: 16px; text-align: center; background: linear-gradient(135deg, #8BE0BA 0%, #8BE0BA 100%); color: #000; text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 16px; margin-bottom: 16px;">
           View Full Estimate
         </a>
 
@@ -475,7 +475,7 @@ export class EmailService {
         <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
           <!-- Header -->
           <tr>
-            <td style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); padding: 40px 40px 30px; border-radius: 8px 8px 0 0;">
+            <td style="background: linear-gradient(135deg, #8BE0BA 0%, #73CBA2 100%); padding: 40px 40px 30px; border-radius: 8px 8px 0 0;">
               <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; text-align: center;">
                 Thank You for Reaching Out!
               </h1>
@@ -485,47 +485,47 @@ export class EmailService {
           <!-- Body -->
           <tr>
             <td style="padding: 40px;">
-              <p style="margin: 0 0 20px; color: #333333; font-size: 16px; line-height: 1.6;">
+              <p style="margin: 0 0 20px; color: #172126; font-size: 16px; line-height: 1.6;">
                 Hi <strong>${data.name}</strong>,
               </p>
               
-              <p style="margin: 0 0 20px; color: #333333; font-size: 16px; line-height: 1.6;">
+              <p style="margin: 0 0 20px; color: #172126; font-size: 16px; line-height: 1.6;">
                 We've received your message and we're excited to learn more about your project! Our team will review your inquiry and get back to you within <strong>24 hours</strong>.
               </p>
               
               <!-- Summary Box -->
-              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f8f9fa; border-radius: 6px; margin: 30px 0;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #F0F6F3; border-radius: 6px; margin: 30px 0;">
                 <tr>
                   <td style="padding: 20px;">
-                    <h3 style="margin: 0 0 15px; color: #6366f1; font-size: 18px; font-weight: 600;">
+                    <h3 style="margin: 0 0 15px; color: #8BE0BA; font-size: 18px; font-weight: 600;">
                       📋 Your Inquiry Summary
                     </h3>
-                    ${data.service ? `<p style="margin: 0 0 10px; color: #555555; font-size: 14px;"><strong>Service Interest:</strong> ${data.service}</p>` : ''}
-                    ${data.budget ? `<p style="margin: 0 0 10px; color: #555555; font-size: 14px;"><strong>Budget Range:</strong> ${data.budget}</p>` : ''}
-                    ${data.company ? `<p style="margin: 0 0 10px; color: #555555; font-size: 14px;"><strong>Company:</strong> ${data.company}</p>` : ''}
-                    <p style="margin: 0 0 10px; color: #555555; font-size: 14px;"><strong>Your Message:</strong></p>
-                    <p style="margin: 0; color: #666666; font-size: 14px; font-style: italic; padding-left: 15px; border-left: 3px solid #6366f1;">
+                    ${data.service ? `<p style="margin: 0 0 10px; color: #4A5C57; font-size: 14px;"><strong>Service Interest:</strong> ${data.service}</p>` : ''}
+                    ${data.budget ? `<p style="margin: 0 0 10px; color: #4A5C57; font-size: 14px;"><strong>Budget Range:</strong> ${data.budget}</p>` : ''}
+                    ${data.company ? `<p style="margin: 0 0 10px; color: #4A5C57; font-size: 14px;"><strong>Company:</strong> ${data.company}</p>` : ''}
+                    <p style="margin: 0 0 10px; color: #4A5C57; font-size: 14px;"><strong>Your Message:</strong></p>
+                    <p style="margin: 0; color: #71837D; font-size: 14px; font-style: italic; padding-left: 15px; border-left: 3px solid #8BE0BA;">
                       ${data.message}
                     </p>
                   </td>
                 </tr>
               </table>
               
-              <p style="margin: 0 0 20px; color: #333333; font-size: 16px; line-height: 1.6;">
+              <p style="margin: 0 0 20px; color: #172126; font-size: 16px; line-height: 1.6;">
                 In the meantime, feel free to:
               </p>
               
-              <ul style="margin: 0 0 20px; padding-left: 20px; color: #333333; font-size: 16px; line-height: 1.8;">
-                <li>Browse our <a href="https://iitdeveloper.com/case-studies" style="color: #6366f1; text-decoration: none;">case studies</a></li>
-                <li>Explore our <a href="https://iitdeveloper.com/services" style="color: #6366f1; text-decoration: none;">services</a></li>
-                <li>Check out our <a href="https://iitdeveloper.com/projects" style="color: #6366f1; text-decoration: none;">portfolio</a></li>
+              <ul style="margin: 0 0 20px; padding-left: 20px; color: #172126; font-size: 16px; line-height: 1.8;">
+                <li>Browse our <a href="https://iitdeveloper.com/case-studies" style="color: #8BE0BA; text-decoration: none;">case studies</a></li>
+                <li>Explore our <a href="https://iitdeveloper.com/services" style="color: #8BE0BA; text-decoration: none;">services</a></li>
+                <li>Check out our <a href="https://iitdeveloper.com/projects" style="color: #8BE0BA; text-decoration: none;">portfolio</a></li>
               </ul>
               
-              <p style="margin: 0 0 20px; color: #333333; font-size: 16px; line-height: 1.6;">
+              <p style="margin: 0 0 20px; color: #172126; font-size: 16px; line-height: 1.6;">
                 If you have any urgent questions, feel free to reply to this email or call us directly.
               </p>
               
-              <p style="margin: 0; color: #333333; font-size: 16px; line-height: 1.6;">
+              <p style="margin: 0; color: #172126; font-size: 16px; line-height: 1.6;">
                 Best regards,<br>
                 <strong>The IIT Developer Team</strong>
               </p>
@@ -534,13 +534,13 @@ export class EmailService {
           
           <!-- Footer -->
           <tr>
-            <td style="padding: 30px 40px; background-color: #f8f9fa; border-radius: 0 0 8px 8px; text-align: center;">
-              <p style="margin: 0 0 10px; color: #666666; font-size: 14px;">
+            <td style="padding: 30px 40px; background-color: #F0F6F3; border-radius: 0 0 8px 8px; text-align: center;">
+              <p style="margin: 0 0 10px; color: #71837D; font-size: 14px;">
                 <strong>IIT Developer</strong><br>
                 Building Tomorrow's Solutions Today
               </p>
               <p style="margin: 0; color: #999999; font-size: 12px;">
-                📧 info@iitdeveloper.com | 🌐 <a href="https://iitdeveloper.com" style="color: #6366f1; text-decoration: none;">iitdeveloper.com</a>
+                📧 info@iitdeveloper.com | 🌐 <a href="https://iitdeveloper.com" style="color: #8BE0BA; text-decoration: none;">iitdeveloper.com</a>
               </p>
             </td>
           </tr>
@@ -570,7 +570,7 @@ export class EmailService {
         <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
           <!-- Header -->
           <tr>
-            <td style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); padding: 30px 40px; border-radius: 8px 8px 0 0;">
+            <td style="background: linear-gradient(135deg, #73CBA2 0%, #5FAF88 100%); padding: 30px 40px; border-radius: 8px 8px 0 0;">
               <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700;">
                 🔔 New Contact Form Submission
               </h1>
@@ -583,33 +583,33 @@ export class EmailService {
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
                 <tr>
                   <td style="padding-bottom: 20px;">
-                    <h2 style="margin: 0 0 5px; color: #333333; font-size: 20px; font-weight: 600;">
+                    <h2 style="margin: 0 0 5px; color: #172126; font-size: 20px; font-weight: 600;">
                       ${data.name}
                     </h2>
-                    ${data.company ? `<p style="margin: 0; color: #666666; font-size: 14px;">${data.company}</p>` : ''}
+                    ${data.company ? `<p style="margin: 0; color: #71837D; font-size: 14px;">${data.company}</p>` : ''}
                   </td>
                 </tr>
                 
                 <!-- Contact Info -->
                 <tr>
-                  <td style="padding: 20px; background-color: #f8f9fa; border-radius: 6px;">
-                    <p style="margin: 0 0 10px; color: #333333; font-size: 14px;">
-                      <strong>📧 Email:</strong> <a href="mailto:${data.email}" style="color: #6366f1; text-decoration: none;">${data.email}</a>
+                  <td style="padding: 20px; background-color: #F0F6F3; border-radius: 6px;">
+                    <p style="margin: 0 0 10px; color: #172126; font-size: 14px;">
+                      <strong>📧 Email:</strong> <a href="mailto:${data.email}" style="color: #8BE0BA; text-decoration: none;">${data.email}</a>
                     </p>
-                    ${data.phone ? `<p style="margin: 0 0 10px; color: #333333; font-size: 14px;"><strong>📱 Phone:</strong> ${data.phone}</p>` : ''}
-                    ${data.service ? `<p style="margin: 0 0 10px; color: #333333; font-size: 14px;"><strong>🎯 Service:</strong> ${data.service}</p>` : ''}
-                    ${data.budget ? `<p style="margin: 0; color: #333333; font-size: 14px;"><strong>💰 Budget:</strong> ${data.budget}</p>` : ''}
+                    ${data.phone ? `<p style="margin: 0 0 10px; color: #172126; font-size: 14px;"><strong>📱 Phone:</strong> ${data.phone}</p>` : ''}
+                    ${data.service ? `<p style="margin: 0 0 10px; color: #172126; font-size: 14px;"><strong>🎯 Service:</strong> ${data.service}</p>` : ''}
+                    ${data.budget ? `<p style="margin: 0; color: #172126; font-size: 14px;"><strong>💰 Budget:</strong> ${data.budget}</p>` : ''}
                   </td>
                 </tr>
                 
                 <!-- Message -->
                 <tr>
                   <td style="padding-top: 25px;">
-                    <h3 style="margin: 0 0 15px; color: #333333; font-size: 16px; font-weight: 600;">
+                    <h3 style="margin: 0 0 15px; color: #172126; font-size: 16px; font-weight: 600;">
                       Message:
                     </h3>
-                    <div style="padding: 20px; background-color: #f8f9fa; border-left: 4px solid #6366f1; border-radius: 6px;">
-                      <p style="margin: 0; color: #333333; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">
+                    <div style="padding: 20px; background-color: #F0F6F3; border-left: 4px solid #8BE0BA; border-radius: 6px;">
+                      <p style="margin: 0; color: #172126; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">
 ${data.message}
                       </p>
                     </div>
@@ -620,7 +620,7 @@ ${data.message}
                 <tr>
                   <td style="padding-top: 30px; text-align: center;">
                     <a href="mailto:${data.email}?subject=Re: Your Inquiry to IIT Developer" 
-                       style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">
+                       style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #8BE0BA 0%, #73CBA2 100%); color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">
                       Reply to ${data.name}
                     </a>
                   </td>
@@ -631,7 +631,7 @@ ${data.message}
           
           <!-- Footer -->
           <tr>
-            <td style="padding: 20px 40px; background-color: #f8f9fa; border-radius: 0 0 8px 8px; text-align: center;">
+            <td style="padding: 20px 40px; background-color: #F0F6F3; border-radius: 0 0 8px 8px; text-align: center;">
               <p style="margin: 0; color: #999999; font-size: 12px;">
                 Submitted on ${new Date().toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'short' })}
               </p>

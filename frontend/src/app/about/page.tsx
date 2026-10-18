@@ -119,7 +119,7 @@ export default function AboutPage() {
               Building The
               <br />
               <span className="gradient-text">Future</span>{' '}
-              <span className="text-primary drop-shadow-[0_0_30px_rgba(99,102,241,0.4)]">Together</span>
+              <span className="text-primary drop-shadow-[0_0_30px_rgba(139,224,186,0.4)]">Together</span>
             </motion.h1>
 
             <motion.p
@@ -142,7 +142,7 @@ export default function AboutPage() {
                   className="glass rounded-2xl p-6 border-2 border-primary/20 hover:border-primary/40 transition-all shadow-glow"
                 >
                   <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground/70">{stat.label}</div>
+                  <div className="text-sm text-muted-foreground">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -332,14 +332,14 @@ export default function AboutPage() {
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-primary" />
 
             <h2 className="text-3xl lg:text-5xl font-bold mb-5 tracking-tight">
-              Ready to <span className="text-primary drop-shadow-[0_0_20px_rgba(99,102,241,0.4)]">Work Together?</span>
+              Ready to <span className="text-primary drop-shadow-[0_0_20px_rgba(139,224,186,0.4)]">Work Together?</span>
             </h2>
             <p className="text-xl text-muted-foreground/80 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
               Let's transform your ideas into reality. Get in touch with us today and start your digital transformation journey.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/contact">
-                <Button size="lg" className="shadow-glow hover:shadow-glow-lg bg-primary text-white hover:bg-primary/90">
+                <Button size="lg" className="shadow-glow hover:shadow-glow-lg bg-primary text-primary-foreground hover:bg-primary/90">
                   Get Started
                 </Button>
               </Link>

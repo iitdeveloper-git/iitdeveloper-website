@@ -57,7 +57,7 @@ export default function ChatWidget() {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.1, y: -2 }}
           whileTap={{ scale: 0.95 }}
-          className="w-14 h-14 rounded-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white shadow-lg shadow-green-500/20 hover:shadow-green-500/30 border border-green-500/30 cursor-pointer transition-shadow duration-300"
+          className="w-14 h-14 rounded-full flex items-center justify-center bg-accent text-accent-foreground shadow-lg shadow-accent/20 hover:bg-accent/90 hover:shadow-accent/30 border border-accent/30 cursor-pointer transition-shadow duration-300"
         >
           <WhatsAppIcon className="w-6 h-6 flex-shrink-0" />
         </motion.a>
