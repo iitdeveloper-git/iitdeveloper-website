@@ -329,6 +329,25 @@
 }
 .services-showcase .service-chapter__description { color: hsl(var(--text-secondary)); }
 .services-showcase .service-chapter__tagline { color: hsl(var(--accent)); }
+
+/* Midnight Atelier keeps every editorial panel on a graphite surface so the
+   ivory copy and orange active accents remain readable. The paper artwork can
+   stay warm and light inside the frame; only the surrounding panel chrome is
+   normalized here. */
+[data-theme='midnight-atelier'] .services-showcase .service-chapter:nth-child(odd),
+[data-theme='midnight-atelier'] .services-showcase .service-chapter:nth-child(even) {
+  --panel-foreground: var(--ivory);
+  --panel-muted: var(--warm-muted);
+  --panel-rule: var(--border);
+  --panel-card: var(--surface-elevated);
+  --panel-accent: var(--lime);
+}
+[data-theme='midnight-atelier'] .services-showcase .service-chapter:nth-child(odd) {
+  --panel-background: var(--obsidian);
+}
+[data-theme='midnight-atelier'] .services-showcase .service-chapter:nth-child(even) {
+  --panel-background: var(--surface);
+}
 @media (max-width: 899px) {
   .services-showcase .services-navigation a { min-height: 48px; }
   .services-showcase .service-chapter__art { border-radius: .8rem; }
