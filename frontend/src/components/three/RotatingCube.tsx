@@ -7,7 +7,7 @@ import * as THREE from 'three';
 
 export function RotatingCube({ 
   position,
-  color = '#FFD662',
+  color = '#FFB162',
   size = 1
 }: { 
   position: [number, number, number];

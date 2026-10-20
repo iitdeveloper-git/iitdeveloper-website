@@ -33,15 +33,17 @@ export default function RootLayout({
 }) {
   const organizationSchema = generateStructuredData('Organization');
   const websiteSchema = generateStructuredData('WebSite');
+  const theme = process.env.NEXT_PUBLIC_THEME === 'graphite' ? 'graphite' : 'midnight-atelier';
+  const themeColor = theme === 'midnight-atelier' ? '#1B2632' : '#0D1215';
 
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" data-theme={theme}>
       <head>
         {/* Preconnect to external origins for faster resource loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <meta name="theme-color" content="#0b1a2b" />
+        <meta name="theme-color" content={themeColor} />
         <meta name="color-scheme" content="dark" />
         {/* Structured Data */}
         <script

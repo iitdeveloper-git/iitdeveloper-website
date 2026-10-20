@@ -115,7 +115,7 @@ export default function PrivacyPage() {
                     <p className="text-muted-foreground/90 font-light leading-relaxed">
                       For any inquiries regarding data protection and our privacy practices, please contact our privacy desk:
                     </p>
-                    <div className="mt-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] inline-block">
+                    <div className="mt-4 p-4 rounded-xl bg-surface-muted/40 border border-white/[0.05] inline-block">
                       <p className="text-sm font-semibold text-foreground">IITDeveloper Data Protection Officer</p>
                       <p className="text-sm text-muted-foreground">Email: <a href="mailto:info@iitdeveloper.com" className="text-primary hover:underline">info@iitdeveloper.com</a></p>
                       <p className="text-sm text-muted-foreground">Address: Delhi, India</p>

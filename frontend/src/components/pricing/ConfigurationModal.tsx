@@ -91,13 +91,13 @@ export default function ConfigurationModal({
                 <div className="flex items-center justify-between">
                   <div>
                     <h2 className="text-3xl font-bold gradient-text mb-2">Configure Service</h2>
-                    <p className="text-base text-muted-foreground/70 font-light">
+                    <p className="text-base text-muted-foreground font-light">
                       {service.name}
                     </p>
                   </div>
                   <button
                     onClick={onClose}
-                    className="p-2.5 rounded-xl glass-hover hover:bg-white/[0.08] transition-all"
+                    className="p-2.5 rounded-xl glass-hover hover:bg-surface-muted transition-all"
                   >
                     <X className="w-6 h-6" />
                   </button>
@@ -133,7 +133,7 @@ export default function ConfigurationModal({
                         >
                           <option value="">Select an option...</option>
                           {option.options?.map((opt) => (
-                            <option key={opt.value} value={opt.value} className="bg-[#0a0a0a]">
+                            <option key={opt.value} value={opt.value} className="bg-[#0D1215]">
                               {opt.label}
                               {opt.priceModifier &&
                                 ` (+${formatCurrency(opt.priceModifier)})`}
@@ -198,7 +198,7 @@ export default function ConfigurationModal({
                             className="flex-1"
                           />
                           {option.min !== undefined && option.max !== undefined && (
-                            <span className="text-sm text-muted-foreground/70 whitespace-nowrap">
+                            <span className="text-sm text-muted-foreground whitespace-nowrap">
                               ({option.min} - {option.max})
                             </span>
                           )}
@@ -244,7 +244,7 @@ export default function ConfigurationModal({
               {/* Footer */}
               <div className="p-8 border-t border-primary/10">
                 <div className="flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground/70">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Info className="w-4 h-4" />
                     <span>Configuration can be edited later</span>
                   </div>

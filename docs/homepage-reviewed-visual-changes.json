@@ -1,0 +1,10 @@
+{
+  "frontend/src/components/three/TechBackground.tsx": {
+    "sha256": "d7051d5a0a4e7c5ef45feb67337b3bd5ece80f029ef3458487aac3e76d51cc2e",
+    "reason": "Phase 3 visual-only change: retain canvas, 50 connection nodes, original RGB colors and opacity; arrange deterministic architectural grid, remove random particle motion and continuous render loop. No text, links, media references, or integrations changed."
+  },
+  "frontend/src/components/sections/Hero.tsx": {
+    "sha256": "e175a8da8b7a6a80a39f3d01a0d38440c0d8087827c598b98622d6842612ccab",
+    "reason": "Phases 4\u20136 reviewed presentation-only changes: native static markup, smaller Framer mini block reveal with visible server defaults; static metrics/ambient layers and reduced-motion listener. Exact text, links, commented estimator, icons, classes and media retained."
+  }
+}

@@ -46,7 +46,7 @@ export default function LineItemCard({
         <div className="flex items-start gap-4">
           {/* Index & Icon */}
           <div className="flex items-center gap-4">
-            <div className="flex items-center justify-center w-10 h-10 rounded-xl glass-strong text-sm font-bold text-muted-foreground/70">
+            <div className="flex items-center justify-center w-10 h-10 rounded-xl glass-strong text-sm font-bold text-muted-foreground">
               {index + 1}
             </div>
             <div className="p-3 rounded-xl glass-strong shadow-glow-sm">
@@ -60,7 +60,7 @@ export default function LineItemCard({
               <div>
                 <h3 className="font-bold text-lg mb-1">{item.serviceName}</h3>
                 {service && (
-                  <p className="text-sm text-muted-foreground/70 font-light">
+                  <p className="text-sm text-muted-foreground font-light">
                     {service.description}
                   </p>
                 )}
@@ -68,7 +68,7 @@ export default function LineItemCard({
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setIsExpanded(!isExpanded)}
-                  className="p-2 rounded-lg hover:bg-white/[0.05] transition-colors opacity-0 group-hover:opacity-100"
+                  className="p-2 rounded-lg hover:bg-surface-muted/80 transition-colors opacity-0 group-hover:opacity-100"
                 >
                   {isExpanded ? (
                     <ChevronUp className="w-4 h-4" />
@@ -88,7 +88,7 @@ export default function LineItemCard({
             {/* Quantity & Price */}
             <div className="flex items-center gap-6 mt-4">
               <div className="flex items-center gap-3">
-                <span className="text-sm text-muted-foreground/70">Qty:</span>
+                <span className="text-sm text-muted-foreground">Qty:</span>
                 {isEditingQty ? (
                   <input
                     type="number"
@@ -102,25 +102,25 @@ export default function LineItemCard({
                 ) : (
                   <button
                     onClick={() => setIsEditingQty(true)}
-                    className="px-3 py-1.5 rounded-lg glass-strong hover:bg-white/[0.05] font-medium transition-colors"
+                    className="px-3 py-1.5 rounded-lg glass-strong hover:bg-surface-muted/80 font-medium transition-colors"
                   >
                     {item.quantity}
                   </button>
                 )}
-                <span className="text-sm text-muted-foreground/70">× {item.unit}</span>
+                <span className="text-sm text-muted-foreground">× {item.unit}</span>
               </div>
 
               <div className="flex-1" />
 
               <div className="text-right">
-                <p className="text-sm text-muted-foreground/70 mb-1">Base Price</p>
+                <p className="text-sm text-muted-foreground mb-1">Base Price</p>
                 <p className="font-mono text-lg">
                   {formatCurrency(item.basePrice * item.quantity)}
                 </p>
               </div>
 
               <div className="text-right">
-                <p className="text-sm text-muted-foreground/70 mb-1">Total</p>
+                <p className="text-sm text-muted-foreground mb-1">Total</p>
                 <p className="font-mono text-2xl font-bold text-primary">
                   {formatCurrency(item.totalPrice)}
                 </p>
@@ -138,7 +138,7 @@ export default function LineItemCard({
             className="mt-6 pt-6 border-t border-primary/10"
           >
             <div className="flex items-start justify-between mb-4">
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground/70">
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
                 Configuration
               </h4>
               <Button
@@ -174,7 +174,7 @@ export default function LineItemCard({
 
                 return (
                   <div key={key} className="flex items-center justify-between py-2">
-                    <span className="text-sm text-muted-foreground/70">{option.label}:</span>
+                    <span className="text-sm text-muted-foreground">{option.label}:</span>
                     <span className="text-sm font-medium">{String(displayValue)}</span>
                   </div>
                 );
@@ -183,7 +183,7 @@ export default function LineItemCard({
 
             {item.notes && (
               <div className="mt-4 p-4 rounded-xl glass-strong">
-                <p className="text-sm text-muted-foreground/70 mb-1">Notes:</p>
+                <p className="text-sm text-muted-foreground mb-1">Notes:</p>
                 <p className="text-sm">{item.notes}</p>
               </div>
             )}

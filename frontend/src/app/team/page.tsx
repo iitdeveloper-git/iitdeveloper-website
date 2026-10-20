@@ -170,7 +170,7 @@ export default function TeamPage() {
 //                   className="glass rounded-2xl p-6 border-2 border-primary/20 hover:border-primary/40 transition-all shadow-glow"
 //                 >
 //                   <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
-//                   <div className="text-sm text-muted-foreground/70">{stat.label}</div>
+//                   <div className="text-sm text-muted-foreground">{stat.label}</div>
 //                 </motion.div>
 //               ))}
 //             </motion.div>
@@ -212,7 +212,7 @@ export default function TeamPage() {
 //                     <CardContent className="pt-6">
 //                       {/* Avatar */}
 //                       <div className="relative mb-6">
-//                         <div className={`w-32 h-32 mx-auto rounded-2xl bg-gradient-to-br ${member.gradient} flex items-center justify-center text-white text-3xl font-bold shadow-lg group-hover:scale-105 transition-transform`}>
+//                         <div className={`w-32 h-32 mx-auto rounded-2xl bg-gradient-to-br ${member.gradient} flex items-center justify-center text-foreground text-3xl font-bold shadow-lg group-hover:scale-105 transition-transform`}>
 //                           {member.avatar}
 //                         </div>
 //                         <div className="absolute -bottom-3 left-1/2 -translate-x-1/2">
@@ -340,12 +340,12 @@ export default function TeamPage() {
 //               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
 //               className="inline-block mb-6"
 //             >
-//               <Sparkles className="w-10 h-10 text-secondary drop-shadow-[0_0_15px_rgba(255,214,98,0.6)]" />
+//               <Sparkles className="w-10 h-10 text-secondary drop-shadow-[0_0_15px_rgba(139,224,186,0.6)]" />
 //             </motion.div>
 //
 //             <h2 className="text-3xl lg:text-5xl font-bold mb-5 tracking-tight">
 //               Want To{' '}
-//               <span className="text-secondary drop-shadow-[0_0_20px_rgba(255,214,98,0.4)]">Join Us?</span>
+//               <span className="text-secondary drop-shadow-[0_0_20px_rgba(139,224,186,0.4)]">Join Us?</span>
 //             </h2>
 //             <p className="text-xl text-muted-foreground/80 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
 //               We're always looking for exceptional talent. Check out our open positions and become part of something amazing.

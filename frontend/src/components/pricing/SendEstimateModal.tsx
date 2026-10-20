@@ -111,14 +111,14 @@ export default function SendEstimateModal({
                 <div className="flex items-center justify-between">
                   <div>
                     <h2 className="text-3xl font-bold gradient-text mb-2">Send Estimate</h2>
-                    <p className="text-base text-muted-foreground/70 font-light">
+                    <p className="text-base text-muted-foreground font-light">
                       Enter customer details to send the estimate
                     </p>
                   </div>
                   <button
                     onClick={onClose}
                     disabled={isLoading}
-                    className="p-2.5 rounded-xl glass-hover hover:bg-white/[0.08] transition-all disabled:opacity-50"
+                    className="p-2.5 rounded-xl glass-hover hover:bg-surface-muted transition-all disabled:opacity-50"
                   >
                     <X className="w-6 h-6" />
                   </button>

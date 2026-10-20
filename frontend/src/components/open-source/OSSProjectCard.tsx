@@ -19,11 +19,11 @@ export default function OSSProjectCard({ project, meta, reverse }: OSSProjectCar
   return (
     <article
       id={project.slug}
-      className="scroll-mt-28 rounded-3xl border border-white/[0.08] bg-white/[0.02] overflow-hidden shadow-premium hover:shadow-premium-lg hover:border-primary/25 transition-all duration-500"
+      className="scroll-mt-28 rounded-3xl border border-white/[0.08] bg-surface-muted/40 overflow-hidden shadow-premium hover:shadow-premium-lg hover:border-primary/25 transition-all duration-500"
     >
       <div className={`grid grid-cols-1 lg:grid-cols-2 ${reverse ? 'lg:[&>*:first-child]:order-2' : ''}`}>
         {/* Banner */}
-        <div className="relative min-h-[220px] lg:min-h-full bg-[#060a12]">
+        <div className="relative min-h-[220px] lg:min-h-full bg-surface-darker">
           <Image
             src={project.bannerImage}
             alt={`${project.name} by IITDEVELOPER — ${project.tagline}`}
@@ -32,7 +32,7 @@ export default function OSSProjectCard({ project, meta, reverse }: OSSProjectCar
             className="object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#060a12] via-transparent to-transparent lg:bg-gradient-to-r" />
+          <div className="absolute inset-0 bg-gradient-to-t from-surface-darker via-transparent to-transparent lg:bg-gradient-to-r" />
         </div>
 
         {/* Content */}
@@ -50,29 +50,29 @@ export default function OSSProjectCard({ project, meta, reverse }: OSSProjectCar
 
           {/* Live GitHub metadata — real values only, gracefully omitted if unavailable */}
           <div className="flex flex-wrap items-center gap-2 mb-6">
-            <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground/70 bg-white/[0.04] border border-white/[0.08] rounded-full px-3 py-1.5">
+            <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground bg-surface-muted/70 border border-white/[0.08] rounded-full px-3 py-1.5">
               <Tag className="w-3.5 h-3.5 text-primary/70" />
               {license}
             </span>
             {meta?.latestRelease && (
-              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground/70 bg-white/[0.04] border border-white/[0.08] rounded-full px-3 py-1.5">
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground bg-surface-muted/70 border border-white/[0.08] rounded-full px-3 py-1.5">
                 <Star className="w-3.5 h-3.5 text-secondary/80" />
                 {meta.latestRelease}
               </span>
             )}
             {meta && meta.stars > 0 && (
-              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground/70 bg-white/[0.04] border border-white/[0.08] rounded-full px-3 py-1.5">
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground bg-surface-muted/70 border border-white/[0.08] rounded-full px-3 py-1.5">
                 <Star className="w-3.5 h-3.5 text-secondary/80" />
                 {meta.stars} stars
               </span>
             )}
             {meta && meta.forks > 0 && (
-              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground/70 bg-white/[0.04] border border-white/[0.08] rounded-full px-3 py-1.5">
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground bg-surface-muted/70 border border-white/[0.08] rounded-full px-3 py-1.5">
                 <GitFork className="w-3.5 h-3.5 text-primary/70" />
                 {meta.forks} forks
               </span>
             )}
-            <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground/70 bg-white/[0.04] border border-white/[0.08] rounded-full px-3 py-1.5">
+            <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground bg-surface-muted/70 border border-white/[0.08] rounded-full px-3 py-1.5">
               <MapPin className="w-3.5 h-3.5 text-accent" />
               Public repository
             </span>
@@ -91,13 +91,13 @@ export default function OSSProjectCard({ project, meta, reverse }: OSSProjectCar
           </div>
 
           {roadmap.length > 0 && (
-            <div className="mb-6 rounded-xl border border-white/[0.06] bg-white/[0.02] p-4">
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/50 mb-2.5">
+            <div className="mb-6 rounded-xl border border-white/[0.06] bg-surface-muted/40 p-4">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground mb-2.5">
                 Roadmap — not yet available
               </p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
                 {roadmap.map((item) => (
-                  <li key={item.label} className="text-sm text-muted-foreground/60">
+                  <li key={item.label} className="text-sm text-muted-foreground">
                     → {item.label}
                   </li>
                 ))}
@@ -107,7 +107,7 @@ export default function OSSProjectCard({ project, meta, reverse }: OSSProjectCar
 
           {/* Quickstart */}
           <div className="mb-8">
-            <p className="text-xs font-semibold text-muted-foreground/60 mb-2">{project.quickstart.label}</p>
+            <p className="text-xs font-semibold text-muted-foreground mb-2">{project.quickstart.label}</p>
             <CopyableCode
               code={project.quickstart.code}
               lang={project.quickstart.lang}

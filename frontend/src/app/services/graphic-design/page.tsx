@@ -216,7 +216,7 @@ export default function GraphicDesignPage() {
                 key={index}
                 className="px-6 py-3 rounded-lg bg-accent/10 border border-accent/20 hover:border-accent/40 transition-all hover:shadow-glow-purple"
               >
-                <span className="font-medium text-white">{tech}</span>
+                <span className="font-medium text-foreground">{tech}</span>
               </div>
             ))}
           </div>
@@ -239,8 +239,8 @@ export default function GraphicDesignPage() {
             {processSteps.map((step, index) => (
               <div key={index} className="relative">
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-glow-purple">
-                    <span className="text-2xl font-bold text-white">{step.number}</span>
+                  <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-glow-purple text-primary-foreground">
+                    <span className="text-2xl font-bold text-primary-foreground">{step.number}</span>
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
@@ -277,7 +277,7 @@ export default function GraphicDesignPage() {
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="px-4 py-1 rounded-full bg-gradient-to-r from-primary to-accent text-white text-sm font-semibold">
+                    <span className="px-4 py-1 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-semibold">
                       Most Popular
                     </span>
                   </div>

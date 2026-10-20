@@ -1,0 +1,1889 @@
+{
+  "date": "2026-10-14",
+  "sections": [
+    "Hero",
+    "Services",
+    "Clients",
+    "TechStack",
+    "OpenSourceHighlight",
+    "Process",
+    "Testimonials",
+    "CTA"
+  ],
+  "components": [
+    "Header",
+    "Hero",
+    "Services",
+    "Clients",
+    "TechStack",
+    "OpenSourceHighlight",
+    "Process",
+    "Testimonials",
+    "CTA",
+    "Footer"
+  ],
+  "texts": [
+    {
+      "section": "Header / navigation",
+      "text": "Premium Web Development, AI Solutions & DevOps | IITDeveloper"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "IIT Developer"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "Home"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "About Us"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "What We Build"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "Build"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "Websites & Apps"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "Mobile Apps"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "Shopify Store"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "Ecommerce Solutions"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "Cloud & DevOps"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "Salesforce"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "AI"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "AI Agents"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "AI Workflows"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "Growth"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "Performance Marketing"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "SEO & SMM"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "B2B Promotion"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "Design"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "Graphic Design"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "View all 12 services →"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "Open Source"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "Company"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "Careers"
+    },
+    {
+      "section": "Header / navigation",
+      "text": "Let's Talk"
+    },
+    {
+      "section": "Hero",
+      "text": "From"
+    },
+    {
+      "section": "Hero",
+      "text": "Vision"
+    },
+    {
+      "section": "Hero",
+      "text": "to Reality,"
+    },
+    {
+      "section": "Hero",
+      "text": "We Build What Works"
+    },
+    {
+      "section": "Hero",
+      "text": "Premium web applications, intelligent AI solutions, and scalable systems built by experts who actually care about your success."
+    },
+    {
+      "section": "Hero",
+      "text": "Let's Talk"
+    },
+    {
+      "section": "Hero",
+      "text": "Explore Services"
+    },
+    {
+      "section": "Hero",
+      "text": "100+"
+    },
+    {
+      "section": "Hero",
+      "text": "Projects Delivered"
+    },
+    {
+      "section": "Hero",
+      "text": "99.9%"
+    },
+    {
+      "section": "Hero",
+      "text": "Uptime SLA"
+    },
+    {
+      "section": "Hero",
+      "text": "24/7"
+    },
+    {
+      "section": "Hero",
+      "text": "Support Available"
+    },
+    {
+      "section": "Hero",
+      "text": "50+"
+    },
+    {
+      "section": "Hero",
+      "text": "Happy Clients"
+    },
+    {
+      "section": "Services",
+      "text": "WHAT WE DO"
+    },
+    {
+      "section": "Services",
+      "text": "Services"
+    },
+    {
+      "section": "Services",
+      "text": "That"
+    },
+    {
+      "section": "Services",
+      "text": "Actually Work"
+    },
+    {
+      "section": "Services",
+      "text": "We automate things… including your headaches. Full-stack development, AI solutions, and marketing that scales."
+    },
+    {
+      "section": "Services",
+      "text": "Build"
+    },
+    {
+      "section": "Services",
+      "text": "Website & App Development"
+    },
+    {
+      "section": "Services",
+      "text": "Custom web and mobile apps built with modern frameworks. Fast, scalable, and conversion-focused."
+    },
+    {
+      "section": "Services",
+      "text": "💻 We turn caffeine into code. Actually tested on real users."
+    },
+    {
+      "section": "Services",
+      "text": "AI"
+    },
+    {
+      "section": "Services",
+      "text": "AI Agents"
+    },
+    {
+      "section": "Services",
+      "text": "Intelligent agents that automate your workflows. Available 24/7, never need coffee breaks."
+    },
+    {
+      "section": "Services",
+      "text": "🤖 Your new employee. Doesn't complain. Doesn't take vacations."
+    },
+    {
+      "section": "Services",
+      "text": "AI"
+    },
+    {
+      "section": "Services",
+      "text": "AI Workflows"
+    },
+    {
+      "section": "Services",
+      "text": "Custom LLM integrations and automation systems. MCP protocols and intelligent pipelines."
+    },
+    {
+      "section": "Services",
+      "text": "🧠 Teaching AI to do your job. But don't worry, you're still needed."
+    },
+    {
+      "section": "Services",
+      "text": "Commerce"
+    },
+    {
+      "section": "Services",
+      "text": "Shopify Store"
+    },
+    {
+      "section": "Services",
+      "text": "Custom Shopify stores built to convert. Theme design, payment setup, app integrations, and full launch support."
+    },
+    {
+      "section": "Services",
+      "text": "🛍️ Your store live in weeks. Designed to sell from day one."
+    },
+    {
+      "section": "Services",
+      "text": "Grow"
+    },
+    {
+      "section": "Services",
+      "text": "Performance Marketing"
+    },
+    {
+      "section": "Services",
+      "text": "Data-driven campaigns that convert. PPC, social ads, and conversion optimization."
+    },
+    {
+      "section": "Services",
+      "text": "📈 Stop burning money. Start burning competitors."
+    },
+    {
+      "section": "Services",
+      "text": "Design"
+    },
+    {
+      "section": "Services",
+      "text": "Graphic Design"
+    },
+    {
+      "section": "Services",
+      "text": "Visual identity, motion graphics, and multimedia design. Posters, banners, videos, and After Effects."
+    },
+    {
+      "section": "Services",
+      "text": "🎨 Design so good, your competitors will think you hired someone expensive."
+    },
+    {
+      "section": "Services",
+      "text": "We offer 12 services in total."
+    },
+    {
+      "section": "Services",
+      "text": "From DevOps to Salesforce, B2B to SEO — explore everything we do."
+    },
+    {
+      "section": "Services",
+      "text": "View All 12 Services"
+    },
+    {
+      "section": "Services",
+      "text": "Book a Call"
+    },
+    {
+      "section": "Clients",
+      "text": "Trusted By Industry Leaders"
+    },
+    {
+      "section": "Clients",
+      "text": "50+"
+    },
+    {
+      "section": "Clients",
+      "text": "Happy Clients"
+    },
+    {
+      "section": "Clients",
+      "text": "100+"
+    },
+    {
+      "section": "Clients",
+      "text": "Projects Delivered"
+    },
+    {
+      "section": "Clients",
+      "text": "98%"
+    },
+    {
+      "section": "Clients",
+      "text": "Client Satisfaction"
+    },
+    {
+      "section": "Clients",
+      "text": "24/7"
+    },
+    {
+      "section": "Clients",
+      "text": "Support Available"
+    },
+    {
+      "section": "TechStack",
+      "text": "Built"
+    },
+    {
+      "section": "TechStack",
+      "text": "With"
+    },
+    {
+      "section": "TechStack",
+      "text": "Cutting-Edge Tech"
+    },
+    {
+      "section": "TechStack",
+      "text": "We don't chase trends. We master tools that solve real problems."
+    },
+    {
+      "section": "TechStack",
+      "text": "Also, we Googled \"best tech stack 2026\" and this is what we found."
+    },
+    {
+      "section": "TechStack",
+      "text": "Frontend"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "React"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "Next.js"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "TypeScript"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "Tailwind CSS"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "Vue.js"
+    },
+    {
+      "section": "TechStack",
+      "text": "Backend"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "Node.js"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "Python"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "Go"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "PostgreSQL"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "MongoDB"
+    },
+    {
+      "section": "TechStack",
+      "text": "Cloud & DevOps"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "AWS"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "Azure"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "GCP"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "Docker"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "Kubernetes"
+    },
+    {
+      "section": "TechStack",
+      "text": "AI & ML"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "OpenAI"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "Anthropic"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "LangChain"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "TensorFlow"
+    },
+    {
+      "section": "TechStack",
+      "text": "•"
+    },
+    {
+      "section": "TechStack",
+      "text": "PyTorch"
+    },
+    {
+      "section": "TechStack",
+      "text": "And 50+ more technologies in our arsenal"
+    },
+    {
+      "section": "OpenSourceHighlight",
+      "text": "Built in public"
+    },
+    {
+      "section": "OpenSourceHighlight",
+      "text": "The tools behind our engineering are"
+    },
+    {
+      "section": "OpenSourceHighlight",
+      "text": "open source"
+    },
+    {
+      "section": "OpenSourceHighlight",
+      "text": "We don't only deliver client projects. We build reusable infrastructure and automation tools for the engineering community."
+    },
+    {
+      "section": "OpenSourceHighlight",
+      "text": "DeployKit"
+    },
+    {
+      "section": "OpenSourceHighlight",
+      "text": "Build • Secure • Release • Deploy"
+    },
+    {
+      "section": "OpenSourceHighlight",
+      "text": "OpsPilot"
+    },
+    {
+      "section": "OpenSourceHighlight",
+      "text": "Monitor • Understand • Act"
+    },
+    {
+      "section": "OpenSourceHighlight",
+      "text": "Explore IITDEVELOPER Open Source"
+    },
+    {
+      "section": "Process",
+      "text": "How We"
+    },
+    {
+      "section": "Process",
+      "text": "Get Shit Done"
+    },
+    {
+      "section": "Process",
+      "text": "AI agents that don't sleep, unlike your team. A process designed for speed and quality."
+    },
+    {
+      "section": "Process",
+      "text": "01"
+    },
+    {
+      "section": "Process",
+      "text": "Discovery"
+    },
+    {
+      "section": "Process",
+      "text": "We dig deep to understand your business, users, and goals. No assumptions, just facts."
+    },
+    {
+      "section": "Process",
+      "text": "02"
+    },
+    {
+      "section": "Process",
+      "text": "Strategy"
+    },
+    {
+      "section": "Process",
+      "text": "Custom roadmap tailored to your needs. Architecture, timeline, and cost—all transparent."
+    },
+    {
+      "section": "Process",
+      "text": "03"
+    },
+    {
+      "section": "Process",
+      "text": "Development"
+    },
+    {
+      "section": "Process",
+      "text": "Agile sprints with weekly demos. You see progress, not excuses."
+    },
+    {
+      "section": "Process",
+      "text": "04"
+    },
+    {
+      "section": "Process",
+      "text": "Launch & Scale"
+    },
+    {
+      "section": "Process",
+      "text": "Smooth deployment, monitoring, and ongoing optimization. We stick around."
+    },
+    {
+      "section": "Process",
+      "text": "\"From zero to production faster than your coffee gets cold.\""
+    },
+    {
+      "section": "Testimonials",
+      "text": "Don't Take Our"
+    },
+    {
+      "section": "Testimonials",
+      "text": "Word"
+    },
+    {
+      "section": "Testimonials",
+      "text": "For It"
+    },
+    {
+      "section": "Testimonials",
+      "text": "Real results from real clients. No fluff, just facts."
+    },
+    {
+      "section": "Testimonials",
+      "text": "\""
+    },
+    {
+      "section": "Testimonials",
+      "text": "Our online visibility was completely changed by IIT DEVELOPER thanks to their excellent software development, web and UI/UX design, and digital marketing techniques. Our dependable partner for all our tech needs, their team's skill and inventiveness are evident."
+    },
+    {
+      "section": "Testimonials",
+      "text": "\""
+    },
+    {
+      "section": "Testimonials",
+      "text": "Devendra Kumar"
+    },
+    {
+      "section": "Testimonials",
+      "text": "CTO, Educare"
+    },
+    {
+      "section": "Testimonials",
+      "text": "\""
+    },
+    {
+      "section": "Testimonials",
+      "text": "We have had an outstanding experience working with IIT DEVELOPER. Their exact software development, innovative web and UI/UX design, and digital marketing methods have continuously surpassed our expectations. They are our first choice in technology partners."
+    },
+    {
+      "section": "Testimonials",
+      "text": "\""
+    },
+    {
+      "section": "Testimonials",
+      "text": "Kshitij Chauhan"
+    },
+    {
+      "section": "Testimonials",
+      "text": "Manager, NIIT"
+    },
+    {
+      "section": "Testimonials",
+      "text": "\""
+    },
+    {
+      "section": "Testimonials",
+      "text": "IIT DEVELOPER is amazing! Our online game is strong because of their digital marketing methods. Like tech geniuses, the software development team just gets things. The UI/UX and web design teams are another story altogether. Our website has never looked better!"
+    },
+    {
+      "section": "Testimonials",
+      "text": "\""
+    },
+    {
+      "section": "Testimonials",
+      "text": "Nishant"
+    },
+    {
+      "section": "Testimonials",
+      "text": "Product Manager"
+    },
+    {
+      "section": "Testimonials",
+      "text": "4.9/5"
+    },
+    {
+      "section": "Testimonials",
+      "text": "Client Rating"
+    },
+    {
+      "section": "Testimonials",
+      "text": "98%"
+    },
+    {
+      "section": "Testimonials",
+      "text": "Retention Rate"
+    },
+    {
+      "section": "Testimonials",
+      "text": "2.5x"
+    },
+    {
+      "section": "Testimonials",
+      "text": "Avg ROI"
+    },
+    {
+      "section": "Testimonials",
+      "text": "100+"
+    },
+    {
+      "section": "Testimonials",
+      "text": "Projects"
+    },
+    {
+      "section": "CTA",
+      "text": "Ready to Build Something"
+    },
+    {
+      "section": "CTA",
+      "text": "Legendary?"
+    },
+    {
+      "section": "CTA",
+      "text": "Book a free consultation. No sales pitch. Just honest advice."
+    },
+    {
+      "section": "CTA",
+      "text": "⚡ PS: Our AI responds faster than your last dev team's Slack messages."
+    },
+    {
+      "section": "CTA",
+      "text": "Book Free Consultation"
+    },
+    {
+      "section": "CTA",
+      "text": "\"We automate things… including your headaches.\""
+    },
+    {
+      "section": "CTA",
+      "text": "⚡ Fast Turnaround"
+    },
+    {
+      "section": "CTA",
+      "text": "💯 Quality Guaranteed"
+    },
+    {
+      "section": "CTA",
+      "text": "🔒 NDA Protected"
+    },
+    {
+      "section": "CTA",
+      "text": "🚀 Scale-Ready"
+    },
+    {
+      "section": "CTA",
+      "text": "24/7 Support"
+    },
+    {
+      "section": "Footer",
+      "text": "IIT Developer"
+    },
+    {
+      "section": "Footer",
+      "text": "Building legendary digital products since [checks notes] recently. We turn \"it's impossible\" into \"it's deployed.\" ⚡"
+    },
+    {
+      "section": "Footer",
+      "text": "✦ Our Work"
+    },
+    {
+      "section": "Footer",
+      "text": "100+ Projects"
+    },
+    {
+      "section": "Footer",
+      "text": "See what we've built"
+    },
+    {
+      "section": "Footer",
+      "text": "Case studies, live projects & real results."
+    },
+    {
+      "section": "Footer",
+      "text": "View Portfolio"
+    },
+    {
+      "section": "Footer",
+      "text": "Services"
+    },
+    {
+      "section": "Footer",
+      "text": "Website Development"
+    },
+    {
+      "section": "Footer",
+      "text": "App Development"
+    },
+    {
+      "section": "Footer",
+      "text": "DevOps & Cloud"
+    },
+    {
+      "section": "Footer",
+      "text": "AI Solutions"
+    },
+    {
+      "section": "Footer",
+      "text": "Shopify Store"
+    },
+    {
+      "section": "Footer",
+      "text": "Company"
+    },
+    {
+      "section": "Footer",
+      "text": "About Us"
+    },
+    {
+      "section": "Footer",
+      "text": "Careers"
+    },
+    {
+      "section": "Footer",
+      "text": "Contact"
+    },
+    {
+      "section": "Footer",
+      "text": "Resources"
+    },
+    {
+      "section": "Footer",
+      "text": "Blog"
+    },
+    {
+      "section": "Footer",
+      "text": "Documentation"
+    },
+    {
+      "section": "Footer",
+      "text": "API Reference"
+    },
+    {
+      "section": "Footer",
+      "text": "Support"
+    },
+    {
+      "section": "Footer",
+      "text": "Developers"
+    },
+    {
+      "section": "Footer",
+      "text": "Open Source"
+    },
+    {
+      "section": "Footer",
+      "text": "GitHub"
+    },
+    {
+      "section": "Footer",
+      "text": "DeployKit"
+    },
+    {
+      "section": "Footer",
+      "text": "OpsPilot"
+    },
+    {
+      "section": "Footer",
+      "text": "©"
+    },
+    {
+      "section": "Footer",
+      "text": "2026"
+    },
+    {
+      "section": "Footer",
+      "text": "IITDeveloper. All rights reserved."
+    },
+    {
+      "section": "Footer",
+      "text": "Handcrafted with ☕ and ⚡. No AI was harmed in the making of this website. (They did all the work.)"
+    },
+    {
+      "section": "Footer",
+      "text": "Privacy Policy"
+    },
+    {
+      "section": "Footer",
+      "text": "Terms & Conditions"
+    },
+    {
+      "section": "Footer",
+      "text": "Cookie Policy"
+    },
+    {
+      "section": "Footer",
+      "text": "Refund Policy"
+    },
+    {
+      "section": "Footer",
+      "text": "Call +91 73027 55534"
+    },
+    {
+      "section": "Footer",
+      "text": "Chat on WhatsApp"
+    }
+  ],
+  "links": [
+    {
+      "section": "Header / navigation",
+      "href": "/",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/about",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/services",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/services/website-development",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/services/app-development",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/services/shopify-store",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/services/ecommerce",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/services/devops-cloud",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/services/salesforce",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/services/ai-agents",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/services/ai-workflows",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/services/marketing",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/services/seo-smm",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/services/b2b-promotion",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/services/graphic-design",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/services",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/open-source",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/about",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/careers",
+      "label": ""
+    },
+    {
+      "section": "Header / navigation",
+      "href": "/contact",
+      "label": ""
+    },
+    {
+      "section": "Hero",
+      "href": "/contact",
+      "label": ""
+    },
+    {
+      "section": "Hero",
+      "href": "/services",
+      "label": ""
+    },
+    {
+      "section": "Services",
+      "href": "/services/website-development",
+      "label": ""
+    },
+    {
+      "section": "Services",
+      "href": "/services/ai-agents",
+      "label": ""
+    },
+    {
+      "section": "Services",
+      "href": "/services/ai-workflows",
+      "label": ""
+    },
+    {
+      "section": "Services",
+      "href": "/services/shopify-store",
+      "label": ""
+    },
+    {
+      "section": "Services",
+      "href": "/services/marketing",
+      "label": ""
+    },
+    {
+      "section": "Services",
+      "href": "/services/graphic-design",
+      "label": ""
+    },
+    {
+      "section": "Services",
+      "href": "/services",
+      "label": ""
+    },
+    {
+      "section": "Services",
+      "href": "/contact",
+      "label": ""
+    },
+    {
+      "section": "OpenSourceHighlight",
+      "href": "/open-source",
+      "label": ""
+    },
+    {
+      "section": "OpenSourceHighlight",
+      "href": "/open-source",
+      "label": ""
+    },
+    {
+      "section": "OpenSourceHighlight",
+      "href": "/open-source",
+      "label": ""
+    },
+    {
+      "section": "OpenSourceHighlight",
+      "href": "https://github.com/iitdeveloper-git",
+      "label": "IITDEVELOPER on GitHub"
+    },
+    {
+      "section": "CTA",
+      "href": "/contact",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "/",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "https://www.instagram.com/iitdeveloper",
+      "label": "Instagram"
+    },
+    {
+      "section": "Footer",
+      "href": "https://x.com/developer_iit",
+      "label": "Twitter/X"
+    },
+    {
+      "section": "Footer",
+      "href": "https://www.linkedin.com/company/iitdeveloper/",
+      "label": "LinkedIn"
+    },
+    {
+      "section": "Footer",
+      "href": "mailto:info@iitdeveloper.com",
+      "label": "Email"
+    },
+    {
+      "section": "Footer",
+      "href": "/case-studies",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "/services/website-development",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "/services/app-development",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "/services/devops-cloud",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "/services/ai-agents",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "/services/shopify-store",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "/about",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "/careers",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "/contact",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "/blog",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "/docs",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "/api-docs",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "/support",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "/open-source",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "https://github.com/iitdeveloper-git",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "https://github.com/iitdeveloper-git/deploykit",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "https://github.com/iitdeveloper-git/opspilot",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "/privacy",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "/terms",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "/cookies",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "/refund-policy",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "tel:+917302755534",
+      "label": ""
+    },
+    {
+      "section": "Footer",
+      "href": "https://wa.me/917302755534?text=Hi%20IITDeveloper%2C%20I%20would%20like%20to%20inquire%20about%20your%20services%20for%20my%20project.",
+      "label": ""
+    }
+  ],
+  "media": [
+    {
+      "section": "Header / navigation",
+      "tag": "img",
+      "src": "/_next/image?url=%2Flogo.png&w=640&q=75",
+      "alt": "IIT Developer"
+    },
+    {
+      "section": "Hero",
+      "tag": "canvas",
+      "src": "",
+      "alt": ""
+    },
+    {
+      "section": "Clients",
+      "tag": "img",
+      "src": "/_next/image?url=%2Fclients%2Flegalsujhav.png&w=640&q=75",
+      "alt": "Legal Sujhav"
+    },
+    {
+      "section": "Clients",
+      "tag": "img",
+      "src": "/_next/image?url=%2Fclients%2Fherbal-kitchen-nobg.png&w=640&q=75",
+      "alt": "Herbal Kitchen"
+    },
+    {
+      "section": "Clients",
+      "tag": "img",
+      "src": "/_next/image?url=%2Fclients%2Fghar-ka-dabba-nobg.png&w=640&q=75",
+      "alt": "Ghar Ka Dabba"
+    },
+    {
+      "section": "Clients",
+      "tag": "img",
+      "src": "/_next/image?url=%2Fclients%2Fvanshveda-nobg.png&w=640&q=75",
+      "alt": "VanshVeda"
+    },
+    {
+      "section": "Clients",
+      "tag": "img",
+      "src": "/_next/image?url=%2Fclients%2FknowledgeKing-nobg.png&w=640&q=75",
+      "alt": "Knowledge King"
+    },
+    {
+      "section": "Clients",
+      "tag": "img",
+      "src": "/_next/image?url=%2Fclients%2Flegalsujhav.png&w=640&q=75",
+      "alt": "Legal Sujhav"
+    },
+    {
+      "section": "Clients",
+      "tag": "img",
+      "src": "/_next/image?url=%2Fclients%2Fherbal-kitchen-nobg.png&w=640&q=75",
+      "alt": "Herbal Kitchen"
+    },
+    {
+      "section": "Clients",
+      "tag": "img",
+      "src": "/_next/image?url=%2Fclients%2Fghar-ka-dabba-nobg.png&w=640&q=75",
+      "alt": "Ghar Ka Dabba"
+    },
+    {
+      "section": "Clients",
+      "tag": "img",
+      "src": "/_next/image?url=%2Fclients%2Fvanshveda-nobg.png&w=640&q=75",
+      "alt": "VanshVeda"
+    },
+    {
+      "section": "Clients",
+      "tag": "img",
+      "src": "/_next/image?url=%2Fclients%2FknowledgeKing-nobg.png&w=640&q=75",
+      "alt": "Knowledge King"
+    },
+    {
+      "section": "Clients",
+      "tag": "img",
+      "src": "/_next/image?url=%2Fclients%2Flegalsujhav.png&w=640&q=75",
+      "alt": "Legal Sujhav"
+    },
+    {
+      "section": "Clients",
+      "tag": "img",
+      "src": "/_next/image?url=%2Fclients%2Fherbal-kitchen-nobg.png&w=640&q=75",
+      "alt": "Herbal Kitchen"
+    },
+    {
+      "section": "Clients",
+      "tag": "img",
+      "src": "/_next/image?url=%2Fclients%2Fghar-ka-dabba-nobg.png&w=640&q=75",
+      "alt": "Ghar Ka Dabba"
+    },
+    {
+      "section": "Clients",
+      "tag": "img",
+      "src": "/_next/image?url=%2Fclients%2Fvanshveda-nobg.png&w=640&q=75",
+      "alt": "VanshVeda"
+    },
+    {
+      "section": "Clients",
+      "tag": "img",
+      "src": "/_next/image?url=%2Fclients%2FknowledgeKing-nobg.png&w=640&q=75",
+      "alt": "Knowledge King"
+    },
+    {
+      "section": "Testimonials",
+      "tag": "img",
+      "src": "/_next/image?url=%2Ftestimonials-devendra.png&w=96&q=75",
+      "alt": "Devendra Kumar"
+    },
+    {
+      "section": "Testimonials",
+      "tag": "img",
+      "src": "/_next/image?url=%2Ftestimonials-kshitij.png&w=96&q=75",
+      "alt": "Kshitij Chauhan"
+    },
+    {
+      "section": "Testimonials",
+      "tag": "img",
+      "src": "/_next/image?url=%2Ftestimonials-nishant.png&w=96&q=75",
+      "alt": "Nishant"
+    },
+    {
+      "section": "Footer",
+      "tag": "img",
+      "src": "/_next/image?url=%2Flogo.png&w=640&q=75",
+      "alt": "IIT Developer"
+    }
+  ],
+  "metadata": [
+    [
+      "meta",
+      {
+        "charset": "utf-8"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      }
+    ],
+    [
+      "link",
+      {
+        "rel": "preload",
+        "as": "image",
+        "imagesrcset": "/_next/image?url=%2Flogo.png&w=256&q=75 1x, /_next/image?url=%2Flogo.png&w=640&q=75 2x",
+        "fetchpriority": "high"
+      }
+    ],
+    [
+      "link",
+      {
+        "rel": "preload",
+        "as": "script",
+        "fetchpriority": "low",
+        "href": "/_next/static/chunks/webpack.js?v=1792001316433"
+      }
+    ],
+    [
+      "link",
+      {
+        "rel": "preload",
+        "href": "https://www.googletagmanager.com/gtag/js?id=G-7VZRZJC8C8",
+        "as": "script"
+      }
+    ],
+    [
+      "link",
+      {
+        "rel": "preconnect",
+        "href": "https://fonts.googleapis.com"
+      }
+    ],
+    [
+      "link",
+      {
+        "rel": "preconnect",
+        "href": "https://fonts.gstatic.com",
+        "crossorigin": "anonymous"
+      }
+    ],
+    [
+      "link",
+      {
+        "rel": "dns-prefetch",
+        "href": "https://www.googletagmanager.com"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "theme-color",
+        "content": "#0b1a2b"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "color-scheme",
+        "content": "dark"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "description",
+        "content": "Expert web development, AI automation, and cloud infrastructure. Build scalable applications with modern frameworks. Fast, reliable, and built to last."
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "author",
+        "content": "IITDeveloper"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "keywords",
+        "content": "web development, app development, AI solutions, DevOps, cloud infrastructure, Salesforce, performance marketing, SEO services, Next.js development, React development, AI agents, automation"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "creator",
+        "content": "IITDeveloper"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "publisher",
+        "content": "IITDeveloper"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "robots",
+        "content": "index, follow"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "googlebot",
+        "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "category",
+        "content": "technology"
+      }
+    ],
+    [
+      "link",
+      {
+        "rel": "canonical",
+        "href": "https://iitdeveloper.com"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "google-site-verification",
+        "content": "your-google-verification-code"
+      }
+    ],
+    [
+      "meta",
+      {
+        "property": "og:title",
+        "content": "Premium Web Development, AI Solutions & DevOps | IITDeveloper"
+      }
+    ],
+    [
+      "meta",
+      {
+        "property": "og:description",
+        "content": "Expert web development, AI automation, and cloud infrastructure. Build scalable applications with modern frameworks. Fast, reliable, and built to last."
+      }
+    ],
+    [
+      "meta",
+      {
+        "property": "og:url",
+        "content": "https://iitdeveloper.com"
+      }
+    ],
+    [
+      "meta",
+      {
+        "property": "og:site_name",
+        "content": "IITDeveloper"
+      }
+    ],
+    [
+      "meta",
+      {
+        "property": "og:locale",
+        "content": "en_US"
+      }
+    ],
+    [
+      "meta",
+      {
+        "property": "og:image",
+        "content": "http://localhost:3000/og-image.jpg"
+      }
+    ],
+    [
+      "meta",
+      {
+        "property": "og:image:width",
+        "content": "1200"
+      }
+    ],
+    [
+      "meta",
+      {
+        "property": "og:image:height",
+        "content": "630"
+      }
+    ],
+    [
+      "meta",
+      {
+        "property": "og:image:alt",
+        "content": "Premium Web Development, AI Solutions & DevOps | IITDeveloper"
+      }
+    ],
+    [
+      "meta",
+      {
+        "property": "og:type",
+        "content": "website"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "twitter:creator",
+        "content": "@developer_iit"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "twitter:title",
+        "content": "Premium Web Development, AI Solutions & DevOps | IITDeveloper"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "twitter:description",
+        "content": "Expert web development, AI automation, and cloud infrastructure. Build scalable applications with modern frameworks. Fast, reliable, and built to last."
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "twitter:image",
+        "content": "http://localhost:3000/og-image.jpg"
+      }
+    ],
+    [
+      "link",
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon-32x32.png"
+      }
+    ],
+    [
+      "link",
+      {
+        "rel": "icon",
+        "href": "/favicon.ico",
+        "sizes": "16x16 32x32 48x48 64x64",
+        "type": "image/x-icon"
+      }
+    ],
+    [
+      "link",
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png",
+        "sizes": "32x32",
+        "type": "image/png"
+      }
+    ],
+    [
+      "link",
+      {
+        "rel": "icon",
+        "href": "/favicon-96x96.png",
+        "sizes": "96x96",
+        "type": "image/png"
+      }
+    ],
+    [
+      "link",
+      {
+        "rel": "icon",
+        "href": "/favicon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ],
+    [
+      "link",
+      {
+        "rel": "icon",
+        "href": "/favicon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    [
+      "link",
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png",
+        "sizes": "180x180",
+        "type": "image/png"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "next-size-adjust"
+      }
+    ]
+  ],
+  "protectedFiles": {
+    "frontend/src/app/about/page.tsx": "db84d512d1025d7251720260035cdeb0dce3a8271e990c03acf09de0bfbeeac8",
+    "frontend/src/app/api/careers/route.ts": "83eeb561b70ff59b5d86c9687425c570dc587be45d24cfc644dd955024d51ce5",
+    "frontend/src/app/api/dispatch/route.ts": "b54c3f3277cba284568f32a4fd10f5f33e3aea70dc9dddfbce7883256c911fed",
+    "frontend/src/app/api/estimates/[id]/activities/route.ts": "224bc0c4343d1659c954f1514d8a674f4eef644dfaed1180e3f4ce5dbf89ce38",
+    "frontend/src/app/api/estimates/[id]/pdf/route.ts": "3343e87a3fb6cd4ded97a0c13fe494bd385f0434102af13da52bb7ffdb834207",
+    "frontend/src/app/api/estimates/[id]/route.ts": "c6d8adf423e5e24f2972629f56b715f8e752a47744bd4aa277b7430343e67194",
+    "frontend/src/app/api/estimates/calculate/route.ts": "63d9ade08fbdfd06797f62255583e1483f83cf1c7613709a53fc4e10126997e3",
+    "frontend/src/app/api/estimates/route.ts": "a3944d6b541cb101065366fc3c0d774224a7bee5f6ad0f9cb4a92c8be71d8e7f",
+    "frontend/src/app/api/estimates/send/route.ts": "8654c3564d6a35ac6eccc8ed132b13d69c2df352ff4cd17f7634186e04d48633",
+    "frontend/src/app/api/health/route.ts": "fb828c357168c6ccac5ec1073c3933614d87a0f14fd8ca606fb5be8591a3f716",
+    "frontend/src/app/api/leads/route.ts": "eeda9c5c1afd088d69141cab37e8442f0794cc8b546672127ffbd442029a8e3b",
+    "frontend/src/app/api/services/[id]/route.ts": "6d09b1396d50bd555c41201e79c5a498e56c3521fa0c25b7b892c7a9e4237e07",
+    "frontend/src/app/api/services/route.ts": "47fb960f777c6c21ece496cc5a4331d084614440b26363a2d913c72cf0425c87",
+    "frontend/src/app/careers/page.tsx": "382ac9b6fde0a55efb2c843399840a4494ff1058d5a6e3309577e173eb6771d2",
+    "frontend/src/app/case-studies/page.tsx": "b7c86cbf011e6308fc7d83f0706607936a262ac616c59ccef95d0db6110c8e99",
+    "frontend/src/app/contact/page.tsx": "cc28eb53b7dfecfe7add670f031bcbcd3305367d045b222f2ffc3980a0af34d8",
+    "frontend/src/app/cookies/page.tsx": "ac08e486ecfb448d872328e39613353130482b778701010d7aecc0221e8fb6b5",
+    "frontend/src/app/estimate/[id]/page.tsx": "9134ed0171ecec365e6a5d40c0ef7bf0bdaa7d94cc5364cffb30ce1dce3dbe39",
+    "frontend/src/app/estimate/loading.tsx": "c7569e38145c037c683ecdf8a02224a2504c68bbdd0e9830bb10f832aa8cc633",
+    "frontend/src/app/estimate/page.tsx": "291fa48d735615bda1a7e117e00ac4b334b26792e557944f2fa06d553df2075f",
+    "frontend/src/app/globals.css": "b00b70e5f75a59c5479120224030648be2b5c282545a56e56e3c613672e71ac4",
+    "frontend/src/app/icon.png": "5c0a8af23604dfd323cda9705668fe00f7dfce39610a29d7097fab2405456e2f",
+    "frontend/src/app/layout.tsx": "3cdd7fc2a8184ca6733f485f916fa7eb2871a30f5d9bbd4dace6035098691b2f",
+    "frontend/src/app/open-source/page.tsx": "0a68d61b1d2bcffe129f19480b4a227b1551b6e26eae7f06be2c301fe5506832",
+    "frontend/src/app/privacy/page.tsx": "e932b77f655860ffddbb5d17700ab4782f8d6d9cf3680c7094e678f6fc4621ab",
+    "frontend/src/app/projects/page.tsx": "b3e4e8da9f72cb97623c543d94ff99430444bd6b19ce1a4c64e7170b55ab683d",
+    "frontend/src/app/refund-policy/page.tsx": "0d374e1539dfa4e8b2f4c10d7abc90ef389e5fa42fb9356de08f6fcc5628444c",
+    "frontend/src/app/robots.ts": "217e4a52d89659292059525b9997c321bb88c439d2c31de67e09f38059389dd1",
+    "frontend/src/app/services/ai-agents/page.tsx": "38c037db0af3830a3bcd42048c6e4702c91c20096bc4a7942b6355246300bec1",
+    "frontend/src/app/services/ai-workflows/page.tsx": "55b287bc13462221c0400fdef0be6008490cb73eeb48e20e8c66c1f6e6dd668c",
+    "frontend/src/app/services/app-development/page.tsx": "fb2f8a66899271cbea25d4491205e9fd9296815bed31b3b0139c7c9c8703c60f",
+    "frontend/src/app/services/b2b-promotion/page.tsx": "823a49b7139b84b844e802a60d86e245cdcc5ba15f506b2d588966f9fc010f4a",
+    "frontend/src/app/services/devops-cloud/page.tsx": "07501f43a9882caf2e431adfebd4499ee617a5cef567058986c87961b62c5556",
+    "frontend/src/app/services/ecommerce/page.tsx": "55bc89103908eeb93f6078022150583ea4885e80a42e3b8eabfd4b6c06bedfdf",
+    "frontend/src/app/services/graphic-design/page.tsx": "e5ed93b9aa5df363083455083ef99164b420909af99b8927491997658acf12ff",
+    "frontend/src/app/services/marketing/page.tsx": "b3244e3ed9e0f794cf4d228b64016c2ad23d30552e880412a9c28df3d53940cf",
+    "frontend/src/app/services/page.tsx": "03b6cebe61b473f21bf8505e00fea7e010ebb4375c093920bbf622912fd5bca4",
+    "frontend/src/app/services/salesforce/page.tsx": "3278ae181327c0def226b375813f30253b52758d4d9a44634e04ee5f4121eecd",
+    "frontend/src/app/services/seo-smm/page.tsx": "4d95a7664d0ba3f87887e850f9bb1b34f982a7e0de38416d1f55c570fd158b2d",
+    "frontend/src/app/services/shopify-store/page.tsx": "7f035e83c16b869f72049b66e34426712825be2c72a899d5ffd64b19e3deafd0",
+    "frontend/src/app/services/website-development/page.tsx": "c48422861c94cf21b9c6ac7ec0d91bed7d2dbaed904a261c03d81e9d21dc8389",
+    "frontend/src/app/sitemap.ts": "e7bb40422cd8b572d184febc517e71640c3335400a420dbc7bd10bc6947acd42",
+    "frontend/src/app/styles-backup.css": "b00b70e5f75a59c5479120224030648be2b5c282545a56e56e3c613672e71ac4",
+    "frontend/src/app/styles.css": "b00b70e5f75a59c5479120224030648be2b5c282545a56e56e3c613672e71ac4",
+    "frontend/src/app/team/page.tsx": "f517f255a10aecc92d2f222ea5513294ed174c8e8513c5ef6bd1a81ade731d32",
+    "frontend/src/app/terms/page.tsx": "39b4b3c00c8d976bb38f80009c60bf0b26fd0cbc8ee995bd2916374a04489d3a",
+    "frontend/src/components/forms/CareerApplicationForm.tsx": "bbd2100cda76868dac9af023dc26924db15e25c002efa0776e1d5aabc46af703",
+    "frontend/src/components/forms/ContactForm.tsx": "c5083318012328fe2854fec747b7d1fc21c06d333a56da6df25b6b9381e455b2",
+    "frontend/src/components/layout/ChatWidget.tsx": "0cd4f85c3dfaff761a7d0d74fd5040a280d098705c0abfdd20ad55550a6687c3",
+    "frontend/src/components/layout/Footer.tsx": "16abe251b6fd929cf8be422cb8b7decff3897173fad42da62259ae39cf6fd367",
+    "frontend/src/components/layout/Header.tsx": "6b0bd9b5458df58f1940979b690714197bbf38c2c881f58d44ef7d292fbf3329",
+    "frontend/src/components/layout/Navigation.tsx": "7aa7297b454cd914231c0ba3cbdcb294adc67f87126a0241b084685975e6c521",
+    "frontend/src/components/open-source/CopyableCode.tsx": "ca39457ec8cf800947645a8b91934fb0b45a993c21bbf3ab50aae0ff02c4de24",
+    "frontend/src/components/open-source/OSSArchitecture.tsx": "5f3569b072182669871cc54e0aced8932ec9425f00ac9427c8b96b3d783f813f",
+    "frontend/src/components/open-source/OSSBusinessCTA.tsx": "28bcf1e03fb4b430449d5cd539e292138fdc36e94db4da6088c44ec5fe3236fd",
+    "frontend/src/components/open-source/OSSCommunityCTA.tsx": "58ff982c5b79fdb26596f6b3b4e0467aaa1b24142eb2863231bef1e91d2d1b8e",
+    "frontend/src/components/open-source/OSSPrinciples.tsx": "8c6864010757be5d7a0f0e6b28aa52e7685ddd8cea704815db17a442fcc07609",
+    "frontend/src/components/open-source/OSSProjectCard.tsx": "f45da1fe40f9d6db6fa7a085ec78f219f309c1fa23dbff0b490e6a537a637535",
+    "frontend/src/components/pricing/ConfigurationModal.tsx": "2292a11cf09969f86efdb35ba03ba26f7f03acbccc93cdcb477d37d5a47ed0c2",
+    "frontend/src/components/pricing/LineItemCard.tsx": "1d8b242eaf8621398325bc3edd330ca666e5b98ea4bc0db5599af7bd8a717443",
+    "frontend/src/components/pricing/PricingEstimator.tsx": "19ea6658d5eadef0be2f342576de2804cacf43e7bb28021c5eddf3a87c7ae2fa",
+    "frontend/src/components/pricing/QuotationDocument.tsx": "ffe57267b0cf7d5c1ca0ebe859893eb6f2eae7591a2f476a1fe4bbd0f4cd15a7",
+    "frontend/src/components/pricing/SendEstimateModal.tsx": "cd8811ab92ff91175d5e7317d872b05f4e7307ccaae80d9cf49bd475202b420b",
+    "frontend/src/components/pricing/ServiceSelector.tsx": "282f6c3c9c758e7b8f20efcfe7a2fa7c8f677ecdf3697ee6dc89324aade2243d",
+    "frontend/src/components/providers/ToastProvider.tsx": "1ec1dcebb4ac9a440a6d26f26c25731a196ac7fa4be97f99eee4143e0f7982cf",
+    "frontend/src/components/sections/CTA.tsx": "6accdadd6fac5aeaa2c2047952eba03c99178c37ce358c2e5254c65b6be08aaa",
+    "frontend/src/components/sections/Clients.tsx": "9cdcdd82f54cd66127ff87f3cf48d4164f35da9e65d128ac685fdbe286c423df",
+    "frontend/src/components/sections/Hero.tsx": "881e2de5445520a431a2ad6c2481ad95c227ce56a72548eaa85c611a3997a556",
+    "frontend/src/components/sections/OpenSourceHighlight.tsx": "93c2902b9173fb7aa8c098017dd6a3e70009a472294283508e0420ad9c4769be",
+    "frontend/src/components/sections/Process.tsx": "116772f774628792d3db3e695d0481530d57e88d824f16787a5b53e2024aac9e",
+    "frontend/src/components/sections/Services.tsx": "91db1e7505d2e9efd6b8107f8263246f12d0cba8c42bb49429c7f226198ff333",
+    "frontend/src/components/sections/TechStack.tsx": "c7736c20b76e0da871ba80d4a6fb259ca60bdeba6d498cf6a599cd249c15e333",
+    "frontend/src/components/sections/Testimonials.tsx": "f549de8b005a389ff8f053e01c06250af27279c3a94d7113c23ff160f2ac3f9c",
+    "frontend/src/components/three/AnimatedSphere.tsx": "5bc11ec29ccd8e6e258300f4e83b3807812fc2e7082acb361cddb71e938a9ed0",
+    "frontend/src/components/three/FloatingShape.tsx": "52ae12bb7bdd244e03d4bfff41df37c410501de179940e66a3b65683835dd31d",
+    "frontend/src/components/three/GridPlane.tsx": "7c1f89434055973d26ebd27e2f95f7edc3b57ac81b7163688490ba0a8979ba3a",
+    "frontend/src/components/three/HeroScene.tsx": "d4c1bd788ed420470129c97b655c09b3ab82b5bf7f48545ce5d80b474c9a5b49",
+    "frontend/src/components/three/ParticleField.tsx": "32ea6ce0c12fe84e94f061a5c508d4f33bf7a1241047462573abeeffe701f3c4",
+    "frontend/src/components/three/README.md": "8d9e9b18aa6bd3cd10c01b27b358929323876b489b225729e532af5cf33b0ccb",
+    "frontend/src/components/three/RotatingCube.tsx": "9004dd6c3a29881c185465678226054aad79a0154987c1f3733b0d45c78836f3",
+    "frontend/src/components/three/SimpleTest.tsx": "668cac529e13c5ddf0c32e380f0270dcb78baff26f3cb41076fc34f6da030771",
+    "frontend/src/components/three/TechBackground.tsx": "27eb5ff1db88c755173f6bf06e1c20491f0c2b6a790e08d79d32f0f050dfa2c3",
+    "frontend/src/components/three/WireframeShape.tsx": "25a10d94d528264c13e9fe9b3111b557f315b01e88779d89b203a9cc88adb42e",
+    "frontend/src/components/three/index.ts": "d632e343a974358be4b4e79456172fb883b359cf8ef73b42b3cc1bb56a2794b1",
+    "frontend/src/components/ui/Logo.tsx": "e7ce633182780b02491438f2392d85defa56788e011a7d5c449e4d326fa792ae",
+    "frontend/src/components/ui/badge.tsx": "a512a9a9b015166747269feb6e4ee63d638aef16e90ac0c2bfe1d57a93065987",
+    "frontend/src/components/ui/button.tsx": "807ddf8b30a108020af3aea55f852ce6d3b80b50d90a201fa876713f30c674b7",
+    "frontend/src/components/ui/card.tsx": "d2662894f960628e5b4e60fcc4119257ff2deff67ecd8a06919457a2043ea5e9",
+    "frontend/src/components/ui/index.ts": "0302971c706dfae9869734bfe3437013fa3928e90b2c26aacfb847d2480dd5e0",
+    "frontend/src/components/ui/input.tsx": "758e242f87b3b668128e8e49b86b2270ac658bc5f1b8c289c7bb0af157ab8f14",
+    "frontend/src/components/ui/label.tsx": "3268f1e3a5b31f6b15b6c825632f3b28f1f158eac9539683d2a19702a0d84452",
+    "frontend/src/components/ui/select.tsx": "46712e0877e0fd67929585a66e2447b39b5e27a1ec0a72335cdf86b31472f920",
+    "frontend/src/components/ui/textarea.tsx": "ce779ea8504e991177ff98b0430bfde57cc4436ef5f5afc295d270360fa37acc",
+    "frontend/src/hooks/index.ts": "d295bc97a032d4d6c95db5c96dbb92091836f1075084e4e87543027c3317ef0f",
+    "frontend/src/hooks/useIsMobile.ts": "bd12864fd2597ae4cf9052cf82238716705b0aad959d07c5e16d5a9539706fb7",
+    "frontend/src/hooks/useReducedMotion.ts": "ceae7e25ddf086260a2ba3691e2b0d01e6870ce682a14c3b33d2233ee78e83bc",
+    "frontend/src/hooks/useScrollAnimation.ts": "22ca7343af9661da92dbd871a7f1b93b252b3fb78d602bd4cea6cdbff40b78cf",
+    "frontend/src/hooks/useWindowSize.ts": "fe1c1789803f7012ad566639f5d0eb8f7e11631c54d5738a19d3ecba6a3b1154",
+    "frontend/src/lib/animations/variants.ts": "595012520ae943749f2f43b66eb08afa64130e9c3ea39a68ead8fa3aec32d5c2",
+    "frontend/src/lib/api/client.ts": "52bf9bf2f325cc84414a672e12e1c7965e3171a5f97bc1864051546e66fef6cb",
+    "frontend/src/lib/api-client.ts": "efaef59d98563a438e7c9016b8a5f81901c401157c812794aa63353148edd1a8",
+    "frontend/src/lib/config/site.ts": "990cb711741723b7a0a645a037a8c3ca1a01b91d96c05e92681480f05619c05c",
+    "frontend/src/lib/data/insights.ts": "d27b02135a5513fb69099271fbc8e253d5c052eb056b896fafd2da92f05700d3",
+    "frontend/src/lib/data/oss.ts": "5a44c511cd35821cb74165021163922a4c490b8e88a53cc2c075ea5f0764e69a",
+    "frontend/src/lib/data/projects.ts": "84f6779e0824af84858ae7bb71439e5c56f0d54058b28b74a1dde6922c8ca6ea",
+    "frontend/src/lib/data/services.ts": "ac5341efdf52940ea8502f784f3026e09c531df67f1832ce9144430ebdcd8ddc",
+    "frontend/src/lib/db/client.ts": "ec9c98c869de8a6d2af4f28ec2262da4e95ae023459c4fcd60bcd408718b8318",
+    "frontend/src/lib/db/dispatch-service.ts": "8c89baa5da2ee90e49b9b2a0d1703710dc9a34ea02fb485b0752d15b7cd6071a",
+    "frontend/src/lib/db/leads-service.ts": "93f2bd6326d00279cc5a47ee1ce43aa768556db2dd4780c2588d761d8e1ae663",
+    "frontend/src/lib/db/migrations/002_services_pricing_leads.sql": "592e78a60ca386baed46e071776d03f092af03cf5d43cda014e0d647b2e20d99",
+    "frontend/src/lib/db/migrations/003_client_dispatch_gateway.sql": "bc5c568e927641e2ee303c94e1130dac5a2b5dc0a4004dedceefd581d4942430",
+    "frontend/src/lib/db/pricing-rules-service.ts": "5d996f97bb750d3b86a98ea771dadf40227a976da374830499a735b532e6d9e2",
+    "frontend/src/lib/db/schema.sql": "79920e969bc2073196bfb4272657ab7afac566bc72c2e98bdd75252cef939e71",
+    "frontend/src/lib/db/services-service.ts": "fda62c8701d0dcd5a8554af86d978bf49f45ef3043ffa5bd3ad1d1c76d20034d",
+    "frontend/src/lib/db/types.ts": "f6920c6803d2819f686cbb4123a87291bc9d9803960bb21523d183239f8af057",
+    "frontend/src/lib/github.ts": "1fbc52542129e05ed9b5307c3bf24ae3a0b3c32e2afb849c48382e52a8b9b383",
+    "frontend/src/lib/pricing-config.ts": "308b3bc9e674ed35097150644f85a534ae70b3c3920fbf598624cab6c7d3050d",
+    "frontend/src/lib/security/rate-limiter.ts": "33e321c2d2543cedbfef3b9f105709000164cde0fb39f55e87708b6e8638f5a4",
+    "frontend/src/lib/seo.ts": "3a8fc1049b11e1adedd9382cf4d633f4489034e9e7a44c331c20023bf5767160",
+    "frontend/src/lib/services/email-service.ts": "22129a6640abadb1252eaa2cd60769734875af05bb9189c1581edc21ff16b3ea",
+    "frontend/src/lib/services/pdf-service.ts": "4616bdb7f385fd200c78b51119bdc8ac8015a6e62ac387acd6cf3fe72641a1a2",
+    "frontend/src/lib/services/pricing-service.ts": "e015acd28c71aa9d19d30a434cb1da7febe93d489916cd2582e7759b321851b9",
+    "frontend/src/lib/utils.ts": "f23be5c414ccd417d66958a1ad0e35d5003becd576398942f4a42a420f788564",
+    "frontend/src/lib/validations/pricing.ts": "31055ef344d3ecbbf0561955cdfb1dceede614503fe770295c78b0e52b326204",
+    "frontend/src/types/index.ts": "236d9afdb61a38891630b2ac0067b75bc37681d8bd92a7f49580a9e1a0600fb6",
+    "frontend/src/types/pricing.ts": "397b1b73c08a14a6432d813af15729f3ed577ce7985f1f103839ff610e3d5cc8",
+    "frontend/tailwind.config.ts": "2b5222886738acb40f234d33823083aec350f5b9810589648e1e320467757b31",
+    "frontend/next.config.js": "76681c56b331e843fcb31bc1e304a12bcd7497edb7751fe8eaca5fd18680b45a"
+  },
+  "assets": {
+    "frontend/public/apple-touch-icon.png": "25507d21464d9616729172d3c65c447d9ded3deee3e4d1f559368a1ed26115b7",
+    "frontend/public/assets/README.md": "20efd8a90354353be091b25c5357d30c7b9dee35676d2bbeb5758081edbad5f9",
+    "frontend/public/clients/Devendra.png": "8a68750548d442f36fd034104cf21a830367c97353135cabde075e62a08ca3b3",
+    "frontend/public/clients/Nishant.png": "cc3d739bd8093bf873334883cbf8c65aff0e16f5b259c5b67f3bf975065850c4",
+    "frontend/public/clients/README.txt": "24d09d932d9ae3b29808970f7522bed79c5e95b3c748e88aad1eeae4ac1a1daa",
+    "frontend/public/clients/ghar-ka-dabba-nobg.png": "a4a482b3babc85abe7b96f16da4daf565a88a385b73d22500508ddbf39b3dcf2",
+    "frontend/public/clients/ghar-ka-dabba.png": "da4bc44ff57b9d103f73c65a900705c8b11788c3525795900ed7263796bdb385",
+    "frontend/public/clients/herbal-kitchen-nobg.png": "f94860cbdc843befb81a34a4d6c82c050ca222c35da165f72b5d2fcd5a4e616d",
+    "frontend/public/clients/herbal-kitchen.png": "ef92abbce8ff704c40371eaba611aee0214803d75d838b2f0ba797145458ce02",
+    "frontend/public/clients/iitdeveloper.png": "be92b416a43fa6c6bddbd0b424f6ab3329fc2be5474b4f3613bc7b57320fda9b",
+    "frontend/public/clients/knowledgeKing-nobg.png": "6e929c0aa2b76b5f88fe9b978a65f7af7ee14c55d898ac44eeeb1f62dcc05953",
+    "frontend/public/clients/knowledgeKing.png": "792e3e77e106b0fbb232c85138e4910d75f304c277c91a627c934c10d27f83ca",
+    "frontend/public/clients/kshitij.png": "55ab5999b74d6dea5427c86c499a4597c56d86fa4c9b47fb25251399e781b501",
+    "frontend/public/clients/legalsujhav.png": "3fc3d716da150e120037bd9f49056c45a0d4b69423118257bec4effd1eba6383",
+    "frontend/public/clients/vanshveda-nobg.png": "5fc9468f1a5abb26b0e04fc1434acd3cf4957308ae4032bd6a40d636ca0c4920",
+    "frontend/public/clients/vanshveda.png": "ec3c1b17a60e2d42c0d82211603bcb78c16699f9aa0be2a3041f385401fc4dd9",
+    "frontend/public/favicon-192x192.png": "86e57d4997bf2985bd95cb62793f88f21350336a4e9bed9de1b085da7b7ba910",
+    "frontend/public/favicon-32x32.png": "c6d9b190cea85b5cd9bebbd8d49cb00b0f5ba0bee9eaa53bee54912014882ff6",
+    "frontend/public/favicon-512x512.png": "20452de9cc59f415192472d6a599efd1f3cc773fdc8c854dd976061ca81cabe3",
+    "frontend/public/favicon-96x96.png": "86b16ebfcdddf1e44a933d3b3ab5bbffc5417778ab4373e3b0f47153d846ee41",
+    "frontend/public/favicon.ico": "09ffd6689a0a7f28e55265a4954bd4557f582f8d6c1b71925f23427ef29c49f3",
+    "frontend/public/favicon.svg": "1a9cbc9ad3126a86a99b111b140e2a7b94fb029b1f6e8b8cab11a5926b84f474",
+    "frontend/public/logo-transparent.png": "d4684b255012631a1aa9aa22921e438cbfe337b6713d7c008c3fa7ec1edfd8ad",
+    "frontend/public/logo.png": "843d52848c2fefcce2479d91e4f823f3c8552e476890e7d2637893912de5930a",
+    "frontend/public/open-source/deploykit-banner.png": "6ec92e9d699d2af73f368bf1d88bc35441a4684999a9743e97c7649f8a5b0cdc",
+    "frontend/public/open-source/opspilot-banner.png": "e407514aa1f670302311683d7e4205f6c5af4f62d30629cd701e4e7d83544de8",
+    "frontend/public/testimonials-devendra.png": "8a68750548d442f36fd034104cf21a830367c97353135cabde075e62a08ca3b3",
+    "frontend/public/testimonials-kshitij.png": "55ab5999b74d6dea5427c86c499a4597c56d86fa4c9b47fb25251399e781b501",
+    "frontend/public/testimonials-nishant.png": "cc3d739bd8093bf873334883cbf8c65aff0e16f5b259c5b67f3bf975065850c4"
+  }
+}
