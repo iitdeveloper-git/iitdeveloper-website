@@ -195,10 +195,10 @@ export default function Footer() {
         <div className="mt-16 pt-10 border-t border-white/[0.08]">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <p className="text-base text-muted-foreground font-light">
+              <p className="footer__copyright text-base text-muted-foreground font-light">
                 © {new Date().getFullYear()} IITDeveloper. All rights reserved.
               </p>
-              <p className="text-xs text-muted-foreground italic mt-1">
+              <p className="footer__signature text-xs text-muted-foreground italic mt-1">
                 Handcrafted with ☕ and ⚡. No AI was harmed in the making of this website. (They did all the work.)
               </p>
             </div>

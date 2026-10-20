@@ -251,17 +251,21 @@ export default function Clients() {
               <span aria-hidden="true">×</span>
               Close
             </button>
-            <div className="clients-editorial__modal-display">
-              <LogoDisplay client={selectedClient} expanded />
+            <div className="clients-editorial__modal-profile">
+              <div className="clients-editorial__modal-display">
+                <LogoDisplay client={selectedClient} expanded />
+              </div>
+              <div className="clients-editorial__modal-info">
+                <h3 id="client-modal-title">{selectedClient.name}</h3>
+                {selectedClient.businessDescription && <p className="clients-editorial__modal-description">{selectedClient.businessDescription}</p>}
+                {selectedClient.website && (
+                  <a className="clients-editorial__modal-website" href={selectedClient.website} target="_blank" rel="noopener noreferrer">
+                    <span><small>OFFICIAL WEBSITE</small><strong>{selectedClient.website.replace(/^https?:\/\//, '').replace(/\/$/, '')}</strong></span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+              </div>
             </div>
-            <h3 id="client-modal-title">{selectedClient.name}</h3>
-            {selectedClient.businessDescription && <p className="clients-editorial__modal-description">{selectedClient.businessDescription}</p>}
-            {selectedClient.website && (
-              <a className="clients-editorial__modal-website" href={selectedClient.website} target="_blank" rel="noopener noreferrer">
-                <span><small>OFFICIAL WEBSITE</small><strong>{selectedClient.website.replace(/^https?:\/\//, '').replace(/\/$/, '')}</strong></span>
-                <span aria-hidden="true">↗</span>
-              </a>
-            )}
           </div>
         </div>,
         document.body,

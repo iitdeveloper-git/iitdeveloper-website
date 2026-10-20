@@ -343,6 +343,44 @@
   letter-spacing: -0.045em;
 }
 
+/* Client profile treatment: a compact exhibit plus a clear editorial identity
+   block, rather than a logo floating in a tall empty modal. */
+.clients-editorial__modal-profile {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(15rem, .85fr);
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: stretch;
+}
+.clients-editorial__modal-profile .clients-editorial__modal-display {
+  min-height: min(42vh, 22rem);
+}
+.clients-editorial__modal-profile .clients-editorial__modal-display .clients-editorial__logo-display {
+  min-width: min(38vw, 25rem);
+  min-height: min(30vh, 15rem);
+}
+.clients-editorial__modal-info {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: .5rem 0 .25rem;
+}
+.clients-editorial__modal-info h3 { margin-top: 0; }
+.clients-editorial__modal-description { margin-top: .85rem; }
+.clients-editorial__modal-website { margin-top: 1.4rem; }
+
+/* The footer signature reads as a deliberate studio colophon instead of a
+   low-contrast paragraph. The wording remains unchanged. */
+.footer__copyright { color: hsl(var(--text-primary)); letter-spacing: -.01em; }
+.footer__signature {
+  display: inline-block;
+  margin-top: .55rem;
+  padding-top: .55rem;
+  border-top: 1px solid hsl(var(--border) / .72);
+  color: hsl(var(--text-secondary));
+  letter-spacing: .015em;
+}
+
 @keyframes clients-modal-fade {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -552,6 +590,7 @@
 }
 .clients-editorial__modal-description{max-width:42rem;margin:.65rem 0 0;color:hsl(var(--muted-foreground));font-size:1rem;line-height:1.6}.clients-editorial__modal-website{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1.35rem;padding:1rem 1.1rem;border:1px solid hsl(var(--border));background:hsl(var(--background)/.65);color:hsl(var(--foreground));text-decoration:none;transition:border-color .25s,background .25s,transform .25s}.clients-editorial__modal-website:hover,.clients-editorial__modal-website:focus-visible{border-color:hsl(var(--primary));background:hsl(var(--surface-muted));transform:translateY(-.15rem);outline:none}.clients-editorial__modal-website span:first-child{display:grid;gap:.3rem;min-width:0}.clients-editorial__modal-website small{color:hsl(var(--primary));font:500 .58rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em}.clients-editorial__modal-website strong{overflow-wrap:anywhere;font-size:.95rem;font-weight:500}.clients-editorial__modal-website>span:last-child{flex:0 0 auto;color:hsl(var(--primary));font-size:1.5rem}.clients-editorial__modal-website:focus-visible{outline:2px solid hsl(var(--primary));outline-offset:3px}
 @media (max-width:800px){.clients-editorial__modal-description{font-size:.9rem}.clients-editorial__modal-website{margin-top:1rem;padding:.9rem}.clients-editorial__modal-website strong{font-size:.85rem}}
+@media (max-width:800px){.clients-editorial__modal-profile{grid-template-columns:1fr;gap:1rem}.clients-editorial__modal-profile .clients-editorial__modal-display{min-height:13rem}.clients-editorial__modal-profile .clients-editorial__modal-display .clients-editorial__logo-display{min-width:min(78vw,30rem);min-height:9rem}.clients-editorial__modal-info{padding-top:0}.clients-editorial__modal-info h3{font-size:clamp(1.5rem,7vw,2.25rem)}}
 @media (prefers-reduced-motion:reduce){.clients-editorial__modal-website:hover{transform:none}}
 /* Profile popups keep the existing exhibit animation while making room for factual client context. */
 .clients-editorial__modal-dialog{width:min(100%,42rem)}.clients-editorial__modal-display{min-height:min(36vh,18rem)}.clients-editorial__modal-display .clients-editorial__logo-display{min-width:min(68vw,30rem);min-height:min(28vh,13rem)}
