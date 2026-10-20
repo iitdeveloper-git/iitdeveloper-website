@@ -353,9 +353,11 @@
 }
 .clients-editorial__modal-profile .clients-editorial__modal-display {
   min-height: min(42vh, 22rem);
+  overflow: hidden;
 }
 .clients-editorial__modal-profile .clients-editorial__modal-display .clients-editorial__logo-display {
-  min-width: min(38vw, 25rem);
+  width: min(100%, 25rem);
+  min-width: 0;
   min-height: min(30vh, 15rem);
 }
 .clients-editorial__modal-info {
