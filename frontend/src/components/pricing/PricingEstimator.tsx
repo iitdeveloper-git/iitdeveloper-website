@@ -359,19 +359,19 @@ export default function PricingEstimator() {
                     <FileText className="w-6 h-6 text-primary" />
                     <h2 className="text-2xl font-bold">Quotation</h2>
                   </div>
-                  <p className="text-sm text-muted-foreground/70">
+                  <p className="text-sm text-muted-foreground">
                     Configure your project requirements
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="text-sm text-muted-foreground/70 mb-1">Quotation No.</p>
+                  <p className="text-sm text-muted-foreground mb-1">Quotation No.</p>
                   <p className="text-xl font-mono font-bold text-primary">{quotationNumber}</p>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <p className="text-sm text-muted-foreground/70 mb-2">Created</p>
+                  <p className="text-sm text-muted-foreground mb-2">Created</p>
                   <div className="flex items-center gap-2 text-base">
                     <Calendar className="w-4 h-4 text-primary" />
                     {new Date().toLocaleDateString('en-US', {
@@ -382,7 +382,7 @@ export default function PricingEstimator() {
                   </div>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground/70 mb-2">Valid Until</p>
+                  <p className="text-sm text-muted-foreground mb-2">Valid Until</p>
                   <div className="flex items-center gap-2 text-base">
                     <Calendar className="w-4 h-4 text-secondary" />
                     {validUntil.toLocaleDateString('en-US', {
@@ -421,10 +421,10 @@ export default function PricingEstimator() {
                   className="glass rounded-2xl p-16 text-center"
                 >
                   <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl glass-strong mb-6">
-                    <FileText className="w-10 h-10 text-muted-foreground/50" />
+                    <FileText className="w-10 h-10 text-muted-foreground" />
                   </div>
                   <h3 className="text-2xl font-bold mb-3">No services added yet</h3>
-                  <p className="text-base text-muted-foreground/70 mb-8 font-light">
+                  <p className="text-base text-muted-foreground mb-8 font-light">
                     Click "Add Service" to start building your estimate
                   </p>
                   <Button variant="neon" onClick={() => setIsSelectorOpen(true)} className="gap-2">
@@ -463,7 +463,7 @@ export default function PricingEstimator() {
               <div className="space-y-6 mb-8">
                 {/* Subtotal */}
                 <div className="flex items-center justify-between pb-4 border-b border-primary/10">
-                  <span className="text-base text-muted-foreground/70">Subtotal</span>
+                  <span className="text-base text-muted-foreground">Subtotal</span>
                   <span className="text-xl font-mono font-bold">
                     {formatCurrency(subtotal)}
                   </span>
@@ -471,7 +471,7 @@ export default function PricingEstimator() {
 
                 {/* Discount */}
                 <div className="space-y-3">
-                  <label className="text-sm text-muted-foreground/70">Discount (%)</label>
+                  <label className="text-sm text-muted-foreground">Discount (%)</label>
                   <Input
                     type="number"
                     min="0"
@@ -496,7 +496,7 @@ export default function PricingEstimator() {
                       <span className="text-4xl font-bold font-mono text-primary">
                         {formatCurrency(total)}
                       </span>
-                      <p className="text-xs text-muted-foreground/70 mt-1">INR</p>
+                      <p className="text-xs text-muted-foreground mt-1">INR</p>
                     </div>
                   </div>
                 </div>
@@ -578,7 +578,7 @@ export default function PricingEstimator() {
 
               {/* Info */}
               <div className="mt-8 p-4 rounded-xl glass-strong">
-                <p className="text-xs text-muted-foreground/70 leading-relaxed">
+                <p className="text-xs text-muted-foreground leading-relaxed">
                   This is an estimated quote. Final pricing may vary based on specific requirements
                   and project scope. All prices are in INR.
                 </p>

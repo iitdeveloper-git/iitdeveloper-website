@@ -7,7 +7,7 @@ import * as THREE from 'three';
 
 export function AnimatedSphere({ 
   position, 
-  color = '#00539C',
+  color = '#FFB162',
   size = 1
 }: { 
   position: [number, number, number];

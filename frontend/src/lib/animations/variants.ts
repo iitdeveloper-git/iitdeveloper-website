@@ -87,13 +87,13 @@ export const staggerItem: Variants = {
 
 export const glowPulse: Variants = {
   initial: { 
-    boxShadow: '0 0 10px rgba(0, 255, 136, 0.5)',
+    boxShadow: '0 0 10px rgba(139, 224, 186, 0.5)',
   },
   animate: {
     boxShadow: [
-      '0 0 10px rgba(0, 255, 136, 0.5)',
-      '0 0 20px rgba(0, 255, 136, 0.8)',
-      '0 0 10px rgba(0, 255, 136, 0.5)',
+      '0 0 10px rgba(139, 224, 186, 0.5)',
+      '0 0 20px rgba(139, 224, 186, 0.8)',
+      '0 0 10px rgba(139, 224, 186, 0.5)',
     ],
     transition: {
       duration: 2,

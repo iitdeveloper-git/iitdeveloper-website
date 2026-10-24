@@ -168,7 +168,7 @@ export default function CareersPage() {
             >
               Build The
               <br />
-              <span className="text-secondary drop-shadow-[0_0_30px_rgba(255,214,98,0.4)]">Future</span>{' '}
+              <span className="text-secondary drop-shadow-[0_0_30px_rgba(139,224,186,0.4)]">Future</span>{' '}
               <span className="gradient-text">With Us</span>
             </motion.h1>
 
@@ -185,11 +185,13 @@ export default function CareersPage() {
                   View Open Positions
                 </Button>
               </a>
+              {/* Team CTA temporarily disabled; see docs/COMMENTED_SECTIONS.md.
               <Link href="/team">
                 <Button size="lg" variant="neon" className="">
                   Meet The Team
                 </Button>
               </Link>
+              */}
             </motion.div>
           </motion.div>
         </div>
@@ -339,13 +341,13 @@ export default function CareersPage() {
                             }`}>
                               {position.department}
                             </span>
-                            <span className="text-xs px-3 py-1 rounded-full bg-white/5 text-muted-foreground border border-white/10">
+                            <span className="text-xs px-3 py-1 rounded-full bg-surface-muted/80 text-muted-foreground border border-white/10">
                               {position.type}
                             </span>
                           </div>
                         </div>
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground/70">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <MapPin className="w-4 h-4" />
                         <span>{position.location}</span>
                       </div>
@@ -402,7 +404,7 @@ export default function CareersPage() {
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 tracking-tight">
               Ready to <span className="gradient-text">Join Us?</span>
             </h2>
-            <p className="text-xl text-muted-foreground/70 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Submit your application below. We read every single one.
             </p>
           </motion.div>
@@ -427,12 +429,12 @@ export default function CareersPage() {
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               className="inline-block mb-6"
             >
-              <Sparkles className="w-10 h-10 text-primary drop-shadow-[0_0_15px_rgba(99,102,241,0.6)]" />
+              <Sparkles className="w-10 h-10 text-primary drop-shadow-[0_0_15px_rgba(139,224,186,0.6)]" />
             </motion.div>
 
             <h2 className="text-3xl lg:text-5xl font-bold mb-5 tracking-tight">
               Don't See Your{' '}
-              <span className="text-primary drop-shadow-[0_0_20px_rgba(99,102,241,0.4)]">Perfect Role?</span>
+              <span className="text-primary drop-shadow-[0_0_20px_rgba(139,224,186,0.4)]">Perfect Role?</span>
             </h2>
             <p className="text-xl text-muted-foreground/80 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
               We're always looking for exceptional talent. Send us your resume and let's talk about creating a role for you.
@@ -441,7 +443,7 @@ export default function CareersPage() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => scrollToForm('Other / Open Application')}
-              className="px-8 py-4 rounded-xl bg-primary text-white font-bold text-lg shadow-glow hover:shadow-glow-lg transition-all group"
+              className="px-8 py-4 rounded-xl bg-primary text-primary-foreground font-bold text-lg shadow-glow hover:shadow-glow-lg transition-all group"
             >
               <span className="flex items-center gap-2">
                 Submit Open Application

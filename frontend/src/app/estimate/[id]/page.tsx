@@ -75,7 +75,7 @@ export default function ViewEstimatePage() {
                 <XCircle className="w-10 h-10 text-red-400" />
               </div>
               <h1 className="text-4xl font-bold mb-4">Estimate Not Found</h1>
-              <p className="text-lg text-muted-foreground/70 mb-8">
+              <p className="text-lg text-muted-foreground mb-8">
                 {error || "The estimate you're looking for doesn't exist or has been removed."}
               </p>
               <Link href="/estimate">
@@ -124,7 +124,7 @@ export default function ViewEstimatePage() {
           <h1 className="text-6xl font-bold mb-4 gradient-text tracking-tighter">
             Your Custom Quote
           </h1>
-          <p className="text-lg text-muted-foreground/70">
+          <p className="text-lg text-muted-foreground">
             Estimate ID: <span className="font-mono text-accent-neon">{estimate.id.substring(0, 8)}</span>
           </p>
         </motion.div>
@@ -146,7 +146,7 @@ export default function ViewEstimatePage() {
                     {estimate.status.charAt(0).toUpperCase() + estimate.status.slice(1)}
                   </Badge>
                   {estimate.validUntil && (
-                    <span className="text-sm text-muted-foreground/70">
+                    <span className="text-sm text-muted-foreground">
                       Valid until {new Date(estimate.validUntil).toLocaleDateString('en-US', {
                         month: 'long',
                         day: 'numeric',
@@ -155,7 +155,7 @@ export default function ViewEstimatePage() {
                     </span>
                   )}
                 </div>
-                <p className="text-sm text-muted-foreground/70">
+                <p className="text-sm text-muted-foreground">
                   Created {new Date(estimate.createdAt).toLocaleDateString('en-US', {
                     month: 'long',
                     day: 'numeric',
@@ -171,7 +171,7 @@ export default function ViewEstimatePage() {
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-accent-neon" />
                   <div>
-                    <p className="text-xs text-muted-foreground/70">Email</p>
+                    <p className="text-xs text-muted-foreground">Email</p>
                     <p className="text-sm font-medium">{estimate.customerInfo.email}</p>
                   </div>
                 </div>
@@ -179,7 +179,7 @@ export default function ViewEstimatePage() {
                   <div className="flex items-center gap-3">
                     <Building2 className="w-5 h-5 text-accent-purple" />
                     <div>
-                      <p className="text-xs text-muted-foreground/70">Company</p>
+                      <p className="text-xs text-muted-foreground">Company</p>
                       <p className="text-sm font-medium">{estimate.customerInfo.company}</p>
                     </div>
                   </div>
@@ -207,12 +207,12 @@ export default function ViewEstimatePage() {
                   className="flex items-start justify-between p-4 rounded-xl glass-strong"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-lg glass-strong text-sm font-bold text-muted-foreground/70">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-lg glass-strong text-sm font-bold text-muted-foreground">
                       {index + 1}
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-1">{item.serviceName}</h3>
-                      <p className="text-sm text-muted-foreground/70">
+                      <p className="text-sm text-muted-foreground">
                         Qty: {item.quantity} × {item.unit}
                       </p>
                     </div>
@@ -236,7 +236,7 @@ export default function ViewEstimatePage() {
           >
             <div className="space-y-4">
               <div className="flex items-center justify-between pb-4 border-b border-white/[0.08]">
-                <span className="text-base text-muted-foreground/70">Subtotal</span>
+                <span className="text-base text-muted-foreground">Subtotal</span>
                 <span className="text-xl font-mono font-bold">
                   {formatCurrency(estimate.subtotal)}
                 </span>
@@ -244,7 +244,7 @@ export default function ViewEstimatePage() {
 
               {estimate.discount && (
                 <div className="flex items-center justify-between pb-4 border-b border-white/[0.08]">
-                  <span className="text-base text-muted-foreground/70">
+                  <span className="text-base text-muted-foreground">
                     Discount ({estimate.discount.value}%)
                   </span>
                   <span className="text-xl font-mono text-green-400">
@@ -259,7 +259,7 @@ export default function ViewEstimatePage() {
                   <span className="text-4xl font-bold font-mono text-accent-neon">
                     {formatCurrency(estimate.total)}
                   </span>
-                  <p className="text-xs text-muted-foreground/70 mt-1">INR</p>
+                  <p className="text-xs text-muted-foreground mt-1">INR</p>
                 </div>
               </div>
             </div>

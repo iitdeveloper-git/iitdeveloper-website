@@ -196,7 +196,7 @@ export default function OurWorkPage() {
             >
               Work That
               <br />
-              <span className="text-secondary drop-shadow-[0_0_30px_rgba(255,214,98,0.4)]">Speaks</span>{' '}
+              <span className="text-secondary drop-shadow-[0_0_30px_rgba(139,224,186,0.4)]">Speaks</span>{' '}
               <span className="gradient-text">For Itself</span>
             </motion.h1>
 
@@ -219,7 +219,7 @@ export default function OurWorkPage() {
                   className="glass rounded-2xl p-6 border-2 border-secondary/20 hover:border-secondary/40 transition-all shadow-glow-yellow"
                 >
                   <div className="text-3xl font-bold text-secondary mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground/70">{stat.label}</div>
+                  <div className="text-sm text-muted-foreground">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -286,10 +286,10 @@ export default function OurWorkPage() {
                                 {project.category}
                               </span>
                               <h3 className="text-2xl font-bold text-foreground">{project.title}</h3>
-                              <p className="text-xs text-muted-foreground/60">{project.client}</p>
+                              <p className="text-xs text-muted-foreground">{project.client}</p>
                             </div>
                           </div>
-                          <span className="text-xs text-muted-foreground/50 font-mono">{project.year}</span>
+                          <span className="text-xs text-muted-foreground font-mono">{project.year}</span>
                         </div>
 
                         <p className="text-muted-foreground/80 text-base leading-relaxed mb-6 flex-grow">
@@ -310,7 +310,7 @@ export default function OurWorkPage() {
 
                         {/* Tech Stack */}
                         <div className="mb-6">
-                          <p className="text-sm text-muted-foreground/60 mb-2">Tech Stack:</p>
+                          <p className="text-sm text-muted-foreground mb-2">Tech Stack:</p>
                           <div className="flex flex-wrap gap-2">
                             {project.tech.map((tech, idx) => (
                               <span
@@ -324,7 +324,7 @@ export default function OurWorkPage() {
                         </div>
 
                         {/* Timeline */}
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground/60 mb-6">
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
                           <Clock className="w-4 h-4" />
                           <span>Timeline: {project.timeline}</span>
                         </div>
@@ -398,7 +398,7 @@ export default function OurWorkPage() {
                             <span className="text-xs font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-secondary/10 text-secondary">
                               {project.category}
                             </span>
-                            <span className="text-xs text-muted-foreground/40 font-mono">{project.year}</span>
+                            <span className="text-xs text-muted-foreground font-mono">{project.year}</span>
                           </div>
                         </div>
 
@@ -412,7 +412,7 @@ export default function OurWorkPage() {
                           {project.tech.map((tag) => (
                             <span
                               key={tag}
-                              className="text-xs px-2.5 py-1 rounded-full bg-white/[0.05] text-muted-foreground/60 border border-white/[0.07]"
+                              className="text-xs px-2.5 py-1 rounded-full bg-surface-muted/80 text-muted-foreground border border-white/[0.07]"
                             >
                               {tag}
                             </span>
@@ -476,12 +476,12 @@ export default function OurWorkPage() {
                       "{testimonial.quote}"
                     </p>
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-lg">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-primary-foreground font-bold text-lg">
                         {testimonial.author.charAt(0)}
                       </div>
                       <div>
                         <p className="font-semibold text-foreground">{testimonial.author}</p>
-                        <p className="text-sm text-muted-foreground/70">
+                        <p className="text-sm text-muted-foreground">
                           {testimonial.role}, {testimonial.company}
                         </p>
                       </div>
@@ -512,12 +512,12 @@ export default function OurWorkPage() {
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                 className="inline-block mb-6"
               >
-                <Sparkles className="w-10 h-10 text-secondary drop-shadow-[0_0_15px_rgba(255,214,98,0.6)]" />
+                <Sparkles className="w-10 h-10 text-secondary drop-shadow-[0_0_15px_rgba(139,224,186,0.6)]" />
               </motion.div>
 
               <h2 className="text-3xl lg:text-5xl font-bold mb-5 tracking-tight">
                 Want Something Built{' '}
-                <span className="text-secondary drop-shadow-[0_0_20px_rgba(255,214,98,0.4)]">Like This?</span>
+                <span className="text-secondary drop-shadow-[0_0_20px_rgba(139,224,186,0.4)]">Like This?</span>
               </h2>
               <p className="text-xl text-muted-foreground/80 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
                 Every project above started with a conversation. Let's start yours — get an instant estimate or book a free call.

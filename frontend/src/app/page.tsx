@@ -11,19 +11,36 @@ import OpenSourceHighlight from '@/components/sections/OpenSourceHighlight';
 import Process from '@/components/sections/Process';
 import Testimonials from '@/components/sections/Testimonials';
 import CTA from '@/components/sections/CTA';
+import './homepage.css';
 
 export default function HomePage() {
   return (
-    <main className="relative">
+    <main className="relative homepage">
       <Header />
-      <Hero />
-      <Services />
-      <Clients />
-      <TechStack />
-      <OpenSourceHighlight />
-      <Process />
-      <Testimonials />
-      <CTA />
+      <div className="homepage-hero" data-home-section="hero">
+        <Hero />
+      </div>
+      <div data-home-section="services">
+        <Services />
+      </div>
+      <div data-home-section="clients">
+        <Clients />
+      </div>
+      <div data-home-section="technology">
+        <TechStack />
+      </div>
+      <div data-home-section="open-source">
+        <OpenSourceHighlight />
+      </div>
+      <div data-home-section="process">
+        <Process />
+      </div>
+      <div data-home-section="testimonials">
+        <Testimonials />
+      </div>
+      <div data-home-section="consultation">
+        <CTA />
+      </div>
       <Footer />
     </main>
   );

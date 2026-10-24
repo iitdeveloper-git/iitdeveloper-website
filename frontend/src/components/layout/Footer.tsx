@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Github, Instagram, Linkedin, Mail, Twitter } from 'lucide-react';
+import '../sections/ClosingSections.css';
 
 const footerLinks = {
   services: [
@@ -14,7 +15,7 @@ const footerLinks = {
   ],
   company: [
     { label: 'About Us', href: '/about' },
-    { label: 'Team', href: '/team' },
+    // { label: 'Team', href: '/team' }, // Temporarily disabled; see docs/COMMENTED_SECTIONS.md.
     { label: 'Careers', href: '/careers' },
     { label: 'Contact', href: '/contact' },
   ],
@@ -42,7 +43,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/[0.08] bg-background/80 backdrop-blur-xl">
+    <footer className="agency-footer relative border-t border-white/[0.08] bg-background/80 backdrop-blur-xl">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-16">
           {/* Brand */}
@@ -79,7 +80,7 @@ export default function Footer() {
 
             {/* Portfolio Spotlight Card */}
             <Link href="/case-studies" className="group block">
-              <div className="relative overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/10 via-background to-secondary/5 p-5 transition-all duration-500 hover:border-secondary/40 hover:shadow-[0_0_30px_rgba(0,83,156,0.25)] hover:scale-[1.02]">
+              <div className="relative overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/10 via-background to-secondary/5 p-5 transition-all duration-500 hover:border-secondary/40 hover:shadow-[0_0_30px_rgba(139,224,186,0.25)] hover:scale-[1.02]">
                 {/* Animated shimmer line */}
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-secondary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -87,13 +88,13 @@ export default function Footer() {
                   <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-secondary/80 bg-secondary/10 px-2.5 py-1 rounded-full border border-secondary/20">
                     ✦ Our Work
                   </span>
-                  <span className="text-[10px] text-muted-foreground/50 font-light">100+ Projects</span>
+                  <span className="text-[10px] text-muted-foreground font-light">100+ Projects</span>
                 </div>
 
                 <p className="text-sm font-semibold text-foreground/90 mb-1 leading-snug">
                   See what we've built
                 </p>
-                <p className="text-xs text-muted-foreground/60 font-light mb-4 leading-relaxed">
+                <p className="text-xs text-muted-foreground font-light mb-4 leading-relaxed">
                   Case studies, live projects & real results.
                 </p>
 
@@ -194,35 +195,35 @@ export default function Footer() {
         <div className="mt-16 pt-10 border-t border-white/[0.08]">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <p className="text-base text-muted-foreground/70 font-light">
+              <p className="footer__copyright text-base text-muted-foreground font-light">
                 © {new Date().getFullYear()} IITDeveloper. All rights reserved.
               </p>
-              <p className="text-xs text-muted-foreground/50 italic mt-1">
+              <p className="footer__signature text-xs text-muted-foreground italic mt-1">
                 Handcrafted with ☕ and ⚡. No AI was harmed in the making of this website. (They did all the work.)
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base">
               <Link
                 href="/privacy"
-                className="text-muted-foreground/70 hover:text-primary transition-colors font-light"
+                className="text-muted-foreground hover:text-primary transition-colors font-light"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-muted-foreground/70 hover:text-primary transition-colors font-light"
+                className="text-muted-foreground hover:text-primary transition-colors font-light"
               >
                 Terms & Conditions
               </Link>
               <Link
                 href="/cookies"
-                className="text-muted-foreground/70 hover:text-primary transition-colors font-light"
+                className="text-muted-foreground hover:text-primary transition-colors font-light"
               >
                 Cookie Policy
               </Link>
               <Link
                 href="/refund-policy"
-                className="text-muted-foreground/70 hover:text-primary transition-colors font-light"
+                className="text-muted-foreground hover:text-primary transition-colors font-light"
               >
                 Refund Policy
               </Link>

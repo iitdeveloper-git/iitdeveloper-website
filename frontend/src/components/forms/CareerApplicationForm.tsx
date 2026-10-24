@@ -260,14 +260,14 @@ export default function CareerApplicationForm({ preselectedPosition }: Props) {
           <div className="space-y-2">
             <Label className="flex items-center gap-2">
               <FileText className="w-4 h-4" /> Resume / CV
-              <span className="text-xs text-muted-foreground/60 font-normal">(PDF or Word, max 5 MB)</span>
+              <span className="text-xs text-muted-foreground font-normal">(PDF or Word, max 5 MB)</span>
             </Label>
             {resumeFile ? (
               <div className="flex items-center gap-3 glass rounded-lg px-4 py-3 border border-primary/20">
                 <FileText className="w-5 h-5 text-primary flex-shrink-0" />
                 <span className="text-sm flex-1 truncate">{resumeFile.name}</span>
                 <button type="button" onClick={removeResume}
-                  className="text-muted-foreground/60 hover:text-destructive transition-colors">
+                  className="text-muted-foreground hover:text-destructive transition-colors">
                   <X className="w-4 h-4" />
                 </button>
               </div>
@@ -278,8 +278,8 @@ export default function CareerApplicationForm({ preselectedPosition }: Props) {
                 className="w-full flex flex-col items-center justify-center gap-2 glass rounded-lg px-4 py-8 border-2 border-dashed border-primary/20 hover:border-primary/40 transition-colors cursor-pointer"
               >
                 <Upload className="w-8 h-8 text-primary/60" />
-                <span className="text-sm text-muted-foreground/70">Click to upload your resume</span>
-                <span className="text-xs text-muted-foreground/40">PDF, DOC, DOCX — up to 5 MB</span>
+                <span className="text-sm text-muted-foreground">Click to upload your resume</span>
+                <span className="text-xs text-muted-foreground">PDF, DOC, DOCX — up to 5 MB</span>
               </button>
             )}
             <input
@@ -323,7 +323,7 @@ export default function CareerApplicationForm({ preselectedPosition }: Props) {
             </span>
           </Button>
 
-          <p className="text-xs text-center text-muted-foreground/60">
+          <p className="text-xs text-center text-muted-foreground">
             By applying you agree to our{' '}
             <a href="/privacy" className="text-primary hover:underline">Privacy Policy</a>.
             We keep your data confidential.

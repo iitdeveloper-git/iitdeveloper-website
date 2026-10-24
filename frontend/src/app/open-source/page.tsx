@@ -112,7 +112,7 @@ export default async function OpenSourcePage() {
           className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage:
-              'linear-gradient(rgba(0,83,156,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(0,83,156,0.8) 1px, transparent 1px)',
+              'linear-gradient(hsl(var(--primary) / .55) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary) / .55) 1px, transparent 1px)',
             backgroundSize: '48px 48px',
           }}
           aria-hidden="true"
@@ -157,7 +157,7 @@ export default async function OpenSourcePage() {
               </a>
             </div>
 
-            <p className="flex items-center justify-center gap-2 text-sm text-muted-foreground/60 font-mono">
+            <p className="flex items-center justify-center gap-2 text-sm text-muted-foreground font-mono">
               <Radio className="w-3.5 h-3.5 text-secondary/70" aria-hidden="true" />
               Built in public • Self-hostable • Developer-first
             </p>

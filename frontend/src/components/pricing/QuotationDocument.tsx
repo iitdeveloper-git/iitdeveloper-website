@@ -245,7 +245,7 @@ export default function QuotationDocument({ estimate, quotationNumber }: Quotati
         </div>
 
         <div className="text-right shrink-0">
-          <div className="bg-blue-600 text-white px-6 py-2 rounded-lg mb-3 inline-block">
+          <div className="bg-blue-600 text-foreground px-6 py-2 rounded-lg mb-3 inline-block">
             <p className="text-xl font-black tracking-[0.2em]">QUOTATION</p>
           </div>
           <p className="text-xs text-gray-400 mb-0.5">Quotation No.</p>
@@ -327,7 +327,7 @@ export default function QuotationDocument({ estimate, quotationNumber }: Quotati
         <div className="overflow-hidden rounded-xl border border-gray-200">
           <table className="w-full border-collapse text-xs">
             <thead>
-              <tr className="bg-blue-600 text-white">
+              <tr className="bg-blue-600 text-foreground">
                 <th className="py-3 px-3 text-center w-8 font-semibold">#</th>
                 <th className="py-3 px-4 text-left font-semibold">Service</th>
                 <th className="py-3 px-4 text-left font-semibold">Configuration &amp; Scope</th>
@@ -426,7 +426,7 @@ export default function QuotationDocument({ estimate, quotationNumber }: Quotati
             </div>
           )}
 
-          <div className="flex justify-between bg-blue-600 text-white px-5 py-3.5 rounded-xl mt-2">
+          <div className="flex justify-between bg-blue-600 text-foreground px-5 py-3.5 rounded-xl mt-2">
             <span className="font-bold text-sm">Grand Total</span>
             <span className="font-mono font-black text-xl">{formatCurrency(total)}</span>
           </div>
@@ -449,7 +449,7 @@ export default function QuotationDocument({ estimate, quotationNumber }: Quotati
           <div className="grid grid-cols-3 gap-3">
             <div className="bg-blue-50 rounded-xl p-4 border border-blue-100">
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-6 h-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center font-bold">
+                <span className="w-6 h-6 rounded-full bg-blue-600 text-foreground text-xs flex items-center justify-center font-bold">
                   1
                 </span>
                 <p className="font-bold text-blue-800 text-sm">Advance</p>
@@ -462,7 +462,7 @@ export default function QuotationDocument({ estimate, quotationNumber }: Quotati
 
             <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-6 h-6 rounded-full bg-gray-400 text-white text-xs flex items-center justify-center font-bold">
+                <span className="w-6 h-6 rounded-full bg-gray-400 text-foreground text-xs flex items-center justify-center font-bold">
                   2
                 </span>
                 <p className="font-bold text-gray-700 text-sm">Milestone</p>
@@ -475,7 +475,7 @@ export default function QuotationDocument({ estimate, quotationNumber }: Quotati
 
             <div className="bg-green-50 rounded-xl p-4 border border-green-100">
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-6 h-6 rounded-full bg-green-600 text-white text-xs flex items-center justify-center font-bold">
+                <span className="w-6 h-6 rounded-full bg-green-600 text-foreground text-xs flex items-center justify-center font-bold">
                   3
                 </span>
                 <p className="font-bold text-green-700 text-sm">Final</p>
@@ -490,7 +490,7 @@ export default function QuotationDocument({ estimate, quotationNumber }: Quotati
           <div className="grid grid-cols-2 gap-3">
             <div className="bg-blue-50 rounded-xl p-4 border border-blue-100">
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-6 h-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center font-bold">
+                <span className="w-6 h-6 rounded-full bg-blue-600 text-foreground text-xs flex items-center justify-center font-bold">
                   M
                 </span>
                 <p className="font-bold text-blue-800 text-sm">Monthly Retainer</p>
@@ -501,7 +501,7 @@ export default function QuotationDocument({ estimate, quotationNumber }: Quotati
             </div>
             <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-6 h-6 rounded-full bg-gray-400 text-white text-xs flex items-center justify-center font-bold">
+                <span className="w-6 h-6 rounded-full bg-gray-400 text-foreground text-xs flex items-center justify-center font-bold">
                   S
                 </span>
                 <p className="font-bold text-gray-700 text-sm">One-Time Setup Fee</p>

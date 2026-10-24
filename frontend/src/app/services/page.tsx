@@ -231,7 +231,7 @@ export default function ServicesPage() {
                       </CardDescription>
                       <div className="space-y-2">
                         {service.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-center gap-2 text-xs text-muted-foreground/60">
+                          <div key={idx} className="flex items-center gap-2 text-xs text-muted-foreground">
                             <div className="w-1 h-1 rounded-full bg-accent/50" />
                             <span>{feature}</span>
                           </div>
@@ -272,7 +272,7 @@ export default function ServicesPage() {
                     {technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 rounded-md bg-accent/10 text-sm text-white/90 border border-accent/20"
+                        className="px-3 py-1 rounded-md bg-accent/10 text-sm text-foreground/90 border border-accent/20"
                       >
                         {tech}
                       </span>
@@ -301,8 +301,8 @@ export default function ServicesPage() {
             {process.map((item, index) => (
               <div key={index} className="relative">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-glow-purple mb-4">
-                    <span className="text-2xl font-bold text-white">{item.step}</span>
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-glow-purple text-primary-foreground mb-4">
+                    <span className="text-2xl font-bold text-primary-foreground">{item.step}</span>
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                   <p className="text-muted-foreground/80 text-sm leading-relaxed">{item.description}</p>

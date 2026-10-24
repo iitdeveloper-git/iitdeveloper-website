@@ -36,9 +36,9 @@ export async function generateEstimatePDF(
 
       // Colors
       const colors = {
-        primary: '#00539C', // Royal blue
-        secondary: '#FFD662', // Yellow beige
-        dark: '#0a0a0a',
+        primary: '#8BE0BA', // Electric lime
+        secondary: '#8BE0BA', // Warm ivory
+        dark: '#0D1215',
         gray: '#888888',
         lightGray: '#cccccc',
         white: '#ffffff',
@@ -340,7 +340,7 @@ export async function generateEstimatePDF(
           });
 
         doc
-          .fillColor('#FFD662')
+          .fillColor('#8BE0BA')
           .font('Helvetica')
           .text(`-${formatCurrency(discountAmount)}`, totalsX + 85, yPosition, {
             width: 77,

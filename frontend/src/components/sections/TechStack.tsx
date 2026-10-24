@@ -1,94 +1,101 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { fadeInUp } from '@/lib/animations/variants';
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+import './ImpactTechnology.css';
+
+const technologies = [
+  { category: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Vue.js'], code: 'UI / 01' },
+  { category: 'Backend', items: ['Node.js', 'Python', 'Go', 'PostgreSQL', 'MongoDB'], code: 'API / 02' },
+  { category: 'Cloud & DevOps', items: ['AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes'], code: 'OPS / 03' },
+  { category: 'AI & ML', items: ['OpenAI', 'Anthropic', 'LangChain', 'TensorFlow', 'PyTorch'], code: 'LAB / 04' },
+];
+
+function FrontendArtifact() {
+  return <div className="tech-runway__artifact tech-runway__artifact--frontend" aria-hidden="true">
+    <div className="tech-runway__browser-bar"><i /><i /><i /><span>product / responsive-system</span></div>
+    <div className="tech-runway__interface">
+      <div className="tech-runway__interface-nav"><b /><span /><span /><span /></div>
+      <div className="tech-runway__interface-hero"><span /><strong /><em /></div>
+      <div className="tech-runway__interface-grid"><i /><i /><i /></div>
+      <div className="tech-runway__phone"><span /><b /><i /><i /></div>
+    </div>
+    <svg className="tech-runway__signal tech-runway__signal--frontend" viewBox="0 0 240 80" fill="none"><path d="M8 65C45 65 45 18 82 18S122 58 158 58s38-27 74-27" stroke="currentColor" strokeWidth="1"/><circle cx="82" cy="18" r="3" fill="currentColor"/><circle cx="158" cy="58" r="3" fill="currentColor"/></svg>
+    <span className="tech-runway__artifact-note">responsive proof / 01</span>
+  </div>;
+}
+
+function BackendArtifact() {
+  return <div className="tech-runway__artifact tech-runway__artifact--backend" aria-hidden="true">
+    <div className="tech-runway__spec-head"><span>REQUEST / RESPONSE</span><b>200 OK</b></div>
+    <div className="tech-runway__code-sheet"><span>01</span><span>const route = async (req) =&gt; {'{'}</span><span>02&nbsp;&nbsp;const record = await db.query(</span><span>03&nbsp;&nbsp;&nbsp;&nbsp;SELECT * FROM services</span><span>04&nbsp;&nbsp;);</span><span>05&nbsp;&nbsp;return Response.json(record);</span><span>06 {'}'}</span></div>
+    <div className="tech-runway__schema"><i /><i /><i /><span>data contract / stable</span></div>
+    <svg className="tech-runway__signal tech-runway__signal--backend" viewBox="0 0 240 54" fill="none"><path d="M8 27h48m16 0h40m16 0h40m16 0h48" stroke="currentColor" strokeWidth="1" strokeDasharray="3 4"/><rect x="56" y="18" width="16" height="18" stroke="currentColor"/><rect x="112" y="12" width="16" height="30" stroke="currentColor"/><rect x="168" y="18" width="16" height="18" stroke="currentColor"/></svg>
+    <span className="tech-runway__artifact-note">architecture sheet / 02</span>
+  </div>;
+}
+
+function CloudArtifact() {
+  return <div className="tech-runway__artifact tech-runway__artifact--cloud" aria-hidden="true">
+    <div className="tech-runway__cloud-label"><span>DEPLOYMENT PATH</span><b>LIVE</b></div>
+    <div className="tech-runway__pipeline"><div><i />commit</div><span /><div><i />build</div><span /><div><i />ship</div></div>
+    <div className="tech-runway__cloud-grid"><i /><i /><i /><i /><i /><i /></div>
+    <div className="tech-runway__cloud-foot"><span>edge / region-01</span><span>uptime / monitored</span></div>
+    <svg className="tech-runway__topology" viewBox="0 0 260 88" fill="none"><path d="M42 44h56m64 0h56M98 44l32-28m-32 28 32 28m32-28-32-28m32 28-32 28" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4"/><rect x="18" y="33" width="24" height="22" rx="2" stroke="currentColor"/><rect x="98" y="33" width="32" height="22" rx="2" stroke="currentColor"/><rect x="160" y="33" width="32" height="22" rx="2" stroke="currentColor"/><rect x="216" y="33" width="24" height="22" rx="2" stroke="currentColor"/><circle cx="130" cy="16" r="5" fill="currentColor"/><circle cx="130" cy="72" r="5" fill="currentColor"/></svg>
+    <span className="tech-runway__artifact-note">infrastructure blueprint / 03</span>
+  </div>;
+}
+
+function AiArtifact() {
+  return <div className="tech-runway__artifact tech-runway__artifact--ai" aria-hidden="true">
+    <div className="tech-runway__lab-head"><span>MODEL INTEGRATION NOTES</span><b>R&amp;D / 04</b></div>
+    <div className="tech-runway__lab-flow"><div><i />input</div><span /><div><i />context</div><span /><div><i />output</div></div>
+    <div className="tech-runway__research"><span /><span /><span /><span /><span /><span /><span /><span /></div>
+    <svg className="tech-runway__signal tech-runway__signal--ai" viewBox="0 0 260 74" fill="none"><path d="M10 62C38 18 63 52 88 28s49 16 71-7 52 18 91-10" stroke="currentColor" strokeWidth="1"/><path d="M10 18c37 30 52 5 82 30s47-17 76 2 55-12 82 7" stroke="currentColor" strokeWidth="1" strokeDasharray="2 5"/><circle cx="88" cy="28" r="3" fill="currentColor"/><circle cx="159" cy="21" r="3" fill="currentColor"/></svg>
+    <div className="tech-runway__lab-foot"><em>reasoning trace</em><b>•••</b></div>
+    <span className="tech-runway__artifact-note">research study / 04</span>
+  </div>;
+}
+
+function Artifact({ index }: { index: number }) {
+  if (index === 0) return <FrontendArtifact />;
+  if (index === 1) return <BackendArtifact />;
+  if (index === 2) return <CloudArtifact />;
+  return <AiArtifact />;
+}
 
 export default function TechStack() {
-  const technologies = [
-    {
-      category: 'Frontend',
-      items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Vue.js'],
-    },
-    {
-      category: 'Backend',
-      items: ['Node.js', 'Python', 'Go', 'PostgreSQL', 'MongoDB'],
-    },
-    {
-      category: 'Cloud & DevOps',
-      items: ['AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes'],
-    },
-    {
-      category: 'AI & ML',
-      items: ['OpenAI', 'Anthropic', 'LangChain', 'TensorFlow', 'PyTorch'],
-    },
-  ];
+  const sectionRef = useRef<HTMLElement>(null);
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end end'] });
+  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-75%']);
 
   return (
-    <section className="py-24 lg:py-32 bg-white/[0.02] relative">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-            <span className="text-secondary">Built</span> With <span className="gradient-text">Cutting-Edge Tech</span>
-          </h2>
-          <p className="text-xl text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed font-light">
-            We don't chase trends. We master tools that solve real problems. <br />
-            <span className="text-base text-muted-foreground/60 italic">Also, we Googled "best tech stack 2026" and this is what we found.</span>
-          </p>
-        </motion.div>
+    <section ref={sectionRef} className={`tech-runway${reduceMotion ? ' tech-runway--reduced' : ''}`} aria-labelledby="technology-heading">
+      <div className="tech-runway__stage">
+        <div className="tech-runway__shell">
+          <div className="tech-runway__header" aria-hidden="true"><span>05 / TECHNOLOGY RUNWAY</span><span>FOUR DISCIPLINES / ONE PRACTICE</span></div>
+          <motion.div className="tech-runway__intro" initial={reduceMotion ? false : { opacity: 0, y: 18 }} whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: .7 }}>
+            <h2 id="technology-heading"><span>Built</span> With <span>Cutting-Edge Tech</span></h2>
+            <div className="tech-runway__copy">
+              <p>We don't chase trends. We master tools that solve real problems.</p>
+              <p><em>Also, we Googled "best tech stack 2026" and this is what we found.</em></p>
+            </div>
+          </motion.div>
 
-        {/* Tech Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          {technologies.map((tech, index) => (
-            <motion.div
-              key={tech.category}
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="glass glass-hover rounded-2xl p-8 shadow-premium hover:shadow-glow-yellow-lg border-primary/10 hover:border-secondary/30 border-t-2 border-t-secondary/40"
-            >
-              <h3 className="text-2xl font-bold mb-5 text-secondary drop-shadow-[0_0_8px_rgba(255,214,98,0.3)]">
-                {tech.category}
-              </h3>
-              <ul className="space-y-3">
-                {tech.items.map((item) => (
-                  <li
-                    key={item}
-                    className="text-muted-foreground/80 hover:text-foreground transition-colors cursor-default text-base"
-                  >
-                    • {item}
-                  </li>
-                ))}
-              </ul>
+          <div className="tech-runway__viewport" aria-label="Technology exhibition">
+            <motion.div className="tech-runway__track" style={reduceMotion ? undefined : { x }}>
+              {technologies.map((tech, index) => (
+                <article className={`tech-runway__scene tech-runway__scene--${index}`} key={tech.category}>
+                  <div className="tech-runway__scene-meta"><span>0{index + 1} / 04</span><span>{tech.code}</span></div>
+                  <div className="tech-runway__scene-body"><div className="tech-runway__scene-copy"><p className="tech-runway__scene-kicker">{tech.category}</p><h3>{tech.category}</h3><div className="tech-runway__items">{tech.items.map(item => <span key={item}>{item}</span>)}</div></div><Artifact index={index} /></div>
+                </article>
+              ))}
             </motion.div>
-          ))}
+          </div>
+          <p className="tech-runway__statement">And 50+ more technologies in our arsenal</p>
         </div>
-
-        {/* Bottom Statement */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          className="mt-16 text-center"
-        >
-          <p className="text-xl text-muted-foreground/70 italic font-light">
-            And 50+ more technologies in our arsenal
-          </p>
-        </motion.div>
       </div>
-
-      {/* Background decoration */}
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-cyan/5 rounded-full blur-3xl -z-10" />
     </section>
   );
 }

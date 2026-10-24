@@ -7,7 +7,7 @@ import * as THREE from 'three';
 
 export function FloatingShape({ 
   position, 
-  color = '#00539C',
+  color = '#FFB162',
   speed = 1,
   geometry = 'box'
 }: { 

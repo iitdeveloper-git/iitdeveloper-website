@@ -104,7 +104,7 @@ export default function TermsPage() {
                     <p className="text-muted-foreground/90 font-light leading-relaxed">
                       If you have any questions or concerns regarding these Terms and Conditions, please contact us at:
                     </p>
-                    <div className="mt-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] inline-block">
+                    <div className="mt-4 p-4 rounded-xl bg-surface-muted/40 border border-white/[0.05] inline-block">
                       <p className="text-sm font-semibold text-foreground">IITDeveloper Legal Team</p>
                       <p className="text-sm text-muted-foreground">Email: <a href="mailto:info@iitdeveloper.com" className="text-primary hover:underline">info@iitdeveloper.com</a></p>
                       <p className="text-sm text-muted-foreground">Phone: +91 73027 55534</p>

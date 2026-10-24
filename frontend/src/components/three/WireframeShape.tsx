@@ -30,7 +30,7 @@ export function WireframeShape({
     <mesh ref={meshRef} position={position} rotation={rotation}>
       <icosahedronGeometry args={[1, 0]} />
       <meshBasicMaterial
-        color="#00539C"
+        color="#FFB162"
         wireframe
         transparent
         opacity={0.3}
