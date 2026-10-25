@@ -20,6 +20,25 @@ const stats = [
 // Featured projects with detailed case study info
 const featuredProjects = [
   {
+    title: 'BiteBreak — Smart Cafeteria System',
+    client: 'Corporate Cafeterias',
+    category: 'Mobile & Kitchen System',
+    description: 'A multi-role cafeteria ordering and kitchen management platform with real-time ticket queues, nutritional tracking, and store analytics. Interactive live prototype available.',
+    url: '/case-studies/bitebreak',
+    displayUrl: 'Launch Live Prototype →',
+    icon: Smartphone,
+    isInternal: true,
+    metrics: [
+      { label: 'Role Workspaces', value: '3 Roles', change: 'Synced' },
+      { label: 'Queue Sync', value: '<100ms', change: 'Real-time' },
+      { label: 'Throughput', value: '3x Faster', change: '+200%' },
+    ],
+    tech: ['Next.js', 'Python', 'Docker', 'SQLite', 'Tailwind CSS', 'Framer Motion'],
+    timeline: '4 weeks',
+    color: 'primary',
+    year: '2026',
+  },
+  {
     title: 'IITDeveloper Website',
     client: 'IITDeveloper',
     category: 'Web App',
@@ -330,16 +349,27 @@ export default function OurWorkPage() {
                         </div>
 
                         {/* URL */}
-                        <a
-                          href={project.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="mt-auto inline-flex items-center gap-3 px-6 py-3 rounded-xl font-bold text-base transition-all duration-300 group/btn bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-glow-yellow hover:shadow-glow-yellow-lg"
-                        >
-                          <Globe className="w-4 h-4" />
-                          {project.displayUrl}
-                          <ExternalLink className="w-4 h-4 opacity-70 group-hover/btn:opacity-100 group-hover/btn:translate-x-0.5 transition-all" />
-                        </a>
+                        {project.isInternal ? (
+                          <Link
+                            href={project.url}
+                            className="mt-auto inline-flex items-center gap-3 px-6 py-3 rounded-xl font-bold text-base transition-all duration-300 group/btn bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-glow-yellow hover:shadow-glow-yellow-lg"
+                          >
+                            <Smartphone className="w-4 h-4" />
+                            {project.displayUrl}
+                            <ArrowRight className="w-4 h-4 opacity-70 group-hover/btn:opacity-100 group-hover/btn:translate-x-0.5 transition-all" />
+                          </Link>
+                        ) : (
+                          <a
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-auto inline-flex items-center gap-3 px-6 py-3 rounded-xl font-bold text-base transition-all duration-300 group/btn bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-glow-yellow hover:shadow-glow-yellow-lg"
+                          >
+                            <Globe className="w-4 h-4" />
+                            {project.displayUrl}
+                            <ExternalLink className="w-4 h-4 opacity-70 group-hover/btn:opacity-100 group-hover/btn:translate-x-0.5 transition-all" />
+                          </a>
+                        )}
                       </div>
 
                       {/* Corner decoration */}
