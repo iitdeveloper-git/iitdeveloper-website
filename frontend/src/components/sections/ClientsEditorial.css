@@ -107,10 +107,10 @@
 
 .clients-editorial__exhibit {
   display: grid;
-  grid-template-columns: 1.2fr 0.9fr 1.1fr;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, minmax(10rem, 13rem));
   gap: clamp(0.75rem, 2vw, 1.25rem);
-  min-height: 26rem;
+  min-height: 24rem;
   padding: clamp(1rem, 3vw, 2.5rem);
   border: 1px solid color-mix(in srgb, var(--clients-line) 65%, transparent);
   background:
@@ -167,11 +167,12 @@
   outline-offset: 0.35rem;
 }
 
-.clients-editorial__artifact--1 { grid-row: span 2; min-height: 20rem; }
-.clients-editorial__artifact--2 { transform: translateY(0.6rem) rotate(1deg); }
-.clients-editorial__artifact--3 { transform: translateY(-0.35rem) rotate(-0.8deg); }
-.clients-editorial__artifact--4 { transform: translateY(0.45rem) rotate(-1deg); }
-.clients-editorial__artifact--5 { transform: translateY(-0.5rem) rotate(0.7deg); }
+.clients-editorial__artifact--1 { transform: translateY(-0.25rem) rotate(-0.6deg); }
+.clients-editorial__artifact--2 { transform: translateY(0.45rem) rotate(0.8deg); }
+.clients-editorial__artifact--3 { transform: translateY(-0.35rem) rotate(-0.7deg); }
+.clients-editorial__artifact--4 { transform: translateY(0.35rem) rotate(0.6deg); }
+.clients-editorial__artifact--5 { transform: translateY(-0.4rem) rotate(-0.8deg); }
+.clients-editorial__artifact--6 { transform: translateY(0.3rem) rotate(0.7deg); }
 
 .clients-editorial__artifact-index,
 .clients-editorial__artifact-name {
@@ -535,8 +536,8 @@
 
   .clients-editorial__artifact--1 {
     grid-row: span 1;
-    grid-column: span 2;
-    min-height: 11rem;
+    grid-column: span 1;
+    min-height: 8.5rem;
   }
 
   .clients-editorial__modal {

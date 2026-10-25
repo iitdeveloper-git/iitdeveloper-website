@@ -62,6 +62,15 @@ const clients: Client[] = [
     border: '1px solid hsl(var(--border))',
     display: { background: 'light', maxWidth: '78%', maxHeight: '92%', padding: '0.3rem' },
   },
+  {
+    name: 'PulsarIP',
+    logo: '/clients/pulsarip.png',
+    businessDescription: 'An intellectual property and corporate legal platform for trademark, patent, and enterprise compliance services.',
+    website: 'https://pulsarip.com',
+    cardBg: 'hsl(var(--surface-elevated))',
+    border: '1px solid hsl(var(--border))',
+    display: { background: 'dark', maxWidth: '88%', maxHeight: '88%', padding: '0.4rem 0.6rem' },
+  },
 ];
 
 function LogoDisplay({ client, expanded = false }: { client: Client; expanded?: boolean }) {
@@ -177,7 +186,7 @@ export default function Clients() {
           <span>PROOF OF WORK</span>
         </div>
         <div className="clients-editorial__heading-wrap">
-          <p className="clients-editorial__kicker">CLIENT ARCHIVE / 05 MARKS</p>
+          <p className="clients-editorial__kicker">CLIENT ARCHIVE / {String(clients.length).padStart(2, '0')} MARKS</p>
           <h2 id="clients-heading">Trusted By Industry Leaders</h2>
         </div>
         <p className="clients-editorial__aside" aria-hidden="true">LOGO SYSTEM<br />FIELD / 03</p>
@@ -186,7 +195,7 @@ export default function Clients() {
       <motion.div className="clients-editorial__gallery" aria-label="Client logos" {...reveal}>
         <div className="clients-editorial__exhibit-label" aria-hidden="true">
           <span>ZERO GRAVITY / CLIENT ARCHIVE</span>
-          <span>05 AUTHENTIC MARKS</span>
+          <span>{String(clients.length).padStart(2, '0')} AUTHENTIC MARKS</span>
         </div>
         <motion.div className="clients-editorial__exhibit" role="group" aria-label="Client logo artifacts" style={{ y: reduceMotion ? 0 : exhibitY }}>
           {clients.map((client, index) => (
@@ -216,7 +225,7 @@ export default function Clients() {
               onKeyDown={event => handleArtifactKeyDown(event, client)}
               style={{ background: client.cardBg, border: client.border }}
             >
-              <span className="clients-editorial__artifact-index" aria-hidden="true">0{index + 1} / 05</span>
+              <span className="clients-editorial__artifact-index" aria-hidden="true">0{index + 1} / {String(clients.length).padStart(2, '0')}</span>
               <span className="clients-editorial__artifact-line" aria-hidden="true" />
               <LogoDisplay client={client} />
               <span className="clients-editorial__artifact-name">{client.name}</span>
