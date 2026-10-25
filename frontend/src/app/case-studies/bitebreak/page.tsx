@@ -154,13 +154,13 @@ export default function BitebreakCaseStudy() {
   const handleRoleSelect = (role: RoleType) => {
     setSelectedRole(role);
     if (iframeRef.current) {
-      iframeRef.current.src = `/demos/bitebreak/index.html?role=${role.toLowerCase()}`;
+      iframeRef.current.src = `https://bitebreak.iitdeveloper.com/?role=${role.toLowerCase()}`;
     }
   };
 
   const reloadIframe = () => {
     if (iframeRef.current) {
-      iframeRef.current.src = `/demos/bitebreak/index.html?role=${selectedRole.toLowerCase()}&t=${Date.now()}`;
+      iframeRef.current.src = `https://bitebreak.iitdeveloper.com/?role=${selectedRole.toLowerCase()}&t=${Date.now()}`;
     }
   };
 
@@ -242,7 +242,7 @@ export default function BitebreakCaseStudy() {
                 Reset Simulator
               </Button>
               <a
-                href="/demos/bitebreak/index.html"
+                href="https://bitebreak.iitdeveloper.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -384,7 +384,7 @@ export default function BitebreakCaseStudy() {
                   {/* Embedded Prototype Iframe */}
                   <iframe
                     ref={iframeRef}
-                    src="/demos/bitebreak/index.html"
+                    src="https://bitebreak.iitdeveloper.com/"
                     title="Bitebreak Cafeteria App Prototype"
                     className="w-full h-full border-0 bg-[#f7faf6]"
                     loading="eager"
@@ -394,7 +394,7 @@ export default function BitebreakCaseStudy() {
 
               <div className="text-xs text-muted-foreground text-center mt-4 flex items-center gap-2">
                 <Smartphone className="w-3.5 h-3.5 text-secondary" />
-                <span>Interactive viewport: Click, scroll, place demo orders</span>
+                <span>Interactive viewport: Click, scroll, place demo orders. Sign in with the selected account; selecting a persona does not change your login. Use separate browser profiles or devices to test different roles together.</span>
               </div>
             </div>
 
@@ -466,7 +466,7 @@ export default function BitebreakCaseStudy() {
                 </Link>
 
                 <a
-                  href="/demos/bitebreak/index.html"
+                  href="https://bitebreak.iitdeveloper.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full"

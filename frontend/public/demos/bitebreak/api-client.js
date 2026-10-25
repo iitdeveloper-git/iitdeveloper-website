@@ -3,64 +3,7 @@ let signedInUser=null,authMode='login',syncBusy=false,orderRequestKey=null,order
 const screenRender=render;
 const signinScreens=()=>`<div class="login-page"><section class="login-brand-panel"><div class="brand"><span class="logo">b.</span>bite<em>break</em></div><h1>Good food.<br>One connected<br>cafeteria.</h1><p>Your lunch break, kitchen orders and store management — all in one place.</p><div class="login-feature"><span>01</span>Order your favourites in a few taps</div><div class="login-feature"><span>02</span>Keep every kitchen order moving</div><div class="login-feature"><span>03</span>Manage the menu and your team</div><div class="note-foot">BUILT BY IITDEVELOPER<br>Client demo · Sample menu and nutrition · No online payments</div></section><section class="login-form-panel"><div class="login-box"><div class="eyebrow">${authMode==='signup'?'Your cafeteria account':'Welcome to BiteBreak'}</div><h2>${authMode==='signup'?'A better break starts here.':'Good to have you back.'}</h2><p>${authMode==='signup'?'Create a customer account to explore the menu and order.':'Sign in with your assigned username and password.'}</p><form class="form" onsubmit="submitAuth(event)">${authMode==='signup'?'<label>Full name<input name="name" required minlength="2" maxlength="80" autocomplete="name" placeholder="Your name"></label>':''}<label>Username<input name="username" required minlength="3" maxlength="80" autocomplete="username" placeholder="${authMode==='signup'?'Choose a unique username':'Your username'}" autocapitalize="none" spellcheck="false"></label>${authMode==='signup'?'<label>Email (optional)<input name="email" type="email" maxlength="150" autocomplete="email" placeholder="you@company.com"></label>':''}<label>Password<input name="password" type="password" required ${authMode==='signup'?'minlength="10"':''} maxlength="128" autocomplete="${authMode==='signup'?'new-password':'current-password'}" placeholder="${authMode==='signup'?'At least 10 characters':'Your password'}"></label><div id="auth-error" class="auth-error" role="alert"></div><button id="auth-submit" class="primary full">${authMode==='signup'?'Create customer account':'Sign in'} →</button></form><button class="secondary full" onclick="authMode='${authMode==='signup'?'login':'signup'}';showLogin()">${authMode==='signup'?'Already have an account? Sign in':'New customer? Create an account'}</button><p class="note-foot">${authMode==='signup'?'Signup creates a customer account only. Staff access is assigned by the store manager.':'Customers, store workers and managers use this same login. Your account determines your access.'}<br>Use test details for this client demo.</p></div></section></div>`;
 function showLogin(){closeModal();signedInUser=null;foods=[];orders=[];staff=[];mine=[];cart={};document.getElementById('app').innerHTML=signinScreens()}
-let fallbackSeed = null;
-async function getFallbackSeed() {
-  if (!fallbackSeed) {
-    try {
-      const res = await fetch('seed.json');
-      fallbackSeed = await res.json();
-    } catch(e) {
-      fallbackSeed = { foods: [], orders: [], store: { name: 'The Office Kitchen', hours: '9:00 AM – 6:00 PM', open: true } };
-    }
-  }
-  return JSON.parse(JSON.stringify(fallbackSeed));
-}
-
-async function api(path,body){
-  try {
-    let response=await fetch('/api/'+path,{method:body===undefined?'GET':'POST',credentials:'same-origin',headers:body===undefined?{}:{'Content-Type':'application/json'},body:body===undefined?undefined:JSON.stringify(body)});
-    let value=await response.json();
-    if(!response.ok){
-      if(response.status===401&&!['login','signup'].includes(path))showLogin();
-      let e=new Error(value.error||'Request failed. Please try again.');
-      e.status=response.status;
-      throw e;
-    }
-    return value;
-  } catch(err) {
-    // If backend is unreachable (e.g. static preview on portfolio), gracefully simulate mock responses
-    if (path === 'state') {
-      const seed = await getFallbackSeed();
-      if (!signedInUser) throw { status: 401, message: 'Not logged in' };
-      return {
-        user: signedInUser,
-        foods: foods.length ? foods : seed.foods,
-        orders: orders.length ? orders : seed.orders,
-        store: store.name ? store : seed.store,
-        staff: staff.length ? staff : [
-          { id: 1, name: 'Ravi Mehta', email: 'manager@bitebreak.example', role: 'Manager', active: 1 },
-          { id: 2, name: 'Suresh Kumar', email: 'worker@bitebreak.example', role: 'Worker', active: 1 }
-        ]
-      };
-    }
-    if (path === 'login') {
-      const seed = await getFallbackSeed();
-      const u = (body?.username || '').toLowerCase();
-      let userRole = u === 'manager' ? 'Manager' : u === 'customer' ? 'Customer' : 'Worker';
-      let name = userRole === 'Manager' ? 'Ravi Mehta' : userRole === 'Customer' ? 'Aarav Sharma' : 'Suresh Kumar';
-      let user = { id: 1, name, username: u || 'worker', role: userRole, employee: 'EMP-DEMO', active: 1, email: `${u||'demo'}@bitebreak.example` };
-      signedInUser = user;
-      foods = seed.foods;
-      orders = seed.orders;
-      store = seed.store;
-      return { user };
-    }
-    if (path === 'orders') {
-      return { id: 'BB-' + Math.floor(1000 + Math.random() * 9000) };
-    }
-    return { ok: true };
-  }
-}
+async function api(path,body){let response=await fetch('/api/'+path,{method:body===undefined?'GET':'POST',credentials:'same-origin',headers:body===undefined?{}:{'Content-Type':'application/json'},body:body===undefined?undefined:JSON.stringify(body)});let value=await response.json();if(!response.ok){if(response.status===401&&!['login','signup'].includes(path))showLogin();let e=new Error(value.error||'Request failed. Please try again.');e.status=response.status;throw e}return value}
 function installState(data){signedInUser=data.user;role=data.user.role;profile={name:data.user.name,email:data.user.email,employee:data.user.employee};foods=data.foods;orders=data.orders;store=data.store;staff=data.staff||[];mine=role==='Customer'?orders.map(o=>o.id):[];if(!foods.some(f=>f.id===selectedFood)&&foods.length)selectedFood=foods[0].id}
 async function syncState(redraw=true){const state=await api('state');installState(state);if(redraw)render();return state}
 async function submitAuth(event){event.preventDefault();if(authSubmitting)return;authSubmitting=true;const button=document.getElementById('auth-submit');button.disabled=true;button.textContent='Please wait…';const data=Object.fromEntries(new FormData(event.target));try{await api(authMode==='signup'?'signup':'login',data);await syncState(false);page=role==='Customer'?'Menu':role==='Worker'?'Orders':'Overview';category='All items';query='';render()}catch(e){const box=document.getElementById('auth-error');if(box)box.textContent=e.message||'Login failed';if(button&&button.isConnected){button.disabled=false;button.textContent=authMode==='signup'?'Create customer account →':'Sign in →'}}finally{authSubmitting=false}}
