@@ -26,28 +26,29 @@ export default function ChatWidget() {
   const callLink = "tel:+917302755534";
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-4">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end space-y-2.5 sm:space-y-4">
       {/* Phone Call Floating Action Button */}
       <div className="relative flex items-center group">
         {/* Label (Slides in smoothly on hover) */}
-        <span className="absolute right-16 bg-background/90 border border-white/[0.08] text-foreground text-xs font-bold py-1.5 px-3.5 rounded-xl shadow-premium opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none whitespace-nowrap backdrop-blur-md">
+        <span className="hidden sm:block absolute right-16 bg-background/90 border border-white/[0.08] text-foreground text-xs font-bold py-1.5 px-3.5 rounded-xl shadow-premium opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none whitespace-nowrap backdrop-blur-md">
           Call +91 73027 55534
         </span>
         {/* Circle Button */}
         <motion.a
           href={callLink}
-          whileHover={{ scale: 1.1, y: -2 }}
+          aria-label="Call IITDeveloper"
+          whileHover={{ scale: 1.08, y: -2 }}
           whileTap={{ scale: 0.95 }}
-          className="w-14 h-14 rounded-full flex items-center justify-center bg-secondary text-secondary-foreground shadow-glow-yellow border border-secondary/35 cursor-pointer transition-shadow duration-300"
+          className="w-11 h-11 sm:w-14 sm:h-14 rounded-full flex items-center justify-center bg-secondary text-secondary-foreground shadow-glow-yellow border border-secondary/35 cursor-pointer transition-shadow duration-300"
         >
-          <Phone className="w-6 h-6 flex-shrink-0" />
+          <Phone className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
         </motion.a>
       </div>
 
       {/* WhatsApp Chat Floating Action Button */}
       <div className="relative flex items-center group">
         {/* Label (Slides in smoothly on hover) */}
-        <span className="absolute right-16 bg-background/90 border border-white/[0.08] text-foreground text-xs font-bold py-1.5 px-3.5 rounded-xl shadow-premium opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none whitespace-nowrap backdrop-blur-md">
+        <span className="hidden sm:block absolute right-16 bg-background/90 border border-white/[0.08] text-foreground text-xs font-bold py-1.5 px-3.5 rounded-xl shadow-premium opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none whitespace-nowrap backdrop-blur-md">
           Chat on WhatsApp
         </span>
         {/* Circle Button */}
@@ -55,11 +56,12 @@ export default function ChatWidget() {
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          whileHover={{ scale: 1.1, y: -2 }}
+          aria-label="Chat on WhatsApp"
+          whileHover={{ scale: 1.08, y: -2 }}
           whileTap={{ scale: 0.95 }}
-          className="w-14 h-14 rounded-full flex items-center justify-center bg-accent text-accent-foreground shadow-lg shadow-accent/20 hover:bg-accent/90 hover:shadow-accent/30 border border-accent/30 cursor-pointer transition-shadow duration-300"
+          className="w-11 h-11 sm:w-14 sm:h-14 rounded-full flex items-center justify-center bg-accent text-accent-foreground shadow-lg shadow-accent/20 hover:bg-accent/90 hover:shadow-accent/30 border border-accent/30 cursor-pointer transition-shadow duration-300"
         >
-          <WhatsAppIcon className="w-6 h-6 flex-shrink-0" />
+          <WhatsAppIcon className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
         </motion.a>
       </div>
     </div>

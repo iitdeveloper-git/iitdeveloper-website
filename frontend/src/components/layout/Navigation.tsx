@@ -78,7 +78,7 @@ const navItems: NavItem[] = [
     submenu: [
       { label: 'DeployKit', href: 'https://github.com/iitdeveloper-git/deploykit', external: true },
       { label: 'OpsPilot', href: 'https://github.com/iitdeveloper-git/opspilot', external: true },
-      { label: 'LLM Bridge', href: 'https://github.com/iitdeveloper-git/llm-bridge', external: true },
+      { label: 'LLM Bridge', href: 'https://github.com/iitdeveloper-git/LLMBridge', external: true },
     ],
   },
   {

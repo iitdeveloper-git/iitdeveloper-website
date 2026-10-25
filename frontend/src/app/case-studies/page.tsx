@@ -17,7 +17,7 @@ const stats = [
   //{ value: '₹10Cr+', label: 'Revenue Generated' },
 ];
 
-// Featured projects with detailed case study info
+// Featured real-world projects with interactive case studies
 const featuredProjects = [
   {
     title: 'BiteBreak — Smart Cafeteria System',
@@ -55,108 +55,6 @@ const featuredProjects = [
     timeline: '8 weeks',
     color: 'primary',
     year: '2026',
-  },
-  {
-    title: 'AI Customer Support Bot',
-    client: 'TechStart Inc',
-    category: 'AI Solution',
-    description: 'An intelligent support agent that handles 80% of tickets automatically using GPT-4 and a custom knowledge base. Reduced response time from hours to seconds.',
-    url: '#',
-    displayUrl: 'support.techstartinc.com',
-    icon: Bot,
-    metrics: [
-      { label: 'Tickets Automated', value: '80%', change: '+80%' },
-      { label: 'Response Time', value: '<10s', change: '-95%' },
-      { label: 'Cost Savings', value: '₹12L/mo', change: '-60%' },
-    ],
-    tech: ['GPT-4', 'LangChain', 'Python', 'Pinecone', 'React'],
-    timeline: '8 weeks',
-    color: 'primary',
-    year: '2025',
-  },
-  {
-    title: 'E-Commerce Platform Redesign',
-    client: 'RetailCo',
-    category: 'E-Commerce',
-    description: 'Complete platform rebuild with Next.js, resulting in 3x faster load times and 45% increase in conversions. Multi-vendor marketplace with AI-powered recommendations.',
-    url: '#',
-    displayUrl: 'shopverse.store',
-    icon: TrendingUp,
-    metrics: [
-      { label: 'Load Time', value: '0.8s', change: '-70%' },
-      { label: 'Conversions', value: '+45%', change: '+45%' },
-      { label: 'Mobile Traffic', value: '+120%', change: '+120%' },
-    ],
-    tech: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL', 'Redis'],
-    timeline: '12 weeks',
-    color: 'secondary',
-    year: '2025',
-  },
-  {
-    title: 'HealthTrack Mobile App',
-    client: 'MedTech Solutions',
-    category: 'Mobile App',
-    description: 'HIPAA-compliant telemedicine app with live video consultations, prescription management, and appointment scheduling.',
-    url: '#',
-    displayUrl: 'healthtrack.app',
-    icon: Smartphone,
-    metrics: [
-      { label: 'Daily Active Users', value: '12k+', change: '+300%' },
-      { label: 'App Rating', value: '4.8/5', change: '+0.8' },
-      { label: 'Consultations', value: '50k+', change: 'New' },
-    ],
-    tech: ['React Native', 'WebRTC', 'Firebase', 'Twilio'],
-    timeline: '16 weeks',
-    color: 'secondary',
-    year: '2025',
-  },
-];
-
-// Additional projects
-const moreProjects = [
-  {
-    title: 'SaaS Dashboard Platform',
-    description: 'A real-time analytics dashboard with role-based access control, data visualization, and integrations with 20+ third-party APIs.',
-    category: 'Web App',
-    icon: Code,
-    tech: ['React', 'Node.js', 'PostgreSQL', 'Recharts'],
-    url: '#',
-    displayUrl: 'demo.saasplatform.io',
-    color: 'secondary',
-    year: '2025',
-  },
-  {
-    title: 'Cloud Infrastructure Migration',
-    description: 'Migrated legacy monolith to microservices on AWS with 99.99% uptime and 40% cost reduction.',
-    category: 'DevOps & Cloud',
-    icon: Globe,
-    tech: ['AWS', 'Kubernetes', 'Terraform', 'Docker'],
-    url: '#',
-    displayUrl: 'finserve.cloud',
-    color: 'primary',
-    year: '2025',
-  },
-  {
-    title: 'SEO Growth Campaign',
-    description: 'Tripled organic traffic in 4 months for a B2B SaaS company through technical SEO, content strategy, and automation.',
-    category: 'Marketing',
-    icon: TrendingUp,
-    tech: ['SEO', 'Content Strategy', 'Analytics', 'Automation'],
-    url: '#',
-    displayUrl: 'growthco.io',
-    color: 'secondary',
-    year: '2024',
-  },
-  {
-    title: 'Salesforce Implementation',
-    description: 'Complete Salesforce setup with custom integrations, automating 60% of manual sales processes.',
-    category: 'Salesforce',
-    icon: Code,
-    tech: ['Salesforce', 'Apex', 'Lightning', 'Heroku'],
-    url: '#',
-    displayUrl: 'enterprise.salesforce.com',
-    color: 'primary',
-    year: '2025',
   },
 ];
 
@@ -374,95 +272,6 @@ export default function OurWorkPage() {
 
                       {/* Corner decoration */}
                       <div className="absolute bottom-0 right-0 w-32 h-32 bg-secondary rounded-tl-full opacity-[0.04] group-hover:opacity-[0.08] transition-opacity" />
-                    </motion.div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
-
-          {/* More Projects */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-5 h-5 rounded-full bg-gradient-to-br from-primary to-secondary" />
-              <h2 className="text-2xl font-bold">More Projects</h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-              {moreProjects.map((project, index) => {
-                const Icon = project.icon;
-                const isPrimary = project.color === 'primary'; // kept for data compatibility
-                return (
-                  <motion.div
-                    key={project.title}
-                    variants={fadeInUp}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <motion.div
-                      whileHover={{ y: -10, scale: 1.02 }}
-                      transition={{ duration: 0.3, ease: 'easeOut' }}
-                      className="relative group h-full glass dark-surface rounded-2xl overflow-hidden border-2 border-transparent hover:border-secondary/40 hover:shadow-glow-yellow transition-all duration-300 flex flex-col"
-                    >
-                      {/* Top accent */}
-                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-secondary via-secondary/60 to-transparent opacity-60 group-hover:opacity-100 transition-opacity" />
-
-                      {/* Hover background */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                      <div className="relative p-7 flex flex-col flex-1">
-                        {/* Header */}
-                        <div className="flex items-start justify-between mb-5">
-                          <motion.div
-                            whileHover={{ rotate: 8 }}
-                            className="w-14 h-14 rounded-xl bg-secondary/10 border-2 border-secondary/20 flex items-center justify-center"
-                          >
-                            <Icon className="w-7 h-7 text-secondary" />
-                          </motion.div>
-                          <div className="flex flex-col items-end gap-1">
-                            <span className="text-xs font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-secondary/10 text-secondary">
-                              {project.category}
-                            </span>
-                            <span className="text-xs text-muted-foreground font-mono">{project.year}</span>
-                          </div>
-                        </div>
-
-                        <h3 className="text-xl font-bold mb-3 text-foreground">{project.title}</h3>
-                        <p className="text-muted-foreground/75 text-sm leading-relaxed mb-5 flex-grow">
-                          {project.description}
-                        </p>
-
-                        {/* Tags */}
-                        <div className="flex flex-wrap gap-1.5 mb-6">
-                          {project.tech.map((tag) => (
-                            <span
-                              key={tag}
-                              className="text-xs px-2.5 py-1 rounded-full bg-surface-muted/80 text-muted-foreground border border-white/[0.07]"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-
-                        {/* URL Link */}
-                        <a
-                          href={project.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="mt-auto flex items-center justify-between w-full px-4 py-3 rounded-xl border border-secondary/25 hover:border-secondary/50 hover:bg-secondary/10 text-secondary transition-all duration-300 group/link"
-                        >
-                          <span className="text-sm font-semibold font-mono">{project.displayUrl}</span>
-                          <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                        </a>
-                      </div>
-
-                      {/* Corner decoration */}
-                      <div className="absolute bottom-0 right-0 w-20 h-20 bg-secondary rounded-tl-full opacity-[0.04] group-hover:opacity-[0.07] transition-opacity" />
                     </motion.div>
                   </motion.div>
                 );

@@ -9,7 +9,7 @@ import './ClosingSections.css';
 const projects = [
   { name: 'DeployKit', flow: 'Build • Secure • Release • Deploy', code: 'WORKSHOP / 01', type: 'deploy', href: 'https://github.com/iitdeveloper-git/deploykit', image: '/open-source/deploykit-banner.png', description: 'Open-source CI/CD, security, release and deployment automation for GitHub Actions.' },
   { name: 'OpsPilot', flow: 'Monitor • Understand • Act', code: 'WORKSHOP / 02', type: 'ops', href: 'https://github.com/iitdeveloper-git/opspilot', image: '/open-source/opspilot-banner.png', description: 'Open-source infrastructure monitoring, secure ChatOps and automation for engineering teams.' },
-  { name: 'LLM Bridge', flow: 'Connect • Translate • Integrate', code: 'WORKSHOP / 03', type: 'bridge', href: 'https://github.com/iitdeveloper-git/llm-bridge', description: 'An open-source VS Code extension for working across LLM providers through one developer workflow.' },
+  { name: 'LLM Bridge', flow: 'Connect • Translate • Integrate', code: 'WORKSHOP / 03', type: 'bridge', href: 'https://github.com/iitdeveloper-git/LLMBridge', description: 'An open-source VS Code extension for working across LLM providers through one developer workflow.' },
 ];
 
 export default function OpenSourceHighlight() {
