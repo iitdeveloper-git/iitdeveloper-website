@@ -50,14 +50,16 @@ export default function Header() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-5">
-            {/* DISABLED: Estimator — uncomment to re-enable
-            <Link href="/contact">
-              <Button variant="neon" size="lg" className="min-w-[140px]">
-                Price It Out
-              </Button>
+          <div className="hidden lg:flex items-center space-x-4">
+            <Link
+              href="https://app.iitdeveloper.com/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-cyan-400/40 text-sm font-medium text-slate-200 hover:text-white transition-all backdrop-blur-md group"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 group-hover:shadow-[0_0_8px_#34d399] transition-all" />
+              <span>Client Login</span>
             </Link>
-            */}
             <Link href="/contact">
               <Button variant="neon" size="lg" className="min-w-[140px]">
                 Let's Talk
@@ -86,13 +88,16 @@ export default function Header() {
           <div className="container mx-auto px-4 py-6">
             <Navigation mobile onNavigate={() => setIsMobileMenuOpen(false)} />
             <div className="mt-6 space-y-3">
-              {/* DISABLED: Estimator — uncomment to re-enable
-              <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button variant="neon" size="lg" className="w-full">
-                  Price It Out
-                </Button>
+              <Link
+                href="https://app.iitdeveloper.com/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-white/15 bg-white/5 text-slate-200 text-sm font-medium hover:bg-white/10 transition-colors"
+              >
+                <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                <span>Client Login / Portal</span>
               </Link>
-              */}
               <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button variant="neon" size="lg" className="w-full">
                   Let's Talk
