@@ -58,7 +58,7 @@ export default function Header() {
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-cyan-400/40 text-sm font-medium text-slate-200 hover:text-white transition-all backdrop-blur-md group"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 group-hover:shadow-[0_0_8px_#34d399] transition-all" />
-              <span>Client Login</span>
+              <span>Login</span>
             </Link>
             <Link href="/contact">
               <Button variant="neon" size="lg" className="min-w-[140px]">
@@ -96,7 +96,7 @@ export default function Header() {
                 className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-white/15 bg-white/5 text-slate-200 text-sm font-medium hover:bg-white/10 transition-colors"
               >
                 <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                <span>Client Login / Portal</span>
+                <span>Login</span>
               </Link>
               <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button variant="neon" size="lg" className="w-full">
