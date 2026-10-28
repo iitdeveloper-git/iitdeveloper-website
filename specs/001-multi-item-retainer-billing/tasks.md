@@ -66,4 +66,15 @@
 - [X] T022 Issue live test quotation for Rakesh Puri & Associates and verify 1-click conversion to official Tax Invoice
 - [X] T023 Deploy to VPS `149.56.101.2`, verify container health, and commit release tag `v1.3.1`
 
+---
+
+## Phase 9: Phase 2.1 - Quotation Actions Dropdown & Portal Email/WhatsApp Dispatch
+
+- [X] T024 [P] Implement `dispatchQuotationNotification` in `src/lib/dispatcher.ts` and API route `src/app/api/quotations/[id]/send/route.ts`
+- [X] T025 [P] Replace loose buttons in Quotations table with standard `Actions ⌄` dropdown in `src/app/admin/page.tsx`
+- [X] T026 Integrate Send/Share Quotation Modal (Postal Email + WhatsApp) with 1-click portal dispatch in `src/app/admin/page.tsx`
+- [X] T027 Validate build (`npx tsc --noEmit` & `npm run build`), deploy to VPS, and commit release tag `v1.4.0`
+
+
+
 
