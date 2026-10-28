@@ -75,6 +75,17 @@
 - [X] T026 Integrate Send/Share Quotation Modal (Postal Email + WhatsApp) with 1-click portal dispatch in `src/app/admin/page.tsx`
 - [X] T027 Validate build (`npx tsc --noEmit` & `npm run build`), deploy to VPS, and commit release tag `v1.4.0`
 
+---
+
+## Phase 10: Phase 2.2 - Client-Side Interactive Approval, Change Requests & Dashboard
+
+- [X] T028 [P] Implement public quote action API routes (`/api/quote/[token]/accept` and `/api/quote/[token]/feedback`) with automated Postal email alerts to Admin and Client
+- [X] T029 [P] Create `ClientQuoteActions.tsx` component with sticky bottom bar, Accept modal, and Change Request modal on `/quote/[token]`
+- [X] T030 Add "Proposals & Estimates" tab/widget in Client Dashboard (`src/app/dashboard/page.tsx`)
+- [X] T031 Update Admin Workspace (`src/app/admin/page.tsx`) to highlight `CHANGES_REQUESTED` and `ACCEPTED` status badges with client comments
+- [X] T032 Validate build (`npx tsc --noEmit` & `npm run build`), deploy to VPS, and commit release tag `v1.5.0`
+
+
 
 
 
