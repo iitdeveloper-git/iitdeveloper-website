@@ -85,6 +85,17 @@
 - [X] T031 Update Admin Workspace (`src/app/admin/page.tsx`) to highlight `CHANGES_REQUESTED` and `ACCEPTED` status badges with client comments
 - [X] T032 Validate build (`npx tsc --noEmit` & `npm run build`), deploy to VPS, and commit release tag `v1.5.0`
 
+---
+
+## Phase 11: Phase 3 - Standardized Client Onboarding Dossier & 360° Profile Studio
+
+- [ ] T033 [P] Extend Client TypeScript models & Zod schemas in `src/lib/leads-service.ts`, `src/app/api/clients/route.ts`, and `src/app/api/clients/[id]/route.ts` with corporate entity, GSTIN, digital footprint, social media profiles, and acquisition attribution
+- [ ] T034 [P] Update `onboardClient`, `updateClient`, and `getAllClients` in `src/lib/leads-service.ts` to persist and retrieve standardized dossier fields from PostgreSQL columns and `metadata` JSONB
+- [ ] T035 Redesign Client Onboarding Studio modal in `src/app/admin/page.tsx` into a modular 4-step intake (`01 / Entity & Tax`, `02 / Web & Social`, `03 / Team & Source`, `04 / Access & Handoff`) with smart GSTIN auto-state detection and pre-filled WhatsApp handoff
+- [ ] T036 Build expandable 360° Client Profile drawer in Admin Clients list (`src/app/admin/page.tsx`) to view and edit digital presence, social links, GSTIN, team contacts, and lead attribution inline
+- [ ] T037 Validate build (`npx tsc --noEmit` & `npm run build`), deploy to VPS, restart `iitd_app`, and commit release tag `v1.6.0`
+
+
 
 
 
