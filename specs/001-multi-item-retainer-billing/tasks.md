@@ -144,12 +144,35 @@
 - [X] T060 Deploy to VPS (`149.56.101.2`), recreate `iitd_app`, and tag release `v1.7.0`
 - [X] T061 Execute live end-to-end Sendrin dispatch test via Next.js API, verifying `202 Accepted` status, Sendrin notification IDs (`ntf_466e1fa61e4943988b0195033d15dd0c`, `ntf_880a8cf92b384a5d9ac1ef84bf084ab8`), and delivery logging in `gns_prod`
 
+---
 
+## Phase 17: On-Demand Server-Side PDF Generator & Download Endpoints
 
+- [X] T062 [P] Implement `src/lib/pdf-service.ts` with vector-quality `generateInvoicePdf` and `generateQuotationPdf` using `pdfkit`
+- [X] T063 [P] Implement API routes `src/app/api/pay/[token]/pdf/route.ts` and `src/app/api/quote/[token]/pdf/route.ts` for instant on-demand browser PDF streaming
+- [X] T064 Add "Download PDF" direct link buttons to `src/app/quote/[token]/PrintButton.tsx` and `src/app/pay/[token]/page.tsx`
 
+---
 
+## Phase 18: Capability Token Security & 15-Day Auto-Expiry Enforcement
 
+- [X] T065 [P] Update `src/lib/invoices-service.ts` to enforce `token_expires_at = dueDate + 15 days`
+- [X] T066 [P] Upgrade `src/app/quote/[token]/page.tsx` to enforce 15-day quotation validity (`valid_until`), rendering studio "Quotation Link Expired" screen with "Request Fresh Link"
+- [X] T067 [P] Upgrade `src/app/pay/[token]/page.tsx` to enforce 15-day invoice payment link expiry for unpaid invoices while keeping settled Tax Invoices permanently accessible
+- [X] T068 [P] Implement `POST /api/quote/[token]/refresh` and `POST /api/pay/[token]/refresh` to handle automated link refresh requests
 
+---
 
+## Phase 19: Retainer Auto-Invoicing Automation & Cron Engine
 
+- [X] T069 [P] Implement `processRetainerBilling` in `src/lib/invoices-service.ts` to scan active subscriptions (`next_renewal_date <= CURRENT_DATE`), generate consolidated recurring invoices, advance renewal bounds, and dispatch via Sendrin
+- [X] T070 [P] Create protected API cron endpoint `src/app/api/cron/retainers/route.ts` supporting bearer auth and `?dry_run=true`
+
+---
+
+## Phase 20: Build, Validation & Production Deployment (v1.8.0)
+
+- [X] T071 Validate TypeScript type check (`npx tsc --noEmit`) and Next.js production build (`npm run build`)
+- [X] T072 Deploy to VPS `149.56.101.2`, recreate `iitd_app`, and verify live PDF generation, link expiry, and cron endpoints
+- [X] T073 Commit release tag `v1.8.0` and push to origin
 
