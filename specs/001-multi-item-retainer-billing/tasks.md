@@ -104,6 +104,16 @@
 - [X] T040 Upgrade 3-page studio proposal template (`src/app/quote/[token]/page.tsx`) to render client role, package title, dynamic notes, milestone schedule, and custom terms
 - [X] T041 Build, deploy to VPS, verify live SSR output on `https://app.iitdeveloper.com/quote/bv7w8yOfx2P4f8qvvGCLmTYyjXHxJ4RKfG3ekxzWBoc`, and tag release `v1.6.1`
 
+---
+
+## Phase 13: Phase 3.2 - Real-World Client Onboarding & Quotation Sync (Samarpan Clinic)
+
+- [X] T042 Register client `Samarpan Clinic` in PostgreSQL with contact person (`Dr. A. Verma`), phone (`+91 98222 33445`), location (`Gyanpur, Bhadohi, U.P., INDIA`), and role (`Medical Director / Healthcare Practice`)
+- [X] T043 Update quotation `IITD-2026-0002` with real-world line items (Website Development ₹12,500, Google Business ₹0, SEO ₹0, Logo ₹0, Domain ₹1,500, Server hosting ₹2,000, Subtotal ₹27,000, Discount ₹11,000, Total ₹16,000), payment milestones (40% ₹6,400 / 40% ₹6,400 / 20% ₹3,200), and signatory (`For IITDeveloper: Sushma Sharma | Co-Founder`)
+- [X] T044 Upgrade 3-page studio proposal template (`src/app/quote/[token]/page.tsx`) with formal Acceptance & Signatory declaration block and flexible multi-tier address fallback
+- [X] T045 Build, deploy to VPS, verify live SSR output on `https://app.iitdeveloper.com/quote/F9KigphGPqqRzH7hDU05Yp-iCQ-f8semf0eiiPgjldY`, and tag release `v1.6.2`
+
+
 
 
 
