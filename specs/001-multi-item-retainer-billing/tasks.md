@@ -123,6 +123,28 @@
 - [X] T049 Execute end-to-end Sendrin dispatch test to `rdntechinfo@gmail.com` and `lmobds@gmail.com` (Accepted with 250 OK by Postal relay)
 - [X] T050 Build, deploy to VPS, restart `iitd_app`, and commit release tag `v1.6.3`
 
+---
+
+## Phase 15: Phase 3.4 - Standardized Lotus Brand Transactional Quotation Framework (Option A)
+
+- [X] T051 Update Sendrin (`gns_prod`) template `billing.quotation_issued` (v1 Active) with the two-card framework matching `billing.invoice_issued` (dark slate lotus header card, amber eyebrow, white summary card, milestone schedule, and direct CTA)
+- [X] T052 Update `src/lib/dispatcher.ts` in `iitdeveloper-app` with the standardized two-card lotus email template HTML
+- [X] T053 Validate TypeScript compilation and production build (`npx tsc --noEmit && npm run build`)
+- [X] T054 Deploy updated build to VPS (`149.56.101.2`), recreate Docker container `iitd_app`, and tag release `v1.6.4`
+- [X] T055 Dispatch live end-to-end test quotation email to `rdntechinfo@gmail.com` and `lmobds@gmail.com` and verify 250 OK relay delivery matching visual inbox specs
+
+---
+
+## Phase 16: Phase 3.5 - Official Sendrin Adapter Architecture & Universal Event Gateway (v1.7.0)
+
+- [X] T056 Build official Sendrin Adapter (`src/lib/sendrin.ts`) in `iitdeveloper-app` providing typed interfaces (`sendQuotation`, `sendInvoice`, `sendPaymentReceipt`) targeting Sendrin's `/api/v1/notifications` endpoint
+- [X] T057 Fix Sendrin verified domain validation in `ett_gns_app/api.py` on VPS to recognize tenant-owned verified active domains (`iitdeveloper.com`) and remove sandbox restrictions
+- [X] T058 Refactor `src/lib/dispatcher.ts` to route all billing event dispatches (`billing.quotation_issued`, `billing.invoice_issued`, `billing.payment_received`) exclusively through `sendrin` adapter
+- [X] T059 Validate TypeScript type checking (`npx tsc --noEmit`) and production Next.js compilation (`npm run build`)
+- [X] T060 Deploy to VPS (`149.56.101.2`), recreate `iitd_app`, and tag release `v1.7.0`
+- [X] T061 Execute live end-to-end Sendrin dispatch test via Next.js API, verifying `202 Accepted` status, Sendrin notification IDs (`ntf_466e1fa61e4943988b0195033d15dd0c`, `ntf_880a8cf92b384a5d9ac1ef84bf084ab8`), and delivery logging in `gns_prod`
+
+
 
 
 
