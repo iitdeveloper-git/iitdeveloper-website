@@ -95,6 +95,16 @@
 - [X] T036 Build expandable 360° Client Profile drawer in Admin Clients list (`src/app/admin/page.tsx`) to view and edit digital presence, social links, GSTIN, team contacts, and lead attribution inline
 - [X] T037 Validate build (`npx tsc --noEmit` & `npm run build`), deploy to VPS, restart `iitd_app`, and commit release tag `v1.6.0`
 
+---
+
+## Phase 12: Phase 3.1 - Real-World Quotation Sync (Rakesh Puri & Associates)
+
+- [X] T038 Update client record for `Rakesh Puri & Associates | Advocates & legal consultants` in PostgreSQL with contact person (`Rakesh Kumar Puri`), phone (`9414432758`), location (`Jodhpur, Rajasthan, INDIA`), and role (`Member of bar council`)
+- [X] T039 Re-seed quotation `IITD-2026-0001` with real-world line items (Website Development ₹11,500, SEO ₹0, Logo ₹0, Domain ₹1,500, Server hosting ₹2,000, Subtotal ₹25,000, Discount ₹10,000, Total ₹15,000), milestone schedule, scope terms, and client inputs
+- [X] T040 Upgrade 3-page studio proposal template (`src/app/quote/[token]/page.tsx`) to render client role, package title, dynamic notes, milestone schedule, and custom terms
+- [X] T041 Build, deploy to VPS, verify live SSR output on `https://app.iitdeveloper.com/quote/bv7w8yOfx2P4f8qvvGCLmTYyjXHxJ4RKfG3ekxzWBoc`, and tag release `v1.6.1`
+
+
 
 
 
