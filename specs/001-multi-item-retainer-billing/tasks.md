@@ -113,6 +113,17 @@
 - [X] T044 Upgrade 3-page studio proposal template (`src/app/quote/[token]/page.tsx`) with formal Acceptance & Signatory declaration block and flexible multi-tier address fallback
 - [X] T045 Build, deploy to VPS, verify live SSR output on `https://app.iitdeveloper.com/quote/F9KigphGPqqRzH7hDU05Yp-iCQ-f8semf0eiiPgjldY`, and tag release `v1.6.2`
 
+---
+
+## Phase 14: Phase 3.3 - Sendrin Quotation Template Registration & Dispatch Engine
+
+- [X] T046 Register event `billing.quotation_issued` in Sendrin (`gns_prod`) with JSON Schema v1 under tenant `IITDeveloper`
+- [X] T047 Publish Sendrin template `billing.quotation_issued` (v1 Active) with responsive dark-mode HTML, scope breakdown, milestone schedule, and direct proposal CTA
+- [X] T048 Update `src/lib/dispatcher.ts` and Admin Workspace modal in `src/app/admin/page.tsx` with `billing.quotation_issued (v1 Active)`
+- [X] T049 Execute end-to-end Sendrin dispatch test to `rdntechinfo@gmail.com` and `lmobds@gmail.com` (Accepted with 250 OK by Postal relay)
+- [X] T050 Build, deploy to VPS, restart `iitd_app`, and commit release tag `v1.6.3`
+
+
 
 
 
