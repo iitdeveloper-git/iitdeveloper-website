@@ -1,0 +1,853 @@
+# IITDeveloper — Complete Documentation
+> Digital Engineering Studio building scalable web applications, generative AI workflows, and resilient cloud infrastructure.
+
+## Table of Contents
+- [IITDeveloper — Premium Web Development, AI Solutions & DevOps](https://iitdeveloper.com/)
+- [About Us — IITDeveloper Engineering Studio](https://iitdeveloper.com/about)
+- [Case Studies & Engineering Portfolio — IITDeveloper](https://iitdeveloper.com/case-studies)
+- [Contact & Project Intake — IITDeveloper](https://iitdeveloper.com/contact)
+- [Open Source Initiatives — IITDeveloper](https://iitdeveloper.com/open-source)
+- [Privacy Policy — IITDeveloper](https://iitdeveloper.com/privacy)
+- [AI Agents & Automation — IITDeveloper](https://iitdeveloper.com/services/ai-agents)
+- [AI Workflows & LLM Integration — IITDeveloper](https://iitdeveloper.com/services/ai-workflows)
+- [Mobile App Development — IITDeveloper](https://iitdeveloper.com/services/app-development)
+- [B2B Promotion & Enterprise Growth — IITDeveloper](https://iitdeveloper.com/services/b2b-promotion)
+- [DevOps & Cloud Infrastructure — IITDeveloper](https://iitdeveloper.com/services/devops-cloud)
+- [Custom Ecommerce Solutions — IITDeveloper](https://iitdeveloper.com/services/ecommerce)
+- [Graphic Design, Video Editing & Motion Graphics — IITDeveloper](https://iitdeveloper.com/services/graphic-design)
+- [Performance Marketing & Growth — IITDeveloper](https://iitdeveloper.com/services/marketing)
+- [Salesforce Consulting & Custom Development — IITDeveloper](https://iitdeveloper.com/services/salesforce)
+- [SEO, SMM & Generative Engine Optimization (GEO) — IITDeveloper](https://iitdeveloper.com/services/seo-smm)
+- [Shopify Store Development — IITDeveloper](https://iitdeveloper.com/services/shopify-store)
+- [Website & Web Application Development — IITDeveloper](https://iitdeveloper.com/services/website-development)
+- [Terms of Service — IITDeveloper](https://iitdeveloper.com/terms)
+
+---
+
+
+<!-- Document: https://iitdeveloper.com/ -->
+
+---
+title: IITDeveloper — Premium Web Development, AI Solutions & DevOps
+description: Digital Engineering Studio building scalable web applications, generative AI workflows, and resilient cloud infrastructure.
+canonical_url: https://iitdeveloper.com/
+category: Overview
+---
+
+# IITDeveloper — Digital Engineering Studio & Cloud Infrastructure Lab
+
+Digital Engineering Studio building scalable web applications, generative AI workflows, and resilient cloud infrastructure.
+
+## Core Services
+- **Website & App Development** (/services/website-development): Professional custom website development services. We build fast, scalable, and beautiful web applications with modern frameworks like Next.js, React, and TypeScript.
+- **Mobile App Development** (/services/app-development): Professional mobile app development for iOS and Android. Native and cross-platform apps that users love. React Native, Flutter, Swift, and Kotlin expertise.
+- **DevOps & Cloud** (/services/devops-cloud): Professional DevOps and cloud infrastructure services. CI/CD pipelines, containerization, Kubernetes orchestration, and cloud architecture on AWS, GCP, and Azure.
+- **AI Agents** (/services/ai-agents): Custom AI agents that automate complex workflows. Autonomous, intelligent, and available 24/7. Built with modern LLMs and agent frameworks.
+- **AI Workflows** (/services/ai-workflows): Custom LLM integrations and AI automation systems. MCP protocols, intelligent pipelines, and workflow automation that scales.
+- **Salesforce Solutions** (/services/salesforce): Expert Salesforce consulting and custom implementations. CRM optimization, integrations, custom apps, and automation that makes Salesforce work for your business.
+- **Shopify Store** (/services/shopify-store): Expert Shopify store creation — custom themes, app integrations, payment setup, and full launch support. We build Shopify stores that convert and scale.
+- **Performance Marketing** (/services/marketing): Data-driven performance marketing that converts. PPC campaigns, social ads, conversion optimization, and growth marketing that stops burning money.
+- **SEO & Social Media** (/services/seo-smm): SEO and social media marketing that works in 2026. Get found on Google, grow your following, and drive organic traffic that converts.
+- **Ecommerce Solutions** (/services/ecommerce): Full-stack ecommerce development with payment gateways, marketplace integrations, brand architecture, and retention strategies. Built to sell, engineered to scale.
+- **Graphic Design & Video** (/services/graphic-design): Professional graphic design — posters, banners, video editing, 2D animations, After Effects motion graphics, and online/offline marketing materials.
+- **B2B Promotion** (/services/b2b-promotion): End-to-end B2B growth strategies. Market research, lead generation, content marketing, and analytics that fill pipelines and close deals.
+
+## Featured Products & Ecosystem
+- **Sendrin** (https://sendrin.com): Enterprise multi-tenant communication and notification engine.
+- **IITD IAM** (https://iam.iitdeveloper.com): Central identity provider with RFC 7636 PKCE.
+- **Growixa** (https://growixa.com): Growth engineering, lead intake, and marketing automation.
+
+## Quick Contact
+- Website: https://iitdeveloper.com
+- Inquiries: info@iitdeveloper.com
+- Intake: https://iitdeveloper.com/contact
+
+
+---
+
+
+<!-- Document: https://iitdeveloper.com/about -->
+
+---
+title: About Us — IITDeveloper Engineering Studio
+description: Learn about IITDeveloper, founded in 2019, MSME certified, our mission, core values, and engineering philosophy.
+canonical_url: https://iitdeveloper.com/about
+category: Company
+---
+
+# About IITDeveloper
+
+To empower organizations worldwide through resilient digital engineering, ethical AI systems, and high-performance cloud infrastructure that accelerates human potential.
+
+## Studio Milestones & Stats
+- **Founded**: 2019
+- **Growth Professionals**: 50+
+- **Years Experience**: 6+
+- **Registered 2020**: MSME
+
+## Core Engineering Values
+### Cutting-Edge Technologies
+The secret to success is to offer cutting-edge technologies. Always choose the better product with the most effective platform, whether that means using the cloud for scalability, putting DevOps into practice for efficiency, or developing creative digital marketing efforts.
+
+### Client-Centric Approach
+We are primarily focused on your success. Our solutions are customized after we take the time to comprehend your particular objectives and difficulties. As a valued partner on a quest to achieve exceptional digital transformations, you are more than just a client while working with IIT Developer.
+
+### Your End-to-End Solution Provider
+At IIT Developer, we deliver complete solutions rather than simply services. We can help you develop a game-changing product, increase your online presence, use DevOps to streamline operations, or take advantage of cloud computing.
+
+## Contact & Hubs
+- Email: info@iitdeveloper.com
+- Address: San Francisco, CA, US
+
+
+---
+
+
+<!-- Document: https://iitdeveloper.com/case-studies -->
+
+---
+title: Case Studies & Engineering Portfolio — IITDeveloper
+description: Explore verified production case studies delivered by IITDeveloper across legaltech, mobile ordering, enterprise IAM, and cloud infrastructure.
+canonical_url: https://iitdeveloper.com/case-studies
+category: Portfolio
+---
+
+# Verified Case Studies & Production Portfolio
+
+IITDeveloper track record across delivered enterprise systems:
+- **Projects Delivered**: 100+
+- **Client Satisfaction**: 98%
+- **Average Rating**: 4.9★
+- **On-Time Delivery**: 100%
+
+## Featured Case Studies
+### BiteBreak — Smart Cafeteria System
+- **Client/Domain**: Corporate Cafeterias (Mobile & Kitchen System)
+- **Overview**: A multi-role cafeteria ordering and kitchen management platform with real-time ticket queues, nutritional tracking, and store analytics. Interactive live prototype available.
+- **Tech Stack**: Next.js, Python, Docker, SQLite, Tailwind CSS, Framer Motion
+- **Outcomes**: Role Workspaces: 3 Roles (Synced); Queue Sync: <100ms (Real-time); Throughput: 3x Faster (+200%)
+- **URL**: /case-studies/bitebreak
+
+### PulsarIP — Intellectual Property Platform
+- **Client/Domain**: PulsarIP Legal (Legaltech Platform)
+- **Overview**: An intellectual property and corporate legal services portal with digital trademark & patent filing workflows, legal consultancy booking, and automated compliance tracking.
+- **Tech Stack**: Next.js, Tailwind CSS, Cloud Infrastructure, Analytics
+- **Outcomes**: Practice Areas: 12+ (Full Scope); Consultation SLA: 24hr (Guaranteed); Client Trust: Enterprise (Verified)
+- **URL**: https://pulsarip.com
+
+### Sendrin — Enterprise Notification & Messaging Engine
+- **Client/Domain**: Internal Product & Enterprise Clients (Cloud Communications Platform)
+- **Overview**: A high-throughput multi-tenant communication platform routing transactional email, SMS, and WhatsApp messages with real-time delivery telemetry and Keycloak SSO.
+- **Tech Stack**: Next.js, FastAPI, Keycloak, Redis, Docker, Caddy
+- **Outcomes**: Throughput: 10k+ msgs/min (High Volume); Delivery Rate: 99.9% (Zero Drop); Latency: <250ms (Real-time)
+- **URL**: https://sendrin.com
+
+
+---
+
+
+<!-- Document: https://iitdeveloper.com/contact -->
+
+---
+title: Contact & Project Intake — IITDeveloper
+description: Get in touch with the IITDeveloper engineering team for project consultations, architectural reviews, and enterprise engagements.
+canonical_url: https://iitdeveloper.com/contact
+category: Company
+---
+
+# Contact & Project Intake
+
+Schedule a technical consultation or submit a project brief to the IITDeveloper team.
+
+## Official Communication Channels
+- **General Inquiries**: info@iitdeveloper.com
+- **Billing & Operations**: billing@iitdeveloper.com
+- **Intake Form**: https://iitdeveloper.com/contact
+
+## Engagement Workflow
+1. **Discovery & Architecture Review**: 15–30 minute scope assessment.
+2. **Technical Proposal & Estimation**: Detailed milestone roadmap and transparent budget.
+3. **Sprint Execution**: Agile sprints with automated previews and continuous integration.
+4. **Production Deployment & SLA**: Safe release, SSL setup, and ongoing maintenance.
+
+
+---
+
+
+<!-- Document: https://iitdeveloper.com/open-source -->
+
+---
+title: Open Source Initiatives — IITDeveloper
+description: Explore open-source tools, developer utilities, and AI modules published and maintained by IITDeveloper.
+canonical_url: https://iitdeveloper.com/open-source
+category: Community
+---
+
+# Open Source at IITDeveloper
+
+We contribute back to the global developer ecosystem through resilient, production-tested open-source software.
+
+## Key Repositories
+- **AgentContent** (https://github.com/iitdeveloper-git/agent-content): Next.js & Node.js content negotiation adapter and llms.txt discovery engine for AI agents and LLMs.
+- **GitHub**: https://github.com/iitdeveloper-git
+
+
+---
+
+
+<!-- Document: https://iitdeveloper.com/privacy -->
+
+---
+title: Privacy Policy — IITDeveloper
+description: Privacy policy detailing data collection, processing, and protection standards at IITDeveloper.
+canonical_url: https://iitdeveloper.com/privacy
+category: Legal
+---
+
+# Privacy Policy
+
+IITDeveloper is committed to protecting your privacy and ensuring transparent data governance.
+
+## Key Principles
+- We do not sell personal data to third parties.
+- Client project data is held in strict confidentiality under mutual NDA.
+- We utilize industry-standard TLS encryption for all web communications.
+- For privacy inquiries, contact: info@iitdeveloper.com
+
+
+---
+
+
+<!-- Document: https://iitdeveloper.com/services/ai-agents -->
+
+---
+title: AI Agents & Automation — IITDeveloper
+description: Custom AI agents that automate complex workflows. Autonomous, intelligent, and available 24/7. Built with modern LLMs and agent frameworks.
+canonical_url: https://iitdeveloper.com/services/ai-agents
+category: Services
+---
+
+# AI Agents & Automation — IITDeveloper
+
+Custom AI agents that automate complex workflows. Autonomous, intelligent, and available 24/7. Built with modern LLMs and agent frameworks.
+
+## Core Capabilities
+- **Custom AI Agents**: Agents tailored to your business logic. Not generic chatbots.
+- **Multi-Model Support**: GPT-4, Claude, Gemini, or custom models. Best tool for each task.
+- **24/7 Availability**: Works while you sleep. No sick days. No vacation requests.
+- **Natural Conversations**: Context-aware dialogue. Remembers conversations. Actually helpful.
+- **Learning & Improvement**: Gets smarter over time. Learns from interactions and feedback.
+- **Fast Integration**: Plug into existing systems. APIs, webhooks, databases.
+
+## Supported Technologies & Frameworks
+- OpenAI GPT-4
+- Claude 3.5
+- Google Gemini
+- LangChain
+- Vector Databases
+- Pinecone
+- Weaviate
+- LlamaIndex
+- Function Calling
+- RAG Systems
+- Fine-tuning
+- Prompt Engineering
+
+## Delivery & Engineering Process
+01. **Use Case Discovery**: We identify repetitive tasks that AI can handle better than humans.
+02. **Agent Architecture**: Design the agent logic, knowledge base, and integration points.
+03. **Development & Training**: Build the agent, configure prompts, and connect to your data sources.
+04. **Testing & Refinement**: Rigorous testing with edge cases and unexpected inputs.
+05. **Deployment & Monitoring**: Launch the agent with full monitoring, analytics, and fallback mechanisms.
+06. **Continuous Learning**: Regular updates and improvements based on real conversation data.
+
+## Engagement & Next Steps
+- **Consultation**: Free consultation. We explore how AI agents can save your team 20+ hours a week.
+- **Inquiries**: info@iitdeveloper.com
+- **Intake Form**: https://iitdeveloper.com/contact
+
+
+---
+
+
+<!-- Document: https://iitdeveloper.com/services/ai-workflows -->
+
+---
+title: AI Workflows & LLM Integration — IITDeveloper
+description: Custom LLM integrations and AI automation systems. MCP protocols, intelligent pipelines, and workflow automation that scales.
+canonical_url: https://iitdeveloper.com/services/ai-workflows
+category: Services
+---
+
+# AI Workflows & LLM Integration — IITDeveloper
+
+Custom LLM integrations and AI automation systems. MCP protocols, intelligent pipelines, and workflow automation that scales.
+
+## Core Capabilities
+- **Custom Workflows**: Automated workflows tailored to your business processes. No generic templates.
+- **LLM Integration**: Seamless integration with OpenAI, Anthropic, and custom models.
+- **MCP Protocols**: Model Context Protocol implementations for advanced agent communication.
+- **Data Pipelines**: Intelligent data processing pipelines with AI at every step.
+- **Real-Time Processing**: Stream processing and real-time AI decision making.
+- **Secure & Compliant**: Enterprise-grade security. Your data stays your data.
+
+## Supported Technologies & Frameworks
+- LangChain
+- LlamaIndex
+- MCP Protocol
+- OpenAI APIs
+- Anthropic Claude
+- Vector Stores
+- Redis
+- Kafka
+- Airflow
+- Prefect
+- n8n
+- Make.com
+
+## Delivery & Engineering Process
+01. **Process Mapping**: We map your existing business workflows and identify AI automation opportunities.
+02. **Pipeline Architecture**: Design secure, high-throughput LLM pipelines and tool integration schemas.
+03. **Model Orchestration**: Connect vector stores, RAG retrieval engines, and fine-tuned prompts.
+04. **Verification & Guardrails**: Implement content safety guardrails, rate-limiters, and output validation.
+05. **Production Rollout**: Deploy resilient pipelines with end-to-end telemetry and token tracking.
+
+## Engagement & Next Steps
+- **Consultation**: Schedule a discovery session to map your business processes to intelligent automated pipelines.
+- **Inquiries**: info@iitdeveloper.com
+- **Intake Form**: https://iitdeveloper.com/contact
+
+
+---
+
+
+<!-- Document: https://iitdeveloper.com/services/app-development -->
+
+---
+title: Mobile App Development — IITDeveloper
+description: Professional mobile app development for iOS and Android. Native and cross-platform apps that users love. React Native, Flutter, Swift, and Kotlin expertise.
+canonical_url: https://iitdeveloper.com/services/app-development
+category: Services
+---
+
+# Mobile App Development — IITDeveloper
+
+Professional mobile app development for iOS and Android. Native and cross-platform apps that users love. React Native, Flutter, Swift, and Kotlin expertise.
+
+## Core Capabilities
+- **Cross-Platform Development**: React Native or Flutter. Write once, deploy everywhere. 60% cost savings.
+- **Native iOS Apps**: Swift and SwiftUI expertise. Full access to iOS features and APIs.
+- **Native Android Apps**: Kotlin and Jetpack Compose. Material Design 3 implementations.
+- **High Performance**: 60 FPS animations. Native-like performance. Battery-optimized.
+- **Secure by Design**: Encrypted storage, secure APIs, biometric auth. OWASP Mobile Top 10.
+- **User-Centric Design**: Intuitive UX following iOS and Android guidelines. Users love it.
+
+## Supported Technologies & Frameworks
+- React Native
+- Flutter
+- Swift
+- Kotlin
+- TypeScript
+- Firebase
+- GraphQL
+- REST APIs
+- Redux
+- MobX
+- Push Notifications
+- In-App Purchases
+
+## Delivery & Engineering Process
+01. **Product Strategy & Scope**: Define key user journeys, offline requirements, and platform roadmap.
+02. **Mobile UI/UX Design**: Native design patterns for iOS Human Interface Guidelines & Material 3.
+03. **Core App Engineering**: Type-safe architecture with reactive state management and biometric auth.
+04. **Device Matrix Testing**: Testing across real physical devices and screen densities.
+05. **Store Publishing & Launch**: Complete Apple App Store & Google Play Store submission and approval handling.
+
+## Engagement & Next Steps
+- **Consultation**: From napkin sketch to top of the App Store. Let us engineer your mobile product.
+- **Inquiries**: info@iitdeveloper.com
+- **Intake Form**: https://iitdeveloper.com/contact
+
+
+---
+
+
+<!-- Document: https://iitdeveloper.com/services/b2b-promotion -->
+
+---
+title: B2B Promotion & Enterprise Growth — IITDeveloper
+description: End-to-end B2B growth strategies. Market research, lead generation, content marketing, and analytics that fill pipelines and close deals.
+canonical_url: https://iitdeveloper.com/services/b2b-promotion
+category: Services
+---
+
+# B2B Promotion & Enterprise Growth — IITDeveloper
+
+End-to-end B2B growth strategies. Market research, lead generation, content marketing, and analytics that fill pipelines and close deals.
+
+## Core Capabilities
+- **Market Research**: Deep industry analysis, competitor mapping, and ideal customer profile development. Know your market before you enter it.
+- **Content Marketing**: Thought leadership content, whitepapers, case studies, and blog strategies that attract and educate your buyers.
+- **Lead Generation**: Multi-channel outbound and inbound lead generation. LinkedIn outreach, paid B2B ads, and intent-based targeting.
+- **Value Proposition**: Craft a clear, compelling value proposition that resonates with decision-makers and differentiates your offering.
+- **Sales Enablement**: Pitch decks, one-pagers, and email sequences that equip your sales team to convert conversations into contracts.
+- **Pipeline Analytics**: CRM tracking, pipeline velocity measurement, and attribution models to show exactly which channels produce revenue.
+
+## Supported Technologies & Frameworks
+- LinkedIn Sales Navigator
+- HubSpot
+- Apollo.io
+- Clay
+- Google Workspace
+- Looker Studio
+- Zapier
+- Notion
+
+## Delivery & Engineering Process
+01. **ICP & Market Analysis**: Map buying committees, decision-maker pain points, and competitive gaps.
+02. **Messaging & Assets**: Develop tailored case studies, landing pages, and cold outbound scripts.
+03. **Multi-Channel Outreach**: Launch intent-driven email sequences, LinkedIn touchpoints, and remarketing.
+04. **Lead Qualification**: Screen and qualify prospects against BANT criteria before passing to sales.
+05. **Continuous Pipeline Review**: Weekly review of reply rates, conversion velocity, and customer acquisition cost.
+
+## Engagement & Next Steps
+- **Consultation**: Schedule a strategic pipeline review to uncover your fastest path to qualified enterprise leads.
+- **Inquiries**: info@iitdeveloper.com
+- **Intake Form**: https://iitdeveloper.com/contact
+
+
+---
+
+
+<!-- Document: https://iitdeveloper.com/services/devops-cloud -->
+
+---
+title: DevOps & Cloud Infrastructure — IITDeveloper
+description: Professional DevOps and cloud infrastructure services. CI/CD pipelines, containerization, Kubernetes orchestration, and cloud architecture on AWS, GCP, and Azure.
+canonical_url: https://iitdeveloper.com/services/devops-cloud
+category: Services
+---
+
+# DevOps & Cloud Infrastructure — IITDeveloper
+
+Professional DevOps and cloud infrastructure services. CI/CD pipelines, containerization, Kubernetes orchestration, and cloud architecture on AWS, GCP, and Azure.
+
+## Core Capabilities
+- **Cloud Architecture**: AWS, GCP, or Azure. Scalable infrastructure designed for growth.
+- **Containerization**: Docker and Kubernetes. Consistent environments from dev to production.
+- **CI/CD Pipelines**: Automated testing and deployment. Ship code confidently.
+- **Infrastructure as Code**: Terraform, CloudFormation, or Pulumi. Version-controlled infrastructure.
+- **Monitoring & Logging**: Prometheus, Grafana, ELK stack. Know what's happening before users complain.
+- **Security & Compliance**: SOC 2, HIPAA, GDPR ready. Security baked in, not bolted on.
+
+## Supported Technologies & Frameworks
+- AWS
+- Google Cloud
+- Azure
+- Docker
+- Kubernetes
+- Terraform
+- GitHub Actions
+- Jenkins
+- Prometheus
+- Grafana
+- ELK Stack
+- Nginx
+
+## Delivery & Engineering Process
+01. **Infrastructure Audit**: We assess your current setup, identify bottlenecks, and spot security issues.
+02. **Architecture Design**: Scalable, cost-effective infrastructure blueprint. No over-engineering.
+03. **Migration Strategy**: Zero-downtime migration plan. We move fast without breaking things.
+04. **Implementation**: Infrastructure as code, CI/CD setup, and monitoring configuration.
+05. **Testing & Validation**: Load testing, security audits, and disaster recovery drills.
+06. **Ongoing Support**: 24/7 monitoring, performance optimization, and incident response.
+
+## Engagement & Next Steps
+- **Consultation**: Free infrastructure audit. Get a detailed migration plan in 48 hours.
+- **Inquiries**: info@iitdeveloper.com
+- **Intake Form**: https://iitdeveloper.com/contact
+
+
+---
+
+
+<!-- Document: https://iitdeveloper.com/services/ecommerce -->
+
+---
+title: Custom Ecommerce Solutions — IITDeveloper
+description: Full-stack ecommerce development with payment gateways, marketplace integrations, brand architecture, and retention strategies. Built to sell, engineered to scale.
+canonical_url: https://iitdeveloper.com/services/ecommerce
+category: Services
+---
+
+# Custom Ecommerce Solutions — IITDeveloper
+
+Full-stack ecommerce development with payment gateways, marketplace integrations, brand architecture, and retention strategies. Built to sell, engineered to scale.
+
+## Core Capabilities
+- **Ecommerce Development**: Custom storefronts built on Shopify, WooCommerce, or fully bespoke platforms. Fast, beautiful, and conversion-focused.
+- **Payment Gateways**: Stripe, Razorpay, PayPal, and more. Secure, seamless checkout flows that reduce cart abandonment.
+- **Marketplace Setup & Integrations**: List and sell across Amazon, Flipkart, Etsy, and other marketplaces. Centralized inventory and order management.
+- **Brand Architecture**: Multi-brand or sub-brand structures designed for scale. Consistent identity across every storefront and channel.
+- **Inventory & Order Sync**: Real-time synchronization across warehouses, marketplaces, and online storefronts. Zero overselling.
+- **Retention & Loyalty Engines**: Automated post-purchase sequences, loyalty points, and win-back email automation.
+
+## Supported Technologies & Frameworks
+- Shopify Plus
+- WooCommerce
+- Next.js Commerce
+- Stripe
+- Razorpay
+- Shiprocket
+- Klaviyo
+- PostgreSQL
+- Tailwind CSS
+- GraphQL
+- Algolia
+- Redis
+
+## Delivery & Engineering Process
+01. **Commerce Architecture**: Evaluate catalog size, multi-currency needs, and checkout flow requirements.
+02. **Storefront Engineering**: Build responsive, fast-loading storefront with optimized mobile UX.
+03. **Payment & Logistics Integration**: Configure regional payment gateways, tax calculation, and automated shipping.
+04. **End-to-End Testing**: Simulate high concurrency, payment edge cases, and inventory webhooks.
+05. **Launch & Growth**: Go live with full analytics and retention automation active from day one.
+
+## Engagement & Next Steps
+- **Consultation**: Get a full commerce architectural assessment and delivery timeline in 48 hours.
+- **Inquiries**: info@iitdeveloper.com
+- **Intake Form**: https://iitdeveloper.com/contact
+
+
+---
+
+
+<!-- Document: https://iitdeveloper.com/services/graphic-design -->
+
+---
+title: Graphic Design, Video Editing & Motion Graphics — IITDeveloper
+description: Professional graphic design — posters, banners, video editing, 2D animations, After Effects motion graphics, and online/offline marketing materials.
+canonical_url: https://iitdeveloper.com/services/graphic-design
+category: Services
+---
+
+# Graphic Design, Video Editing & Motion Graphics — IITDeveloper
+
+Professional graphic design — posters, banners, video editing, 2D animations, After Effects motion graphics, and online/offline marketing materials.
+
+## Core Capabilities
+- **Poster & Banner Design**: Eye-catching posters and banners for digital campaigns, events, and physical marketing materials. Print-ready and pixel-perfect.
+- **Video Editing**: Professional video editing for promotional, product, and social media content. From raw footage to polished final cut.
+- **Launching Video & 2D Video**: Compelling product launch videos and 2D animated explainers that communicate your value proposition clearly and memorably.
+- **Online & Offline Designs**: Consistent visual identity across digital channels (social, web, email) and offline materials (brochures, flyers, signage).
+- **Motion Graphics & After Effects**: Kinetic typography, animated logo reveals, and custom After Effects motion graphics that make your brand stand out.
+- **Brand Identity Systems**: Cohesive color systems, typography pairing, logo guidelines, and comprehensive brand books.
+
+## Supported Technologies & Frameworks
+- Adobe Illustrator
+- Adobe Photoshop
+- After Effects
+- Premiere Pro
+- Figma
+- Blender
+- DaVinci Resolve
+- Cinema 4D
+
+## Delivery & Engineering Process
+01. **Creative Brief & Concepting**: Align on brand voice, target demographic, and visual direction through moodboards.
+02. **Storyboarding & Wireframing**: Draft layouts, storyboard scenes, and review initial visual directions.
+03. **Design & Motion Production**: Craft high-resolution visual assets, color grading, and fluid keyframe animation.
+04. **Review & Refinement**: Collaborative feedback rounds ensuring brand precision and impact.
+05. **Multi-Format Delivery**: Deliver production assets in all required social, web, print, and video codecs.
+
+## Engagement & Next Steps
+- **Consultation**: Share your vision with our creative team. Fast turnarounds and production-grade quality.
+- **Inquiries**: info@iitdeveloper.com
+- **Intake Form**: https://iitdeveloper.com/contact
+
+
+---
+
+
+<!-- Document: https://iitdeveloper.com/services/marketing -->
+
+---
+title: Performance Marketing & Growth — IITDeveloper
+description: Data-driven performance marketing that converts. PPC campaigns, social ads, conversion optimization, and growth marketing that stops burning money.
+canonical_url: https://iitdeveloper.com/services/marketing
+category: Services
+---
+
+# Performance Marketing & Growth — IITDeveloper
+
+Data-driven performance marketing that converts. PPC campaigns, social ads, conversion optimization, and growth marketing that stops burning money.
+
+## Core Capabilities
+- **Targeted Campaigns**: Precision targeting based on data, not guesswork. Right audience, right message.
+- **ROI-Focused**: Every dollar tracked. Clear attribution. No vanity metrics.
+- **Data Analytics**: Deep dive into metrics. We optimize what matters: conversions and revenue.
+- **Conversion Optimization**: Landing pages that convert. A/B testing. Heat maps. Real improvements.
+- **Growth Marketing**: Systematic experimentation. Find what works, scale it aggressively.
+- **Full-Funnel Strategy**: Awareness to conversion. We handle the entire customer journey.
+- **Multi-Channel Advertising**: Google, Meta, LinkedIn, and programmatic ads orchestrated across channels.
+
+## Supported Technologies & Frameworks
+- Google Ads
+- Meta Ads
+- LinkedIn Ads
+- Google Analytics 4
+- Google Tag Manager
+- Hotjar
+- Mixpanel
+- HubSpot
+- Klaviyo
+- Looker Studio
+- Zapier
+- Segment
+
+## Delivery & Engineering Process
+01. **Audit & Tracking Setup**: Audit historical ad spend, configure conversion tracking, and fix attribution gaps.
+02. **Strategy & Audience Modeling**: Build ideal customer personas and full-funnel keyword/creative strategies.
+03. **Campaign Architecture**: Deploy campaigns with segmented bidding, negative keywords, and tailored creatives.
+04. **A/B Testing & Optimization**: Continuous testing of ad copy, hooks, and landing page conversion rates.
+05. **Scale & Profit Maximization**: Scale winning ad sets while preserving target CAC and maximizing ROAS.
+
+## Engagement & Next Steps
+- **Consultation**: Free ad account audit. We identify wasted spend and growth opportunities within 48 hours.
+- **Inquiries**: info@iitdeveloper.com
+- **Intake Form**: https://iitdeveloper.com/contact
+
+
+---
+
+
+<!-- Document: https://iitdeveloper.com/services/salesforce -->
+
+---
+title: Salesforce Consulting & Custom Development — IITDeveloper
+description: Expert Salesforce consulting and custom implementations. CRM optimization, integrations, custom apps, and automation that makes Salesforce work for your business.
+canonical_url: https://iitdeveloper.com/services/salesforce
+category: Services
+---
+
+# Salesforce Consulting & Custom Development — IITDeveloper
+
+Expert Salesforce consulting and custom implementations. CRM optimization, integrations, custom apps, and automation that makes Salesforce work for your business.
+
+## Core Capabilities
+- **Custom Implementation**: Tailored Salesforce setup that fits your business process, not the other way around.
+- **Third-Party Integrations**: Connect Salesforce with your existing tools. APIs, webhooks, middleware.
+- **Data Migration**: Clean data migration from legacy systems. No data loss, validated transfers.
+- **Advanced Analytics**: Custom dashboards, reports, and Einstein Analytics for data-driven decisions.
+- **Process Automation**: Workflows, approval processes, and custom automation. Less manual work.
+- **Training & Support**: Your team actually knows how to use it. Documentation included.
+
+## Supported Technologies & Frameworks
+- Salesforce CRM
+- Apex
+- Visualforce
+- Lightning Components
+- Salesforce APIs
+- Heroku
+- Marketing Cloud
+- Service Cloud
+- Sales Cloud
+- Einstein Analytics
+- MuleSoft
+- Pardot
+
+## Delivery & Engineering Process
+01. **Discovery & Audit**: Assess current CRM structure, data health, and workflow bottlenecks.
+02. **Solution Design**: Architect custom objects, LWC components, and security models.
+03. **Implementation & Integration**: Build Apex triggers, middleware flows, and API sync pipelines.
+04. **Validation & Testing**: End-to-end sandbox testing with real business scenarios.
+05. **Deployment & Training**: Change set deployment and comprehensive team training.
+
+## Engagement & Next Steps
+- **Consultation**: Schedule a discovery call with our certified Salesforce specialists.
+- **Inquiries**: info@iitdeveloper.com
+- **Intake Form**: https://iitdeveloper.com/contact
+
+
+---
+
+
+<!-- Document: https://iitdeveloper.com/services/seo-smm -->
+
+---
+title: SEO, SMM & Generative Engine Optimization (GEO) — IITDeveloper
+description: SEO and social media marketing that works in 2026. Get found on Google, grow your following, and drive organic traffic that converts.
+canonical_url: https://iitdeveloper.com/services/seo-smm
+category: Services
+---
+
+# SEO, SMM & Generative Engine Optimization (GEO) — IITDeveloper
+
+SEO and social media marketing that works in 2026. Get found on Google, grow your following, and drive organic traffic that converts.
+
+## Core Capabilities
+- **Technical SEO**: Site speed, structured data, Core Web Vitals. The technical foundation that ranks.
+- **On-Page Optimization**: Content optimization, keyword strategy, and internal linking that works.
+- **Link Building**: High-quality backlinks from real sites. No spam, no PBNs, no shortcuts.
+- **Social Media Strategy**: Platform-specific content strategies. Not just posting, actually engaging.
+- **Community Growth**: Real followers, real engagement. No bots, no fake accounts.
+- **Content Marketing**: Content that ranks, content that converts. SEO + social + conversion.
+
+## Supported Technologies & Frameworks
+- Ahrefs
+- SEMrush
+- Google Search Console
+- Screaming Frog
+- SurferSEO
+- Buffer
+- Hootsuite
+- Canva
+- Google Analytics
+- Schema.org
+- PageSpeed Insights
+- BuzzSumo
+
+## Delivery & Engineering Process
+01. **Technical & Content Audit**: Identify indexation blockers, schema omissions, Core Web Vitals issues, and content gaps.
+02. **Keyword & Semantic Strategy**: Target high-intent search queries and AI engine answer topics.
+03. **On-Page & Architecture Fixes**: Optimize page structure, meta tags, and internal link equity.
+04. **Authority & Link Building**: Acquire high-authority editorial links through genuine digital PR.
+05. **Tracking & Compounding Growth**: Monitor search impressions, keyword rankings, and organic conversions.
+
+## Engagement & Next Steps
+- **Consultation**: Free technical SEO audit. Discover the top 5 blockers preventing your website from ranking #1.
+- **Inquiries**: info@iitdeveloper.com
+- **Intake Form**: https://iitdeveloper.com/contact
+
+
+---
+
+
+<!-- Document: https://iitdeveloper.com/services/shopify-store -->
+
+---
+title: Shopify Store Development — IITDeveloper
+description: Expert Shopify store creation — custom themes, app integrations, payment setup, and full launch support. We build Shopify stores that convert and scale.
+canonical_url: https://iitdeveloper.com/services/shopify-store
+category: Services
+---
+
+# Shopify Store Development — IITDeveloper
+
+Expert Shopify store creation — custom themes, app integrations, payment setup, and full launch support. We build Shopify stores that convert and scale.
+
+## Core Capabilities
+- **Custom Theme Design**: Pixel-perfect Shopify themes built from scratch or customized from premium bases. Branded, fast, and conversion-optimized.
+- **Payment & Checkout Setup**: Stripe, Shopify Payments, Razorpay, PayPal, and more. Streamlined checkout flows that reduce abandonment.
+- **App Integrations**: Klaviyo, Yotpo, ReCharge, Judge.me, Loox, and custom Shopify apps. Every integration your store needs to grow.
+- **Shipping & Fulfillment**: ShipStation, Shiprocket, EasyPost, and third-party logistics (3PL) setup. Automated shipping rules and tracking.
+- **Product Catalog & Collections**: Bulk product uploads, smart collections, metafields, and variant management. Organized from day one.
+- **Analytics & Conversion Tracking**: Google Analytics 4, Meta Pixel, TikTok Pixel, and Shopify analytics dashboards. Know exactly what's selling.
+- **Shopify Markets & Internationalization**: Multi-currency, multi-language stores powered by Shopify Markets. Sell globally from a single backend.
+
+## Supported Technologies & Frameworks
+- Shopify
+- Shopify Plus
+- Liquid
+- Hydrogen
+- Klaviyo
+- Yotpo
+- ReCharge
+- Judge.me
+- Stripe
+- Razorpay
+- PayPal
+- ShipStation
+
+## Delivery & Engineering Process
+01. **Discovery & Store Strategy**: Define your product catalog, target audience, branding, and conversion goals.
+02. **Theme & UX Design**: Custom Shopify theme wireframes and interactive prototypes optimized for mobile conversions.
+03. **Store Build & App Setup**: Liquid theme engineering, payment gateways, shipping rules, and marketing app integrations.
+04. **Testing & QA**: End-to-end checkout testing, speed optimization, and cross-browser quality checks.
+05. **Launch & Handoff**: Domain connection, live checkout verification, and store management training.
+
+## Engagement & Next Steps
+- **Consultation**: Get a custom quote and timeline in 24 hours. From idea to launch in weeks.
+- **Inquiries**: info@iitdeveloper.com
+- **Intake Form**: https://iitdeveloper.com/contact
+
+
+---
+
+
+<!-- Document: https://iitdeveloper.com/services/website-development -->
+
+---
+title: Website & Web Application Development — IITDeveloper
+description: Professional custom website development services. We build fast, scalable, and beautiful web applications with modern frameworks like Next.js, React, and TypeScript.
+canonical_url: https://iitdeveloper.com/services/website-development
+category: Services
+---
+
+# Website & Web Application Development — IITDeveloper
+
+Professional custom website development services. We build fast, scalable, and beautiful web applications with modern frameworks like Next.js, React, and TypeScript.
+
+## Core Capabilities
+- **Blazing Fast Performance**: Optimized for Core Web Vitals with SSR, SSG, and ISR. Your users won't wait.
+- **Responsive Design**: Perfect on any device. Mobile-first approach that actually works.
+- **Enterprise Security**: OWASP compliance, XSS protection, CSRF tokens. Sleep better at night.
+- **Scalable Architecture**: From 100 to 100,000 users. Your infrastructure grows with you.
+- **SEO Optimized**: Built-in SEO best practices. Structured data, meta tags, sitemaps included.
+- **Modern Tech Stack**: Next.js 14, React 18, TypeScript, Tailwind CSS. The good stuff.
+- **Personalized UX Design**: User experience tailored to your audience. Wireframes, prototypes, and pixel-perfect interfaces.
+- **Quality Control**: Rigorous QA testing — automated and manual. We find the bugs before your users do.
+- **Real-time Deployment**: CI/CD pipelines for instant, zero-downtime deployments. Ship faster, ship safer.
+- **Website Maintenance**: Ongoing updates, security patches, and performance monitoring. We keep your site running.
+
+## Supported Technologies & Frameworks
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Node.js
+- PostgreSQL
+- MongoDB
+- Prisma
+- GraphQL
+- REST APIs
+- Docker
+- AWS/Vercel
+
+## Delivery & Engineering Process
+01. **Discovery & Architecture**: We understand your goals, target audience, and technical requirements.
+02. **UI/UX Design**: Figma prototypes that look and feel like a real product. No surprises.
+03. **Sprint Development**: Clean, type-safe, tested code. Weekly demos so you see progress.
+04. **Testing & QA**: Cross-browser testing, accessibility checks, and performance optimization.
+05. **Launch & Handoff**: Smooth deployment to production. Documentation and training included.
+06. **Ongoing Support**: We stick around. Bug fixes, updates, and scaling support when you need it.
+
+## Engagement & Next Steps
+- **Consultation**: Let's turn your vision into a production-grade web application.
+- **Inquiries**: info@iitdeveloper.com
+- **Intake Form**: https://iitdeveloper.com/contact
+
+
+---
+
+
+<!-- Document: https://iitdeveloper.com/terms -->
+
+---
+title: Terms of Service — IITDeveloper
+description: Terms and conditions governing the use of IITDeveloper web platforms and consulting services.
+canonical_url: https://iitdeveloper.com/terms
+category: Legal
+---
+
+# Terms of Service
+
+Terms governing digital engineering services, technical deliverables, and intellectual property.
+
+## Standard Terms
+- Deliverables and source code ownership transfer to client upon complete milestone payment.
+- 30-day post-launch warranty and bug-fixing period included with all custom software engagements.
+- For legal inquiries, contact: info@iitdeveloper.com
+
+
+---

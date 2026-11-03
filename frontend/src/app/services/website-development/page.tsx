@@ -5,108 +5,38 @@ import Footer from '@/components/layout/Footer';
 import { Code, Rocket, Zap, Shield, Globe, Smartphone, Database, CheckCircle2, UserCheck, Settings, RefreshCcw, Wrench } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { websiteDevelopmentContent } from '@/content/services/website-development';
 
 export const metadata: Metadata = {
-  title: 'Website Development Services | Custom Web Applications | IITDeveloper',
-  description: 'Professional custom website development services. We build fast, scalable, and beautiful web applications with modern frameworks like Next.js, React, and TypeScript.',
+  title: websiteDevelopmentContent.metaTitle,
+  description: websiteDevelopmentContent.metaDescription,
   openGraph: {
-    title: 'Website Development Services | IITDeveloper',
-    description: 'Custom web applications built with modern frameworks. Fast, scalable, and beautiful.',
+    title: websiteDevelopmentContent.title,
+    description: websiteDevelopmentContent.description,
     type: 'website',
   },
 };
 
-const features = [
-  {
-    icon: Rocket,
-    title: 'Blazing Fast Performance',
-    description: 'Optimized for Core Web Vitals with SSR, SSG, and ISR. Your users won\'t wait.',
-  },
-  {
-    icon: Smartphone,
-    title: 'Responsive Design',
-    description: 'Perfect on any device. Mobile-first approach that actually works.',
-  },
-  {
-    icon: Shield,
-    title: 'Enterprise Security',
-    description: 'OWASP compliance, XSS protection, CSRF tokens. Sleep better at night.',
-  },
-  {
-    icon: Database,
-    title: 'Scalable Architecture',
-    description: 'From 100 to 100,000 users. Your infrastructure grows with you.',
-  },
-  {
-    icon: Globe,
-    title: 'SEO Optimized',
-    description: 'Built-in SEO best practices. Structured data, meta tags, sitemaps included.',
-  },
-  {
-    icon: Zap,
-    title: 'Modern Tech Stack',
-    description: 'Next.js 14, React 18, TypeScript, Tailwind CSS. The good stuff.',
-  },
-  {
-    icon: UserCheck,
-    title: 'Personalized UX Design',
-    description: 'User experience tailored to your audience. Wireframes, prototypes, and pixel-perfect interfaces.',
-  },
-  {
-    icon: Settings,
-    title: 'Quality Control',
-    description: 'Rigorous QA testing — automated and manual. We find the bugs before your users do.',
-  },
-  {
-    icon: RefreshCcw,
-    title: 'Real-time Deployment',
-    description: 'CI/CD pipelines for instant, zero-downtime deployments. Ship faster, ship safer.',
-  },
-  {
-    icon: Wrench,
-    title: 'Website Maintenance',
-    description: 'Ongoing updates, security patches, and performance monitoring. We keep your site running.',
-  },
-];
+const iconMap: Record<string, any> = {
+  Rocket,
+  Smartphone,
+  Shield,
+  Database,
+  Globe,
+  Zap,
+  UserCheck,
+  Settings,
+  RefreshCcw,
+  Wrench,
+};
 
-const technologies = [
-  'Next.js', 'React', 'TypeScript', 'Tailwind CSS',
-  'Node.js', 'PostgreSQL', 'MongoDB', 'Prisma',
-  'GraphQL', 'REST APIs', 'Docker', 'AWS/Vercel',
-];
+const features = websiteDevelopmentContent.features.map((item) => ({
+  ...item,
+  icon: (item.iconName && iconMap[item.iconName]) || Code,
+}));
 
-const processSteps = [
-  {
-    number: '01',
-    title: 'Discovery & Planning',
-    description: 'We understand your business goals, target audience, and technical requirements. No assumptions, just facts.',
-  },
-  {
-    number: '02',
-    title: 'Design & Architecture',
-    description: 'Wireframes, mockups, and system architecture. You see exactly what you\'re getting.',
-  },
-  {
-    number: '03',
-    title: 'Development',
-    description: 'Clean code, test-driven development, and regular progress updates. Weekly demos.',
-  },
-  {
-    number: '04',
-    title: 'Testing & QA',
-    description: 'Automated tests, manual QA, security audits. We break it so users don\'t.',
-  },
-  {
-    number: '05',
-    title: 'Deployment & Launch',
-    description: 'Smooth production deployment with monitoring, analytics, and documentation.',
-  },
-  {
-    number: '06',
-    title: 'Support & Growth',
-    description: 'Post-launch support, performance monitoring, and continuous improvements.',
-  },
-];
+const technologies = websiteDevelopmentContent.technologies;
+const processSteps = websiteDevelopmentContent.processSteps;
 
 const pricing = [
   {

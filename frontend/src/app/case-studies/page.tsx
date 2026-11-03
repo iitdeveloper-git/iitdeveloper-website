@@ -8,14 +8,9 @@ import { ExternalLink, TrendingUp, Clock, Sparkles, Star, Globe, ArrowRight, Bot
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/animations/variants';
+import { caseStudyStats } from '@/content/case-studies';
 
-const stats = [
-  { value: '100+', label: 'Projects Delivered' },
-  { value: '98%', label: 'Client Satisfaction' },
-  { value: '4.9★', label: 'Average Rating' },
-  { value: '100%', label: 'On-Time Delivery' },
-  //{ value: '₹10Cr+', label: 'Revenue Generated' },
-];
+const stats = caseStudyStats;
 
 // Featured real-world projects with interactive case studies
 const featuredProjects = [

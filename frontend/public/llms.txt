@@ -1,0 +1,33 @@
+# IITDeveloper
+> Digital Engineering Studio building scalable web applications, generative AI workflows, and resilient cloud infrastructure.
+
+## Community
+- [Open Source Initiatives — IITDeveloper](https://iitdeveloper.com/open-source): Explore open-source tools, developer utilities, and AI modules published and maintained by IITDeveloper.
+
+## Company
+- [About Us — IITDeveloper Engineering Studio](https://iitdeveloper.com/about): Learn about IITDeveloper, founded in 2019, MSME certified, our mission, core values, and engineering philosophy.
+- [Contact & Project Intake — IITDeveloper](https://iitdeveloper.com/contact): Get in touch with the IITDeveloper engineering team for project consultations, architectural reviews, and enterprise engagements.
+
+## Legal
+- [Privacy Policy — IITDeveloper](https://iitdeveloper.com/privacy): Privacy policy detailing data collection, processing, and protection standards at IITDeveloper.
+- [Terms of Service — IITDeveloper](https://iitdeveloper.com/terms): Terms and conditions governing the use of IITDeveloper web platforms and consulting services.
+
+## Overview
+- [IITDeveloper — Premium Web Development, AI Solutions & DevOps](https://iitdeveloper.com/): Digital Engineering Studio building scalable web applications, generative AI workflows, and resilient cloud infrastructure.
+
+## Portfolio
+- [Case Studies & Engineering Portfolio — IITDeveloper](https://iitdeveloper.com/case-studies): Explore verified production case studies delivered by IITDeveloper across legaltech, mobile ordering, enterprise IAM, and cloud infrastructure.
+
+## Services
+- [AI Agents & Automation — IITDeveloper](https://iitdeveloper.com/services/ai-agents): Custom AI agents that automate complex workflows. Autonomous, intelligent, and available 24/7. Built with modern LLMs and agent frameworks.
+- [AI Workflows & LLM Integration — IITDeveloper](https://iitdeveloper.com/services/ai-workflows): Custom LLM integrations and AI automation systems. MCP protocols, intelligent pipelines, and workflow automation that scales.
+- [Mobile App Development — IITDeveloper](https://iitdeveloper.com/services/app-development): Professional mobile app development for iOS and Android. Native and cross-platform apps that users love. React Native, Flutter, Swift, and Kotlin expertise.
+- [B2B Promotion & Enterprise Growth — IITDeveloper](https://iitdeveloper.com/services/b2b-promotion): End-to-end B2B growth strategies. Market research, lead generation, content marketing, and analytics that fill pipelines and close deals.
+- [DevOps & Cloud Infrastructure — IITDeveloper](https://iitdeveloper.com/services/devops-cloud): Professional DevOps and cloud infrastructure services. CI/CD pipelines, containerization, Kubernetes orchestration, and cloud architecture on AWS, GCP, and Azure.
+- [Custom Ecommerce Solutions — IITDeveloper](https://iitdeveloper.com/services/ecommerce): Full-stack ecommerce development with payment gateways, marketplace integrations, brand architecture, and retention strategies. Built to sell, engineered to scale.
+- [Graphic Design, Video Editing & Motion Graphics — IITDeveloper](https://iitdeveloper.com/services/graphic-design): Professional graphic design — posters, banners, video editing, 2D animations, After Effects motion graphics, and online/offline marketing materials.
+- [Performance Marketing & Growth — IITDeveloper](https://iitdeveloper.com/services/marketing): Data-driven performance marketing that converts. PPC campaigns, social ads, conversion optimization, and growth marketing that stops burning money.
+- [Salesforce Consulting & Custom Development — IITDeveloper](https://iitdeveloper.com/services/salesforce): Expert Salesforce consulting and custom implementations. CRM optimization, integrations, custom apps, and automation that makes Salesforce work for your business.
+- [SEO, SMM & Generative Engine Optimization (GEO) — IITDeveloper](https://iitdeveloper.com/services/seo-smm): SEO and social media marketing that works in 2026. Get found on Google, grow your following, and drive organic traffic that converts.
+- [Shopify Store Development — IITDeveloper](https://iitdeveloper.com/services/shopify-store): Expert Shopify store creation — custom themes, app integrations, payment setup, and full launch support. We build Shopify stores that convert and scale.
+- [Website & Web Application Development — IITDeveloper](https://iitdeveloper.com/services/website-development): Professional custom website development services. We build fast, scalable, and beautiful web applications with modern frameworks like Next.js, React, and TypeScript.

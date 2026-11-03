@@ -5,88 +5,34 @@ import Footer from '@/components/layout/Footer';
 import { Bot, Brain, Clock, MessageSquare, TrendingUp, Zap, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { aiAgentsContent } from '@/content/services/ai-agents';
 
 export const metadata: Metadata = {
-  title: 'AI Agents & Automation | Custom AI Solutions | IITDeveloper',
-  description: 'Custom AI agents that automate workflows. Available 24/7, powered by GPT-4, Claude, and custom LLMs. Never need coffee breaks or vacations.',
+  title: aiAgentsContent.metaTitle,
+  description: aiAgentsContent.metaDescription,
   openGraph: {
-    title: 'AI Agents & Automation | IITDeveloper',
-    description: 'Intelligent agents that automate your workflows. Available 24/7, never need coffee breaks.',
+    title: aiAgentsContent.title,
+    description: aiAgentsContent.description,
     type: 'website',
   },
 };
 
-const features = [
-  {
-    icon: Bot,
-    title: 'Custom AI Agents',
-    description: 'Agents tailored to your business logic. Not generic chatbots.',
-  },
-  {
-    icon: Brain,
-    title: 'Multi-Model Support',
-    description: 'GPT-4, Claude, Gemini, or custom models. Best tool for each task.',
-  },
-  {
-    icon: Clock,
-    title: '24/7 Availability',
-    description: 'Works while you sleep. No sick days. No vacation requests.',
-  },
-  {
-    icon: MessageSquare,
-    title: 'Natural Conversations',
-    description: 'Context-aware dialogue. Remembers conversations. Actually helpful.',
-  },
-  {
-    icon: TrendingUp,
-    title: 'Learning & Improvement',
-    description: 'Gets smarter over time. Learns from interactions and feedback.',
-  },
-  {
-    icon: Zap,
-    title: 'Fast Integration',
-    description: 'Plug into existing systems. APIs, webhooks, databases.',
-  },
-];
+const iconMap: Record<string, any> = {
+  Bot,
+  Brain,
+  Clock,
+  MessageSquare,
+  TrendingUp,
+  Zap,
+};
 
-const technologies = [
-  'OpenAI GPT-4', 'Claude 3.5', 'Google Gemini', 'LangChain',
-  'Vector Databases', 'Pinecone', 'Weaviate', 'LlamaIndex',
-  'Function Calling', 'RAG Systems', 'Fine-tuning', 'Prompt Engineering',
-];
+const features = aiAgentsContent.features.map((item) => ({
+  ...item,
+  icon: (item.iconName && iconMap[item.iconName]) || Bot,
+}));
 
-const processSteps = [
-  {
-    number: '01',
-    title: 'Use Case Discovery',
-    description: 'We identify repetitive tasks that AI can handle better than humans.',
-  },
-  {
-    number: '02',
-    title: 'Agent Design',
-    description: 'Custom personality, knowledge base, and capabilities tailored to your needs.',
-  },
-  {
-    number: '03',
-    title: 'Model Selection',
-    description: 'Choose the best LLM for your use case. Cost vs. capability optimization.',
-  },
-  {
-    number: '04',
-    title: 'Development & Training',
-    description: 'Build the agent, train on your data, and fine-tune responses.',
-  },
-  {
-    number: '05',
-    title: 'Testing & Validation',
-    description: 'Real-world testing with edge cases. Quality assurance before deployment.',
-  },
-  {
-    number: '06',
-    title: 'Deployment & Monitoring',
-    description: 'Production deployment with performance monitoring and continuous improvement.',
-  },
-];
+const technologies = aiAgentsContent.technologies;
+const processSteps = aiAgentsContent.processSteps;
 
 const pricing = [
   {

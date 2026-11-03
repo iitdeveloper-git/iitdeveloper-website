@@ -5,88 +5,35 @@ import Footer from '@/components/layout/Footer';
 import { Cloud, Container, GitBranch, Server, Shield, Zap, Activity, CheckCircle2, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { devopsCloudContent } from '@/content/services/devops-cloud';
 
 export const metadata: Metadata = {
-  title: 'DevOps & Cloud Services | AWS, Docker, Kubernetes | IITDeveloper',
-  description: 'Professional DevOps and cloud infrastructure services. CI/CD pipelines, containerization, Kubernetes orchestration, and cloud architecture on AWS, GCP, and Azure.',
+  title: devopsCloudContent.metaTitle,
+  description: devopsCloudContent.metaDescription,
   openGraph: {
-    title: 'DevOps & Cloud Services | IITDeveloper',
-    description: 'Infrastructure that scales. CI/CD pipelines, containerization, and cloud architecture.',
+    title: devopsCloudContent.title,
+    description: devopsCloudContent.description,
     type: 'website',
   },
 };
 
-const features = [
-  {
-    icon: Cloud,
-    title: 'Cloud Architecture',
-    description: 'AWS, GCP, or Azure. Scalable infrastructure designed for growth.',
-  },
-  {
-    icon: Container,
-    title: 'Containerization',
-    description: 'Docker and Kubernetes. Consistent environments from dev to production.',
-  },
-  {
-    icon: GitBranch,
-    title: 'CI/CD Pipelines',
-    description: 'Automated testing and deployment. Ship code confidently.',
-  },
-  {
-    icon: Server,
-    title: 'Infrastructure as Code',
-    description: 'Terraform, CloudFormation, or Pulumi. Version-controlled infrastructure.',
-  },
-  {
-    icon: Activity,
-    title: 'Monitoring & Logging',
-    description: 'Prometheus, Grafana, ELK stack. Know what\'s happening before users complain.',
-  },
-  {
-    icon: Shield,
-    title: 'Security & Compliance',
-    description: 'SOC 2, HIPAA, GDPR ready. Security baked in, not bolted on.',
-  },
-];
+const iconMap: Record<string, any> = {
+  Cloud,
+  Container,
+  GitBranch,
+  Server,
+  Activity,
+  Shield,
+  Zap,
+};
 
-const technologies = [
-  'AWS', 'Google Cloud', 'Azure', 'Docker',
-  'Kubernetes', 'Terraform', 'GitHub Actions', 'Jenkins',
-  'Prometheus', 'Grafana', 'ELK Stack', 'Nginx',
-];
+const features = devopsCloudContent.features.map((item) => ({
+  ...item,
+  icon: (item.iconName && iconMap[item.iconName]) || Cloud,
+}));
 
-const processSteps = [
-  {
-    number: '01',
-    title: 'Infrastructure Audit',
-    description: 'We assess your current setup, identify bottlenecks, and spot security issues.',
-  },
-  {
-    number: '02',
-    title: 'Architecture Design',
-    description: 'Scalable, cost-effective infrastructure blueprint. No over-engineering.',
-  },
-  {
-    number: '03',
-    title: 'Migration Strategy',
-    description: 'Zero-downtime migration plan. We move fast without breaking things.',
-  },
-  {
-    number: '04',
-    title: 'Implementation',
-    description: 'Infrastructure as code, CI/CD setup, and monitoring configuration.',
-  },
-  {
-    number: '05',
-    title: 'Testing & Validation',
-    description: 'Load testing, security audits, and disaster recovery drills.',
-  },
-  {
-    number: '06',
-    title: 'Ongoing Support',
-    description: '24/7 monitoring, performance optimization, and incident response.',
-  },
-];
+const technologies = devopsCloudContent.technologies;
+const processSteps = devopsCloudContent.processSteps;
 
 const pricing = [
   {
