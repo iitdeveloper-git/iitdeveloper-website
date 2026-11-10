@@ -24,6 +24,11 @@ export const metadata: Metadata = {
     title: 'Premium Web Development, AI Solutions & DevOps',
     description: 'Expert web development, AI automation, and cloud infrastructure. Build scalable applications with modern frameworks. Fast, reliable, and built to last.',
   }),
+  verification: {
+    other: {
+      'growixa-verification': 'grx-verify-cc14cf01b60d030f6eca3db51c34d1e9',
+    },
+  },
 };
 
 export default function RootLayout({
@@ -35,6 +40,10 @@ export default function RootLayout({
   const websiteSchema = generateStructuredData('WebSite');
   const theme = process.env.NEXT_PUBLIC_THEME === 'graphite' ? 'graphite' : 'midnight-atelier';
   const themeColor = theme === 'midnight-atelier' ? '#1B2632' : '#0D1215';
+
+  const growixaBarUrl = process.env.NEXT_PUBLIC_GROWIXA_BAR_URL;
+  const growixaSiteId = process.env.NEXT_PUBLIC_GROWIXA_SITE_ID;
+  const growixaApiUrl = process.env.NEXT_PUBLIC_GROWIXA_API_URL;
 
   return (
     <html lang="en" className="dark" data-theme={theme}>
@@ -60,6 +69,16 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
+        {/* Growixa Announcement Bar Embed (Loaded dynamically from environment) */}
+        {growixaBarUrl && growixaSiteId && (
+          <Script
+            src={growixaBarUrl}
+            data-site-id={growixaSiteId}
+            data-api={growixaApiUrl}
+            strategy="afterInteractive"
+          />
+        )}
+
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-7VZRZJC8C8"
