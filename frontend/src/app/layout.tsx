@@ -43,7 +43,7 @@ export default function RootLayout({
 
   const growixaBarUrl = process.env.NEXT_PUBLIC_GROWIXA_BAR_URL;
   const growixaSiteId = process.env.NEXT_PUBLIC_GROWIXA_SITE_ID;
-  const growixaApiUrl = process.env.NEXT_PUBLIC_GROWIXA_API_URL;
+  const growixaApiUrl = process.env.NEXT_PUBLIC_GROWIXA_API_URL || 'https://growixa.iitdeveloper.com/api';
 
   return (
     <html lang="en" className="dark" data-theme={theme}>
